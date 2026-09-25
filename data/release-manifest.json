@@ -6,13 +6,13 @@
   },
   {
     "file": "README.md",
-    "bytes": 9927,
-    "sha256": "73fbe6fef13c50b0e0adaf38ea0b228d9aad7b9365993f64d6938e2731f8b46c"
+    "bytes": 10142,
+    "sha256": "e73bdbf490ecb49db6d3b512a53f21521cc7001c261138a74b25492514fe4594"
   },
   {
     "file": "admin.html",
-    "bytes": 895208,
-    "sha256": "c64eabacb325a6c328c1f1fc9e3deb565539c3012fda237c6255bb7959f22ecc"
+    "bytes": 895203,
+    "sha256": "c737b95611f572e6769b37cf5ec017842296d2c9bba398eaac7843bd36d35ad4"
   },
   {
     "file": "al_aqidah_al_wasitiyyah.pdf",
@@ -71,8 +71,8 @@
   },
   {
     "file": "assets/js/access.js",
-    "bytes": 3661,
-    "sha256": "48e403fe6d95bdab5d309c6cc4d6d3a606667c35429691a59543e0a240acc98c"
+    "bytes": 4320,
+    "sha256": "bab76322e94e74318799ac844e05db9c80b369da965e90103e6dc5e756339420"
   },
   {
     "file": "assets/js/accessibility.js",
@@ -106,8 +106,8 @@
   },
   {
     "file": "assets/js/admin.js",
-    "bytes": 14329,
-    "sha256": "40b9a2d0bbea6ad865da4d458b75d0203d7bf1827279e524ead3e6b9521488e7"
+    "bytes": 14327,
+    "sha256": "963333f60b7d84ca664f09048eecc31219e0b0162e44fa81d7fe642947e1a016"
   },
   {
     "file": "assets/js/appearance.js",
@@ -146,8 +146,8 @@
   },
   {
     "file": "assets/js/i18n-catalog.js",
-    "bytes": 422672,
-    "sha256": "ca9d7855c7adf3e3ac2368134ce3d1d93d4540e97975432a98d895fec3505676"
+    "bytes": 422669,
+    "sha256": "b7d5636285db6c5405995359eb02e044ef88a03fe23b88063694e4fa38b49205"
   },
   {
     "file": "assets/js/i18n.js",
@@ -220,9 +220,104 @@
     "sha256": "2983887dabcffdc243733c8c148a813853567c8875bcbeca58afbe8ae6913869"
   },
   {
+    "file": "backend/backups/buckets-before.json",
+    "bytes": 434,
+    "sha256": "f2021ad1587f315b0a3b7d2cd3cf3d9d6fc7a3a204913d11343f5f92b36bc9ff"
+  },
+  {
+    "file": "backend/backups/edge-dependencies.json",
+    "bytes": 3445,
+    "sha256": "9d76c27c581954fad26edaf58e54675ea9e8b2c17435057ff73cd8fac87c1375"
+  },
+  {
+    "file": "backend/backups/frontend-dependencies.json",
+    "bytes": 1017,
+    "sha256": "158f38b356048a44f75ee3293bf0504f63c15d9ac800a5c9dbe5a430026b2a09"
+  },
+  {
+    "file": "backend/backups/function-versions.json",
+    "bytes": 5731,
+    "sha256": "26071e875861cdb262b1149cf7110f36372c193874e86cc68dc4e55690e365ac"
+  },
+  {
+    "file": "backend/backups/functions/zad-access-check/index.ts",
+    "bytes": 3711,
+    "sha256": "1c39d5b94d3b743c76e9290d12822080df55299fd49386977bc30376c9be587f"
+  },
+  {
+    "file": "backend/backups/functions/zad-account-delete/index.ts",
+    "bytes": 2021,
+    "sha256": "a69e6cd66c1fa5f931415f028ecf140a8530cba4fc55a3d7d52385bf1226c19b"
+  },
+  {
+    "file": "backend/backups/functions/zad-admin-auth/index.ts",
+    "bytes": 3373,
+    "sha256": "3d80b2723f00836cbe163743faf06461068e09fd77ed152f2fac91a80d04bf28"
+  },
+  {
+    "file": "backend/backups/functions/zad-admin-users/index.ts",
+    "bytes": 10568,
+    "sha256": "3dc45bb9bb5c9d5528ae534ca02c4f7552883aef5e983ae8c1f6b7f4d16022c2"
+  },
+  {
+    "file": "backend/backups/functions/zad-talk-admin-list/index.ts",
+    "bytes": 2347,
+    "sha256": "f0dbb2b8c70939dbd225b2618d2c8db6ff4182282d9a60bff77be5938814b88f"
+  },
+  {
+    "file": "backend/backups/functions/zad-talk-admin-review/index.ts",
+    "bytes": 2765,
+    "sha256": "abbabc931fe04331e306b33ac1110b8a6e65135b1723cd284f04d5143bf57625"
+  },
+  {
+    "file": "backend/backups/functions/zad-talk-create-upload/index.ts",
+    "bytes": 5498,
+    "sha256": "529e97ffcd3e205079ee19bffcf68b2f66d279d3e12e63dbf08c8ccbb6286b6f"
+  },
+  {
+    "file": "backend/backups/functions/zad-talk-feed/index.ts",
+    "bytes": 4381,
+    "sha256": "55f4c27883849dfcb116c587853fa71c351109dd6290ce9ec6015b1179199fd7"
+  },
+  {
+    "file": "backend/backups/functions/zad-talk-finalize-upload/index.ts",
+    "bytes": 3847,
+    "sha256": "4c7eb49651f0568c75a2eb0d69edef346801d268bf786ac60f6ab5568b91610f"
+  },
+  {
+    "file": "backend/backups/functions/zad-talk-leaderboard/index.ts",
+    "bytes": 2177,
+    "sha256": "d1dd5fecbc9e930f389fdf67ff2bee0cca00cd50a1a56beb0185019b3363c2a6"
+  },
+  {
+    "file": "backend/backups/functions/zad-talk-social/index.ts",
+    "bytes": 6732,
+    "sha256": "a5eaaaa1b7064c70fdc112f551bf9b2c0e27300bf6164effff7a0f16b6b1b4db"
+  },
+  {
+    "file": "backend/backups/project-before.json",
+    "bytes": 376,
+    "sha256": "a454dd9e6969676bb40c4c1293c1871e53b1343120034440e2b77aefa870dfb8"
+  },
+  {
+    "file": "backend/backups/row-fingerprints-after.json",
+    "bytes": 1646,
+    "sha256": "bf8eae32b926ba5846e584afc4a7bce2b49907b5a8800cca0ecc4590bccc2761"
+  },
+  {
+    "file": "backend/backups/row-fingerprints-before.json",
+    "bytes": 1645,
+    "sha256": "f4654de3e0eb50bf126b744f232eb2a9f3d65603c4b5f373fb89d1c907bb2d63"
+  },
+  {
+    "file": "backend/backups/schema-before.json",
+    "bytes": 231169,
+    "sha256": "847d4169b6686a55ebcd189a1bf60c7ab8434c7e3b0c5c57c21c0bc5d68749ff"
+  },
+  {
     "file": "backend/review-only/README.md",
-    "bytes": 3416,
-    "sha256": "dfa200aa21428c7adace588235e975038b92aced078a82150a8fe72f43a3ba3c"
+    "bytes": 3893,
+    "sha256": "bba5e888e29edf02c2394483a72b4c8ba092e4b74b3e2fe8e3c1075aa00f81f1"
   },
   {
     "file": "backend/review-only/inspected-versions.json",
@@ -255,6 +350,11 @@
     "sha256": "d2097b6c6eb4b5c55668f620b1ae4afb7ed3d9da2ca4bddb12fded9de93200a7"
   },
   {
+    "file": "data/backend-release.json",
+    "bytes": 1636,
+    "sha256": "bb13d6722d2baa2d0015007d88fb3aed4609dd36fb97899434d4821637de41a7"
+  },
+  {
     "file": "data/content-integrity.json",
     "bytes": 1177,
     "sha256": "5e912c253b39c480c48485b133e6cc17d087e5d9ba56a98bcf0f39001a5cf97e"
@@ -271,8 +371,8 @@
   },
   {
     "file": "data/release-summary.json",
-    "bytes": 2106,
-    "sha256": "557d57a31c2935873310bd9ab9256de84fa74765d6022c4c652e4ce9b6ea45b1"
+    "bytes": 3957,
+    "sha256": "2d50f0d2858c0d8a4775d4cc0e03e597d27ba6acbb1635c0decc26f1f018c360"
   },
   {
     "file": "data/ui-inventory.json",
@@ -285,14 +385,19 @@
     "sha256": "ae79822102feac2556eddc1d66dcabea7e77b79fbabae4e7d6697c1354d357c1"
   },
   {
+    "file": "docs/BACKEND-2.1.2.md",
+    "bytes": 8189,
+    "sha256": "efbb75d68be9d0cf0891e250cb231e731878c0fa32780b3197c3f91b555d5b28"
+  },
+  {
     "file": "docs/CHANGELOG.md",
-    "bytes": 12253,
-    "sha256": "c611f8cfc357ab72b8ac4ceeb33ceb28145fe158bd8fa3dbae19587ed9e5ce63"
+    "bytes": 12984,
+    "sha256": "c1cdc3d3137d23536c4154a73eacab9559a0f6bc0df75e81fc76eb6fcc834dd6"
   },
   {
     "file": "docs/DEPLOYMENT.md",
-    "bytes": 4698,
-    "sha256": "dbe1654527417b6d85d144eba6b1f85e1f4af033f35759ee957ad82380647fdd"
+    "bytes": 5247,
+    "sha256": "03c030acd51b4b4813d97e7f07b8ce0c5d8218cf4bea8a7e370bb53e59212280"
   },
   {
     "file": "docs/LOCALIZATION.md",
@@ -306,8 +411,8 @@
   },
   {
     "file": "docs/QA.md",
-    "bytes": 14181,
-    "sha256": "a457f2b51d065b349e7b793235400e015d8bcd7964599a6b97738d03f9891262"
+    "bytes": 14544,
+    "sha256": "e23959cfa0b07c76e6486a720cb28fe3f8071ab56a3056b1a23f24d262ecea87"
   },
   {
     "file": "docs/SOURCES.md",
@@ -331,8 +436,8 @@
   },
   {
     "file": "index.html",
-    "bytes": 1563280,
-    "sha256": "8b85ad2a3ec396b838abb70d7372ce6978800f3c8b23a78a90ac097a4e49c133"
+    "bytes": 1563936,
+    "sha256": "fadb0c1ccd25cd13cd0fd8561bf7f2a454c430d85eab6e85a718d1addcbe3194"
   },
   {
     "file": "kitab_al_tawhid.pdf",
@@ -342,12 +447,12 @@
   {
     "file": "package-lock.json",
     "bytes": 22650,
-    "sha256": "6c6bf24e0c7858c84f367e152922b418c555db4d5a10800d843ca2d41c3e19c1"
+    "sha256": "92d16a6e5a115142188c0fdf0b410101682921286e1fc29bb60682c25e55eb90"
   },
   {
     "file": "package.json",
-    "bytes": 821,
-    "sha256": "2b10b07dcb3d855522486cbe89ce7f8b9a93672d099cd5a967ed322fc5d5cbc4"
+    "bytes": 920,
+    "sha256": "1de5cf935c970782d11223ae0047dd786557df65b9ef2f753eebfb15875a2433"
   },
   {
     "file": "quran.pdf",
@@ -356,8 +461,8 @@
   },
   {
     "file": "reader.html",
-    "bytes": 913009,
-    "sha256": "3f8b882f54249596b44ca20cd857eea4456a1b40612b77d4a70d6ea313e67823"
+    "bytes": 913006,
+    "sha256": "3007cb6ea5f0dfa80d33d9457f8a5f8ae08cadb75e9245dacd47d1a1c549f18b"
   },
   {
     "file": "scripts/build_portable.py",
@@ -371,13 +476,13 @@
   },
   {
     "file": "scripts/package_release.py",
-    "bytes": 2410,
-    "sha256": "f73c5e0ab9ce9b3a327102282bee4e11bb8f9a23a999b02ec6ead7802b80c5ca"
+    "bytes": 2471,
+    "sha256": "060fd8b8b698a6b1732cc22ed9e8b388b071343c51eeab3897db493855e6b98c"
   },
   {
     "file": "seerah.html",
-    "bytes": 894955,
-    "sha256": "ca537c9392278bf974f56ac99426b2eb0f11ff437458b9943b1c2700f972c847"
+    "bytes": 894952,
+    "sha256": "7bf143390b1db76616f54b947ec10b0f3abe6a30774a5ba6b06d35e86ccfe988"
   },
   {
     "file": "source-pages/admin.html",
@@ -400,9 +505,104 @@
     "sha256": "355e49a146eb4314b3c24480f141c1c7dd44d04ed569f42949f356ef3bc32fdc"
   },
   {
+    "file": "supabase/.temp/cli-latest",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "supabase/config.toml",
+    "bytes": 1310,
+    "sha256": "fdc79b6ebbc3ac4624ba2e8c7b809e1d241845035d4ac11b3baa092734d5c292"
+  },
+  {
+    "file": "supabase/functions/_shared/runtime.ts",
+    "bytes": 9058,
+    "sha256": "fe77bd93032ae97d96bde9802b00986cda25ca83bf07fe543c4409b6a7b0e839"
+  },
+  {
+    "file": "supabase/functions/zad-access-check/index.ts",
+    "bytes": 163,
+    "sha256": "f26e2a4e71e9e7723afcd2dbcd35f42b9424eca79bc23cc321165426a9388844"
+  },
+  {
+    "file": "supabase/functions/zad-account-delete/index.ts",
+    "bytes": 179,
+    "sha256": "029c5f9992defa09b16e8adc4244003d330358c5541bcce386a508ea546aa4ad"
+  },
+  {
+    "file": "supabase/functions/zad-admin-auth/index.ts",
+    "bytes": 1991,
+    "sha256": "4b7a3a111181babae4388474903211e3576baaa18663007009be3f0b3456f498"
+  },
+  {
+    "file": "supabase/functions/zad-admin-users/index.ts",
+    "bytes": 2128,
+    "sha256": "a6246e8d0900974b4b89e57225b6acec13db805dae02a77d08bab1ea43ef4616"
+  },
+  {
+    "file": "supabase/functions/zad-talk-admin-list/index.ts",
+    "bytes": 1090,
+    "sha256": "2b11bf7fb9c90f081193c79bd69a343e2fc1c09d881dd51a3d0a2c6f96b427b6"
+  },
+  {
+    "file": "supabase/functions/zad-talk-admin-review/index.ts",
+    "bytes": 1635,
+    "sha256": "4ae56a0278d664527d197bf2644d05559d2f0bae27bb219c584336a741706372"
+  },
+  {
+    "file": "supabase/functions/zad-talk-create-upload/index.ts",
+    "bytes": 2157,
+    "sha256": "1039ce02bfe86dd44f18d11e9cb6a86fdc193c8091c893d558f8e38ca9aa20ba"
+  },
+  {
+    "file": "supabase/functions/zad-talk-feed/index.ts",
+    "bytes": 1519,
+    "sha256": "21ca1d8f4ce16a2e48578d128cae73429d8b5a413755c0f00a8b40b3226f0bf9"
+  },
+  {
+    "file": "supabase/functions/zad-talk-finalize-upload/index.ts",
+    "bytes": 1154,
+    "sha256": "47b6d8b32c14262f49fbd3193e71b9f77e121cfceae29d8f895017db72d283cf"
+  },
+  {
+    "file": "supabase/functions/zad-talk-leaderboard/index.ts",
+    "bytes": 339,
+    "sha256": "b2b705382c64583bfc53234ca56a32983777631992fbad700aa651b6b50b2b50"
+  },
+  {
+    "file": "supabase/functions/zad-talk-social/index.ts",
+    "bytes": 4056,
+    "sha256": "ade4de833fb554e609ef8d117cc127d19754d27bb178368de54ffc3a46d36104"
+  },
+  {
+    "file": "supabase/migrations/20260925154442_repair_zad_backend_authorization.sql",
+    "bytes": 19828,
+    "sha256": "5d4f7d144fbda9db922b1d773ac3f2cb7f063023e49fb8011907abb03f3592b0"
+  },
+  {
+    "file": "supabase/migrations/20260925155115_zad_admin_user_search_pagination.sql",
+    "bytes": 1996,
+    "sha256": "fbb1f8648572c5771c91f82c643a9fe2fd6db6ee4eabf1f50c3959a209d8b8b7"
+  },
+  {
+    "file": "supabase/migrations/20260925160155_revoke_internal_trigger_rpc_access.sql",
+    "bytes": 205,
+    "sha256": "6914a9b95a0ea36b0c129bd9c24c412c475aa69c9610c207e3c0855ef2644e24"
+  },
+  {
     "file": "tests/backend-contracts.cjs",
     "bytes": 7731,
     "sha256": "34d890d1066b97186a43f637f671f88117763b752f9603c66d90de93977dc7ab"
+  },
+  {
+    "file": "tests/backend-live-results.json",
+    "bytes": 3713,
+    "sha256": "c9325d0461eabe108d2b0f2dd3e3891db762a40dbc3ec0bd08e0bbc5bed01f33"
+  },
+  {
+    "file": "tests/backend-live.cjs",
+    "bytes": 19419,
+    "sha256": "1326882b8f9515c278fcc2a130f353240b659b358b53d8a9adeb4215cb25a923"
   },
   {
     "file": "tests/backend-results.json",
@@ -410,9 +610,24 @@
     "sha256": "39b2850140f25d7f7d1b51f62c9f8f17a508522fa2e0fd5fad385d57cb6cb042"
   },
   {
+    "file": "tests/backend-security-results.json",
+    "bytes": 843,
+    "sha256": "e8f6325b62444fa5a628eb0e1ce7b2143ad27da72760b1ca5e6fac5a5d1bfc32"
+  },
+  {
+    "file": "tests/backend-security.cjs",
+    "bytes": 4360,
+    "sha256": "3fd3f496b9c367a2f71adda8fef508c3d04a5f3681dcd50d942a3e0fd566ef5b"
+  },
+  {
     "file": "tests/dom-harness.cjs",
     "bytes": 4077,
     "sha256": "bcefe55d4deb7827fef838f350f860a4b3c6e78d043e545fb25630daf1f2af75"
+  },
+  {
+    "file": "tests/fixtures/qa-video.mp4",
+    "bytes": 1863,
+    "sha256": "b977145608894ed49bda240d148f96bc031b8f64b42e5cac2317164aadf2cb4d"
   },
   {
     "file": "tests/fixtures/quran-source.json",
@@ -452,7 +667,7 @@
   {
     "file": "tests/localization-results.json",
     "bytes": 4410,
-    "sha256": "da7d0c8adaa65028592546d8def121a458c1d1de26c45a20a7474dc0c3d09b92"
+    "sha256": "f49df0fa71f7e33be08e32670c83536052408eb49b4554e197437bfe4563fc1c"
   },
   {
     "file": "tests/localization.cjs",
@@ -462,7 +677,7 @@
   {
     "file": "tests/media-localization-results.json",
     "bytes": 1129,
-    "sha256": "af996fbabd01975162d2d2b8b7d1d28d61ad08d0eb482f8fc19fce367ec626b9"
+    "sha256": "9d5f646580e2a577f1d683c8e2018235a53865f75a0adb1af15a7b14a69e9a4b"
   },
   {
     "file": "tests/media-localization.cjs",
@@ -472,7 +687,7 @@
   {
     "file": "tests/palettes-paths-results.json",
     "bytes": 65185,
-    "sha256": "8f09606eef6484b706885daf73a0dc4134c135b9298d238b6b6b7d99266dfc82"
+    "sha256": "af8f46cb8c68fc8467bd0d854ae4352e8519f35da33911fb3c8644336605ef42"
   },
   {
     "file": "tests/palettes-paths.cjs",
@@ -482,7 +697,7 @@
   {
     "file": "tests/quran-integrity-results.json",
     "bytes": 1048,
-    "sha256": "5901faa08b97cac8ac1d613b1959b85e435d193ab5521f92dc5b30ffa0dfb8e2"
+    "sha256": "6eabeae9ed23fdfc9152b998b819966c86f02c5b24c19caec981c1ef3c4e1198"
   },
   {
     "file": "tests/quran-integrity.cjs",
@@ -502,7 +717,7 @@
   {
     "file": "tests/scoped-colors-results.json",
     "bytes": 1105,
-    "sha256": "e2161a0303b24e66b2e7556c17785dba56c5b31e9a9cb57428ef8ca321a959a9"
+    "sha256": "c92a48d892dd8d64ed63e4e0a3e6606ae17243692d0a535a70369f25d51ced4d"
   },
   {
     "file": "tests/scoped-colors.cjs",

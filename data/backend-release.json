@@ -1,0 +1,46 @@
+{
+  "version": "2.1.2",
+  "date": "2026-09-25",
+  "project": "bzrhrvgddtnhctcdlgmy",
+  "rootCause": "Original project INACTIVE; restored same project. Additional authorization, upload validation and session revocation defects repaired after inspecting live schema.",
+  "status": "ACTIVE_HEALTHY",
+  "migrationsApplied": [
+    "20260925154442_repair_zad_backend_authorization.sql",
+    "20260925155115_zad_admin_user_search_pagination.sql",
+    "20260925160155_revoke_internal_trigger_rpc_access.sql"
+  ],
+  "deployedFunctions": {
+    "zad-talk-create-upload": 8,
+    "zad-talk-finalize-upload": 6,
+    "zad-talk-feed": 9,
+    "zad-talk-admin-list": 4,
+    "zad-talk-admin-review": 4,
+    "zad-admin-auth": 5,
+    "zad-admin-users": 6,
+    "zad-talk-social": 7,
+    "zad-talk-leaderboard": 4,
+    "zad-account-delete": 2,
+    "zad-access-check": 4
+  },
+  "liveTests": {
+    "passed": 31,
+    "failed": 0
+  },
+  "localTests": {
+    "passed": 113,
+    "failed": 0
+  },
+  "cleanup": {
+    "remainingQaUsers": 0,
+    "remainingQaAdmins": 0,
+    "originalAuthUsers": 7,
+    "originalStorageObjects": 5,
+    "concurrentOriginalAdminLoginAndBanPreserved": true
+  },
+  "limitations": [
+    "Local full deno check blocked by npm registry access; syntax parsing, deployment and live execution passed.",
+    "Rendered browser QA not run: browser access policy.",
+    "Existing signed playback URLs expire after 300 seconds; signed upload tickets remain valid until Storage expiry, but finalization revalidates the current user session.",
+    "Auth leaked-password protection remains disabled; not changed through available management tools."
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "project": "bzrhrvgddtnhctcdlgmy",
+  "tested_at": "2026-09-25T17:38:31.141Z",
+  "real_backend": true,
+  "passed": 31,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Public feed responds on restored live project",
+      "status": "passed"
+    },
+    {
+      "name": "Narrow CORS accepts approved origin and rejects deceptive localhost origin",
+      "status": "passed"
+    },
+    {
+      "name": "Anonymous upload authorization is rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Real signup and automatic profile creation a",
+      "status": "passed"
+    },
+    {
+      "name": "Real signup and automatic profile creation b",
+      "status": "passed"
+    },
+    {
+      "name": "Duplicate username and invalid password are rejected by live backend",
+      "status": "passed"
+    },
+    {
+      "name": "Session restoration with the actual bundled SDK",
+      "status": "passed"
+    },
+    {
+      "name": "Cross-user profile update and account-status escalation are denied",
+      "status": "passed"
+    },
+    {
+      "name": "Direct stats, moderation, admin tables and privileged RPC writes are denied",
+      "status": "passed"
+    },
+    {
+      "name": "Server points claims are bounded, idempotent and do not allow arbitrary events",
+      "status": "passed"
+    },
+    {
+      "name": "Avatar upload works only in the authenticated owner folder",
+      "status": "passed"
+    },
+    {
+      "name": "Admin login and server-side user search and pagination",
+      "status": "passed"
+    },
+    {
+      "name": "Ordinary user metadata cannot grant admin authority",
+      "status": "passed"
+    },
+    {
+      "name": "Invalid MIME and oversized upload requests are rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Authenticated upload authorization binds owner, path and receipt",
+      "status": "passed"
+    },
+    {
+      "name": "Real signed Storage upload works and cannot overwrite another object",
+      "status": "passed"
+    },
+    {
+      "name": "Finalization verifies stored file and enters pending moderation",
+      "status": "passed"
+    },
+    {
+      "name": "Owner cannot self-approve a pending video",
+      "status": "passed"
+    },
+    {
+      "name": "Admin approval makes only approved video publicly readable",
+      "status": "passed"
+    },
+    {
+      "name": "Likes, comments and shares use authenticated identity and deduplicate shares",
+      "status": "passed"
+    },
+    {
+      "name": "Admin rejection removes the video from public feed and interactions",
+      "status": "passed"
+    },
+    {
+      "name": "Server rejects forged MP4 content and mismatched actual size",
+      "status": "passed"
+    },
+    {
+      "name": "Kick invalidates old JWT authorization and refresh tokens server-side",
+      "status": "passed"
+    },
+    {
+      "name": "Ban and unban enforce Auth, RLS and Edge authorization",
+      "status": "passed"
+    },
+    {
+      "name": "Username change preserves login mapping and blocks duplicates",
+      "status": "passed"
+    },
+    {
+      "name": "Password update and server-side weak-password rejection",
+      "status": "passed"
+    },
+    {
+      "name": "Logout invalidates live protected operations and session restoration",
+      "status": "passed"
+    },
+    {
+      "name": "Admin logout invalidates the server session",
+      "status": "passed"
+    },
+    {
+      "name": "Admin video deletion removes only the temporary clip and object",
+      "status": "passed"
+    },
+    {
+      "name": "Self-delete removes the temporary user and its storage objects",
+      "status": "passed"
+    },
+    {
+      "name": "Admin deletion removes the other temporary user",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+[
+  {
+    "file": "assets/js/access.js",
+    "tables": [
+      "profiles"
+    ]
+  },
+  {
+    "file": "assets/js/account-security.js",
+    "rpc": [
+      "zad_change_username",
+      "zad_resolve_login_username",
+      "zad_username_available"
+    ]
+  },
+  {
+    "file": "assets/js/account-sync.js",
+    "rpc": [
+      "zad_claim_event",
+      "zad_get_current_season",
+      "zad_get_leaderboard",
+      "zad_get_my_season_stats",
+      "zad_get_today_wird_choice"
+    ]
+  },
+  {
+    "file": "assets/js/admin.js",
+    "functions": [
+      "zad-admin-auth",
+      "zad-admin-users",
+      "zad-talk-admin-list",
+      "zad-talk-admin-review"
+    ]
+  },
+  {
+    "file": "assets/js/profile.js",
+    "tables": [
+      "profiles"
+    ]
+  },
+  {
+    "file": "assets/js/talk.js",
+    "tables": [
+      "zad-talk-media"
+    ],
+    "functions": [
+      "zad-talk-create-upload",
+      "zad-talk-feed",
+      "zad-talk-finalize-upload",
+      "zad-talk-leaderboard",
+      "zad-talk-media",
+      "zad-talk-social"
+    ]
+  }
+]

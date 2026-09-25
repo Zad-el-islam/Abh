@@ -45,6 +45,19 @@
     const session = s.data?.session;
     const user = session?.user;
     if (!user) return;
+    const check = await Zad.fetch(Zad.config.url + '/functions/v1/zad-access-check', {
+      method: 'POST',
+      headers: { apikey: Zad.config.key, authorization: 'Bearer ' + session.access_token, 'content-type': 'application/json' },
+      body: '{}'
+    }).catch(() => null);
+    if (check && [401, 403].includes(check.status)) {
+      const result = await check.json().catch(() => ({}));
+      const banned = ['account_banned', 'ip_banned'].includes(result.error);
+      if (showMessage) alert(ZadI18n.t(banned ? 'access.6c3ca4d526' : 'access.7f6005e5fb'));
+      await sb.auth.signOut({ scope: 'local' });
+      return;
+    }
+    if (!check?.ok) return;
     const p = await sb.from('profiles').select('username,display_name,avatar_url,account_status,ban_reason,banned_at,force_logout_at').eq('id', user.id).maybeSingle();
     if (p.error) return;
     const profile = p.data || {};
@@ -91,4 +104,3 @@
   });
   else init();
 })();
-

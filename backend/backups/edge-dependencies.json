@@ -1,0 +1,176 @@
+[
+  {
+    "function": "zad-access-check",
+    "tables": [
+      "profiles",
+      "zad_ip_bans",
+      "zad_user_ip_links"
+    ],
+    "rpc": [],
+    "env_names": [
+      "SUPABASE_SECRET_KEYS",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "SUPABASE_URL"
+    ]
+  },
+  {
+    "function": "zad-account-delete",
+    "tables": [
+      "zad-profile-avatars",
+      "zad_talk_likes"
+    ],
+    "rpc": [],
+    "env_names": [
+      "SUPABASE_SECRET_KEYS",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "SUPABASE_URL"
+    ]
+  },
+  {
+    "function": "zad-admin-auth",
+    "tables": [
+      "zad_admin_login_attempts",
+      "zad_admin_sessions"
+    ],
+    "rpc": [
+      "zad_admin_verify"
+    ],
+    "env_names": [
+      "SUPABASE_SECRET_KEYS",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "SUPABASE_URL"
+    ]
+  },
+  {
+    "function": "zad-admin-users",
+    "tables": [
+      "profiles",
+      "zad-profile-avatars",
+      "zad-talk-media",
+      "zad_admin_sessions",
+      "zad_ip_bans",
+      "zad_talk_comments",
+      "zad_talk_likes",
+      "zad_talk_share_events",
+      "zad_talk_submissions",
+      "zad_user_ip_links"
+    ],
+    "rpc": [
+      "zad_set_user_ip_ban"
+    ],
+    "env_names": [
+      "SUPABASE_SECRET_KEYS",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "SUPABASE_URL"
+    ]
+  },
+  {
+    "function": "zad-talk-admin-list",
+    "tables": [
+      "zad-talk-media",
+      "zad_admin_sessions",
+      "zad_talk_submissions"
+    ],
+    "rpc": [],
+    "env_names": [
+      "SUPABASE_SECRET_KEYS",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "SUPABASE_URL"
+    ]
+  },
+  {
+    "function": "zad-talk-admin-review",
+    "tables": [
+      "zad-talk-media",
+      "zad_admin_sessions",
+      "zad_talk_submissions"
+    ],
+    "rpc": [],
+    "env_names": [
+      "SUPABASE_SECRET_KEYS",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "SUPABASE_URL"
+    ]
+  },
+  {
+    "function": "zad-talk-create-upload",
+    "tables": [
+      "profiles",
+      "zad-talk-media",
+      "zad_ip_bans",
+      "zad_talk_submissions",
+      "zad_talk_upload_attempts",
+      "zad_user_ip_links"
+    ],
+    "rpc": [],
+    "env_names": [
+      "SUPABASE_SECRET_KEYS",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "SUPABASE_URL"
+    ]
+  },
+  {
+    "function": "zad-talk-feed",
+    "tables": [
+      "profiles",
+      "zad-talk-media",
+      "zad_ip_bans",
+      "zad_talk_submissions",
+      "zad_user_ip_links"
+    ],
+    "rpc": [],
+    "env_names": [
+      "SUPABASE_SECRET_KEYS",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "SUPABASE_URL"
+    ]
+  },
+  {
+    "function": "zad-talk-finalize-upload",
+    "tables": [
+      "zad-talk-media",
+      "zad_ip_bans",
+      "zad_talk_submissions"
+    ],
+    "rpc": [],
+    "env_names": [
+      "SUPABASE_SECRET_KEYS",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "SUPABASE_URL"
+    ]
+  },
+  {
+    "function": "zad-talk-leaderboard",
+    "tables": [
+      "zad_ip_bans"
+    ],
+    "rpc": [
+      "zad_talk_engagement_leaderboard"
+    ],
+    "env_names": [
+      "SUPABASE_SECRET_KEYS",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "SUPABASE_URL"
+    ]
+  },
+  {
+    "function": "zad-talk-social",
+    "tables": [
+      "profiles",
+      "zad_ip_bans",
+      "zad_talk_comments",
+      "zad_talk_likes",
+      "zad_talk_share_events",
+      "zad_talk_submissions",
+      "zad_user_ip_links"
+    ],
+    "rpc": [
+      "zad_talk_increment_share"
+    ],
+    "env_names": [
+      "SUPABASE_SECRET_KEYS",
+      "SUPABASE_SERVICE_ROLE_KEY",
+      "SUPABASE_URL"
+    ]
+  }
+]

@@ -106,7 +106,7 @@
       session = {
         token: data.session_token,
         name: String(data.admin_display_name || $('adminUser').value),
-        expires: Date.now() + 12 * 3600000
+        expires: Math.min(Date.parse(data.expires_at) || Date.now() + 12 * 3600000, Date.now() + 12 * 3600000)
       };
       Zad.session.setItem(SESSION, JSON.stringify(session));
       $('adminPass').value = '';
@@ -247,7 +247,7 @@
       if (!confirm('سيُحظر الحساب وعناوين الاتصال المرتبطة به حتى فك الحظر. هل تؤكد؟')) return;
     }
     if (kind === 'unban' && !confirm('فك حظر @' + name + ' وكل عناوين الاتصال المرتبطة به؟')) return;
-    if (kind === 'kick' && !confirm('طلب تسجيل خروج @' + name + ' من واجهة الموقع؟ قد يستغرق ظهوره حتى التحقق التالي.')) return;
+    if (kind === 'kick' && !confirm('تسجيل خروج @' + name + ' من جميع الأجهزة؟')) return;
     if (kind === 'delete' && prompt('سيُحذف الحساب @' + name + ' نهائيًا مع مقاطعه وتعليقاته وتفاعلاته. لا يمكن التراجع. اكتب «حذف» للتأكيد:') !== 'حذف') return;
     await action('zad-admin-users', {
       action: kind,

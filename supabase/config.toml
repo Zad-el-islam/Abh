@@ -1,0 +1,46 @@
+project_id = "bzrhrvgddtnhctcdlgmy"
+
+# Endpoints perform verified Auth JWT or hashed admin-session authorization internally.
+[functions."zad-access-check"]
+verify_jwt = false
+entrypoint = "./functions/zad-access-check/index.ts"
+
+[functions."zad-account-delete"]
+verify_jwt = false
+entrypoint = "./functions/zad-account-delete/index.ts"
+
+[functions."zad-admin-auth"]
+verify_jwt = false
+entrypoint = "./functions/zad-admin-auth/index.ts"
+
+[functions."zad-admin-users"]
+verify_jwt = false
+entrypoint = "./functions/zad-admin-users/index.ts"
+
+[functions."zad-talk-admin-list"]
+verify_jwt = false
+entrypoint = "./functions/zad-talk-admin-list/index.ts"
+
+[functions."zad-talk-admin-review"]
+verify_jwt = false
+entrypoint = "./functions/zad-talk-admin-review/index.ts"
+
+[functions."zad-talk-create-upload"]
+verify_jwt = false
+entrypoint = "./functions/zad-talk-create-upload/index.ts"
+
+[functions."zad-talk-feed"]
+verify_jwt = false
+entrypoint = "./functions/zad-talk-feed/index.ts"
+
+[functions."zad-talk-finalize-upload"]
+verify_jwt = false
+entrypoint = "./functions/zad-talk-finalize-upload/index.ts"
+
+[functions."zad-talk-leaderboard"]
+verify_jwt = false
+entrypoint = "./functions/zad-talk-leaderboard/index.ts"
+
+[functions."zad-talk-social"]
+verify_jwt = false
+entrypoint = "./functions/zad-talk-social/index.ts"

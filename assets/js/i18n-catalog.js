@@ -6958,13 +6958,13 @@ window.ZadI18nCatalog = {
     "es": "Publicado solo tras aprobación"
   },
   "talk.aefcd2ba0d": {
-    "ar": "يمكنك الرفع بدون حساب، لكن عند تسجيل الدخول سيظهر اسم حسابك وصورتك مع الفيديو بعد اعتماده. جميع المقاطع تمر على مراجعة الإدارة قبل النشر.",
-    "en": "You may upload without an account. When signed in, approved videos display your name and photo. Every video is reviewed before publication.",
-    "fr": "Vous pouvez envoyer sans compte. Si vous êtes connecté, les vidéos validées affichent votre nom et photo. Chaque vidéo est vérifiée avant publication.",
-    "id": "Anda boleh mengunggah tanpa akun. Saat masuk, video yang disetujui menampilkan nama dan foto Anda. Semua video ditinjau sebelum diterbitkan.",
-    "tr": "Hesapsız yükleyebilirsiniz. Giriş yaparsanız onaylı videolarda adınız ve fotoğrafınız görünür. Her video yayımlanmadan önce incelenir.",
-    "ur": "بغیر اکاؤنٹ بھی اپ لوڈ کر سکتے ہیں۔ لاگ اِن ہونے پر منظور شدہ ویڈیو کے ساتھ نام اور تصویر آتے ہیں۔ ہر ویڈیو نشر ہونے سے پہلے دیکھی جاتی ہے۔",
-    "es": "Puedes subir sin cuenta. Con sesión iniciada, los vídeos aprobados muestran tu nombre y foto. Todos se revisan antes de publicarse."
+    "ar": "سجّل الدخول لرفع فيديو. سيظهر اسم حسابك وصورتك مع المقطع بعد اعتماده. تُراجع الإدارة جميع المقاطع قبل نشرها.",
+    "en": "Sign in to upload a video. Your account name and photo appear with the video after approval. Every video is reviewed before publication.",
+    "fr": "Connectez-vous pour envoyer une vidéo. Votre nom et votre photo de profil apparaîtront après validation. Chaque vidéo est examinée avant sa publication.",
+    "id": "Masuk untuk mengunggah video. Nama dan foto akun Anda akan ditampilkan setelah video disetujui. Semua video ditinjau sebelum diterbitkan.",
+    "tr": "Video yüklemek için giriş yapın. Onaylandıktan sonra videonuzla birlikte hesap adınız ve fotoğrafınız görünür. Her video yayımlanmadan önce incelenir.",
+    "ur": "ویڈیو اپ لوڈ کرنے کے لیے لاگ اِن کریں۔ منظوری کے بعد ویڈیو کے ساتھ آپ کے اکاؤنٹ کا نام اور تصویر دکھائی جائے گی۔ ہر ویڈیو شائع ہونے سے پہلے جانچی جاتی ہے۔",
+    "es": "Inicia sesión para subir un vídeo. Tu nombre y foto de perfil aparecerán tras su aprobación. Todos los vídeos se revisan antes de publicarse."
   },
   "index.0ab5dfc2f6": {
     "ar": "العودة",
