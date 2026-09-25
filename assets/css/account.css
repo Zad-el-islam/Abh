@@ -1,0 +1,659 @@
+.zadAuthOverlay,.zadMyPanelOverlay,.zadUtilityOverlay,#v21LanguagePanel {
+  position: fixed;
+  inset: 0;
+  background: #12281c70;
+  z-index: 70;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: auto;
+}
+.zadAuthOverlay.open,.zadMyPanelOverlay.open,.zadUtilityOverlay.open,#v21LanguagePanel.show {
+  display: flex;
+}
+.zadAuthShell,.zadMyPanelPage,.zadUtilityShell,.v21LangCard {
+  width: 100%;
+  max-width: 700px;
+  max-height: calc(100dvh - 40px);
+  overflow: auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 26px;
+}
+.zadMyPanelHead,.zadAuthHead,.zadAuthTop,.zadUtilityTop,.v21LangHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+}
+.zadMyPanelHead h2,.zadAuthHead h2,.zadUtilityTop h2,.v21LangHead h2 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+.zadMyPanelHead small {
+  color: var(--muted);
+}
+.zadMyPanelHeadActions {
+  display: flex;
+  gap: 6px;
+}
+.zadMyPanelHeadActions button,.zadAuthHead>button,.v21LangHead>button {
+  background: var(--card2);
+  color: var(--text);
+  border-color: var(--line);
+}
+.zadMyPanelHero,.zadUtilityHero {
+  color: var(--muted);
+  font-size: .86rem;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+.zadMyPanelHero h3,.zadUtilityHero h3 {
+  color: var(--text);
+  font-size: 1.1rem;
+}
+.zadMyPanelCards {
+  display: grid;
+  gap: 12px;
+}
+.zadMyPanelCard {
+  display: flex;
+  align-items: center;
+  text-align: start;
+  gap: 16px;
+  padding: 20px;
+  background: var(--card2);
+  color: var(--text);
+  border-color: var(--line);
+}
+.zadMyPanelCard:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+.zadMyPanelCardText b,.zadMyPanelCardText strong,.zadMyPanelCardText small {
+  display: block;
+}
+.zadMyPanelCardText small {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: .8rem;
+  margin-top: 5px;
+}
+.zadMyPanelCardIcon {
+  color: var(--color-brand);
+}
+.zadMyPanelCardIcon svg {
+  width: 30px;
+  height: 30px;
+}
+.zadAuthChoice h3 {
+  font-size: 1.1rem;
+}
+.zadAuthChoice p {
+  font-size: .85rem;
+  color: var(--muted);
+}
+.zadAuthChoiceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+.zadAuthChoiceGrid button {
+  background: var(--card2);
+  color: var(--text);
+  border-color: var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: start;
+  padding: 18px;
+  gap: 6px;
+}
+.zadAuthChoiceGrid button:hover {
+  background: var(--bg);
+}
+.zadAuthChoiceGrid small {
+  color: var(--muted);
+  font-weight: 400;
+}
+.zadAuthChoiceGrid svg {
+  width: 24px;
+  height: 24px;
+}
+.zadAuthStatus,.zadPanelAuthStatus {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.zadAuthStatus.ready,.zadPanelAuthStatus.ready {
+  color: var(--color-success);
+}
+.zadAuthScreenHead {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.zadAuthScreenHead h3 {
+  margin: 0;
+}
+.zadAuthForm,.zadPanelAuthForm {
+  max-width: 100%;
+}
+.zadAuthForm label,.zadPanelAuthForm label {
+  margin-top: 18px;
+}
+.zadAuthActions,.zadPanelAuthActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+.zadAuthActions button,.zadPanelAuthActions button {
+  flex: 1;
+}
+.zadAuthMessage,.zadPanelAuthMessage {
+  font-size: .85rem;
+  margin-top: 16px;
+  min-height: 1.8em;
+}
+.zadAuthNote,.zadUsernameHint {
+  font-size: .77rem;
+  color: var(--muted);
+  display: block;
+  margin-top: 10px;
+}
+.zadAuthLogged {
+  display: none;
+}
+.zadAuthLogged.show {
+  display: block;
+}
+.zadAuthUserBox,.zadPanelUserBox {
+  background: var(--card2);
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+}
+.zadAuthUserBox small,.zadPanelUserBox small {
+  display: block;
+  font-size: .8rem;
+  color: var(--muted);
+}
+.zadAuthLogout,.zadPanelLogout {
+  background: transparent;
+  color: var(--color-danger);
+  border-color: var(--line);
+  width: 100%;
+  margin-top: 20px;
+}
+.zadPasswordStrength {
+  font-size: .7rem;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.zadPasswordStrength b {
+  font-weight: 400;
+}
+.zadPasswordStrengthTrack {
+  display: block;
+  height: 3px;
+  background: var(--line);
+  margin-bottom: 5px;
+}
+.zadPasswordStrengthTrack i {
+  display: block;
+  height: 100%;
+  background: var(--color-brand);
+}
+.zadAccountSettings>section,.zadAccountSettings>div {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.zadAccountSettings button {
+  margin-top: 16px;
+}
+.zadAccountSettings h3 {
+  font-size: 1rem;
+}
+.zadAccountSettings p {
+  font-size: .83rem;
+  color: var(--muted);
+}
+.zadStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 16px;
+  margin-block: 20px;
+}
+.zadStatsGrid>div {
+  padding: 20px;
+  border: 1px solid var(--line);
+  background: var(--card2);
+  border-radius: var(--radius-sm);
+}
+.zadStatsGrid strong {
+  display: block;
+  font-size: 1.75rem;
+  color: var(--color-brand);
+  font-weight: 500;
+}
+.zadStatsGrid small {
+  color: var(--muted);
+}
+.zadLeaderboardTabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.zadLeaderboardTabs button {
+  background: var(--card2);
+  color: var(--text);
+  border-color: var(--line);
+  font-size: .85rem;
+}
+.zadLeaderboardTabs button.active {
+  border-color: var(--color-brand);
+  color: var(--color-brand);
+}
+.zadComingCard {
+  color: var(--muted);
+  font-size: .86rem;
+}
+.zadComingCard h3 {
+  color: var(--text);
+}
+.zadSeasonBanner,.zadSeasonMini {
+  padding: 16px;
+  background: var(--card2);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.zadSeasonBanner small,.zadSeasonBanner span,.zadSeasonMini span {
+  font-size: .75rem;
+  color: var(--muted);
+}
+.zadSeasonBanner strong {
+  display: block;
+  font-size: .9rem;
+}
+.zadRealLeaderboard {
+  display: grid;
+  gap: 10px;
+}
+.zadRealLeaderboardRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  font-size: .9rem;
+}
+.zadRealLeaderboardRow strong {
+  margin-inline-start: auto;
+}
+.zadLeaderboardError,.zadSyncError {
+  font-size: .85rem;
+  color: var(--color-danger);
+  padding: 18px;
+}
+.zadProfileCard {
+  display: flex;
+  align-items: start;
+  gap: 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 22px;
+}
+.zadProfileAvatar {
+  width: 64px;
+  height: 64px;
+  background: var(--card2);
+  border-radius: 50%;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  color: var(--color-brand);
+  font-size: 1.5rem;
+}
+.zadProfileAvatar img,.zadHasAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.zadHasAvatar {
+  overflow: hidden;
+  border-radius: 50%;
+  padding: 0!important;
+}
+.zadProfileCopy {
+  min-width: 0;
+}
+.zadProfileCopy>strong {
+  font-size: 1rem;
+}
+.zadProfileCopy>small {
+  display: block;
+  font-size: .78rem;
+  color: var(--muted);
+  margin: 7px 0;
+}
+.zadProfileActions button {
+  font-size: .76rem;
+  padding: 8px 12px;
+}
+.zadProfileStatus {
+  font-size: .8rem;
+  margin-top: 8px;
+}
+.zadProfileIdentity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  font-size: .83rem;
+}
+.zadProfileIdentity>small {
+  flex-basis: 100%;
+  font-size: .75rem;
+  color: var(--muted);
+}
+.zadProfileBadge {
+  font-size: .68rem;
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  border-radius: 30px;
+  color: var(--muted);
+}
+.v21LangOptions {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 10px;
+}
+.v21LangOptions button {
+  background: var(--card2);
+  color: var(--text);
+  border-color: var(--line);
+  font-size: .95rem;
+  padding: 14px;
+}
+.v21LangOptions button.active {
+  color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+.v21LangNote {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-top: 20px;
+}
+.zadPointsBackdrop {
+  position: fixed;
+  inset: 0;
+  background: #13291c70;
+  z-index: 65;
+}
+.zadPointsPanel {
+  position: fixed;
+  inset-inline-end: 24px;
+  top: 110px;
+  width: 390px;
+  max-width: calc(100% - 36px);
+  max-height: calc(100dvh - 140px);
+  overflow: auto;
+  z-index: 66;
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+}
+.zadPointsPanelHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 18px;
+}
+.zadPointsPanelHead strong {
+  font-size: 1.5rem;
+  color: var(--color-brand);
+  display: block;
+}
+.zadPointsPanelHead small {
+  color: var(--muted);
+}
+.zadPointsPanelHead button {
+  background: var(--card2);
+  color: var(--text);
+  padding: 8px;
+}
+.zadPointsRank {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-block: 20px;
+}
+.zadPointsRank p,.zadPointsRank small {
+  font-size: .75rem;
+  color: var(--muted);
+  margin: 0;
+}
+.zadPointsRankIcon,.zadRankRewardIcon {
+  color: var(--color-brand);
+}
+.zadPointsProgressTop {
+  display: flex;
+  justify-content: space-between;
+  font-size: .8rem;
+}
+.zadLevelWord {
+  margin-inline-end: 8px;
+}
+.zadPointsProgressTrack {
+  height: 5px;
+  background: var(--line);
+  margin-top: 10px;
+}
+.zadPointsProgressTrack i {
+  height: 100%;
+  display: block;
+  background: var(--color-brand);
+}
+.zadPointsStats {
+  display: flex;
+  gap: 24px;
+  padding-block: 20px;
+  margin-block: 18px;
+  border-block: 1px solid var(--line);
+}
+.zadPointsStats strong {
+  display: block;
+  font-size: 1.4rem;
+  color: var(--color-brand);
+}
+.zadPointsStats span,.zadPointsStats small {
+  font-size: .8rem;
+  color: var(--muted);
+}
+.zadRankReward {
+  display: flex;
+  gap: 14px;
+  background: var(--card2);
+  padding: 16px;
+  border-radius: 8px;
+}
+.zadRankReward p,.zadRankReward small {
+  font-size: .75rem;
+  color: var(--muted);
+  margin: 0;
+}
+.zadRankReward strong {
+  font-size: .88rem;
+}
+.zadRankRoadHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block: 20px;
+  font-size: .85rem;
+}
+.zadRankRoad {
+  display: grid;
+  gap: 10px;
+}
+.zadRankRoadItem {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  display: flex;
+  gap: 10px;
+  font-size: .8rem;
+}
+.zadPointsRules {
+  font-size: .75rem;
+  color: var(--muted);
+  line-height: 2;
+  border-top: 1px solid var(--line);
+  margin-top: 20px;
+  padding-top: 18px;
+}
+.zadPointsEthic {
+  font-size: .75rem;
+  color: var(--muted);
+  margin-top: 14px;
+}
+@media(max-width:640px) {
+  .zadAuthOverlay,.zadMyPanelOverlay,.zadUtilityOverlay,#v21LanguagePanel {
+    padding: 12px;
+  }
+  .zadAuthShell,.zadMyPanelPage,.zadUtilityShell,.v21LangCard {
+    padding: 20px;
+    max-height: calc(100dvh - 24px);
+  }
+  .zadAuthChoiceGrid {
+    grid-template-columns: 1fr;
+  }
+  .zadMyPanelHead {
+    gap: 8px;
+  }
+  .zadMyPanelHead h2 {
+    font-size: 1.1rem;
+  }
+  .zadProfileCard {
+    padding: 16px;
+    gap: 12px;
+  }
+  .zadProfileAvatar {
+    width: 48px;
+    height: 48px;
+  }
+  .zadStatsGrid {
+    gap: 10px;
+  }
+  .zadStatsGrid>div {
+    padding: 16px;
+  }
+  .zadPointsPanel {
+    top: 30px;
+    max-height: calc(100dvh - 60px);
+    inset-inline-end: 18px;
+  }
+  .zadSeasonBanner,.zadSeasonMini {
+    align-items: start;
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+.zadPasswordWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.zadPasswordWrap input {
+  padding-inline-end: 74px;
+}
+.zadPasswordEye {
+  position: absolute;
+  inset-inline-end: 6px;
+  padding: 6px 10px;
+  background: transparent;
+  color: var(--muted);
+  font-size: .73rem;
+  min-height: 34px;
+}
+.zadPasswordEye:hover {
+  background: var(--card2);
+  color: var(--text);
+}
+.zadLiveBoardRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
+  padding: 15px 0;
+}
+.zadLiveBoardRank {
+  font-size: .8rem;
+  color: var(--color-accent);
+  min-width: 24px;
+}
+.zadLiveBoardPerson {
+  flex: 1;
+  min-width: 0;
+}
+.zadLiveBoardPerson strong {
+  font-size: .88rem;
+  overflow-wrap: anywhere;
+}
+.zadLiveBoardPerson small {
+  display: block;
+  color: var(--muted);
+  font-size: .7rem;
+}
+.zadLiveBoardPoints {
+  font-size: .83rem;
+  color: var(--color-brand);
+}
+.zadLiveBoardStatus {
+  padding: 22px 0;
+  color: var(--muted);
+  font-size: .85rem;
+}
+.zadRankStep {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+.zadRankStepCopy {
+  flex: 1;
+}
+.zadRankStepCopy small {
+  display: block;
+  font-size: .72rem;
+  color: var(--muted);
+}
+.zadRankStepCopy strong {
+  font-size: .86rem;
+}
+.zadRankStepState {
+  font-size: .68rem;
+  color: var(--color-accent);
+}

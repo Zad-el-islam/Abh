@@ -1,0 +1,40 @@
+{
+  "generated": "2026-09-25T12:20:22.288Z",
+  "kind": "DOM patch contracts; no rendered browser",
+  "results": [
+    {
+      "name": "Heart and Wird colors remain independent across navigation",
+      "status": "passed"
+    },
+    {
+      "name": "Refresh/deep links restore both saved section colors",
+      "status": "passed"
+    },
+    {
+      "name": "Legacy preferences migrate once; scoped choices take precedence",
+      "status": "passed"
+    },
+    {
+      "name": "Legacy selection callbacks delegate to the same scoped store",
+      "status": "passed"
+    },
+    {
+      "name": "Reader and Seerah have separate stable scopes; Admin stays conservative",
+      "status": "passed"
+    },
+    {
+      "name": "Language and global light/dark changes preserve section colors",
+      "status": "passed"
+    },
+    {
+      "name": "Invalid stored palettes are ignored safely",
+      "status": "passed"
+    },
+    {
+      "name": "Neutral library title/notice in all seven languages; unavailable tiles removed and messages retained",
+      "status": "passed"
+    }
+  ],
+  "passed": 8,
+  "failed": 0
+}

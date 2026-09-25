@@ -1,0 +1,35 @@
+{
+  "passed": 7,
+  "failed": 0,
+  "scope": "Syntax, local references, byte/text integrity and color token arithmetic; no browser rendering",
+  "results": [
+    {
+      "name": "All shipped JavaScript and review-only TypeScript parse",
+      "status": "passed"
+    },
+    {
+      "name": "Styles parse and every local font/image URL resolves",
+      "status": "passed"
+    },
+    {
+      "name": "HTML IDs are unique, document language is Arabic, and local links/assets resolve",
+      "status": "passed"
+    },
+    {
+      "name": "Portable pages embed valid CSS/JS/fonts/icons and strict-page CSP hashes match exactly",
+      "status": "passed"
+    },
+    {
+      "name": "All five PDF files match their original byte hashes",
+      "status": "passed"
+    },
+    {
+      "name": "743 protected religious text/reference strings match the original content",
+      "status": "passed"
+    },
+    {
+      "name": "Primary light/dark text and button token pairs have at least 4.5:1 contrast",
+      "status": "passed"
+    }
+  ]
+}

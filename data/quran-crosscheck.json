@@ -1,0 +1,11 @@
+{
+  "endpoint": "https://api.quran.com/api/v4/quran/verses/uthmani",
+  "attempts": 1,
+  "status": 403,
+  "limitation": "HTTP Error 403: Forbidden",
+  "exactUnicodeMatches": null,
+  "matchesAfterNFCAndTatweelRemoval": null,
+  "remainingSubstantiveDifferences": null,
+  "comparisonStatus": "not_run_http_403",
+  "note": "One public endpoint request returned HTTP 403. No retry, no alternate scraping, no source edits."
+}

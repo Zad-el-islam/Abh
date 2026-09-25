@@ -1,0 +1,527 @@
+[
+  {
+    "file": ".nojekyll",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "README.md",
+    "bytes": 9927,
+    "sha256": "73fbe6fef13c50b0e0adaf38ea0b228d9aad7b9365993f64d6938e2731f8b46c"
+  },
+  {
+    "file": "admin.html",
+    "bytes": 895208,
+    "sha256": "c64eabacb325a6c328c1f1fc9e3deb565539c3012fda237c6255bb7959f22ecc"
+  },
+  {
+    "file": "al_aqidah_al_wasitiyyah.pdf",
+    "bytes": 2327347,
+    "sha256": "01fd092e5a87619741c109688e3f8d9dc33a3aee76f426bac5d15b0ea8fb4764"
+  },
+  {
+    "file": "assets/css/account.css",
+    "bytes": 12827,
+    "sha256": "e3dc5e2c3065e4d1f3b584c24ebc69e0d860abf4f194c78ab22eaff85fffeba7"
+  },
+  {
+    "file": "assets/css/admin.css",
+    "bytes": 3441,
+    "sha256": "f69f9aca396aea48a8b9e854232e16ff42a9f80408be70b30772a9cb85b05a76"
+  },
+  {
+    "file": "assets/css/design-system.css",
+    "bytes": 29537,
+    "sha256": "e6e85657521f81da43b695b78857d21db100a64279f5c547533b5342d5e2c5ee"
+  },
+  {
+    "file": "assets/css/modules.css",
+    "bytes": 14287,
+    "sha256": "f5257ed179a40cd55969c23b5a6601c8033ef7a45f172e332b71e5b792b920ec"
+  },
+  {
+    "file": "assets/css/reader.css",
+    "bytes": 10079,
+    "sha256": "c51981ee68ada40bc81260126e327955552529a5c127049cb243579b36da1953"
+  },
+  {
+    "file": "assets/css/talk.css",
+    "bytes": 7560,
+    "sha256": "54f07c94050ff2f12fc21dea5237aefe21c8dd521a5ad795b540019216b73481"
+  },
+  {
+    "file": "assets/fonts/amiri-arabic-400-normal.woff2",
+    "bytes": 108560,
+    "sha256": "9abf8a10b4a2f27b698740522c9beec9ded7728aeef0738ac0d6e175bf6249d7"
+  },
+  {
+    "file": "assets/fonts/noto-sans-arabic-arabic-wght-normal.woff2",
+    "bytes": 165960,
+    "sha256": "ce85091f020920b65762b387b194ef59457ea5b25b760f2dcc35240a94bb8669"
+  },
+  {
+    "file": "assets/fonts/noto-sans-arabic-latin-wght-normal.woff2",
+    "bytes": 31416,
+    "sha256": "fed070abc960c5f214fcb02b7b178cdab751ef7facd79a899f571bc21d38b8f8"
+  },
+  {
+    "file": "assets/icons/crescent.svg",
+    "bytes": 207,
+    "sha256": "11f99e9048fd7ea0402a421c8b13084069d55fa757a88cec3818c80f1ed2633a"
+  },
+  {
+    "file": "assets/js/access.js",
+    "bytes": 3661,
+    "sha256": "48e403fe6d95bdab5d309c6cc4d6d3a606667c35429691a59543e0a240acc98c"
+  },
+  {
+    "file": "assets/js/accessibility.js",
+    "bytes": 6683,
+    "sha256": "b235b5f9a234264a22e38aacdf0c2de97a2795affbed878bcaa8d0db9d933383"
+  },
+  {
+    "file": "assets/js/account-panel.js",
+    "bytes": 7191,
+    "sha256": "bccccc35e6443ac52a89bd362c6d76c2e0babcf601a4bd46915178ecebe1ae73"
+  },
+  {
+    "file": "assets/js/account-security.js",
+    "bytes": 17484,
+    "sha256": "84d3e6f692c60333b05cd5057f772a391d27dab773680965f7d3cbcf6905b9b1"
+  },
+  {
+    "file": "assets/js/account-statistics.js",
+    "bytes": 2612,
+    "sha256": "baeaa88df189e1c6d38199f6d21c2a2a5127fa129cdd44ffde19919cbb616b3c"
+  },
+  {
+    "file": "assets/js/account-sync.js",
+    "bytes": 18255,
+    "sha256": "74ea2eb45b5733ce4ce88644fa714be2b4ea5e31fa771d463edcc82773e5e06f"
+  },
+  {
+    "file": "assets/js/account.js",
+    "bytes": 2996,
+    "sha256": "794d61e90f7b734c997640e055a29db4eeec3dbf645b13f2ed4c1659c2494da3"
+  },
+  {
+    "file": "assets/js/admin.js",
+    "bytes": 14329,
+    "sha256": "40b9a2d0bbea6ad865da4d458b75d0203d7bf1827279e524ead3e6b9521488e7"
+  },
+  {
+    "file": "assets/js/appearance.js",
+    "bytes": 2937,
+    "sha256": "338b5c1b96e2ec0d6ea15b3b18d91724df3f7d45a99ad8cbd011499ca9fcb4b3"
+  },
+  {
+    "file": "assets/js/document-reader.js",
+    "bytes": 6307,
+    "sha256": "2326986f0319f71f535d5987778e00a24774db6221b77972397c1b29b0e6c7a9"
+  },
+  {
+    "file": "assets/js/documents.js",
+    "bytes": 3801,
+    "sha256": "d0f51f2fa98987ffaf0f53af55155b99385b5cb6e85882ebbd24bf9fd8db3ca6"
+  },
+  {
+    "file": "assets/js/foundation.js",
+    "bytes": 7861,
+    "sha256": "02a887a23e8ff8bedb1f07b8916900f172c5e3cb7947ac3b850c7cc5ab51c6db"
+  },
+  {
+    "file": "assets/js/gateways.js",
+    "bytes": 37230,
+    "sha256": "765118b5ee43c9861c3a18f446fbc13a3f8f899cb7f042dd7a801cf7a6762226"
+  },
+  {
+    "file": "assets/js/heart-hadith.js",
+    "bytes": 64896,
+    "sha256": "14a0514524a0c62ba8c2e3c85f208e4c6558dcc028f82f3a6773b975c0caaa39"
+  },
+  {
+    "file": "assets/js/heart-remedies.js",
+    "bytes": 49080,
+    "sha256": "b07e0af53a121f9c182dcd96ea44258f76274cad8e177ffd188ec7e03378bd7d"
+  },
+  {
+    "file": "assets/js/i18n-catalog.js",
+    "bytes": 422672,
+    "sha256": "ca9d7855c7adf3e3ac2368134ce3d1d93d4540e97975432a98d895fec3505676"
+  },
+  {
+    "file": "assets/js/i18n.js",
+    "bytes": 3142,
+    "sha256": "912b7d4eb0185f2baec442a9e0517c0060c52a51784c3671cadf02cc1870173d"
+  },
+  {
+    "file": "assets/js/navigation.js",
+    "bytes": 5835,
+    "sha256": "75a70e7c17629f2b2b51a0df9c5be47eaac1ba677e044f3bf5a0eb4d489a3183"
+  },
+  {
+    "file": "assets/js/profile.js",
+    "bytes": 5311,
+    "sha256": "4eec1666c27d57d2ac5506c721b32007fd64d17a037a58122250cdaec04e7662"
+  },
+  {
+    "file": "assets/js/progress-display.js",
+    "bytes": 7477,
+    "sha256": "bb1b43466aaef62200f4f27705f42d4ff2fc1df7b207eade9962483fc6b2b989"
+  },
+  {
+    "file": "assets/js/progress.js",
+    "bytes": 6828,
+    "sha256": "bfd877a9e6b77bf2591e2e255a42203dfc317906e55a2b7b86e80131ea48a76a"
+  },
+  {
+    "file": "assets/js/quran-reader.js",
+    "bytes": 24476,
+    "sha256": "2ede3c0fadd46f12c82c05625d4fcbd84a2bdf810655127d7edf6f5689f7e7d3"
+  },
+  {
+    "file": "assets/js/quran-sources.js",
+    "bytes": 3933,
+    "sha256": "41728b6b29b1f1497ea14fae300efb526f95528c673b18bb62cca408dd364e2e"
+  },
+  {
+    "file": "assets/js/quran.js",
+    "bytes": 38211,
+    "sha256": "1fd616d9a0a55c2da9740b9773cb48cca243d801846e55fb3d5ab6e744a842e7"
+  },
+  {
+    "file": "assets/js/reading-links.js",
+    "bytes": 489,
+    "sha256": "3e44f6163fe63c5fe03a0c20a42330907ec8c8453de3330e5d35b6d5a1b340f2"
+  },
+  {
+    "file": "assets/js/seerah.js",
+    "bytes": 1191,
+    "sha256": "aa12f06e73eb5e016ca3d925513fbd75445ffab70f803e847ce6db04f783005a"
+  },
+  {
+    "file": "assets/js/settings.js",
+    "bytes": 9430,
+    "sha256": "1d920ff8a10485c5d56e9e00d938447fc393fb032166f3c68d1d003e8532c67a"
+  },
+  {
+    "file": "assets/js/steadfastness.js",
+    "bytes": 34853,
+    "sha256": "a36b777de35fcb5fa0e7b5da7c7bce582145a54f0db6c4368a05c1a23408569b"
+  },
+  {
+    "file": "assets/js/supabase-2.110.8.js",
+    "bytes": 206615,
+    "sha256": "d20b0dbd554e60eb60028f069b4c04adaa55128401139f7d763ce557f0dd0dfd"
+  },
+  {
+    "file": "assets/js/talk.js",
+    "bytes": 30090,
+    "sha256": "2983887dabcffdc243733c8c148a813853567c8875bcbeca58afbe8ae6913869"
+  },
+  {
+    "file": "backend/review-only/README.md",
+    "bytes": 3416,
+    "sha256": "dfa200aa21428c7adace588235e975038b92aced078a82150a8fe72f43a3ba3c"
+  },
+  {
+    "file": "backend/review-only/inspected-versions.json",
+    "bytes": 566,
+    "sha256": "3b16f29af59cf30704695243876030d524f932324a17e8c48f63064babbfdd52"
+  },
+  {
+    "file": "backend/review-only/zad-admin-auth/index.ts",
+    "bytes": 4682,
+    "sha256": "bf5d199acfa9445a0629f9a6d3213c47e0e28008655b973411d30ca1331cc690"
+  },
+  {
+    "file": "backend/review-only/zad-talk-feed/index.ts",
+    "bytes": 5540,
+    "sha256": "6c023c4ba2d5c5c56930c310e2add610c54d8f06ef5322be522f1771e55d2198"
+  },
+  {
+    "file": "backend/review-only/zad-talk-finalize-upload/index.ts",
+    "bytes": 5346,
+    "sha256": "575edd81ea520474af41e8c6af971bc9b045f3fa5ac6139c58136c09838b1173"
+  },
+  {
+    "file": "book.pdf",
+    "bytes": 2948191,
+    "sha256": "d0f64e50cb7b3e7605a33cfad2c8192507b408e8af58392577d34bbce4be6e6a"
+  },
+  {
+    "file": "data/accent-palettes.json",
+    "bytes": 4868,
+    "sha256": "d2097b6c6eb4b5c55668f620b1ae4afb7ed3d9da2ca4bddb12fded9de93200a7"
+  },
+  {
+    "file": "data/content-integrity.json",
+    "bytes": 1177,
+    "sha256": "5e912c253b39c480c48485b133e6cc17d087e5d9ba56a98bcf0f39001a5cf97e"
+  },
+  {
+    "file": "data/pdf-integrity.json",
+    "bytes": 726,
+    "sha256": "1a581597f60b2dfa29ae2e5eb709d786f7ec3f9aab21eec8ce25d4b78d60b09c"
+  },
+  {
+    "file": "data/quran-crosscheck.json",
+    "bytes": 419,
+    "sha256": "6b951ecff07b75bf8c28edab749ef8a5858b560612b10957065a43c7fcb1f181"
+  },
+  {
+    "file": "data/release-summary.json",
+    "bytes": 2106,
+    "sha256": "557d57a31c2935873310bd9ab9256de84fa74765d6022c4c652e4ce9b6ea45b1"
+  },
+  {
+    "file": "data/ui-inventory.json",
+    "bytes": 393439,
+    "sha256": "4b77e82d24e1ad3eb3eeeaf8fefccb207df3211551e34f02034fa3ae2b7d11fc"
+  },
+  {
+    "file": "data/visual-qa-status.json",
+    "bytes": 367,
+    "sha256": "ae79822102feac2556eddc1d66dcabea7e77b79fbabae4e7d6697c1354d357c1"
+  },
+  {
+    "file": "docs/CHANGELOG.md",
+    "bytes": 12253,
+    "sha256": "c611f8cfc357ab72b8ac4ceeb33ceb28145fe158bd8fa3dbae19587ed9e5ce63"
+  },
+  {
+    "file": "docs/DEPLOYMENT.md",
+    "bytes": 4698,
+    "sha256": "dbe1654527417b6d85d144eba6b1f85e1f4af033f35759ee957ad82380647fdd"
+  },
+  {
+    "file": "docs/LOCALIZATION.md",
+    "bytes": 6893,
+    "sha256": "02e25ccb97dfc2a14204b4ad8db3ab9000f8c9937ebc9aa6f3a191083ab95884"
+  },
+  {
+    "file": "docs/PATCH-2.1.1.md",
+    "bytes": 6018,
+    "sha256": "dbcc3a1a34d46f366753deb08a5e91c2ca9ef13480852d5734912d3c14c75748"
+  },
+  {
+    "file": "docs/QA.md",
+    "bytes": 14181,
+    "sha256": "a457f2b51d065b349e7b793235400e015d8bcd7964599a6b97738d03f9891262"
+  },
+  {
+    "file": "docs/SOURCES.md",
+    "bytes": 2129,
+    "sha256": "40787fd4717e83c4ba940239f2b826b0ca2a3f1d5402a0f214088b50a129a7b8"
+  },
+  {
+    "file": "docs/TERMINOLOGY.md",
+    "bytes": 1798,
+    "sha256": "78b90f489c596e986ce27074caea9742e7f205b8d3e51581681be344a46bc9ce"
+  },
+  {
+    "file": "docs/licenses/amiri-OFL.txt",
+    "bytes": 4690,
+    "sha256": "1833b55414d413b07e5b4ea64710c2832ad4cb2a24484d30febdf992819b09ed"
+  },
+  {
+    "file": "docs/licenses/noto-sans-arabic-OFL.txt",
+    "bytes": 4380,
+    "sha256": "91053c23e8a0fe5fc9b5fdbe5ff74ceffd66f6f996c123f1a6ca4c23487c1fff"
+  },
+  {
+    "file": "index.html",
+    "bytes": 1563280,
+    "sha256": "8b85ad2a3ec396b838abb70d7372ce6978800f3c8b23a78a90ac097a4e49c133"
+  },
+  {
+    "file": "kitab_al_tawhid.pdf",
+    "bytes": 3083311,
+    "sha256": "b7ef7ec69eeaba56ea558c4e2cbd8daa2fe539af45b366efaf2fb8c8a41c698d"
+  },
+  {
+    "file": "package-lock.json",
+    "bytes": 22650,
+    "sha256": "6c6bf24e0c7858c84f367e152922b418c555db4d5a10800d843ca2d41c3e19c1"
+  },
+  {
+    "file": "package.json",
+    "bytes": 821,
+    "sha256": "2b10b07dcb3d855522486cbe89ce7f8b9a93672d099cd5a967ed322fc5d5cbc4"
+  },
+  {
+    "file": "quran.pdf",
+    "bytes": 4331467,
+    "sha256": "073981fcd8550c7e1175c294a45981fdee9fc4f22bb6dd4927db24b9ae3f67ad"
+  },
+  {
+    "file": "reader.html",
+    "bytes": 913009,
+    "sha256": "3f8b882f54249596b44ca20cd857eea4456a1b40612b77d4a70d6ea313e67823"
+  },
+  {
+    "file": "scripts/build_portable.py",
+    "bytes": 6620,
+    "sha256": "7ed5ebc5ba74ed207c10732dcdf8a3f5c0530ca03372d782adeeaf2cc701be22"
+  },
+  {
+    "file": "scripts/localization_inventory.cjs",
+    "bytes": 2492,
+    "sha256": "40594f3bf89e0bf58aa8aff82f57cf71b83271268f3905d712c9472afa8debf7"
+  },
+  {
+    "file": "scripts/package_release.py",
+    "bytes": 2410,
+    "sha256": "f73c5e0ab9ce9b3a327102282bee4e11bb8f9a23a999b02ec6ead7802b80c5ca"
+  },
+  {
+    "file": "seerah.html",
+    "bytes": 894955,
+    "sha256": "ca537c9392278bf974f56ac99426b2eb0f11ff437458b9943b1c2700f972c847"
+  },
+  {
+    "file": "source-pages/admin.html",
+    "bytes": 5308,
+    "sha256": "68025904648130170d515bc9cec4fd4498b4173e078a83950f7891d535694a9c"
+  },
+  {
+    "file": "source-pages/index.html",
+    "bytes": 55812,
+    "sha256": "9e8bd7965c8cf0e3f46d7a0ddef3e915b59c1a0d9c3871ffc66783a160b5b313"
+  },
+  {
+    "file": "source-pages/reader.html",
+    "bytes": 2721,
+    "sha256": "fa2d67a0684c7b2738d1d636b8bb746a80d291157426df463bcba8d2cb8b79a8"
+  },
+  {
+    "file": "source-pages/seerah.html",
+    "bytes": 4365,
+    "sha256": "355e49a146eb4314b3c24480f141c1c7dd44d04ed569f42949f356ef3bc32fdc"
+  },
+  {
+    "file": "tests/backend-contracts.cjs",
+    "bytes": 7731,
+    "sha256": "34d890d1066b97186a43f637f671f88117763b752f9603c66d90de93977dc7ab"
+  },
+  {
+    "file": "tests/backend-results.json",
+    "bytes": 800,
+    "sha256": "39b2850140f25d7f7d1b51f62c9f8f17a508522fa2e0fd5fad385d57cb6cb042"
+  },
+  {
+    "file": "tests/dom-harness.cjs",
+    "bytes": 4077,
+    "sha256": "bcefe55d4deb7827fef838f350f860a4b3c6e78d043e545fb25630daf1f2af75"
+  },
+  {
+    "file": "tests/fixtures/quran-source.json",
+    "bytes": 2109200,
+    "sha256": "0df03e1d6da4fc8138208fec1688f2b416f0dd4ebbd514179f3e5e0fbaf4195f"
+  },
+  {
+    "file": "tests/fixtures/translation-en.sahih.json",
+    "bytes": 1704,
+    "sha256": "2b5e20655945081612cb03ab8ca0e2da6607a321a9c6206df5bb8508b5d5fb4e"
+  },
+  {
+    "file": "tests/fixtures/translation-es.cortes.json",
+    "bytes": 1611,
+    "sha256": "e8f6828324aca7d25c95897f3eb57ea7e85e534bf2cd0539f262c7508bffb2f4"
+  },
+  {
+    "file": "tests/fixtures/translation-fr.hamidullah.json",
+    "bytes": 1712,
+    "sha256": "24e1e6cc68a3dda44ea5624799de3f8505aa3b791e280839964970943a88a679"
+  },
+  {
+    "file": "tests/fixtures/translation-id.indonesian.json",
+    "bytes": 1732,
+    "sha256": "4b90217917fa07009180c6094110d951baadf5dddfb43dcb4feaf90c71dfba67"
+  },
+  {
+    "file": "tests/fixtures/translation-tr.diyanet.json",
+    "bytes": 1600,
+    "sha256": "683c86d3c191553f0128aeacf98fd91db52e56aa88e84eab09179b8cc75dd25f"
+  },
+  {
+    "file": "tests/fixtures/translation-ur.jalandhry.json",
+    "bytes": 1924,
+    "sha256": "aed1d7f71136992fcc473f1683f506b0036e032dfb45077785e8c3ddbde1bba4"
+  },
+  {
+    "file": "tests/localization-results.json",
+    "bytes": 4410,
+    "sha256": "da7d0c8adaa65028592546d8def121a458c1d1de26c45a20a7474dc0c3d09b92"
+  },
+  {
+    "file": "tests/localization.cjs",
+    "bytes": 10234,
+    "sha256": "abe252dd5da5f922e0dafe8d214f44a1b8601f988e14a52a0f80a6f3d62d150a"
+  },
+  {
+    "file": "tests/media-localization-results.json",
+    "bytes": 1129,
+    "sha256": "af996fbabd01975162d2d2b8b7d1d28d61ad08d0eb482f8fc19fce367ec626b9"
+  },
+  {
+    "file": "tests/media-localization.cjs",
+    "bytes": 3403,
+    "sha256": "de7abf3ccf60afcf9f214bb93a6f616876b2e696559f6423a4917137a29a7433"
+  },
+  {
+    "file": "tests/palettes-paths-results.json",
+    "bytes": 65185,
+    "sha256": "8f09606eef6484b706885daf73a0dc4134c135b9298d238b6b6b7d99266dfc82"
+  },
+  {
+    "file": "tests/palettes-paths.cjs",
+    "bytes": 5482,
+    "sha256": "1e031ae1124bc66db2bd2175a8af5a24d9434315492a4adacc8e75f1de5d1086"
+  },
+  {
+    "file": "tests/quran-integrity-results.json",
+    "bytes": 1048,
+    "sha256": "5901faa08b97cac8ac1d613b1959b85e435d193ab5521f92dc5b30ffa0dfb8e2"
+  },
+  {
+    "file": "tests/quran-integrity.cjs",
+    "bytes": 3452,
+    "sha256": "5f3cb591f4cdf7b1aba2d4c332b81ae4793bad031d77b79449555bbf2288b6d6"
+  },
+  {
+    "file": "tests/regression.cjs",
+    "bytes": 24200,
+    "sha256": "ae251c8f9147444fbb2783cc1e886f36c517c5aacfe62b12e7cf56dac06c26aa"
+  },
+  {
+    "file": "tests/results.json",
+    "bytes": 3540,
+    "sha256": "d341294bef80093ec4d476af7e5773a462e635c163b310c7e61f551767544add"
+  },
+  {
+    "file": "tests/scoped-colors-results.json",
+    "bytes": 1105,
+    "sha256": "e2161a0303b24e66b2e7556c17785dba56c5b31e9a9cb57428ef8ca321a959a9"
+  },
+  {
+    "file": "tests/scoped-colors.cjs",
+    "bytes": 6784,
+    "sha256": "2deb9a1485adf1a1f7a30b1c784f50ac18195d26c2d21b5a08d3200b2f8d5a02"
+  },
+  {
+    "file": "tests/static-check.cjs",
+    "bytes": 7844,
+    "sha256": "ce024c1ca5dec8592df6873fbe28bfff31e4809e00a2083643554d1bf7f3369a"
+  },
+  {
+    "file": "tests/static-results.json",
+    "bytes": 1024,
+    "sha256": "c512939d341958ca9860b8a3f734e35d247f194e9bf55ae34606c4a8848a2511"
+  },
+  {
+    "file": "thalathat_al_usul.pdf",
+    "bytes": 2948191,
+    "sha256": "d0f64e50cb7b3e7605a33cfad2c8192507b408e8af58392577d34bbce4be6e6a"
+  }
+]

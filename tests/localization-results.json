@@ -1,0 +1,164 @@
+{
+  "generated": "2026-09-25T12:21:56.010Z",
+  "kind": "JSDOM/contracts; not rendered browser QA",
+  "catalogKeys": 960,
+  "languages": {
+    "ar": {
+      "keys": 960,
+      "missing": 0
+    },
+    "en": {
+      "keys": 960,
+      "missing": 0
+    },
+    "fr": {
+      "keys": 960,
+      "missing": 0
+    },
+    "id": {
+      "keys": 960,
+      "missing": 0
+    },
+    "tr": {
+      "keys": 960,
+      "missing": 0
+    },
+    "ur": {
+      "keys": 960,
+      "missing": 0
+    },
+    "es": {
+      "keys": 960,
+      "missing": 0
+    }
+  },
+  "missing": [],
+  "results": [
+    {
+      "name": "Catalog: every key has all seven values and matching parameters",
+      "status": "passed"
+    },
+    {
+      "name": "Every literal UI key in templates and render sites resolves",
+      "status": "passed"
+    },
+    {
+      "name": "ar: deep route UI, direction, attributes and source protection",
+      "status": "passed"
+    },
+    {
+      "name": "ar: every Heart remedy, Adhkar tab, completion, counter and empty state",
+      "status": "passed"
+    },
+    {
+      "name": "ar: account, settings, selected language and accent persistence",
+      "status": "passed"
+    },
+    {
+      "name": "ar: persisted language and accent in reload, PDF shell/error, and Seerah",
+      "status": "passed"
+    },
+    {
+      "name": "en: deep route UI, direction, attributes and source protection",
+      "status": "passed"
+    },
+    {
+      "name": "en: every Heart remedy, Adhkar tab, completion, counter and empty state",
+      "status": "passed"
+    },
+    {
+      "name": "en: account, settings, selected language and accent persistence",
+      "status": "passed"
+    },
+    {
+      "name": "en: persisted language and accent in reload, PDF shell/error, and Seerah",
+      "status": "passed"
+    },
+    {
+      "name": "fr: deep route UI, direction, attributes and source protection",
+      "status": "passed"
+    },
+    {
+      "name": "fr: every Heart remedy, Adhkar tab, completion, counter and empty state",
+      "status": "passed"
+    },
+    {
+      "name": "fr: account, settings, selected language and accent persistence",
+      "status": "passed"
+    },
+    {
+      "name": "fr: persisted language and accent in reload, PDF shell/error, and Seerah",
+      "status": "passed"
+    },
+    {
+      "name": "id: deep route UI, direction, attributes and source protection",
+      "status": "passed"
+    },
+    {
+      "name": "id: every Heart remedy, Adhkar tab, completion, counter and empty state",
+      "status": "passed"
+    },
+    {
+      "name": "id: account, settings, selected language and accent persistence",
+      "status": "passed"
+    },
+    {
+      "name": "id: persisted language and accent in reload, PDF shell/error, and Seerah",
+      "status": "passed"
+    },
+    {
+      "name": "tr: deep route UI, direction, attributes and source protection",
+      "status": "passed"
+    },
+    {
+      "name": "tr: every Heart remedy, Adhkar tab, completion, counter and empty state",
+      "status": "passed"
+    },
+    {
+      "name": "tr: account, settings, selected language and accent persistence",
+      "status": "passed"
+    },
+    {
+      "name": "tr: persisted language and accent in reload, PDF shell/error, and Seerah",
+      "status": "passed"
+    },
+    {
+      "name": "ur: deep route UI, direction, attributes and source protection",
+      "status": "passed"
+    },
+    {
+      "name": "ur: every Heart remedy, Adhkar tab, completion, counter and empty state",
+      "status": "passed"
+    },
+    {
+      "name": "ur: account, settings, selected language and accent persistence",
+      "status": "passed"
+    },
+    {
+      "name": "ur: persisted language and accent in reload, PDF shell/error, and Seerah",
+      "status": "passed"
+    },
+    {
+      "name": "es: deep route UI, direction, attributes and source protection",
+      "status": "passed"
+    },
+    {
+      "name": "es: every Heart remedy, Adhkar tab, completion, counter and empty state",
+      "status": "passed"
+    },
+    {
+      "name": "es: account, settings, selected language and accent persistence",
+      "status": "passed"
+    },
+    {
+      "name": "es: persisted language and accent in reload, PDF shell/error, and Seerah",
+      "status": "passed"
+    },
+    {
+      "name": "UI interpolation escapes markup; source and UGC are not text-walked",
+      "status": "passed"
+    }
+  ],
+  "passed": 31,
+  "failed": 0
+}

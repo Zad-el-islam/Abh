@@ -1,0 +1,20 @@
+[
+  {
+    "function": "zad-admin-auth",
+    "inspected_version": 4,
+    "inspected_sha256": "3d80b2723f00836cbe163743faf06461068e09fd77ed152f2fac91a80d04bf28",
+    "deployed": false
+  },
+  {
+    "function": "zad-talk-finalize-upload",
+    "inspected_version": 5,
+    "inspected_sha256": "4c7eb49651f0568c75a2eb0d69edef346801d268bf786ac60f6ab5568b91610f",
+    "deployed": false
+  },
+  {
+    "function": "zad-talk-feed",
+    "inspected_version": 8,
+    "inspected_sha256": "55f4c27883849dfcb116c587853fa71c351109dd6290ce9ec6015b1179199fd7",
+    "deployed": false
+  }
+]

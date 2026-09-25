@@ -1,0 +1,27 @@
+{
+  "passed": 5,
+  "failed": 0,
+  "scope": "Offline Node contract tests of review-only sources with mocked database/storage; not Deno or production integration",
+  "results": [
+    {
+      "name": "Admin username cannot become a PostgREST OR filter or LIKE wildcard",
+      "status": "passed"
+    },
+    {
+      "name": "Admin login does not report success when session persistence fails",
+      "status": "passed"
+    },
+    {
+      "name": "Even a pending upload requires the matching receipt",
+      "status": "passed"
+    },
+    {
+      "name": "Finalize rejects mismatched storage size/MIME and only accepts matching metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Feed pagination advances over scanned rows even when some cannot be emitted",
+      "status": "passed"
+    }
+  ]
+}

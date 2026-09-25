@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="ar" dir="rtl" data-interface-language="ar"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="same-origin"><meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data: https://bzrhrvgddtnhctcdlgmy.supabase.co; media-src https://bzrhrvgddtnhctcdlgmy.supabase.co; connect-src 'self' https://bzrhrvgddtnhctcdlgmy.supabase.co; form-action 'self'; frame-src 'none'">
+  <title>إدارة زاد الإسلام</title>
+  <link rel="icon" href="assets/icons/crescent.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/design-system.css"><link rel="stylesheet" href="assets/css/admin.css">
+  <script defer="" src="assets/js/foundation.js"></script><script defer="" src="assets/js/i18n-catalog.js"></script><script defer="" src="assets/js/i18n.js"></script><script defer="" src="assets/js/admin.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#adminMain">تجاوز إلى المحتوى</a>
+  <header class="site-header standalone-header"><div class="header-inner"><a href="index.html#home" class="site-brand"><img src="assets/icons/crescent.svg" width="43" height="43" alt=""><span><strong>زاد الإسلام</strong><small>الإدارة</small></span></a><div class="row"><span id="adminName" class="meta"></span><button type="button" id="logoutBtn" class="secondary hidden">تسجيل الخروج</button></div></div></header>
+  <main class="standalone-main" id="adminMain" tabindex="-1">
+    <section id="loginView" class="admin-login"><p class="eyebrow">لوحة الإدارة</p><h1>مرحبًا بك</h1><p class="section-intro">سجّل الدخول لمراجعة المقاطع وإدارة الحسابات.</p><form id="loginForm"><label for="adminUser">اسم المستخدم</label><input id="adminUser" autocomplete="username" autocapitalize="none" spellcheck="false" maxlength="80" required=""><label for="adminPass">كلمة المرور</label><input id="adminPass" type="password" autocomplete="current-password" required=""><button type="submit" id="loginBtn">دخول الإدارة</button></form><p id="loginStatus" class="status" role="status" aria-live="polite"></p></section>
+    <section id="appView" class="hidden">
+      <div class="page-heading"><div><p class="eyebrow">الإشراف والمتابعة</p><h1>لوحة الإدارة</h1></div><button type="button" id="refreshAll" class="secondary">تحديث الكل</button></div>
+      <div class="admin-stats"><div><strong id="sUsers">—</strong><span>الحسابات في النتائج</span></div><div><strong id="sBanned">—</strong><span>المحظورون في النتائج</span></div><div><strong id="sVideos">—</strong><span>المقاطع في النتائج</span></div><div><strong id="sPending">—</strong><span>بانتظار المراجعة في النتائج</span></div></div>
+      <div class="admin-tabs" role="tablist" aria-label="أقسام الإدارة"><button type="button" data-tab="videos" role="tab" aria-controls="videosPane" aria-selected="true" class="active">مراجعة المقاطع</button><button type="button" data-tab="users" role="tab" aria-controls="usersPane" aria-selected="false">الحسابات</button></div>
+      <section id="videosPane" role="tabpanel"><div class="admin-tools"><div><label for="videoSearch">البحث في المقاطع المحمّلة</label><input id="videoSearch" type="search" placeholder="عنوان المقطع أو اسم الناشر"></div><div><label for="videoStatus">حالة المقطع</label><select id="videoStatus"><option value="pending">بانتظار المراجعة</option><option value="all">كل الحالات</option><option value="approved">منشور</option><option value="rejected">مرفوض</option><option value="uploading">قيد الرفع</option></select></div><button type="button" id="refreshVideos" class="secondary">تحديث المقاطع</button></div><p class="meta">يعرض الخادم أحدث ١٠٠ مقطع حسب الحالة المختارة.</p><div id="videosState" class="status" role="status"></div><div id="videosGrid" class="admin-grid"></div></section>
+      <section id="usersPane" class="hidden" role="tabpanel"><div class="admin-tools users"><div><label for="userSearch">البحث عن حساب</label><input id="userSearch" type="search" placeholder="اسم المستخدم"></div><button type="button" id="refreshUsers" class="secondary">تحديث الحسابات</button></div><p class="notice">الحظر يشمل الحساب وعناوين الاتصال المرتبطة به. حذف الحساب يزيل مقاطعه وتفاعلاته أيضًا؛ راجع رسالة التأكيد قبل التنفيذ.</p><div id="usersState" class="status" role="status"></div><div id="usersGrid" class="admin-grid"></div></section>
+      <p id="appStatus" class="status" role="status" aria-live="polite"></p>
+    </section>
+    <noscript><p class="notice">تحتاج لوحة الإدارة إلى تفعيل JavaScript.</p></noscript>
+  </main>
+
+
+</body></html>

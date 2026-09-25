@@ -1,0 +1,14 @@
+{
+  "status": "not_executed",
+  "reason": "The session browser policy denies local project access. No alternate browser or bypass used.",
+  "requestedWidths": [
+    390,
+    1440
+  ],
+  "requestedPalettes": [
+    "emerald",
+    "navy",
+    "burgundy"
+  ],
+  "note": "Semantic color contrast, CSS token consistency and scope behavior were tested without rendering."
+}

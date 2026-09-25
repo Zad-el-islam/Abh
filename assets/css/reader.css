@@ -1,0 +1,539 @@
+#wirdModule {
+  max-width: var(--content-width-reading);
+  margin-inline: auto;
+}
+.v22QTop {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+.v22QMetaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+.zaQuranSurahTitle small {
+  display: block;
+  color: var(--muted);
+  font-size: .73rem;
+}
+.zaQuranSurahTitle strong {
+  font: 1.6rem/1.7 var(--font-quran);
+}
+.v22QMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: .75rem;
+  color: var(--muted);
+}
+.v22QModes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-block: 20px;
+}
+.v22QModes button {
+  font-size: .8rem;
+  background: var(--card2);
+  color: var(--text);
+  border-color: var(--line);
+}
+.v22QModes button.active {
+  color: var(--color-brand);
+  border-color: var(--color-brand);
+}
+.zaReaderReciter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-inline-start: auto;
+}
+.zaReaderReciter label {
+  font-size: .75rem;
+  margin: 0;
+  white-space: nowrap;
+}
+.zaReaderReciter select {
+  font-size: .78rem;
+  max-width: 270px;
+}
+.v22QProgress {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.v22QProgressText {
+  margin-bottom: 14px;
+}
+.v22QProgressText strong {
+  font-size: .93rem;
+  display: block;
+}
+.v22QProgressText small {
+  color: var(--muted);
+  font-size: .76rem;
+}
+.v22QProgressActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.v22QProgressActions select {
+  flex: 1;
+  min-width: 180px;
+  font-size: .82rem;
+}
+.v22QProgressActions button {
+  font-size: .8rem;
+}
+.v22QTrack {
+  height: 4px;
+  background: var(--line);
+  border-radius: 4px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.v22QTrack i {
+  display: block;
+  height: 100%;
+  background: var(--color-brand);
+}
+#v22TajweedLegend {
+  display: none;
+  padding: 16px;
+  background: var(--card2);
+  margin-bottom: 16px;
+  border-radius: 6px;
+}
+#v22TajweedLegend.show {
+  display: block;
+}
+.v22LegendTitle {
+  font-size: .8rem;
+  font-weight: 650;
+  margin-bottom: 12px;
+}
+.v22LegendGrid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 12px;
+}
+.v22LegendItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .72rem;
+}
+.v22LegendDot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+.reader-view-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+}
+.reader-view-controls label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: .8rem;
+}
+.reader-view-controls select {
+  width: 140px;
+  font-size: .8rem;
+}
+.reader-view-controls button {
+  margin-inline-start: auto;
+  font-size: .78rem;
+}
+.v22Verse,.ayahBlock {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  margin-bottom: 14px;
+  padding: 22px 28px;
+}
+.v22VerseHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+.v22VerseKey {
+  font-size: .74rem;
+  color: var(--muted);
+}
+.v22VerseTools button {
+  background: var(--card2);
+  color: var(--color-brand);
+  border-color: var(--line);
+  width: 44px;
+  padding: 8px;
+}
+.v22Arabic,.ayahText {
+  font-family: var(--font-quran);
+  font-size: var(--font-size-reader);
+  font-weight: 400;
+  line-height: 2.35;
+  text-align: start;
+  direction: rtl;
+  letter-spacing: 0;
+  word-spacing: .05em;
+  color: var(--text);
+  font-synthesis: none;
+}
+.v22Translation,.qvTranslation {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: var(--font-size-content);
+  line-height: 1.95;
+  text-align: start;
+}
+.v22AudioState {
+  font-size: .8rem;
+  color: var(--muted);
+}
+.v22QLoading,.loader {
+  text-align: center;
+  padding: 35px;
+}
+.zadWirdPointsClaim {
+  padding: 22px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  margin-top: 24px;
+}
+.zadWirdPointsClaim>strong {
+  display: block;
+  font-size: .95rem;
+  margin-bottom: 14px;
+}
+.zadWirdPointsClaimGrid {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.zadWirdPointsClaimGrid button {
+  flex: 1;
+  background: var(--card2);
+  color: var(--color-brand);
+  border-color: var(--line);
+  font-size: .85rem;
+}
+.zadWirdPointsClaim>small {
+  color: var(--muted);
+  display: block;
+  font-size: .78rem;
+}
+.quranAudioList {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 10px;
+}
+.quranSurahAudioRow,.surahAudioRow {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.quranAudioList button {
+  font-size: .8rem;
+  width: 100%;
+  background: var(--card2);
+  color: var(--text);
+  border-color: var(--line);
+}
+.quranAudioNote {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-top: 16px;
+}
+.quranAudioTop {
+  max-width: 400px;
+}
+.ayahMeta {
+  font-size: .8rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.ayahActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.ayahActions button {
+  font-size: .75rem;
+}
+.ayahFooter {
+  font-size: .8rem;
+  color: var(--muted);
+}
+/* API tajweed classes; the base Quran text is retained if enhancement fails. */
+tajweed.ham_wasl,tajweed.slnt {
+  color: #6a776c;
+}
+tajweed.madda_normal {
+  color: #99521b;
+}
+tajweed.madda_permissible {
+  color: #a04822;
+}
+tajweed.madda_necessary,tajweed.madda_obligatory {
+  color: #a52d37;
+}
+tajweed.ghn {
+  color: #267044;
+}
+tajweed.qlq {
+  color: #306db1;
+}
+tajweed.ikhf,tajweed.ikhf_shfw {
+  color: #795399;
+}
+tajweed.iqlb {
+  color: #987327;
+}
+tajweed.idgh_ghn,tajweed.idgh_w_ghn,tajweed.idgh_mus,tajweed.idgh_mus_shfw {
+  color: #41756f;
+}
+:root[data-theme=dark] tajweed.ham_wasl,:root[data-theme=dark] tajweed.slnt {
+  color: #aab5ac;
+}
+:root[data-theme=dark] tajweed.madda_normal,:root[data-theme=dark] tajweed.madda_permissible {
+  color: #e7af78;
+}
+:root[data-theme=dark] tajweed.madda_necessary,:root[data-theme=dark] tajweed.madda_obligatory {
+  color: #f0989a;
+}
+:root[data-theme=dark] tajweed.ghn {
+  color: #9ccd9d;
+}
+:root[data-theme=dark] tajweed.qlq {
+  color: #9ac7ed;
+}
+:root[data-theme=dark] tajweed.ikhf,:root[data-theme=dark] tajweed.ikhf_shfw {
+  color: #c9a8db;
+}
+:root[data-theme=dark] tajweed.iqlb {
+  color: #d9c786;
+}
+:root[data-theme=dark] tajweed.idgh_ghn,:root[data-theme=dark] tajweed.idgh_w_ghn {
+  color: #91c5c0;
+}
+.document-details {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 900px;
+  margin: 30px 0 36px;
+}
+.document-details .book-cover {
+  width: 180px;
+  min-height: 250px;
+}
+.document-details .book-cover span {
+  font-size: 1.8rem;
+}
+.document-details h1 {
+  font-size: 2rem;
+}
+.document-details p {
+  color: var(--muted);
+}
+.document-meta {
+  display: flex;
+  gap: 20px;
+  color: var(--muted);
+  font-size: .8rem;
+  margin-block: 20px;
+}
+.document-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.document-actions a {
+  font-size: .85rem;
+}
+.document-reader {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--card);
+}
+.document-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 16px 22px;
+  background: var(--card2);
+  border-bottom: 1px solid var(--line);
+}
+.document-toolbar h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+.document-toolbar button {
+  font-size: .8rem;
+}
+.document-viewport {
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+}
+.document-viewport iframe {
+  width: 100%;
+  height: 78dvh;
+  border: 0;
+  display: block;
+}
+.document-placeholder {
+  text-align: center;
+  padding: 36px 24px;
+  max-width: 560px;
+}
+.document-placeholder p {
+  font-size: .9rem;
+  color: var(--muted);
+}
+.document-placeholder .icon {
+  width: 38px;
+  height: 38px;
+  color: var(--color-brand);
+  margin-bottom: 18px;
+}
+.document-fallback {
+  font-size: .84rem;
+  color: var(--muted);
+  padding: 18px 22px;
+  margin: 0;
+  border-top: 1px solid var(--line);
+}
+.document-reader:fullscreen {
+  background: var(--card);
+  overflow: auto;
+}
+.document-reader:fullscreen iframe {
+  height: calc(100dvh - 145px);
+}
+.reading-progress-note {
+  color: var(--muted);
+  font-size: .8rem;
+  margin-top: 12px;
+}
+@media(max-width:640px) {
+  .v22QTop {
+    padding: 18px;
+  }
+  .v22Verse,.ayahBlock {
+    padding: 18px;
+  }
+  .v22Arabic,.ayahText {
+    line-height: 2.2;
+  }
+  .v22QMetaRow {
+    align-items: start;
+  }
+  .v22QMeta {
+    flex-direction: column;
+    gap: 1px;
+  }
+  .zaReaderReciter {
+    width: 100%;
+    margin: 4px 0 0;
+  }
+  .zaReaderReciter select {
+    max-width: none;
+    flex: 1;
+  }
+  .v22QModes {
+    gap: 8px;
+  }
+  .v22QModes button {
+    padding: 8px 11px;
+    font-size: .73rem;
+  }
+  .v22LegendGrid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .reader-view-controls {
+    gap: 12px;
+  }
+  .reader-view-controls button {
+    margin: 0;
+    flex-basis: 100%;
+  }
+  .quranAudioList {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+  .document-details {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin: 24px 0;
+  }
+  .document-details .book-cover {
+    width: 130px;
+    min-height: 175px;
+  }
+  .document-details .book-cover span {
+    font-size: 1.3rem;
+  }
+  .document-details h1 {
+    font-size: 1.7rem;
+  }
+  .document-toolbar {
+    padding: 14px;
+  }
+  .document-viewport iframe {
+    height: 70dvh;
+  }
+  .document-actions {
+    gap: 8px;
+  }
+  .document-meta {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .zadWirdPointsClaim {
+    padding: 18px;
+  }
+  .zadWirdPointsClaimGrid {
+    gap: 8px;
+  }
+  .zadWirdPointsClaimGrid button {
+    font-size: .78rem;
+  }
+}
+.document-toolbar input {
+  width: 90px;
+}
+.document-toolbar label {
+  margin: 0;
+  font-size: .8rem;
+}
+.v22VerseHead button:has(.icon) {
+  background: var(--card2);
+  color: var(--color-brand);
+}
+.v22VerseHead button .icon {
+  width: 20px;
+  height: 20px;
+}

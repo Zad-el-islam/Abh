@@ -1,0 +1,115 @@
+{
+  "passed": 27,
+  "failed": 0,
+  "scope": "DOM and mocked contracts; no browser rendering or production writes",
+  "results": [
+    {
+      "name": "Startup: bundled scripts/styles/fonts, header icons, one visible gateway",
+      "status": "passed"
+    },
+    {
+      "name": "The downloaded HTML boots alone on file/HTTPS URLs with all separate assets unavailable",
+      "status": "passed"
+    },
+    {
+      "name": "All gateways and legacy modules route without runtime errors",
+      "status": "passed"
+    },
+    {
+      "name": "Quran: 114 surahs, 6236 verses, exact source text, one reader",
+      "status": "passed"
+    },
+    {
+      "name": "Daily amount, navigation and completion persistence use real portions",
+      "status": "passed"
+    },
+    {
+      "name": "Quran search handles Arabic diacritics without changing display text",
+      "status": "passed"
+    },
+    {
+      "name": "Source-language matching prevents a French choice from selecting another language",
+      "status": "passed"
+    },
+    {
+      "name": "All six translation fallbacks keep the requested edition, verse keys and source attribution",
+      "status": "passed"
+    },
+    {
+      "name": "Tajweed sanitizer allows only safe text and markup",
+      "status": "passed"
+    },
+    {
+      "name": "Warrior: normalized search, favorites persist and unavailable files are not links",
+      "status": "passed"
+    },
+    {
+      "name": "Tasbih add and undo; dhikr counters survive section changes",
+      "status": "passed"
+    },
+    {
+      "name": "Hadith source text remains Arabic; official search is a working form",
+      "status": "passed"
+    },
+    {
+      "name": "Seven languages preserve direction, source text, route and Arabic restoration",
+      "status": "passed"
+    },
+    {
+      "name": "Unified settings, persisted theme/size, and global search",
+      "status": "passed"
+    },
+    {
+      "name": "Account dialog focus, Escape dismissal and focus restoration",
+      "status": "passed"
+    },
+    {
+      "name": "Greeting respects original session key and remains nonmodal",
+      "status": "passed"
+    },
+    {
+      "name": "Auth validation and exact username/email contract with a test adapter",
+      "status": "passed"
+    },
+    {
+      "name": "Corrupt saved state and denied storage do not break startup",
+      "status": "passed"
+    },
+    {
+      "name": "Deep routes survive initial gateway boot",
+      "status": "passed"
+    },
+    {
+      "name": "A saved French or Urdu language survives page reload and keeps the right direction",
+      "status": "passed"
+    },
+    {
+      "name": "Public videos: safe UGC, click-to-play, no loop, controls and no bulk preloads",
+      "status": "passed"
+    },
+    {
+      "name": "Quran failure offers a retry and original PDF; Talk failure offers retry",
+      "status": "passed"
+    },
+    {
+      "name": "Video upload follows ticket, signed storage, receipt finalization and moderation contracts",
+      "status": "passed"
+    },
+    {
+      "name": "PDF detail page: lazy frame, metadata, bounded page bookmark and invalid ID",
+      "status": "passed"
+    },
+    {
+      "name": "Seerah: no initial iframe; exact playlist, safe referrer and permanent fallback",
+      "status": "passed"
+    },
+    {
+      "name": "Admin: session storage only, escaped UGC, cancellation, accurate deletion warning and logout",
+      "status": "passed"
+    },
+    {
+      "name": "Admin: an expired or unauthorized session returns to login",
+      "status": "passed"
+    }
+  ]
+}

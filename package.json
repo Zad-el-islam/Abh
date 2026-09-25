@@ -1,0 +1,23 @@
+{
+  "name": "zad-el-islam",
+  "private": true,
+  "version": "2.1.1",
+  "description": "Zad El-Islam: portable static pages with editable modular sources",
+  "scripts": {
+    "test": "node tests/quran-integrity.cjs && node tests/regression.cjs && node tests/backend-contracts.cjs && node tests/scoped-colors.cjs",
+    "check": "node tests/static-check.cjs",
+    "build": "python3 scripts/build_portable.py",
+    "test:localization": "node tests/localization.cjs && node tests/media-localization.cjs",
+    "test:deployment": "node tests/palettes-paths.cjs",
+    "inventory": "node scripts/localization_inventory.cjs",
+    "test:integrity": "node tests/quran-integrity.cjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "@babel/parser": "7.28.4",
+    "jsdom": "26.1.0",
+    "postcss": "8.5.6"
+  }
+}

@@ -1,0 +1,129 @@
+import { createClient } from 'npm:@supabase/supabase-js@2';
+const cors = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'content-type, apikey, authorization',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS'
+};
+function json(b: unknown, s = 200) {
+  return new Response(JSON.stringify(b), {
+    status: s,
+    headers: {
+      ...cors,
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-store'
+    }
+  });
+}
+function adminKey() {
+  const legacy = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') || '';
+  if (legacy) return legacy;
+  try {
+    const x = JSON.parse(Deno.env.get('SUPABASE_SECRET_KEYS') || '{}');
+    return x.default || '';
+  } catch (_) {
+    return '';
+  }
+}
+async function hex(s: string) {
+  const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+  return Array.from(new Uint8Array(b)).map(x => x.toString(16).padStart(2, '0')).join('');
+}
+Deno.serve(async req => {
+  if (req.method === 'OPTIONS') return new Response('ok', {
+    headers: cors
+  });
+  if (req.method !== 'POST') return json({
+    error: 'method_not_allowed'
+  }, 405);
+  const o = req.headers.get('origin') || '';
+  const allowedOrigins = new Set(['https://zad-el-islam.github.io', 'https://abuhurira-mz.github.io']);
+  if (o && o !== 'null' && !allowedOrigins.has(o) && !o.startsWith('http://localhost') && !o.startsWith('http://127.0.0.1')) return json({
+    error: 'origin_not_allowed'
+  }, 403);
+  try {
+    const body = await req.json();
+    const action = String(body?.action || '');
+    const url = Deno.env.get('SUPABASE_URL') || '';
+    const key = adminKey();
+    if (!url || !key) return json({
+      error: 'server_config_error'
+    }, 500);
+    const sb = createClient(url, key, {
+      auth: {
+        persistSession: false,
+        autoRefreshToken: false
+      }
+    });
+    if (action === 'logout') {
+      const token = String(body?.token || '');
+      if (token) await sb.from('zad_admin_sessions').delete().eq('token_hash', await hex(token));
+      return json({
+        ok: true
+      });
+    }
+    if (action !== 'login') return json({
+      error: 'invalid_action'
+    }, 400);
+    const username = String(body?.username || '').trim().slice(0, 80);
+    const password = String(body?.password || '');
+    const ipRaw = req.headers.get('x-forwarded-for') || req.headers.get('cf-connecting-ip') || 'unknown';
+    const ip = await hex(ipRaw);
+    const since = new Date(Date.now() - 15 * 60 * 1000).toISOString(); // Keep the original OR count semantics without interpolating a username into a PostgREST filter.
+    const literalUsername = username.replace(/[\\%_]/g, '\\$&');
+    const [byIp, byName] = await Promise.all([sb.from('zad_admin_login_attempts').select('*', {
+      count: 'exact',
+      head: true
+    }).eq('success', false).gte('created_at', since).eq('ip', ip), sb.from('zad_admin_login_attempts').select('*', {
+      count: 'exact',
+      head: true
+    }).eq('success', false).gte('created_at', since).ilike('username', literalUsername).neq('ip', ip)]);
+    if (byIp.error) throw byIp.error;
+    if (byName.error) throw byName.error;
+    if ((byIp.count || 0) + (byName.count || 0) >= 8) return json({
+      ok: false,
+      message: 'تم إيقاف محاولات الدخول مؤقتًا. حاول مرة أخرى بعد 15 دقيقة.'
+    }, 429);
+    const {
+      data,
+      error
+    } = await sb.rpc('zad_admin_verify', {
+      p_username: username,
+      p_password: password
+    });
+    const row = Array.isArray(data) ? data[0] : data;
+    if (error || !row?.admin_id) {
+      await sb.from('zad_admin_login_attempts').insert({
+        ip,
+        username,
+        success: false
+      });
+      return json({
+        ok: false,
+        message: 'اسم المستخدم أو كلمة المرور غير صحيحة.'
+      }, 401);
+    }
+    await sb.from('zad_admin_login_attempts').insert({
+      ip,
+      username: row.username,
+      success: true
+    });
+    await sb.from('zad_admin_sessions').delete().lt('expires_at', new Date().toISOString());
+    const token = crypto.randomUUID().replaceAll('-', '') + crypto.randomUUID().replaceAll('-', '');
+    const sessionWrite = await sb.from('zad_admin_sessions').insert({
+      token_hash: await hex(token),
+      admin_id: row.admin_id,
+      expires_at: new Date(Date.now() + 12 * 60 * 60 * 1000).toISOString()
+    });
+    if (sessionWrite.error) throw sessionWrite.error;
+    return json({
+      ok: true,
+      session_token: token,
+      admin_display_name: row.display_name || row.username
+    });
+  } catch (e) {
+    console.error('zad-admin-auth', e);
+    return json({
+      error: 'server_error'
+    }, 500);
+  }
+});

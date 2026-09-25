@@ -1,0 +1,34 @@
+{
+  "generated": "2026-09-25T12:19:26.479Z",
+  "normalization": "Remove one leading U+FEFF per ayah; Unicode NFC; SHA-256 UTF-8 per ayah; SHA-256 of concatenated lowercase hex hashes in canonical order, no delimiter.",
+  "expectedRoot": "5b58aa48fb07265a53cea6abd510d226345357dd556250e30f3ba87b8a076499",
+  "integrity": {
+    "surahs": 114,
+    "ayahs": 6236,
+    "root": "5b58aa48fb07265a53cea6abd510d226345357dd556250e30f3ba87b8a076499"
+  },
+  "results": [
+    {
+      "name": "Canonical Quran: 114 surahs, 6236 ayahs and pinned SHA-256 root",
+      "status": "passed"
+    },
+    {
+      "name": "Leading transport BOM and NFC normalization are deterministic",
+      "status": "passed"
+    },
+    {
+      "name": "A changed ayah fails integrity without modifying the fixture",
+      "status": "passed"
+    },
+    {
+      "name": "Missing surah or ayah fails structural validation",
+      "status": "passed"
+    },
+    {
+      "name": "Reordered canonical ayahs fail validation",
+      "status": "passed"
+    }
+  ],
+  "passed": 5,
+  "failed": 0
+}

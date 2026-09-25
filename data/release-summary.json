@@ -1,0 +1,78 @@
+{
+  "version": "2.1.1",
+  "date": "2026-09-25",
+  "checksPassed": 106,
+  "checksFailed": 0,
+  "scopedFullPageColors": "PASS",
+  "neutralLibraryBranding": "PASS",
+  "localization": {
+    "catalogKeys": 960,
+    "languages": [
+      "ar",
+      "en",
+      "fr",
+      "id",
+      "tr",
+      "ur",
+      "es"
+    ],
+    "translationValues": 6720,
+    "missingKeys": 0,
+    "translationRowsChanged": 2
+  },
+  "suites": {
+    "results": {
+      "passed": 27,
+      "failed": 0
+    },
+    "backend-results": {
+      "passed": 5,
+      "failed": 0
+    },
+    "static-results": {
+      "passed": 7,
+      "failed": 0
+    },
+    "localization-results": {
+      "passed": 31,
+      "failed": 0
+    },
+    "media-localization-results": {
+      "passed": 7,
+      "failed": 0
+    },
+    "palettes-paths-results": {
+      "passed": 16,
+      "failed": 0
+    },
+    "quran-integrity-results": {
+      "passed": 5,
+      "failed": 0
+    },
+    "scoped-colors-results": {
+      "passed": 8,
+      "failed": 0
+    }
+  },
+  "immutablePDFs": {
+    "before": "PASS",
+    "after": "PASS",
+    "count": 5,
+    "hashes": {
+      "kitab_al_tawhid.pdf": "b7ef7ec69eeaba56ea558c4e2cbd8daa2fe539af45b366efaf2fb8c8a41c698d",
+      "thalathat_al_usul.pdf": "d0f64e50cb7b3e7605a33cfad2c8192507b408e8af58392577d34bbce4be6e6a",
+      "book.pdf": "d0f64e50cb7b3e7605a33cfad2c8192507b408e8af58392577d34bbce4be6e6a",
+      "al_aqidah_al_wasitiyyah.pdf": "01fd092e5a87619741c109688e3f8d9dc33a3aee76f426bac5d15b0ea8fb4764",
+      "quran.pdf": "073981fcd8550c7e1175c294a45981fdee9fc4f22bb6dd4927db24b9ae3f67ad"
+    }
+  },
+  "protectedReligiousStrings": 743,
+  "quran": {
+    "surahs": 114,
+    "ayahs": 6236,
+    "root": "5b58aa48fb07265a53cea6abd510d226345357dd556250e30f3ba87b8a076499"
+  },
+  "quranComComparison": "Not executed: one request returned HTTP 403; no retry. A/B/C counts unknown.",
+  "renderedBrowserQA": "Not executed: local project access denied by session browser policy; requested 390/1440 widths and emerald/navy/burgundy.",
+  "backend": "Unchanged; existing contract tests only; no publishing or live service changes."
+}

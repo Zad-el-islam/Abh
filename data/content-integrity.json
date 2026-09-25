@@ -1,0 +1,59 @@
+[
+  {
+    "file": "assets/js/steadfastness.js",
+    "fields": [
+      "verse",
+      "verseSource",
+      "hadith",
+      "hadithSource",
+      "dhikr",
+      "source",
+      "text",
+      "dua",
+      "duaSource",
+      "benefit",
+      "meaning"
+    ],
+    "protected_strings": 86,
+    "sha256": "c30503058c707998adef5201cc0823f6491c1afb818b6a5f764ff45a07570487",
+    "unchanged": true
+  },
+  {
+    "file": "assets/js/heart-hadith.js",
+    "fields": [
+      "verse",
+      "verseSource",
+      "hadith",
+      "hadithSource",
+      "dhikr",
+      "source",
+      "text",
+      "dua",
+      "duaSource",
+      "benefit",
+      "meaning"
+    ],
+    "protected_strings": 261,
+    "sha256": "77a18eeb206f1fee1fd93b7ac3216ca1c6629c201f807458bc6a57fda95964c5",
+    "unchanged": true
+  },
+  {
+    "file": "assets/js/heart-remedies.js",
+    "fields": [
+      "verse",
+      "verseSource",
+      "hadith",
+      "hadithSource",
+      "dhikr",
+      "source",
+      "text",
+      "dua",
+      "duaSource",
+      "benefit",
+      "meaning"
+    ],
+    "protected_strings": 396,
+    "sha256": "e26fdb1f8946090602e2b29adbe6b31cdbbcc06998fd624f0b0e1be11f9dc03f",
+    "unchanged": true
+  }
+]

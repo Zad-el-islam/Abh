@@ -1,0 +1,36 @@
+{
+  "generated": "2026-09-25T12:22:00.411Z",
+  "kind": "DOM with test doubles, not live services",
+  "results": [
+    {
+      "name": "ar: switching keeps upload draft/file and localizes retained comments/ranking chrome",
+      "status": "passed"
+    },
+    {
+      "name": "en: switching keeps upload draft/file and localizes retained comments/ranking chrome",
+      "status": "passed"
+    },
+    {
+      "name": "fr: switching keeps upload draft/file and localizes retained comments/ranking chrome",
+      "status": "passed"
+    },
+    {
+      "name": "id: switching keeps upload draft/file and localizes retained comments/ranking chrome",
+      "status": "passed"
+    },
+    {
+      "name": "tr: switching keeps upload draft/file and localizes retained comments/ranking chrome",
+      "status": "passed"
+    },
+    {
+      "name": "ur: switching keeps upload draft/file and localizes retained comments/ranking chrome",
+      "status": "passed"
+    },
+    {
+      "name": "es: switching keeps upload draft/file and localizes retained comments/ranking chrome",
+      "status": "passed"
+    }
+  ],
+  "passed": 7,
+  "failed": 0
+}

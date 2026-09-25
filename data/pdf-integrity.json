@@ -1,0 +1,27 @@
+[
+  {
+    "file": "book.pdf",
+    "sha256": "d0f64e50cb7b3e7605a33cfad2c8192507b408e8af58392577d34bbce4be6e6a",
+    "bytes": 2948191
+  },
+  {
+    "file": "kitab_al_tawhid.pdf",
+    "sha256": "b7ef7ec69eeaba56ea558c4e2cbd8daa2fe539af45b366efaf2fb8c8a41c698d",
+    "bytes": 3083311
+  },
+  {
+    "file": "thalathat_al_usul.pdf",
+    "sha256": "d0f64e50cb7b3e7605a33cfad2c8192507b408e8af58392577d34bbce4be6e6a",
+    "bytes": 2948191
+  },
+  {
+    "file": "al_aqidah_al_wasitiyyah.pdf",
+    "sha256": "01fd092e5a87619741c109688e3f8d9dc33a3aee76f426bac5d15b0ea8fb4764",
+    "bytes": 2327347
+  },
+  {
+    "file": "quran.pdf",
+    "sha256": "073981fcd8550c7e1175c294a45981fdee9fc4f22bb6dd4927db24b9ae3f67ad",
+    "bytes": 4331467
+  }
+]
