@@ -1,0 +1,17 @@
+{
+  "status": "BLOCKED",
+  "completeAudit": "NOT_RUN",
+  "surahsCompared": 0,
+  "versesCompared": 0,
+  "exactMatches": null,
+  "presentationOnlyDifferences": null,
+  "substantiveDifferences": null,
+  "fetch": {
+    "url": "https://api.quran.com/api/v4/quran/verses/uthmani",
+    "status": 403,
+    "limitation": "HTTP Error 403: Forbidden"
+  },
+  "retryCount": 0,
+  "plainTextSourceChanged": false,
+  "note": "The bulk Quran.com Uthmani API returned 403. No credentials were supplied, no provider corpus was cached, and no full comparison or substantive-discrepancy count can be claimed. The official documentation sample is only one ayah."
+}

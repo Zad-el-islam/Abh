@@ -1,0 +1,16 @@
+{
+  "engine": "Pillow/RAQM; font metrics only, not browser rendering",
+  "font": "existing bundled Amiri 400",
+  "uniqueWordsMeasured": 19492,
+  "testFontPx": 48,
+  "lineBoxAt48Px": 139.2,
+  "maximumWordInkHeightPx": 110,
+  "maximumWordAdvancePx": 199.015625,
+  "safeVerticalMetric": true,
+  "browserClippingVerified": false,
+  "maximumInkAboveBaselinePx": 87,
+  "maximumInkBelowBaselinePx": 46,
+  "maximumAdjacentLineInkEnvelopePx": 133,
+  "previousMobileLineBoxAt48Px": 105.60000000000001,
+  "lineClearancePx": 6.199999999999989
+}

@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "existingFiles": 142,
+  "existingFilesChanged": [
+    "index.html",
+    "tests/quran-integrity-results.json",
+    "tests/quran-integrity.cjs",
+    "data/release-manifest.json",
+    "assets/js/quran-reader.js",
+    "assets/css/reader.css"
+  ],
+  "additionalReaderQaFiles": [
+    "tests/wird-reader/README.md",
+    "tests/wird-reader/acceptance.json",
+    "tests/wird-reader/font-metrics.json",
+    "tests/wird-reader/pdf-verification.json",
+    "tests/wird-reader/quran-foundation-doc-example.json",
+    "tests/wird-reader/qurancom-comparison.json",
+    "tests/wird-reader/scope-check.cjs",
+    "tests/wird-reader/scope-results.json",
+    "tests/wird-reader/source-before.sha256.json",
+    "tests/wird-reader/tajweed-class-inventory.json",
+    "tests/wird-reader/tajweed-colors.json",
+    "tests/wird-reader/translation-keys.json",
+    "tests/wird-reader-results.json",
+    "tests/wird-reader.cjs"
+  ],
+  "unrelatedSourceFilesModified": 0,
+  "pdfsUnchanged": 5,
+  "pdfFiles": [
+    "quran.pdf",
+    "thalathat_al_usul.pdf",
+    "book.pdf",
+    "kitab_al_tawhid.pdf",
+    "al_aqidah_al_wasitiyyah.pdf"
+  ]
+}

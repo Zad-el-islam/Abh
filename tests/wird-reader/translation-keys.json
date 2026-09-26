@@ -1,0 +1,119 @@
+{
+  "quran-reader.wird-silent": {
+    "ar": "الحروف غير المنطوقة",
+    "en": "Silent letters",
+    "fr": "Lettres non prononcées",
+    "id": "Huruf tidak dibaca",
+    "tr": "Okunmayan harfler",
+    "ur": "نہ پڑھے جانے والے حروف",
+    "es": "Letras no pronunciadas"
+  },
+  "quran-reader.wird-normal-madd": {
+    "ar": "المد الطبيعي (حركتان)",
+    "en": "Normal madd (2)",
+    "fr": "Madd naturel (2 temps)",
+    "id": "Mad asli (2 harakat)",
+    "tr": "Tabii med (2 hareke)",
+    "ur": "مدِ طبیعی (۲ حرکات)",
+    "es": "Madd natural (2 tiempos)"
+  },
+  "quran-reader.wird-separated-madd": {
+    "ar": "المد الجائز (٢/٤/٦)",
+    "en": "Permissible madd (2/4/6)",
+    "fr": "Madd permis (2/4/6)",
+    "id": "Mad jaiz (2/4/6)",
+    "tr": "Caiz med (2/4/6)",
+    "ur": "مدِ جائز (۲/۴/۶)",
+    "es": "Madd permitido (2/4/6)"
+  },
+  "quran-reader.wird-connected-madd": {
+    "ar": "المد المتصل (٤/٥)",
+    "en": "Connected madd (4/5)",
+    "fr": "Madd lié (4/5)",
+    "id": "Mad muttasil (4/5)",
+    "tr": "Muttasıl med (4/5)",
+    "ur": "مدِ متصل (۴/۵)",
+    "es": "Madd unido (4/5)"
+  },
+  "quran-reader.wird-necessary-madd": {
+    "ar": "المد اللازم (٦)",
+    "en": "Necessary madd (6)",
+    "fr": "Madd nécessaire (6)",
+    "id": "Mad lazim (6)",
+    "tr": "Lazım med (6)",
+    "ur": "مدِ لازم (۶)",
+    "es": "Madd necesario (6)"
+  },
+  "quran-reader.wird-ghunnah-ikhfa": {
+    "ar": "الغنة والإخفاء",
+    "en": "Ghunnah / ikhfa’",
+    "fr": "Ghunnah / ikhfa’",
+    "id": "Gunnah / ikhfa",
+    "tr": "Gunne / ihfa",
+    "ur": "غنہ / اخفاء",
+    "es": "Ghunnah / ikhfa"
+  },
+  "quran-reader.wird-qalqala": {
+    "ar": "القلقلة",
+    "en": "Qalqala (echo)",
+    "fr": "Qalqala (écho)",
+    "id": "Qalqalah",
+    "tr": "Kalkale",
+    "ur": "قلقلہ",
+    "es": "Qalqala (eco)"
+  },
+  "quran-reader.wird-tafkhim": {
+    "ar": "التفخيم",
+    "en": "Tafkhim (heavy)",
+    "fr": "Tafkhim (emphase)",
+    "id": "Tafkhim (tebal)",
+    "tr": "Tefhim (kalın okuma)",
+    "ur": "تفخیم",
+    "es": "Tafkhim (énfasis)"
+  },
+  "quran-reader.wird-fallback": {
+    "ar": "تعذر تحميل ألوان التجويد كاملةً؛ تُعرض الآيات غير المتاحة بدون تلوين.",
+    "en": "Some Tajweed colors could not be loaded. Unavailable verses remain in plain Uthmani text.",
+    "fr": "Certaines couleurs de tajwid sont indisponibles. Les versets concernés restent en écriture uthmani sans couleurs.",
+    "id": "Sebagian warna tajwid tidak dapat dimuat. Ayat terkait tetap ditampilkan dalam teks Usmani tanpa warna.",
+    "tr": "Bazı tecvid renkleri yüklenemedi. İlgili ayetler renksiz Osmanî metinle gösteriliyor.",
+    "ur": "تجوید کے بعض رنگ لوڈ نہیں ہو سکے۔ متعلقہ آیات بغیر رنگ کے رسمِ عثمانی میں دکھائی جا رہی ہیں۔",
+    "es": "No se pudieron cargar algunos colores de tajwid. Los versículos afectados conservan el texto uthmani sin colores."
+  },
+  "quran-reader.wird-legend": {
+    "ar": "ألوان التجويد",
+    "en": "Tajweed colors",
+    "fr": "Couleurs du tajwid",
+    "id": "Warna tajwid",
+    "tr": "Tecvid renkleri",
+    "ur": "تجوید کے رنگ",
+    "es": "Colores del tajwid"
+  },
+  "quran-reader.wird-choose-ayah": {
+    "ar": "اختر رقم آية للاستماع إليها.",
+    "en": "Select a verse number to listen.",
+    "fr": "Sélectionnez le numéro d’un verset pour l’écouter.",
+    "id": "Pilih nomor ayat untuk mendengarkan.",
+    "tr": "Dinlemek için ayet numarasını seçin.",
+    "ur": "سننے کے لیے آیت کا نمبر منتخب کریں۔",
+    "es": "Selecciona el número de un versículo para escucharlo."
+  },
+  "quran-reader.wird-enabled": {
+    "ar": "التجويد: مفعّل",
+    "en": "Tajweed: on",
+    "fr": "Tajwid : activé",
+    "id": "Tajwid: aktif",
+    "tr": "Tecvid: açık",
+    "ur": "تجوید: فعال",
+    "es": "Tajwid: activado"
+  },
+  "quran-reader.wird-disabled": {
+    "ar": "التجويد: متوقف",
+    "en": "Tajweed: off",
+    "fr": "Tajwid : désactivé",
+    "id": "Tajwid: nonaktif",
+    "tr": "Tecvid: kapalı",
+    "ur": "تجوید: غیر فعال",
+    "es": "Tajwid: desactivado"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "generated": "2026-09-26T10:11:01.929Z",
+  "scope": "Daily Wird only",
+  "testType": "DOM contracts with test media and cached documentation example; NOT live Quran.com corpus / browser rendering / live audio.",
+  "passed": 32,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Pinned complete Quran: 114 surahs / 6236 unique ordered nonempty verses",
+      "status": "passed"
+    },
+    {
+      "name": "One visible reader, inline verse containers, source text retained",
+      "status": "passed"
+    },
+    {
+      "name": "Fatiha and Al-Baqarah boundary: headings and basmalah exactly as supplied",
+      "status": "passed"
+    },
+    {
+      "name": "Tajweed legend is collapsed, accessible and has exactly eight semantic colors",
+      "status": "passed"
+    },
+    {
+      "name": "Official Quran Foundation sample annotation: retain every original code point",
+      "status": "passed"
+    },
+    {
+      "name": "Tajweed switch does not change position, ordering, text or number of markers",
+      "status": "passed"
+    },
+    {
+      "name": "Selected verse uses unchanged audio engine; second click stops it",
+      "status": "passed"
+    },
+    {
+      "name": "Changing Tajweed and translation preserves the active audio control",
+      "status": "passed"
+    },
+    {
+      "name": "Reciter selection persists and stops the previous recitation",
+      "status": "passed"
+    },
+    {
+      "name": "Next/previous portion stops previous audio and restores the correct source range",
+      "status": "passed"
+    },
+    {
+      "name": "Completion and one/two-hizb controls retain progress contracts",
+      "status": "passed"
+    },
+    {
+      "name": "Every one-hizb portion renders each of the 6236 ayahs exactly once",
+      "status": "passed"
+    },
+    {
+      "name": "Ali Imran 102–107, long ayah 2:282, and Tawbah boundary have valid source flow",
+      "status": "passed"
+    },
+    {
+      "name": "Reader-only translation keys are complete in all seven languages",
+      "status": "passed"
+    },
+    {
+      "name": "Plain-text fallback for failure data; no invented Tajweed",
+      "status": "passed"
+    },
+    {
+      "name": "Plain-text fallback for duplicate data; no invented Tajweed",
+      "status": "passed"
+    },
+    {
+      "name": "Plain-text fallback for mismatch data; no invented Tajweed",
+      "status": "passed"
+    },
+    {
+      "name": "Plain-text fallback for wrong-marker data; no invented Tajweed",
+      "status": "passed"
+    },
+    {
+      "name": "Plain-text fallback for unknown data; no invented Tajweed",
+      "status": "passed"
+    },
+    {
+      "name": "A missing ayah does not discard valid annotations for another ayah in its chapter",
+      "status": "passed"
+    },
+    {
+      "name": "Trusted-markup sanitizer strips active content before annotation",
+      "status": "passed"
+    },
+    {
+      "name": "Existing integrity comparator detects all keys and substantive changes in a synthetic control",
+      "status": "passed"
+    },
+    {
+      "name": "All new CSS is scoped to Daily Wird; Tajweed has inherited inline geometry",
+      "status": "passed"
+    },
+    {
+      "name": "360/390/430/768/1440 layout contracts in both modes (not rendered browser QA)",
+      "status": "passed"
+    },
+    {
+      "name": "Light/dark Tajweed colors have >=4.5 contrast on all existing reader surfaces",
+      "status": "passed"
+    },
+    {
+      "name": "Bundled-font ink envelope fits the chosen line height",
+      "status": "passed"
+    },
+    {
+      "name": "Refresh restores reciter, completion and Tajweed preference",
+      "status": "passed"
+    },
+    {
+      "name": "Separate opening lines and bundled-font selection at 2:1 and 3:1 without text mutation",
+      "status": "passed"
+    },
+    {
+      "name": "Verse-key alignment accepts shuffled provider-shaped chapter responses without their unnumbered basmalah",
+      "status": "passed"
+    },
+    {
+      "name": "NFC-equivalent annotations preserve original codepoints; meaningful differences stay plain",
+      "status": "passed"
+    },
+    {
+      "name": "Late chapter responses cannot re-enable Tajweed or replace a different current portion",
+      "status": "passed"
+    },
+    {
+      "name": "No reader console errors in focused runs",
+      "status": "passed"
+    }
+  ]
+}

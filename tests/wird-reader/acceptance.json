@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-26",
+  "scope": "Daily Wird / Quran reader only",
+  "runtimeSourceFilesChanged": [
+    "assets/js/quran-reader.js",
+    "assets/css/reader.css"
+  ],
+  "quranComCompleteAudit": "NOT_RUN_HTTP_403",
+  "surahs": 114,
+  "surahCount": "PASS",
+  "ayahs": 6236,
+  "ayahCount": "PASS",
+  "duplicateVerses": 0,
+  "missingVerses": 0,
+  "uniqueVerseKeys": 6236,
+  "quranIntegrityRoot": "5b58aa48fb07265a53cea6abd510d226345357dd556250e30f3ba87b8a076499",
+  "quranPdfSecondaryVerification": "LIMITATION: visual samples only; no reliable Unicode text layer; complete online comparison unavailable",
+  "quranTextManuallyModified": false,
+  "verseOverlap": "NOT_VERIFIED_IN_BROWSER; font ink envelope/line-height metric passed",
+  "duplicateVisibleReader": 0,
+  "duplicateVisibleReaderEvidence": "DOM/CSS contracts; rendered browser unavailable",
+  "continuousReading": "PASS_IMPLEMENTATION_AND_DOM",
+  "tajweedProviderMarkup": "PASS_OFFICIAL_DOCUMENTATION_SAMPLE; full live corpus unavailable",
+  "tajweedLegendReference": "PASS_EIGHT_COLOR_CATEGORIES; legacy permissible-madd label kept accurate; full live rule inventory unavailable",
+  "lightTajweedContrast": "PASS_CALCULATED_MINIMUM_4.5_TO_1",
+  "darkTajweedContrast": "PASS_CALCULATED_MINIMUM_4.5_TO_1",
+  "responsiveWidths": [
+    360,
+    390,
+    430,
+    768,
+    1440
+  ],
+  "responsiveQa": "PASS_DOM_CSS_CONTRACTS; RENDERED_BROWSER_QA_NOT_RUN",
+  "audioRegression": "PASS_WITH_TEST_MEDIA; remote playback not tested",
+  "wirdProgressRegression": "PASS",
+  "allPdfsUnchanged": "PASS",
+  "unrelatedSourceFilesModified": 0,
+  "readerTests": {
+    "passed": 28,
+    "failed": 0
+  },
+  "integrityTests": {
+    "passed": 6,
+    "failed": 0
+  },
+  "syntax": "PASS",
+  "localReferences": {
+    "status": "PASS",
+    "checked": 40
+  },
+  "build": "PASS",
+  "completeReleaseAcceptance": "LIMITED: full online comparison and rendered-browser acceptance remain unverified"
+}

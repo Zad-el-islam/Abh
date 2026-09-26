@@ -537,3 +537,266 @@ tajweed.idgh_ghn,tajweed.idgh_w_ghn,tajweed.idgh_mus,tajweed.idgh_mus_shfw {
   width: 20px;
   height: 20px;
 }
+
+/* Daily Wird only. Provider annotation colors never change Arabic text geometry. */
+#wirdModule #v22ReaderWorkspace {
+  --tajweed-silent: #686868;
+  --tajweed-normal-madd: #cc0066;
+  --tajweed-separated-madd: #ad4900;
+  --tajweed-connected-madd: #d0003e;
+  --tajweed-necessary-madd: #d30000;
+  --tajweed-ghunnah-ikhfa: #19773d;
+  --tajweed-qalqala: #007283;
+  --tajweed-tafkhim: #2769b4;
+}
+:root[data-theme=dark] #wirdModule #v22ReaderWorkspace {
+  --tajweed-silent: #a2a2a2;
+  --tajweed-normal-madd: #ffc1e0;
+  --tajweed-separated-madd: #ff8e3b;
+  --tajweed-connected-madd: #ff749d;
+  --tajweed-necessary-madd: #ff7979;
+  --tajweed-ghunnah-ikhfa: #27ba5f;
+  --tajweed-qalqala: #00deff;
+  --tajweed-tafkhim: #71a6e0;
+}
+#wirdModule #home > [hidden],
+#wirdModule #wirdContent,
+#wirdModule #v22ReaderWorkspace [hidden] {
+  display: none !important;
+}
+#wirdModule #v22ReaderContent {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: clamp(16px, 3vw, 32px);
+  min-inline-size: 0;
+}
+#wirdModule .wird-surah + .wird-surah {
+  border-block-start: 1px solid var(--line);
+  margin-block-start: 24px;
+  padding-block-start: 20px;
+}
+#wirdModule .wird-surah-heading {
+  text-align: center;
+  font: 400 1.45rem/1.9 var(--font-quran);
+  margin-block: 0 12px;
+  color: var(--text);
+}
+#wirdModule .wird-mushaf-text {
+  display: block;
+  direction: rtl;
+  text-align: start;
+  font-family: var(--font-quran);
+  font-size: clamp(1.5rem, calc(var(--font-size-reader) + .3vw), 3rem);
+  font-weight: 400;
+  /* Bundled Amiri measured ink envelope: 133px at 48px, plus line clearance. */
+  line-height: 2.9;
+  font-synthesis: none;
+  letter-spacing: 0;
+  word-spacing: normal;
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  overflow: visible;
+  padding-block: .35em;
+  max-inline-size: 100%;
+}
+#wirdModule .wird-mushaf-text .wird-ayah,
+#wirdModule .wird-mushaf-text .v22Arabic,
+#wirdModule .wird-mushaf-text tajweed {
+  display: inline;
+  position: static;
+  transform: none;
+  font: inherit;
+  line-height: inherit;
+  direction: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  overflow: visible;
+  float: none;
+}
+#wirdModule .wird-mushaf-text .wird-ayah,
+#wirdModule .wird-mushaf-text .v22Arabic {
+  color: inherit;
+}
+#wirdModule .wird-ayah-marker {
+  display: inline-block;
+  position: static;
+  transform: none;
+  vertical-align: baseline;
+  font-family: var(--font-quran);
+  font-size: .55em;
+  font-weight: 400;
+  line-height: 1.9;
+  min-inline-size: 2.1em;
+  min-block-size: 2.1em;
+  padding: .04em .3em;
+  margin-inline: .25em;
+  border: 1px solid var(--color-brand);
+  border-radius: 50%;
+  color: var(--color-brand);
+  background: var(--card);
+  direction: rtl;
+  unicode-bidi: isolate;
+  white-space: nowrap;
+  box-shadow: none;
+  cursor: pointer;
+}
+#wirdModule .wird-ayah-marker[aria-current=true],
+#wirdModule .wird-ayah-marker:hover {
+  background: var(--card2);
+}
+#wirdModule .wird-ayah-marker:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+#wirdModule .wird-audio-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+  padding-block: 12px 0;
+}
+#wirdModule .wird-audio-controls .ayahAudioStatus:not(:empty) {
+  flex-basis: 100%;
+}
+#wirdModule .wird-audio-label {
+  color: var(--muted);
+  font-size: .85rem;
+}
+#wirdModule .wird-audio-hint {
+  margin-block: 8px 16px;
+}
+#wirdModule #v22TajweedLegend:not([hidden]) {
+  display: block;
+}
+#wirdModule .v22LegendGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px 16px;
+}
+#wirdModule .v22LegendItem {
+  line-height: 1.85;
+  align-items: baseline;
+}
+#wirdModule .v22LegendDot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+#wirdModule .v22TranslationList {
+  border-block-start: 1px solid var(--line);
+  margin-block-start: 24px;
+  padding-block-start: 16px;
+}
+#wirdModule .v22TranslationLine {
+  padding-block: 10px;
+  color: var(--muted);
+  font-size: var(--font-size-content);
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+#wirdModule .v22TranslationLine b {
+  display: inline-block;
+  margin-inline-end: 12px;
+  direction: ltr;
+}
+@media(max-width:640px) {
+  #wirdModule .v22LegendGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #wirdModule .zaReaderReciter select {
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="silent"] {
+  color: var(--tajweed-silent);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="silent"] {
+  background-color: var(--tajweed-silent);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="normal-madd"] {
+  color: var(--tajweed-normal-madd);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="normal-madd"] {
+  background-color: var(--tajweed-normal-madd);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="separated-madd"] {
+  color: var(--tajweed-separated-madd);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="separated-madd"] {
+  background-color: var(--tajweed-separated-madd);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="connected-madd"] {
+  color: var(--tajweed-connected-madd);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="connected-madd"] {
+  background-color: var(--tajweed-connected-madd);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="necessary-madd"] {
+  color: var(--tajweed-necessary-madd);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="necessary-madd"] {
+  background-color: var(--tajweed-necessary-madd);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="ghunnah-ikhfa"] {
+  color: var(--tajweed-ghunnah-ikhfa);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="ghunnah-ikhfa"] {
+  background-color: var(--tajweed-ghunnah-ikhfa);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="qalqala"] {
+  color: var(--tajweed-qalqala);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="qalqala"] {
+  background-color: var(--tajweed-qalqala);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="tafkhim"] {
+  color: var(--tajweed-tafkhim);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="tafkhim"] {
+  background-color: var(--tajweed-tafkhim);
+}
+
+#wirdModule #v22ReaderWorkspace .v22QMetaRow {
+  flex-wrap: wrap;
+}
+#wirdModule #v22ReaderWorkspace .zaQuranSurahTitle {
+  min-inline-size: 0;
+}
+
+/* Opening lines are slices of the verified record, never a second Quran text. */
+#wirdModule .wird-mushaf-text .wird-basmala {
+  display: block;
+  text-align: center;
+  font: inherit;
+  line-height: inherit;
+  direction: rtl;
+  letter-spacing: 0;
+  overflow: visible;
+}
+#wirdModule .wird-ayah[data-verse-key="1:1"] {
+  display: block;
+  text-align: center;
+}
+#wirdModule .wird-mushaf-text .wird-verse-text {
+  display: inline;
+  font: inherit;
+  line-height: inherit;
+  direction: inherit;
+  letter-spacing: 0;
+  word-spacing: inherit;
+  vertical-align: baseline;
+}
+#wirdModule .wird-mushaf-text .wird-verse-text[data-quran-font="opening"] {
+  font-family: 'Zad Sans', Tahoma, sans-serif;
+  font-weight: 400;
+}

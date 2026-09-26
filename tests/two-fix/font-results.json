@@ -1,0 +1,193 @@
+{
+  "engine": "Pillow/RAQM with exact bundled font; not a browser layout test",
+  "sourceCharactersChanged": false,
+  "fontFile": "assets/fonts/noto-sans-arabic-arabic-wght-normal.woff2",
+  "fontSHA256": "ce85091f020920b65762b387b194ef59457ea5b25b760f2dcc35240a94bb8669",
+  "widths": [
+    390,
+    768,
+    1440
+  ],
+  "samples": [
+    {
+      "verseKey": "2:1",
+      "width": 390,
+      "theme": "light",
+      "fontPx": 29,
+      "inkBoxPx": [
+        0,
+        -27,
+        31,
+        12
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 84.1,
+      "pass": true
+    },
+    {
+      "verseKey": "3:1",
+      "width": 390,
+      "theme": "light",
+      "fontPx": 29,
+      "inkBoxPx": [
+        0,
+        -27,
+        31,
+        12
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 84.1,
+      "pass": true
+    },
+    {
+      "verseKey": "2:1",
+      "width": 390,
+      "theme": "dark",
+      "fontPx": 29,
+      "inkBoxPx": [
+        0,
+        -27,
+        31,
+        12
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 84.1,
+      "pass": true
+    },
+    {
+      "verseKey": "3:1",
+      "width": 390,
+      "theme": "dark",
+      "fontPx": 29,
+      "inkBoxPx": [
+        0,
+        -27,
+        31,
+        12
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 84.1,
+      "pass": true
+    },
+    {
+      "verseKey": "2:1",
+      "width": 768,
+      "theme": "light",
+      "fontPx": 30,
+      "inkBoxPx": [
+        0,
+        -27,
+        32,
+        13
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 87.0,
+      "pass": true
+    },
+    {
+      "verseKey": "3:1",
+      "width": 768,
+      "theme": "light",
+      "fontPx": 30,
+      "inkBoxPx": [
+        0,
+        -27,
+        32,
+        13
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 87.0,
+      "pass": true
+    },
+    {
+      "verseKey": "2:1",
+      "width": 768,
+      "theme": "dark",
+      "fontPx": 30,
+      "inkBoxPx": [
+        0,
+        -27,
+        32,
+        13
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 87.0,
+      "pass": true
+    },
+    {
+      "verseKey": "3:1",
+      "width": 768,
+      "theme": "dark",
+      "fontPx": 30,
+      "inkBoxPx": [
+        0,
+        -27,
+        32,
+        13
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 87.0,
+      "pass": true
+    },
+    {
+      "verseKey": "2:1",
+      "width": 1440,
+      "theme": "light",
+      "fontPx": 32,
+      "inkBoxPx": [
+        0,
+        -28,
+        34,
+        13
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 92.8,
+      "pass": true
+    },
+    {
+      "verseKey": "3:1",
+      "width": 1440,
+      "theme": "light",
+      "fontPx": 32,
+      "inkBoxPx": [
+        0,
+        -28,
+        34,
+        13
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 92.8,
+      "pass": true
+    },
+    {
+      "verseKey": "2:1",
+      "width": 1440,
+      "theme": "dark",
+      "fontPx": 32,
+      "inkBoxPx": [
+        0,
+        -28,
+        34,
+        13
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 92.8,
+      "pass": true
+    },
+    {
+      "verseKey": "3:1",
+      "width": 1440,
+      "theme": "dark",
+      "fontPx": 32,
+      "inkBoxPx": [
+        0,
+        -28,
+        34,
+        13
+      ],
+      "separateMaddComponents": 2,
+      "lineHeightPx": 92.8,
+      "pass": true
+    }
+  ]
+}

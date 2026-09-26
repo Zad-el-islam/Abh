@@ -1,6 +1,6 @@
 <!DOCTYPE html><html data-accent="emerald" data-theme="light" dir="rtl" lang="ar" data-portable-build="1"><head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;; object-src &#x27;none&#x27;; script-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; img-src &#x27;self&#x27; data: blob: https://i.ytimg.com/vi/ https://bzrhrvgddtnhctcdlgmy.supabase.co; font-src &#x27;self&#x27; data:; connect-src &#x27;self&#x27; https://bzrhrvgddtnhctcdlgmy.supabase.co https://api.quran.com wss://bzrhrvgddtnhctcdlgmy.supabase.co https://api.alquran.cloud https://quranenc.com https://cdn.mualim.app https://huggingface.co https://*.huggingface.co https://*.hf.co https://*.xethub.hf.co; media-src &#x27;self&#x27; blob: https://bzrhrvgddtnhctcdlgmy.supabase.co https://everyayah.com https://*.mp3quran.net https://cdn.mualim.app https://huggingface.co https://*.huggingface.co https://*.hf.co https://*.xethub.hf.co; frame-src &#x27;self&#x27; blob: https://www.youtube.com/embed/ https://www.youtube-nocookie.com/embed/; worker-src &#x27;self&#x27; blob:; manifest-src &#x27;self&#x27;; upgrade-insecure-requests; block-all-mixed-content">
+<meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;; object-src &#x27;none&#x27;; script-src &#x27;self&#x27; &#x27;unsafe-inline&#x27; https://www.youtube.com/iframe_api https://www.youtube.com/s/player/; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; img-src &#x27;self&#x27; data: blob: https://i.ytimg.com/vi/ https://bzrhrvgddtnhctcdlgmy.supabase.co; font-src &#x27;self&#x27; data:; connect-src &#x27;self&#x27; https://bzrhrvgddtnhctcdlgmy.supabase.co https://api.quran.com wss://bzrhrvgddtnhctcdlgmy.supabase.co https://api.alquran.cloud https://quranenc.com https://cdn.mualim.app https://huggingface.co https://*.huggingface.co https://*.hf.co https://*.xethub.hf.co; media-src &#x27;self&#x27; blob: https://bzrhrvgddtnhctcdlgmy.supabase.co https://everyayah.com https://*.mp3quran.net https://cdn.mualim.app https://huggingface.co https://*.huggingface.co https://*.hf.co https://*.xethub.hf.co; frame-src &#x27;self&#x27; blob: https://www.youtube.com/embed/ https://www.youtube-nocookie.com/embed/; worker-src &#x27;self&#x27; blob:; manifest-src &#x27;self&#x27;; upgrade-insecure-requests; block-all-mixed-content">
 <meta content="strict-origin-when-cross-origin" name="referrer">
 <meta content="telephone=no" name="format-detection">
 <link crossorigin="" href="https://bzrhrvgddtnhctcdlgmy.supabase.co" rel="preconnect">
@@ -2679,6 +2679,269 @@ tajweed.idgh_ghn,tajweed.idgh_w_ghn,tajweed.idgh_mus,tajweed.idgh_mus_shfw {
   width: 20px;
   height: 20px;
 }
+
+/* Daily Wird only. Provider annotation colors never change Arabic text geometry. */
+#wirdModule #v22ReaderWorkspace {
+  --tajweed-silent: #686868;
+  --tajweed-normal-madd: #cc0066;
+  --tajweed-separated-madd: #ad4900;
+  --tajweed-connected-madd: #d0003e;
+  --tajweed-necessary-madd: #d30000;
+  --tajweed-ghunnah-ikhfa: #19773d;
+  --tajweed-qalqala: #007283;
+  --tajweed-tafkhim: #2769b4;
+}
+:root[data-theme=dark] #wirdModule #v22ReaderWorkspace {
+  --tajweed-silent: #a2a2a2;
+  --tajweed-normal-madd: #ffc1e0;
+  --tajweed-separated-madd: #ff8e3b;
+  --tajweed-connected-madd: #ff749d;
+  --tajweed-necessary-madd: #ff7979;
+  --tajweed-ghunnah-ikhfa: #27ba5f;
+  --tajweed-qalqala: #00deff;
+  --tajweed-tafkhim: #71a6e0;
+}
+#wirdModule #home > [hidden],
+#wirdModule #wirdContent,
+#wirdModule #v22ReaderWorkspace [hidden] {
+  display: none !important;
+}
+#wirdModule #v22ReaderContent {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: clamp(16px, 3vw, 32px);
+  min-inline-size: 0;
+}
+#wirdModule .wird-surah + .wird-surah {
+  border-block-start: 1px solid var(--line);
+  margin-block-start: 24px;
+  padding-block-start: 20px;
+}
+#wirdModule .wird-surah-heading {
+  text-align: center;
+  font: 400 1.45rem/1.9 var(--font-quran);
+  margin-block: 0 12px;
+  color: var(--text);
+}
+#wirdModule .wird-mushaf-text {
+  display: block;
+  direction: rtl;
+  text-align: start;
+  font-family: var(--font-quran);
+  font-size: clamp(1.5rem, calc(var(--font-size-reader) + .3vw), 3rem);
+  font-weight: 400;
+  /* Bundled Amiri measured ink envelope: 133px at 48px, plus line clearance. */
+  line-height: 2.9;
+  font-synthesis: none;
+  letter-spacing: 0;
+  word-spacing: normal;
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  overflow: visible;
+  padding-block: .35em;
+  max-inline-size: 100%;
+}
+#wirdModule .wird-mushaf-text .wird-ayah,
+#wirdModule .wird-mushaf-text .v22Arabic,
+#wirdModule .wird-mushaf-text tajweed {
+  display: inline;
+  position: static;
+  transform: none;
+  font: inherit;
+  line-height: inherit;
+  direction: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  overflow: visible;
+  float: none;
+}
+#wirdModule .wird-mushaf-text .wird-ayah,
+#wirdModule .wird-mushaf-text .v22Arabic {
+  color: inherit;
+}
+#wirdModule .wird-ayah-marker {
+  display: inline-block;
+  position: static;
+  transform: none;
+  vertical-align: baseline;
+  font-family: var(--font-quran);
+  font-size: .55em;
+  font-weight: 400;
+  line-height: 1.9;
+  min-inline-size: 2.1em;
+  min-block-size: 2.1em;
+  padding: .04em .3em;
+  margin-inline: .25em;
+  border: 1px solid var(--color-brand);
+  border-radius: 50%;
+  color: var(--color-brand);
+  background: var(--card);
+  direction: rtl;
+  unicode-bidi: isolate;
+  white-space: nowrap;
+  box-shadow: none;
+  cursor: pointer;
+}
+#wirdModule .wird-ayah-marker[aria-current=true],
+#wirdModule .wird-ayah-marker:hover {
+  background: var(--card2);
+}
+#wirdModule .wird-ayah-marker:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 3px;
+}
+#wirdModule .wird-audio-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+  padding-block: 12px 0;
+}
+#wirdModule .wird-audio-controls .ayahAudioStatus:not(:empty) {
+  flex-basis: 100%;
+}
+#wirdModule .wird-audio-label {
+  color: var(--muted);
+  font-size: .85rem;
+}
+#wirdModule .wird-audio-hint {
+  margin-block: 8px 16px;
+}
+#wirdModule #v22TajweedLegend:not([hidden]) {
+  display: block;
+}
+#wirdModule .v22LegendGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px 16px;
+}
+#wirdModule .v22LegendItem {
+  line-height: 1.85;
+  align-items: baseline;
+}
+#wirdModule .v22LegendDot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+#wirdModule .v22TranslationList {
+  border-block-start: 1px solid var(--line);
+  margin-block-start: 24px;
+  padding-block-start: 16px;
+}
+#wirdModule .v22TranslationLine {
+  padding-block: 10px;
+  color: var(--muted);
+  font-size: var(--font-size-content);
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+#wirdModule .v22TranslationLine b {
+  display: inline-block;
+  margin-inline-end: 12px;
+  direction: ltr;
+}
+@media(max-width:640px) {
+  #wirdModule .v22LegendGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #wirdModule .zaReaderReciter select {
+    min-inline-size: 0;
+    max-inline-size: 100%;
+  }
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="silent"] {
+  color: var(--tajweed-silent);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="silent"] {
+  background-color: var(--tajweed-silent);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="normal-madd"] {
+  color: var(--tajweed-normal-madd);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="normal-madd"] {
+  background-color: var(--tajweed-normal-madd);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="separated-madd"] {
+  color: var(--tajweed-separated-madd);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="separated-madd"] {
+  background-color: var(--tajweed-separated-madd);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="connected-madd"] {
+  color: var(--tajweed-connected-madd);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="connected-madd"] {
+  background-color: var(--tajweed-connected-madd);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="necessary-madd"] {
+  color: var(--tajweed-necessary-madd);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="necessary-madd"] {
+  background-color: var(--tajweed-necessary-madd);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="ghunnah-ikhfa"] {
+  color: var(--tajweed-ghunnah-ikhfa);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="ghunnah-ikhfa"] {
+  background-color: var(--tajweed-ghunnah-ikhfa);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="qalqala"] {
+  color: var(--tajweed-qalqala);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="qalqala"] {
+  background-color: var(--tajweed-qalqala);
+}
+#wirdModule #v22ReaderWorkspace tajweed[data-tajweed-rule="tafkhim"] {
+  color: var(--tajweed-tafkhim);
+}
+#wirdModule #v22ReaderWorkspace .v22LegendDot[data-tajweed-rule="tafkhim"] {
+  background-color: var(--tajweed-tafkhim);
+}
+
+#wirdModule #v22ReaderWorkspace .v22QMetaRow {
+  flex-wrap: wrap;
+}
+#wirdModule #v22ReaderWorkspace .zaQuranSurahTitle {
+  min-inline-size: 0;
+}
+
+/* Opening lines are slices of the verified record, never a second Quran text. */
+#wirdModule .wird-mushaf-text .wird-basmala {
+  display: block;
+  text-align: center;
+  font: inherit;
+  line-height: inherit;
+  direction: rtl;
+  letter-spacing: 0;
+  overflow: visible;
+}
+#wirdModule .wird-ayah[data-verse-key="1:1"] {
+  display: block;
+  text-align: center;
+}
+#wirdModule .wird-mushaf-text .wird-verse-text {
+  display: inline;
+  font: inherit;
+  line-height: inherit;
+  direction: inherit;
+  letter-spacing: 0;
+  word-spacing: inherit;
+  vertical-align: baseline;
+}
+#wirdModule .wird-mushaf-text .wird-verse-text[data-quran-font="opening"] {
+  font-family: 'Zad Sans', Tahoma, sans-serif;
+  font-weight: 400;
+}
 </style>
 <style data-source="assets/css/account.css">.zadAuthOverlay,.zadMyPanelOverlay,.zadUtilityOverlay,#v21LanguagePanel {
   position: fixed;
@@ -3766,23 +4029,50 @@ button.ztCreatorLine {background:transparent;border:0;color:var(--color-text);te
 .rouhDuration {position:absolute;inset-inline-end:10px;bottom:10px;background:#202720;color:#fff;padding:2px 8px;border-radius:4px;font-size:.8rem}
 .rouhCopy {padding:20px;min-width:0}.rouhCopy h3 {font-size:1rem;line-height:1.8;overflow-wrap:anywhere}
 .rouhActions {margin-top:16px}.rouhActions button,.rouhActions a {font-size:.8rem}.rouhActions a {color:var(--color-brand)}
-.rouhPlayer {box-sizing:border-box;width:min(920px,calc(100vw - 32px));max-height:calc(100dvh - 24px);margin:auto;overflow-y:auto;padding:20px;border:1px solid var(--color-border);border-radius:var(--radius-md);color:var(--color-text);background:var(--color-surface)}
-.rouhPlayer::backdrop {background:rgba(10,15,12,.65)}.rouhPlayerHead {display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:14px}.rouhPlayerHead button {flex-shrink:0}
-.rouhPlayer iframe {width:100%;aspect-ratio:16/9;border:0;display:block}.rouhPlayer p {font-size:.85rem;color:var(--color-muted)}
-@media(max-width:650px){.rouhGrid,.rouhFeatured{grid-template-columns:minmax(0,1fr)}.rouhCopy{padding:16px}.rouhPlayer{padding:12px}}
+@media(max-width:650px){.rouhGrid,.rouhFeatured{grid-template-columns:minmax(0,1fr)}.rouhCopy{padding:16px}}
 
 #rouhView .page-heading {align-items:flex-start;gap:20px;}
 #rouhView .page-heading .text-link {flex-shrink:0;min-height:44px;display:flex;align-items:center;}
 #rouhView .section-intro {margin-bottom:0;}
-.rouhPlayerOpen {overflow:hidden;}
-.rouhPlayerHead strong {min-width:0;max-height:5.4em;overflow-y:auto;overflow-wrap:anywhere;line-height:1.8;}
-.rouhPlayerHead button {min-width:44px;min-height:44px;padding:6px;background:var(--color-surface-alt);color:var(--color-text);border:1px solid var(--color-border);}
-.rouhPlayerScreen {width:100%;aspect-ratio:16/9;background:#17201b;}
-.rouhPlayerScreen iframe {width:100%;height:100%;aspect-ratio:16/9;}
-.rouhPlayerFallback {padding-top:12px;}.rouhPlayerFallback p {margin:0 0 8px;line-height:1.7;}.rouhPlayerFallback a {color:var(--color-brand);min-height:44px;display:inline-flex;align-items:center;}
 .rouhThumbnailUnavailable {background:var(--color-surface-alt);color:var(--color-brand);}
 .rouhThumb img[hidden] {display:none;}.rouhThumbnailFallback {position:absolute;inset:0;display:grid;place-items:center;}.rouhThumbnailFallback .icon {width:42px;height:42px;}
-@media(max-width:650px){.rouhPlayer {width:calc(100vw - 16px);max-height:calc(100dvh - 16px);padding:8px;}.rouhPlayerHead {gap:10px;margin-bottom:8px;}#rouhView .page-heading {flex-wrap:wrap;gap:8px;}}
+@media(max-width:650px){#rouhView .page-heading {flex-wrap:wrap;gap:8px;}}
+
+/* One in-page player, following the existing Seerah iframe lifecycle. */
+#rouhView .rouhPlayer {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 920px;
+  margin: 24px auto;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  background: var(--color-surface);
+  scroll-margin-block-start: 90px;
+}
+#rouhView .rouhPlayerHead,
+#rouhView .rouhPlayerButtons {display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+#rouhView .rouhPlayerHead {justify-content:space-between;margin-bottom:12px;}
+#rouhView .rouhPlayerHead strong {min-width:0;overflow-wrap:anywhere;line-height:1.8;}
+#rouhView .rouhPlayerButtons button {min-height:44px;}
+#rouhView [data-rouh-close] {min-width:44px;}
+#rouhView .rouhPlayer [hidden] {display:none;}
+#rouhView .rouhPlayerScreen {width:100%;aspect-ratio:16/9;min-height:200px;background:#17201b;}
+#rouhView .rouhPlayerScreen iframe {display:block;width:100%;height:100%;border:0;aspect-ratio:16/9;min-height:200px;}
+#rouhView .rouhPlayerEmpty {display:grid;place-items:center;margin:0;height:100%;padding:16px;box-sizing:border-box;color:#fff;text-align:center;}
+#rouhView .rouhPlayerFallback {padding-top:12px;}
+#rouhView .rouhPlayerFallback p {margin:0;font-size:.85rem;line-height:1.8;color:var(--color-muted);}
+#rouhView .rouhPlayerFallback a {display:inline-flex;align-items:center;min-height:44px;color:var(--color-brand);}
+#rouhView .rouhPlayerExpanded {max-width:100%;}
+#rouhView .rouhPlayer:fullscreen {width:100%;height:100%;max-width:none;margin:0;border:0;border-radius:0;overflow:auto;}
+#rouhView .rouhPlayer:fullscreen .rouhPlayerScreen {width:min(100%,calc((100dvh - 200px) * 16 / 9));margin-inline:auto;}
+@media(max-width:650px){
+  #rouhView .rouhPlayer {padding:0;border:0;border-radius:0;}
+  #rouhView .rouhPlayerHead {gap:8px;}
+  #rouhView .rouhPlayer:fullscreen {padding:8px;box-sizing:border-box;}
+  #rouhView .rouhPlayer:fullscreen .rouhPlayerScreen {width:100%;}
+}
 </style>
 
 
@@ -19387,26 +19677,82 @@ window.ZadRouhVideos = [
 <script data-source="assets/js/rouh.js">/* Curated videos have local favorites; no player loads before an explicit click. */
 (() => {
   'use strict';
+  // Only player labels are added here; the shared catalog remains unchanged.
+  const playerLabels = {
+    'play-inside': ['▶ تشغيل داخل الموقع','▶ Play on this site','▶ Lire sur ce site','▶ Putar di situs ini','▶ Sitede oynat','▶ سائٹ پر چلائیں','▶ Reproducir aquí'],
+    'choose-video': ['▶ اختر مقطعًا لبدء المشاهدة','▶ Select a video to start watching','▶ Choisissez une vidéo pour commencer','▶ Pilih video untuk mulai menonton','▶ İzlemek için bir video seçin','▶ دیکھنے کے لیے ویڈیو منتخب کریں','▶ Elige un vídeo para empezar'],
+    'enlarge': ['تكبير المشغل','Enlarge player','Agrandir le lecteur','Perbesar pemutar','Oynatıcıyı büyüt','پلیئر بڑا کریں','Ampliar reproductor'],
+    'reduce': ['تصغير المشغل','Reduce player','Réduire le lecteur','Perkecil pemutar','Oynatıcıyı küçült','پلیئر چھوٹا کریں','Reducir reproductor'],
+    'youtube-original': ['فتح على YouTube','Open on YouTube','Ouvrir sur YouTube','Buka di YouTube','YouTube’da aç','YouTube پر کھولیں','Abrir en YouTube'],
+    'embed-unavailable': ['يتعذر تشغيل هذا المقطع داخل الموقع.','This video cannot be played on this site.','Cette vidéo ne peut pas être lue sur ce site.','Video ini tidak dapat diputar di situs ini.','Bu video sitede oynatılamıyor.','یہ ویڈیو سائٹ پر نہیں چل سکتی۔','Este vídeo no se puede reproducir aquí.']
+  };
+  for (const [key, values] of Object.entries(playerLabels)) window.ZadI18nCatalog['rouh.' + key] = Object.fromEntries(['ar','en','fr','id','tr','ur','es'].map((lang, i) => [lang, values[i]]));
   const videos=window.ZadRouhVideos, categories=['heart','worship','prayer','quran','repentance','resolve','weak','short','certainty'];
   const key='zad_rouh_saved_v1', esc=Zad.escape, t=k=>ZadI18n.t('rouh.'+k);
   let filter='all';
   function saved(){try{const x=JSON.parse(Zad.storage.getItem(key)||'[]');return Array.isArray(x)?x.filter(id=>videos.some(v=>v.id===id)):[];}catch(_){return [];}}
   function daily(date=new Date()){const pool=videos.filter(v=>v.daily_eligible);return pool[Math.floor(Date.UTC(date.getFullYear(),date.getMonth(),date.getDate())/86400000)%pool.length];}
   function duration(s){return [Math.floor(s/3600),Math.floor(s%3600/60),s%60].filter((n,i)=>i||n).map((n,i)=>i?String(n).padStart(2,'0'):String(n)).join(':');}
-  function card(v,featured=false){const isSaved=saved().includes(v.id);return `<article class="rouhCard${featured?' rouhFeatured':''}" data-rouh-id="${v.id}"><button type="button" class="rouhThumb" data-rouh-play="${v.id}" aria-label="${esc(t('play')+' — '+v.title)}"><img src="${v.thumbnail}" alt="" loading="lazy" width="480" height="270"><span class="rouhDuration" dir="ltr">${duration(v.duration_seconds)}</span></button><div class="rouhCopy">${featured?`<p class="eyebrow">${esc(t('daily'))}</p>`:''}<h3 dir="auto" data-source-content>${esc(v.title)}</h3><p class="meta" dir="auto" data-source-content>${esc(v.channel)}</p><p class="meta">${v.categories.map(c=>esc(t(c))).join(' · ')}${v.long_reference?' · '+esc(t('reference')):''}</p><div class="rouhActions"><button type="button" data-rouh-play="${v.id}">${esc(t('play'))}</button><button type="button" class="secondary" data-rouh-save="${v.id}" aria-pressed="${isSaved}">${esc(t(isSaved?'unsave':'save'))}</button><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(t('youtube'))} ↗</a></div></div></article>`;}
-  function render(){const list=videos.filter(v=>filter==='all'||(filter==='saved'?saved().includes(v.id):v.categories.includes(filter)));return `<section id="rouhView"><nav class="breadcrumb" aria-label="${esc(ZadI18n.t('document-reader.95e840d5b7'))}"><a href="#home">${esc(ZadI18n.t('quran-reader.bfcf483079'))}</a><span>/</span><span aria-current="page">${esc(ZadGatewayLabelSafe())}</span></nav><header class="page-heading"><div><h1>${esc(ZadGatewayLabelSafe())}</h1><p class="section-intro">${esc(t('description'))}</p></div><a class="text-link" href="#home">${esc(ZadI18n.t('gateways.731b070b34'))}</a></header><h2 class="rouhQuestion">${esc(t('question'))}</h2><nav class="rouhFilters" aria-label="${esc(t('question'))}">${['all',...categories,'saved'].map(c=>`<button type="button" data-rouh-filter="${c}" aria-pressed="${filter===c}">${esc(t(c))}</button>`).join('')}</nav>${filter==='all'?card(daily(),true):''}<div class="rouhGrid">${list.length?list.map(v=>card(v)).join(''):`<p class="empty-state">${esc(t('empty'))}</p>`}</div></section>`;}
+  function card(v,featured=false){const isSaved=saved().includes(v.id);return `<article class="rouhCard${featured?' rouhFeatured':''}" data-rouh-id="${v.id}"><button type="button" class="rouhThumb" data-rouh-play="${v.id}" aria-label="${esc(t('play-inside')+' — '+v.title)}"><img src="${v.thumbnail}" alt="" loading="lazy" width="480" height="270"><span class="rouhDuration" dir="ltr">${duration(v.duration_seconds)}</span></button><div class="rouhCopy">${featured?`<p class="eyebrow">${esc(t('daily'))}</p>`:''}<h3 dir="auto" data-source-content>${esc(v.title)}</h3><p class="meta" dir="auto" data-source-content>${esc(v.channel)}</p><p class="meta">${v.categories.map(c=>esc(t(c))).join(' · ')}${v.long_reference?' · '+esc(t('reference')):''}</p><div class="rouhActions"><button type="button" data-rouh-play="${v.id}">${esc(t('play-inside'))}</button><button type="button" class="secondary" data-rouh-save="${v.id}" aria-pressed="${isSaved}">${esc(t(isSaved?'unsave':'save'))}</button><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(t('youtube-original'))} ↗</a></div></div></article>`;}
+  function render(){const list=videos.filter(v=>filter==='all'||(filter==='saved'?saved().includes(v.id):v.categories.includes(filter)));return `<section id="rouhView"><nav class="breadcrumb" aria-label="${esc(ZadI18n.t('document-reader.95e840d5b7'))}"><a href="#home">${esc(ZadI18n.t('quran-reader.bfcf483079'))}</a><span>/</span><span aria-current="page">${esc(ZadGatewayLabelSafe())}</span></nav><header class="page-heading"><div><h1>${esc(ZadGatewayLabelSafe())}</h1><p class="section-intro">${esc(t('description'))}</p></div><a class="text-link" href="#home">${esc(ZadI18n.t('gateways.731b070b34'))}</a></header><h2 class="rouhQuestion">${esc(t('question'))}</h2>${playerArea()}<nav class="rouhFilters" aria-label="${esc(t('question'))}">${['all',...categories,'saved'].map(c=>`<button type="button" data-rouh-filter="${c}" aria-pressed="${filter===c}">${esc(t(c))}</button>`).join('')}</nav>${filter==='all'?card(daily(),true):''}<div class="rouhGrid">${list.length?list.map(v=>card(v)).join(''):`<p class="empty-state">${esc(t('empty'))}</p>`}</div></section>`;}
   function ZadGatewayLabelSafe(){return window.ZadGatewayLabel?.('rouh')||'زاد الروح';}
-  function refresh(focus){const old=document.getElementById('rouhView');if(old){old.outerHTML=render();if(focus)document.querySelector(focus)?.focus();}}
-  let activePlayer = null;
+  function playerArea() {
+    return `<section id="rouhPlayer" class="rouhPlayer" aria-labelledby="rouhPlayerTitle"><div class="rouhPlayerHead"><strong id="rouhPlayerTitle" dir="auto" data-source-content>${esc(t('choose-video'))}</strong><div class="rouhPlayerButtons" hidden><button type="button" data-rouh-enlarge aria-pressed="false">${esc(t('enlarge'))}</button><button type="button" data-rouh-close aria-label="${esc(ZadI18n.t('settings.ca90c297b0'))}">×</button></div></div><div class="rouhPlayerScreen"><p class="rouhPlayerEmpty">${esc(t('choose-video'))}</p></div><div class="rouhPlayerFallback" hidden><p id="rouhPlayerNote" role="status">${esc(t('fallback'))}</p><a data-rouh-youtube target="_blank" rel="noopener noreferrer">${esc(t('youtube-original'))} ↗</a></div></section>`;
+  }
+  function refresh(focus) {
+    const old = document.getElementById('rouhView');
+    if (!old) return;
+    // Replace only the video list. Moving a live iframe can reload its browsing
+    // context, so keep the player and its ancestor in place while filtering/saving.
+    const template = document.createElement('template');
+    template.innerHTML = render();
+    const next = template.content.querySelector('#rouhView');
+    for (const selector of ['.rouhFilters', '.rouhGrid']) old.querySelector(selector)?.replaceWith(next.querySelector(selector));
+    const featured = old.querySelector('.rouhFeatured'), newFeatured = next.querySelector('.rouhFeatured');
+    if (featured && newFeatured) featured.replaceWith(newFeatured);
+    else if (featured) featured.remove();
+    else if (newFeatured) old.querySelector('.rouhGrid').before(newFeatured);
+    if (focus) old.querySelector(focus)?.focus();
+  }
+  let activePlayer = null, apiPromise = null;
+  function youtubeAPI() {
+    if (window.YT?.Player) return Promise.resolve(window.YT);
+    if (apiPromise) return apiPromise;
+    apiPromise = new Promise(resolve => {
+      let settled = false;
+      const previous = window.onYouTubeIframeAPIReady;
+      const finish = () => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timeout);
+        resolve(window.YT?.Player ? window.YT : null);
+      };
+      window.onYouTubeIframeAPIReady = () => {
+        try { if (typeof previous === 'function') previous(); } finally { finish(); }
+      };
+      const timeout = setTimeout(finish, 15000);
+      const script = document.createElement('script');
+      script.src = 'https://www.youtube.com/iframe_api';
+      script.async = true;
+      script.addEventListener('error', finish, {once:true});
+      document.head.append(script);
+    });
+    return apiPromise;
+  }
   function close(restoreFocus = true) {
     const player = activePlayer;
     if (!player) return;
     activePlayer = null;
-    // Removing the browsing context stops its video/audio, including on route changes.
+    // Same lifecycle as Seerah: destroy the previous iframe browsing context.
+    try { player.controller?.destroy(); } catch (_) { /* Always remove the context below. */ }
     player.iframe.remove();
-    if (player.dialog.open) player.dialog.close();
-    player.dialog.remove();
-    document.documentElement.classList.remove('rouhPlayerOpen');
+    if (document.fullscreenElement === player.area) Promise.resolve(document.exitFullscreen?.()).catch(() => {});
+    player.area.classList.remove('rouhPlayerExpanded');
+    if (player.area.isConnected) {
+      const template = document.createElement('template');
+      template.innerHTML = playerArea();
+      player.area.replaceWith(template.content);
+    }
     if (restoreFocus && player.trigger?.isConnected) player.trigger.focus({preventScroll:true});
   }
   function play(id) {
@@ -19414,40 +19760,77 @@ window.ZadRouhVideos = [
     if (!video) return;
     const trigger = document.activeElement;
     close(false);
+    const area = document.getElementById('rouhPlayer');
+    if (!area) return;
     window.stopAllQuranAudio?.();
     document.querySelectorAll('video').forEach(v => v.pause());
-    const dialog = document.createElement('dialog');
-    dialog.id = 'rouhPlayer';
-    dialog.className = 'rouhPlayer';
-    dialog.setAttribute('aria-labelledby', 'rouhPlayerTitle');
-    dialog.setAttribute('aria-describedby', 'rouhPlayerNote');
-    dialog.innerHTML = `<div class="rouhPlayerHead"><strong id="rouhPlayerTitle" dir="auto" data-source-content>${esc(video.title)}</strong><button type="button" data-rouh-close autofocus aria-label="${esc(ZadI18n.t('settings.ca90c297b0'))}">×</button></div><div class="rouhPlayerScreen"></div><div class="rouhPlayerFallback"><p id="rouhPlayerNote">${esc(t('fallback'))}</p><a href="${esc(video.url)}" target="_blank" rel="noopener noreferrer">${esc(t('youtube'))} ↗</a></div>`;
     const iframe = document.createElement('iframe');
     iframe.title = video.title;
-    iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen';
     iframe.setAttribute('allowfullscreen', '');
     iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-    // Provider restrictions stay inside YouTube's own player. The fallback remains visible,
-    // including when cross-origin errors cannot be inspected by the parent document.
-    iframe.src = `https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&playsinline=1&rel=0`;
+    // Seerah's existing no-cookie origin is already permitted by the site's CSP.
+    // Keep native YouTube controls, play inline on mobile, and load only on click.
+    const url = new URL(`https://www.youtube-nocookie.com/embed/${video.id}`);
+    url.searchParams.set('autoplay', '1');
+    url.searchParams.set('playsinline', '1');
+    url.searchParams.set('rel', '0');
+    url.searchParams.set('controls', '1');
+    url.searchParams.set('fs', '1');
+    url.searchParams.set('enablejsapi', '1');
+    if (/^https?:$/.test(location.protocol)) url.searchParams.set('origin', location.origin);
+    iframe.src = url.href;
+    area.querySelector('#rouhPlayerTitle').textContent = video.title;
+    area.querySelector('[data-rouh-youtube]').href = video.url;
+    area.querySelector('.rouhPlayerButtons').hidden = false;
+    area.querySelector('.rouhPlayerFallback').hidden = false;
     iframe.addEventListener('error', () => {
-      if (activePlayer?.iframe === iframe) dialog.querySelector('#rouhPlayerNote').textContent = t('unavailable');
+      if (activePlayer?.iframe === iframe) area.querySelector('#rouhPlayerNote').textContent = t('embed-unavailable');
     });
-    dialog.querySelector('.rouhPlayerScreen').append(iframe);
-    document.body.append(dialog);
-    activePlayer = {dialog, iframe, trigger};
-    const closeThisPlayer = () => {if (activePlayer?.dialog === dialog) close();};
-    dialog.querySelector('[data-rouh-close]').addEventListener('click', closeThisPlayer);
-    dialog.addEventListener('cancel', event => {event.preventDefault();closeThisPlayer();});
-    dialog.addEventListener('close', closeThisPlayer);
-    dialog.addEventListener('keydown', event => {
-      if (event.key === 'Escape') {event.preventDefault();closeThisPlayer();}
+    area.querySelector('.rouhPlayerScreen').replaceChildren(iframe);
+    const player = {area, iframe, trigger, controller:null};
+    activePlayer = player;
+    // The native iframe starts independently. The official optional API reports
+    // embedding restrictions; no private postMessage protocol or proxy is used.
+    youtubeAPI().then(YT => {
+      if (!YT || activePlayer !== player || !iframe.isConnected) return;
+      try {
+        player.controller = new YT.Player(iframe, {events:{
+          onError: () => {
+            if (activePlayer === player) area.querySelector('#rouhPlayerNote').textContent = t('embed-unavailable');
+          }
+        }});
+      } catch (_) { /* Keep the native frame and original link if API setup fails. */ }
     });
-    dialog.addEventListener('click', event => {if (event.target === dialog) closeThisPlayer();});
-    document.documentElement.classList.add('rouhPlayerOpen');
-    dialog.showModal();
-    dialog.querySelector('[data-rouh-close]').focus({preventScroll:true});
+    area.scrollIntoView({block:'start', behavior:'auto'});
+    area.querySelector('[data-rouh-close]').focus({preventScroll:true});
   }
+  async function enlarge() {
+    const player = activePlayer;
+    if (!player) return;
+    const expanded = !player.area.classList.contains('rouhPlayerExpanded');
+    player.area.classList.toggle('rouhPlayerExpanded', expanded);
+    const button = player.area.querySelector('[data-rouh-enlarge]');
+    button.setAttribute('aria-pressed', String(expanded));
+    button.textContent = t(expanded ? 'reduce' : 'enlarge');
+    try {
+      if (expanded && player.area.requestFullscreen) await player.area.requestFullscreen();
+      else if (!expanded && document.fullscreenElement === player.area) await document.exitFullscreen();
+    } catch (_) { /* The enlarged in-page player remains available if fullscreen is denied. */ }
+  }
+  document.addEventListener('click', event => {
+    if (event.target.closest('[data-rouh-close]')) close();
+    else if (event.target.closest('[data-rouh-enlarge]')) enlarge();
+  });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && activePlayer) close(); });
+  document.addEventListener('fullscreenchange', () => {
+    if (!activePlayer || document.fullscreenElement === activePlayer.area) return;
+    activePlayer.area.classList.remove('rouhPlayerExpanded');
+    const button = activePlayer.area.querySelector('[data-rouh-enlarge]');
+    button.setAttribute('aria-pressed', 'false');
+    button.textContent = t('enlarge');
+  });
+  window.addEventListener('pagehide', () => close(false));
   document.addEventListener('error', event => {
     const img = event.target;
     if (!img.matches?.('#rouhView .rouhThumb img')) return;
@@ -19463,7 +19846,7 @@ window.ZadRouhVideos = [
     }
   }, true);
   document.addEventListener('click',e=>{const b=e.target.closest('[data-rouh-filter],[data-rouh-save],[data-rouh-play]');if(!b)return;if(b.dataset.rouhFilter){filter=b.dataset.rouhFilter;refresh(`[data-rouh-filter="${filter}"]`);}else if(b.dataset.rouhSave){const id=b.dataset.rouhSave,ids=new Set(saved());ids.has(id)?ids.delete(id):ids.add(id);Zad.storage.setItem(key,JSON.stringify([...ids]));refresh(`[data-rouh-save="${id}"]`);}else play(b.dataset.rouhPlay);});
-  document.addEventListener('zad:route',()=>close(false));document.addEventListener('zad:language',()=>{close(false);refresh();});
+  document.addEventListener('zad:route',()=>close(false));document.addEventListener('zad:language',()=>{close(false);const view=document.getElementById('rouhView');if(view)view.outerHTML=render();});
   window.ZadRouh={render,daily,saved};
 })();
 </script>
@@ -20184,6 +20567,128 @@ window.ZadRouhVideos = [
 
 <script data-source="assets/js/quran-reader.js">(function() {
   'use strict';
+  // Reader-specific keys extend the existing catalog; no other page loads this module.
+  Object.assign(window.ZadI18nCatalog, {
+  "quran-reader.wird-silent": {
+    "ar": "الحروف غير المنطوقة",
+    "en": "Silent letters",
+    "fr": "Lettres non prononcées",
+    "id": "Huruf tidak dibaca",
+    "tr": "Okunmayan harfler",
+    "ur": "نہ پڑھے جانے والے حروف",
+    "es": "Letras no pronunciadas"
+  },
+  "quran-reader.wird-normal-madd": {
+    "ar": "المد الطبيعي (حركتان)",
+    "en": "Normal madd (2)",
+    "fr": "Madd naturel (2 temps)",
+    "id": "Mad asli (2 harakat)",
+    "tr": "Tabii med (2 hareke)",
+    "ur": "مدِ طبیعی (۲ حرکات)",
+    "es": "Madd natural (2 tiempos)"
+  },
+  "quran-reader.wird-separated-madd": {
+    "ar": "المد الجائز (٢/٤/٦)",
+    "en": "Permissible madd (2/4/6)",
+    "fr": "Madd permis (2/4/6)",
+    "id": "Mad jaiz (2/4/6)",
+    "tr": "Caiz med (2/4/6)",
+    "ur": "مدِ جائز (۲/۴/۶)",
+    "es": "Madd permitido (2/4/6)"
+  },
+  "quran-reader.wird-connected-madd": {
+    "ar": "المد المتصل (٤/٥)",
+    "en": "Connected madd (4/5)",
+    "fr": "Madd lié (4/5)",
+    "id": "Mad muttasil (4/5)",
+    "tr": "Muttasıl med (4/5)",
+    "ur": "مدِ متصل (۴/۵)",
+    "es": "Madd unido (4/5)"
+  },
+  "quran-reader.wird-necessary-madd": {
+    "ar": "المد اللازم (٦)",
+    "en": "Necessary madd (6)",
+    "fr": "Madd nécessaire (6)",
+    "id": "Mad lazim (6)",
+    "tr": "Lazım med (6)",
+    "ur": "مدِ لازم (۶)",
+    "es": "Madd necesario (6)"
+  },
+  "quran-reader.wird-ghunnah-ikhfa": {
+    "ar": "الغنة والإخفاء",
+    "en": "Ghunnah / ikhfa’",
+    "fr": "Ghunnah / ikhfa’",
+    "id": "Gunnah / ikhfa",
+    "tr": "Gunne / ihfa",
+    "ur": "غنہ / اخفاء",
+    "es": "Ghunnah / ikhfa"
+  },
+  "quran-reader.wird-qalqala": {
+    "ar": "القلقلة",
+    "en": "Qalqala (echo)",
+    "fr": "Qalqala (écho)",
+    "id": "Qalqalah",
+    "tr": "Kalkale",
+    "ur": "قلقلہ",
+    "es": "Qalqala (eco)"
+  },
+  "quran-reader.wird-tafkhim": {
+    "ar": "التفخيم",
+    "en": "Tafkhim (heavy)",
+    "fr": "Tafkhim (emphase)",
+    "id": "Tafkhim (tebal)",
+    "tr": "Tefhim (kalın okuma)",
+    "ur": "تفخیم",
+    "es": "Tafkhim (énfasis)"
+  },
+  "quran-reader.wird-fallback": {
+    "ar": "تعذر تحميل ألوان التجويد كاملةً؛ تُعرض الآيات غير المتاحة بدون تلوين.",
+    "en": "Some Tajweed colors could not be loaded. Unavailable verses remain in plain Uthmani text.",
+    "fr": "Certaines couleurs de tajwid sont indisponibles. Les versets concernés restent en écriture uthmani sans couleurs.",
+    "id": "Sebagian warna tajwid tidak dapat dimuat. Ayat terkait tetap ditampilkan dalam teks Usmani tanpa warna.",
+    "tr": "Bazı tecvid renkleri yüklenemedi. İlgili ayetler renksiz Osmanî metinle gösteriliyor.",
+    "ur": "تجوید کے بعض رنگ لوڈ نہیں ہو سکے۔ متعلقہ آیات بغیر رنگ کے رسمِ عثمانی میں دکھائی جا رہی ہیں۔",
+    "es": "No se pudieron cargar algunos colores de tajwid. Los versículos afectados conservan el texto uthmani sin colores."
+  },
+  "quran-reader.wird-legend": {
+    "ar": "ألوان التجويد",
+    "en": "Tajweed colors",
+    "fr": "Couleurs du tajwid",
+    "id": "Warna tajwid",
+    "tr": "Tecvid renkleri",
+    "ur": "تجوید کے رنگ",
+    "es": "Colores del tajwid"
+  },
+  "quran-reader.wird-choose-ayah": {
+    "ar": "اختر رقم آية للاستماع إليها.",
+    "en": "Select a verse number to listen.",
+    "fr": "Sélectionnez le numéro d’un verset pour l’écouter.",
+    "id": "Pilih nomor ayat untuk mendengarkan.",
+    "tr": "Dinlemek için ayet numarasını seçin.",
+    "ur": "سننے کے لیے آیت کا نمبر منتخب کریں۔",
+    "es": "Selecciona el número de un versículo para escucharlo."
+  }
+});
+  Object.assign(window.ZadI18nCatalog, {
+  "quran-reader.wird-enabled": {
+    "ar": "التجويد: مفعّل",
+    "en": "Tajweed: on",
+    "fr": "Tajwid : activé",
+    "id": "Tajwid: aktif",
+    "tr": "Tecvid: açık",
+    "ur": "تجوید: فعال",
+    "es": "Tajwid: activado"
+  },
+  "quran-reader.wird-disabled": {
+    "ar": "التجويد: متوقف",
+    "en": "Tajweed: off",
+    "fr": "Tajwid : désactivé",
+    "id": "Tajwid: nonaktif",
+    "tr": "Tecvid: kapalı",
+    "ur": "تجوید: غیر فعال",
+    "es": "Tajwid: desactivado"
+  }
+});
   const LANG_KEY = 'zad_islam_language_v3';
   const L = {
     ar: {
@@ -20285,6 +20790,7 @@ window.ZadRouhVideos = [
   }
 
   function digits(n) { return ZadI18n.number(n); }
+  const verseNumberFormatter = new Intl.NumberFormat('ar-u-nu-arab', {useGrouping: false});
 
   function ensureChrome() {}
 
@@ -20349,23 +20855,202 @@ window.ZadRouhVideos = [
     return ZadQuranSources.translations(ch, code);
   }
   async function tajweed(ch) {
+    ch = Number(ch);
     if (qCache.has(ch)) return qCache.get(ch);
-    const p = (async () => {
+    const pending = (async () => {
+      const map = new Map(), rejected = new Set(), visitedPages = new Set();
+      const chapter = quran.surahs.find(s => Number(s.number) === ch);
+      if (!chapter) return map;
+      let page = 1;
       try {
-        const r = await Zad.fetch(`https://api.quran.com/api/v4/quran/verses/uthmani_tajweed?chapter_number=${ch}`, {
-          cache: 'force-cache'
-        });
-        if (!r.ok) return new Map();
-        const j = await r.json();
-        const m = new Map();
-        for (const v of j.verses || []) m.set(v.verse_key, v.text_uthmani_tajweed);
-        return m
-      } catch (e) {
-        return new Map()
-      }
+        while (page) {
+          if (visitedPages.has(page) || visitedPages.size >= chapter.ayahs.length) break;
+          visitedPages.add(page);
+          const url = new URL('https://api.quran.com/api/v4/quran/verses/uthmani_tajweed');
+          url.searchParams.set('chapter_number', String(ch));
+          if (page > 1) url.searchParams.set('page', String(page));
+          const response = await Zad.fetch(url.href, {cache: 'force-cache'});
+          if (!response.ok) break;
+          const json = await response.json();
+          if (!Array.isArray(json.verses)) break;
+          // Identity comes only from verse_key. A bad/missing record must not
+          // discard unrelated verses or shift their annotations by array index.
+          for (const verse of json.verses) {
+            const k = verse?.verse_key;
+            if (typeof k !== 'string') continue;
+            const [surah, number] = k.split(':').map(Number);
+            if (surah !== ch || !Number.isInteger(number) || number < 1 || number > chapter.ayahs.length || k !== `${ch}:${number}`) continue;
+            if (map.has(k) || rejected.has(k)) { map.delete(k); rejected.add(k); continue; }
+            if (typeof verse.text_uthmani_tajweed === 'string' && verse.text_uthmani_tajweed.trim()) map.set(k, verse.text_uthmani_tajweed);
+          }
+          const next = json.pagination?.next_page;
+          page = Number.isInteger(next) && next > page && next <= chapter.ayahs.length ? next : 0;
+        }
+      } catch (_) { /* Keep any independently verified records already fetched. */ }
+      return map;
     })();
-    qCache.set(ch, p);
-    return p
+    qCache.set(ch, pending);
+    pending.then(map => {
+      const count = quran.surahs.find(s => Number(s.number) === ch)?.ayahs.length;
+      // A partial response is useful now but must not become a permanent failure cache.
+      if (map.size !== count && qCache.get(ch) === pending) qCache.delete(ch);
+    });
+    return pending;
+  }
+  // Categories come from provider annotations, never from matching Quran letters.
+  // API madda_permissible also covers permitted stopping lengths, not only separated madd.
+  const TAJWEED_RULES = Object.freeze({
+    ham_wasl: 'silent', slnt: 'silent', laam_shamsiyah: 'silent',
+    idgh_w_ghn: 'silent', idgham_wo_ghunnah: 'silent', idgh_mus: 'silent',
+    madda_normal: 'normal-madd', madda_permissible: 'separated-madd',
+    madda_obligatory: 'connected-madd', madda_necessary: 'necessary-madd',
+    ghn: 'ghunnah-ikhfa', ghunnah: 'ghunnah-ikhfa',
+    ikhf: 'ghunnah-ikhfa', ikhfa: 'ghunnah-ikhfa', ikhf_shfw: 'ghunnah-ikhfa',
+    idghm_shfw: 'ghunnah-ikhfa', idgh_ghn: 'ghunnah-ikhfa', idgham_ghunnah: 'ghunnah-ikhfa',
+    iqlb: 'ghunnah-ikhfa', iqlab: 'ghunnah-ikhfa',
+    qlq: 'qalqala', qalqalah: 'qalqala', tafkhim: 'tafkhim'
+  });
+  const ruleLabel = rule => ZadI18n.t('quran-reader.wird-' + rule);
+
+  function annotatedOriginal(markup, ayah) {
+    // Reuse the existing sanitizer, then accept text and known inline annotations only.
+    const doc = new DOMParser().parseFromString(Zad.tajweedHTML(markup), 'text/html');
+    const ends = [...doc.body.querySelectorAll('span.end')];
+    if (ends.length > 1) return null;
+    if (ends.length) {
+      const end = ends[0];
+      const n = [...end.textContent.trim()].map(c => '٠١٢٣٤٥٦٧٨٩'.includes(c) ? '٠١٢٣٤٥٦٧٨٩'.indexOf(c) : c).join('');
+      if (n !== String(ayah.numberInSurah) || end.parentNode !== doc.body || end.nextSibling?.textContent.trim()) return null;
+      // This separator belongs to the provider's ayah-number markup, not the verse.
+      if (end.previousSibling?.nodeType === 3) end.previousSibling.textContent = end.previousSibling.textContent.replace(/\s+$/, '');
+      end.remove();
+    }
+    const units = [];
+    let valid = true;
+    function walk(node, annotation = '') {
+      if (node.nodeType === 3) {
+        for (const char of node.textContent) units.push({char, annotation});
+        return;
+      }
+      if (node.nodeType === 1 && node.tagName === 'TAJWEED') {
+        const classes = [...node.classList];
+        if (classes.length !== 1 || !Object.hasOwn(TAJWEED_RULES, classes[0])) { valid = false; return; }
+        annotation = classes[0];
+      }
+      for (const child of node.childNodes) walk(child, annotation);
+    }
+    walk(doc.body);
+    if (!valid) return null;
+    const original = cleanArabic(ayah), parts = openingParts(ayah);
+    const annotations = alignAnnotations(original, units);
+    let bodyAnnotations = annotations;
+    // Quran.com supplies ayah 1 without the unnumbered surah-opening basmalah.
+    // Al Quran Cloud includes it in the same source record. Split only that exact,
+    // verified prefix for presentation/alignment; keep every original character.
+    if (!annotations && parts.opening) bodyAnnotations = alignAnnotations(parts.body, units);
+    if (!bodyAnnotations) return null;
+    const offset = annotations ? 0 : [...parts.opening].length;
+    const colors = annotations || [...Array(offset).fill(''), ...bodyAnnotations];
+    const fragment = document.createDocumentFragment();
+    let run = null, previous = null;
+    for (const [i, char] of [...original].entries()) {
+      const annotation = colors[i] || '';
+      if (annotation !== previous || !run) {
+        if (annotation) {
+          run = document.createElement('tajweed');
+          run.className = annotation;
+          run.dataset.tajweedRule = TAJWEED_RULES[annotation];
+          run.title = ruleLabel(TAJWEED_RULES[annotation]);
+        } else run = document.createTextNode('');
+        fragment.append(run);
+        previous = annotation;
+      }
+      if (run.nodeType === 3) run.data += char;
+      else run.append(document.createTextNode(char));
+    }
+    return fragment.textContent === original ? fragment : null;
+  }
+
+  function canonicalUnits(units) {
+    const kept = units.filter((u, i) => !(i === 0 && u.char === '\uFEFF') && u.char !== '\u0640');
+    const segments = new Intl.Segmenter('ar', {granularity: 'grapheme'});
+    const normalized = [];
+    let at = 0;
+    for (const {segment} of segments.segment(kept.map(u => u.char).join(''))) {
+      const queues = new Map();
+      for (const ignored of segment) {
+        const unit = kept[at++];
+        for (const char of unit.char.normalize('NFD')) {
+          if (!queues.has(char)) queues.set(char, []);
+          queues.get(char).push({...unit, char});
+        }
+      }
+      // Canonical reordering for comparison only; displayed text is never normalized.
+      for (const char of segment.normalize('NFD')) normalized.push(queues.get(char).shift());
+    }
+    return normalized;
+  }
+
+  function alignAnnotations(text, units) {
+    const chars = [...text];
+    const target = canonicalUnits(chars.map((char, index) => ({char, index})));
+    const source = canonicalUnits(units);
+    if (target.length !== source.length || target.some((u, i) => u.char !== source[i].char)) return null;
+    const annotations = Array(chars.length).fill(''), assigned = new Set();
+    for (let i = 0; i < target.length; i++) {
+      const index = target[i].index, annotation = source[i].annotation;
+      if (assigned.has(index) && annotations[index] !== annotation) return null;
+      annotations[index] = annotation;
+      assigned.add(index);
+    }
+    return annotations;
+  }
+
+  function openingParts(ayah) {
+    const original = cleanArabic(ayah);
+    if (Number(ayah.numberInSurah) !== 1 || [1, 9].includes(Number(ayah.surahNumber))) return {opening: '', body: original};
+    const fatiha = String(quran.surahs.find(s => Number(s.number) === 1)?.ayahs[0]?.text || '').replace(/^\uFEFF/, '');
+    if (!fatiha) return {opening: '', body: original};
+    const words = fatiha.split(' ').length, bom = original.startsWith('\uFEFF') ? 1 : 0;
+    // This pinned source has an opening shadda in 95:1 and 97:1. Their exact
+    // source prefixes are recognized as layout boundaries, never corrected.
+    const openings = [fatiha, ...[95, 97].map(number => String(quran.surahs.find(s => Number(s.number) === number)?.ayahs[0]?.text || '').replace(/^\uFEFF/, '').split(' ').slice(0, words).join(' '))];
+    const opening = openings.find(text => text && original.slice(bom).startsWith(text + ' '));
+    if (!opening) return {opening: '', body: original};
+    const end = bom + opening.length + 1;
+    return {opening: original.slice(0, end), body: original.slice(end)};
+  }
+
+  function arabicContent(ayah, fragment = null) {
+    const full = document.createElement('span');
+    if (fragment) full.append(fragment);
+    else full.textContent = cleanArabic(ayah);
+    const {opening, body} = openingParts(ayah);
+    const result = document.createDocumentFragment();
+    if (opening) {
+      // Move the exact prefix, preserving existing annotation nodes and source bytes.
+      const range = document.createRange();
+      range.setStart(full, 0);
+      const walker = document.createTreeWalker(full, NodeFilter.SHOW_TEXT);
+      let left = opening.length, node;
+      while ((node = walker.nextNode())) {
+        if (left <= node.length) { range.setEnd(node, left); break; }
+        left -= node.length;
+      }
+      const line = document.createElement('span');
+      line.className = 'wird-basmala';
+      line.append(range.extractContents());
+      result.append(line);
+    }
+    const content = document.createElement('span');
+    content.className = 'wird-verse-text';
+    // Amiri's two U+0653 marks overlap for this verified opening. Use the already
+    // bundled Noto Arabic for identical openings; no letter/mark/spacing changes.
+    const baqarah = quran.surahs.find(s => Number(s.number) === 2)?.ayahs[0];
+    if (baqarah && Number(ayah.numberInSurah) === 1 && body === openingParts({...baqarah, surahNumber: 2}).body) content.dataset.quranFont = 'opening';
+    content.append(...full.childNodes);
+    result.append(content);
+    return result;
   }
   const state = {
     mode: 'verse',
@@ -20376,7 +21061,10 @@ window.ZadRouhVideos = [
     arabic: true,
     translationLang: 'en',
     ready: false,
-    token: 0
+    token: 0,
+    selectedKey: null,
+    renderedKeys: '',
+    legendOpen: false
   };
 
   function preferredTranslation() {
@@ -20474,18 +21162,8 @@ window.ZadRouhVideos = [
   }
 
   function makeLegend() {
-    const items = [
-      ['#AAAAAA', ZadI18n.pack("quran-reader.2ca33f1dc0")],
-      ['#537FFF', ZadI18n.pack("quran-reader.cd2a466d9c")],
-      ['#4050FF', ZadI18n.pack("quran-reader.7363c52767")],
-      ['#000EBC', ZadI18n.pack("quran-reader.75d24d0a1a")],
-      ['#DD0008', ZadI18n.pack("quran-reader.3ddb39c6ab")],
-      ['#FF7E1E', ZadI18n.pack("quran-reader.da422e904a")],
-      ['#169200', ZadI18n.pack("quran-reader.b00bfbdce2")],
-      ['#9400A8', ZadI18n.pack("quran-reader.80b44ac838")],
-      ['#26BFFD', ZadI18n.pack("quran-reader.8c1569a0f4")]
-    ];
-    return `<div id="v22TajweedLegend"><div class="v22LegendTitle">${x(T.legend)}</div><div class="v22LegendGrid">${items.map(([c,p])=>`<div class="v22LegendItem"><i class="v22LegendDot" style="background:${c}"></i><span>${x(p)}</span></div>`).join('')}</div></div>`
+    const rules = ['silent','normal-madd','separated-madd','connected-madd','necessary-madd','ghunnah-ikhfa','qalqala','tafkhim'];
+    return `<div id="v22TajweedLegend" ${state.legendOpen ? '' : 'hidden'}><div class="v22LegendGrid">${rules.map(rule => `<div class="v22LegendItem"><i class="v22LegendDot" data-tajweed-rule="${rule}" aria-hidden="true"></i><span>${esc(ruleLabel(rule))}</span></div>`).join('')}</div></div>`;
   }
 
   function ensureReader() {
@@ -20496,6 +21174,8 @@ window.ZadRouhVideos = [
     w = document.createElement('section');
     w.id = 'v22ReaderWorkspace';
     home.prepend(w);
+    const legacy = document.getElementById('wirdContent');
+    if (legacy) { legacy.replaceChildren(); legacy.hidden = true; legacy.setAttribute('aria-hidden', 'true'); legacy.inert = true; }
     w.addEventListener('click', readerClick);
     w.addEventListener('change', readerChange);
     return w
@@ -20530,7 +21210,7 @@ window.ZadRouhVideos = [
       ['yasser_dossari_murattal', 'ياسر الدوسري — مرتل'],
       ['alafasy_murattal', 'مشاري راشد العفاسي — مرتل']
     ].map(([v, l]) => `<option value="${v}" ${v===rec?'selected':''}>${l}</option>`).join('');
-    return ("<div class=\"v22QTop\">\n   <div class=\"v22QMetaRow\">\n     <div class=\"zaQuranSurahTitle\"><small>" + ZadI18n.html("gateways.c15b3a94c1") + "</small><strong>" + (esc(surahTitle)) + "</strong></div>\n     <div class=\"v22QMeta\">\n       <span>" + (x(T.pageLabel)) + " " + (digits(m.page)) + "</span>\n       <span>" + (x(T.juzLabel)) + " " + (digits(m.juz)) + "</span>\n       <span>" + (x(T.hizbLabel)) + " " + (digits(m.hizb)) + "</span>\n     </div>\n   </div>\n   <div class=\"v22QModes zaStableQuranControls\">\n     <button type=\"button\" data-toggle=\"tajweed\" class=\"" + (state.tajweed?'active':'') + "\">" + (x(T.tajweed)) + "</button>\n     <button type=\"button\" class=\"v22Gold\" data-legend>" + (x(T.legend)) + "</button>\n     <div class=\"zaReaderReciter\">\n       <label for=\"v22AyahReciter\">" + ZadI18n.html("quran-reader.19deea1081") + "</label>\n       <select id=\"v22AyahReciter\" aria-label=\"" + ZadI18n.html("quran-reader.30c636a4e4") + "\">" + (recOptions) + "</select>\n     </div>\n   </div>\n   " + (makeLegend()) + "\n   <div class=\"v22QProgress\">\n     <div class=\"v22QProgressText\">\n       <strong>" + (x(T.today)) + " — " + (x(T.portion)) + " " + (digits(cp)) + " " + (x(T.of)) + " " + (digits(total)) + "</strong>\n       <small>" + (esc(rangeMeta(currentPortionAyahs()))) + "</small>\n     </div>\n     <div class=\"v22QProgressActions\">\n       <select id=\"v22DailyAmount\" aria-label=\"" + ZadI18n.html("quran-reader.ea526c4555") + "\">\n         <option value=\"1\" " + (getDailyAmount()===1?'selected':'') + ">" + (x(T.oneHizb)) + "</option>\n         <option value=\"2\" " + (getDailyAmount()===2?'selected':'') + ">" + (x(T.twoHizb)) + "</option>\n       </select>\n       <button type=\"button\" data-portion=\"-1\">" + (x(T.previous)) + "</button>\n       <button type=\"button\" data-portion=\"1\">" + (x(T.next)) + "</button>\n     </div>\n     <p class=\"reading-progress-note\">" + (ZadI18n.t("quran-reader.aafcc5303b")) + ": " + (digits(completed)) + " / " + (digits(total)) + "</p><div class=\"v22QTrack\" role=\"progressbar\" aria-label=\"" + (ZadI18n.t("quran-reader.3061ffb341")) + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"" + (Math.round(pct)) + "\"><i style=\"width:" + (pct) + "%\"></i></div>\n   </div>\n </div>")
+    return ("<div class=\"v22QTop\">\n   <div class=\"v22QMetaRow\">\n     <div class=\"zaQuranSurahTitle\"><small>" + ZadI18n.html("gateways.c15b3a94c1") + "</small><strong>" + (esc(surahTitle)) + "</strong></div>\n     <div class=\"v22QMeta\">\n       <span>" + (x(T.pageLabel)) + " " + (digits(m.page)) + "</span>\n       <span>" + (x(T.juzLabel)) + " " + (digits(m.juz)) + "</span>\n       <span>" + (x(T.hizbLabel)) + " " + (digits(m.hizb)) + "</span>\n     </div>\n   </div>\n   <div class=\"v22QModes zaStableQuranControls\">\n     <button type=\"button\" data-toggle=\"tajweed\" aria-pressed=\"" + state.tajweed + "\" class=\"" + (state.tajweed?'active':'') + "\">" + (ruleLabel(state.tajweed ? 'enabled' : 'disabled')) + "</button>\n     <button type=\"button\" class=\"v22Gold\" data-legend aria-controls=\"v22TajweedLegend\" aria-expanded=\"" + state.legendOpen + "\">" + (ruleLabel('legend')) + "</button>\n     <div class=\"zaReaderReciter\">\n       <label for=\"v22AyahReciter\">" + ZadI18n.html("quran-reader.19deea1081") + "</label>\n       <select id=\"v22AyahReciter\" aria-label=\"" + ZadI18n.html("quran-reader.30c636a4e4") + "\">" + (recOptions) + "</select>\n     </div>\n   </div>\n   " + (makeLegend()) + "\n   <div class=\"v22QProgress\">\n     <div class=\"v22QProgressText\">\n       <strong>" + (x(T.today)) + " — " + (x(T.portion)) + " " + (digits(cp)) + " " + (x(T.of)) + " " + (digits(total)) + "</strong>\n       <small>" + (esc(rangeMeta(currentPortionAyahs()))) + "</small>\n     </div>\n     <div class=\"v22QProgressActions\">\n       <select id=\"v22DailyAmount\" aria-label=\"" + ZadI18n.html("quran-reader.ea526c4555") + "\">\n         <option value=\"1\" " + (getDailyAmount()===1?'selected':'') + ">" + (x(T.oneHizb)) + "</option>\n         <option value=\"2\" " + (getDailyAmount()===2?'selected':'') + ">" + (x(T.twoHizb)) + "</option>\n       </select>\n       <button type=\"button\" data-portion=\"-1\">" + (x(T.previous)) + "</button>\n       <button type=\"button\" data-portion=\"1\">" + (x(T.next)) + "</button>\n     </div>\n     <p class=\"reading-progress-note\">" + (ZadI18n.t("quran-reader.aafcc5303b")) + ": " + (digits(completed)) + " / " + (digits(total)) + "</p><div class=\"v22QTrack\" role=\"progressbar\" aria-label=\"" + (ZadI18n.t("quran-reader.3061ffb341")) + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-valuenow=\"" + (Math.round(pct)) + "\"><i style=\"width:" + (pct) + "%\"></i></div>\n   </div>\n </div>")
   }
 
   function getDailyAmount() {
@@ -20542,35 +21222,44 @@ window.ZadRouhVideos = [
   }
 
   function renderVerse(arr) {
-    return arr.map(a => `<article class="v22Verse" data-key="${key(a)}"><div class="v22VerseHead"><span class="v22VerseKey">${esc((lang()==='ar'?a.surahName:(a.englishName||surahName(a.surahNumber))))} · ${digits(a.numberInSurah)}</span><span class="v22VerseTools"><button type="button" data-play="${a.surahNumber}:${a.numberInSurah}" title="${x(T.play)}" aria-label="${x(T.play)}">${Zad.icon('play')}</button></span></div><div class="v22Arabic" data-source-content lang="ar" dir="rtl" data-ar>${state.arabic?esc(cleanArabic(a)):''}</div>${state.translation?`<div class="v22Translation" data-tr dir="${L[state.translationLang]?.dir||'ltr'}">…</div>`:''}</article>`).join('')
-  }
-
-  function renderMushaf(arr) {
-    if (!arr.length) return `<div class="v22QLoading">${x(T.noData)}</div>`;
-    const title = state.mode === 'page' ? `${x(T.page)} ${digits(state.page)}` : surahName(state.surah);
-    let lastSurah = null;
-    let html = '';
+    let html = '', surah = null;
     for (const a of arr) {
-      if (state.mode === 'surah' && lastSurah === null && Number(a.surahNumber) !== 1 && Number(a.surahNumber) !== 9) html += ("<div class=\"v22Bismillah\">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>");
-      if (state.mode === 'page' && lastSurah !== Number(a.surahNumber)) {
-        if (lastSurah !== null) html += '<br>';
-        html += `<span class="v22InlineSurahTitle">${esc(a.surahName||'')}</span> `;
-        if (Number(a.numberInSurah) === 1 && Number(a.surahNumber) !== 1 && Number(a.surahNumber) !== 9) html += ("<span class=\"v22InlineBismillah\">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span> ");
-        lastSurah = Number(a.surahNumber)
+      if (Number(a.surahNumber) !== surah) {
+        if (surah !== null) html += '</div></section>';
+        surah = Number(a.surahNumber);
+        html += `<section class="wird-surah" data-surah-number="${surah}" aria-labelledby="wird-surah-${surah}"><h2 class="wird-surah-heading" id="wird-surah-${surah}">${esc(displaySurahName(a))}</h2><div class="wird-mushaf-text" lang="ar" dir="rtl" data-source-content>`;
       }
-      html += `<span class="v22InlineAyah" data-key="${key(a)}"><span data-ar>${state.arabic?esc(cleanArabic(a)):''}</span><span class="v22AyahNum">${digits(a.numberInSurah)}</span> </span>`;
-      lastSurah = Number(a.surahNumber)
+      const k = key(a), content = document.createElement('span');
+      content.append(arabicContent(a));
+      html += `<span class="wird-ayah" data-verse-key="${k}" data-key="${k}"><span class="v22Arabic" data-ar>${content.innerHTML}</span> <button type="button" class="wird-ayah-marker" data-select-verse="${k}" aria-label="${esc(x(T.play) + ' · ' + displaySurahName(a) + ' ' + digits(a.numberInSurah))}" ${state.selectedKey === k ? 'aria-current="true"' : ''}>${verseNumberFormatter.format(a.numberInSurah)}</button></span> `;
     }
-    const trs = state.translation ? `<div class="v22TranslationList">${arr.map(a=>`<div class="v22TranslationLine" data-key="${key(a)}"><b>${digits(a.numberInSurah)}</b><span data-tr dir="${L[state.translationLang]?.dir||'ltr'}">…</span></div>`).join('')}</div>` : '';
-    return `<div class="v22MushafWrap"><div class="v22MushafCard"><div class="v22MushafTitle">${esc(title)}</div><div class="v22MushafText">${html}</div>${trs}</div></div>`
+    if (surah !== null) html += '</div></section>';
+    if (state.translation) html += `<div class="v22TranslationList">${arr.map(a => `<div class="v22TranslationLine" data-key="${key(a)}"><b>${esc(key(a))}</b><span data-tr dir="${L[state.translationLang]?.dir || 'ltr'}">…</span></div>`).join('')}</div>`;
+    return html;
   }
 
-  function renderPager() {
-    if (state.mode === 'verse') return '';
-    const n = state.mode === 'page' ? state.page : state.surah;
-    const max = state.mode === 'page' ? 604 : 114;
-    return `<div class="v22Pager"><button data-nav="-1">${x(T.previous)}</button><span>${digits(n)} / ${digits(max)}</span><button data-nav="1">${x(T.next)}</button></div>`
+  function audioControls(arr) {
+    const a = arr.find(a => key(a) === state.selectedKey) || arr[0];
+    state.selectedKey = key(a);
+    return `<div class="wird-audio-controls"><span class="wird-audio-label">${esc(displaySurahName(a))} · ${digits(a.numberInSurah)}</span><button type="button" class="secondary ayahAudioBtn" id="audioBtn_${a.surahNumber}_${a.numberInSurah}" data-play="${key(a)}">${x(T.play)}</button><span class="ayahAudioStatus v22AudioState" id="audioStatus_${a.surahNumber}_${a.numberInSurah}" role="status"></span></div>`;
   }
+
+  function selectAudio(k) {
+    const a = readerAyahs().find(a => key(a) === k);
+    if (!a) return;
+    if (state.selectedKey !== k) {
+      if (typeof stopAyahAudio === 'function') stopAyahAudio();
+      state.selectedKey = k;
+      document.querySelector('#v22ReaderWorkspace .wird-audio-controls').outerHTML = audioControls(readerAyahs());
+    }
+    document.querySelectorAll('#v22ReaderContent [data-select-verse]').forEach(el => {
+      if (el.dataset.selectVerse === k) el.setAttribute('aria-current', 'true');
+      else el.removeAttribute('aria-current');
+    });
+    const button = document.querySelector('#v22ReaderWorkspace [data-play]');
+    button?.click();
+  }
+
   async function enhance(arr, token) {
     const chapters = [...new Set(arr.map(a => Number(a.surahNumber)))],
       tajMaps = new Map(),
@@ -20582,63 +21271,56 @@ window.ZadRouhVideos = [
       const sources = [...new Set([...trMaps.values()].map(m => m?.source).filter(Boolean))];
       note.textContent = sources.length ? (ZadI18n.t("quran-reader.ec5e92d77c")) + sources.join(' · ') : state.translation ? (ZadI18n.t("quran-reader.0330ae042a")) : '';
     }
+    let unavailable = false;
     for (const a of arr) {
       const k = key(a),
         h = tajMaps.get(Number(a.surahNumber))?.get(k);
-      if (h && state.tajweed) document.querySelectorAll(`#v22ReaderContent [data-key="${CSS.escape(k)}"] [data-ar]`).forEach(el => {
-        el.innerHTML = Zad.tajweedHTML(h);
-        addTajweedTitles(el);
-      });
+      if (state.tajweed) {
+        const el = document.querySelector(`#v22ReaderContent [data-verse-key="${CSS.escape(k)}"] [data-ar]`);
+        const annotated = h ? annotatedOriginal(h, a) : null;
+        if (el && annotated) el.replaceChildren(arabicContent(a, annotated));
+        else unavailable = true;
+      }
       if (state.translation) document.querySelectorAll(`#v22ReaderContent [data-key="${CSS.escape(k)}"] [data-tr]`).forEach(el => {
         el.textContent = trMaps.get(Number(a.surahNumber))?.get(k) || (ZadI18n.t("quran-reader.0330ae042a"));
         el.dir = L[state.translationLang]?.dir || 'ltr';
       });
     }
+    const warning = document.getElementById('wirdTajweedStatus');
+    if (warning) {
+      warning.hidden = !state.tajweed || !unavailable;
+      warning.textContent = warning.hidden ? '' : ruleLabel('fallback');
+    }
   }
 
-  function addTajweedTitles(root) {
-    const names = {
-      ham_wasl: 'Hamzat Wasl',
-      slnt: 'Silent',
-      laam_shamsiyah: 'Lam Shamsiyyah',
-      madda_normal: 'Normal Madd (2)',
-      madda_permissible: 'Permissible Madd (2/4/6)',
-      madda_necessary: 'Necessary Madd (6)',
-      madda_obligatory: 'Obligatory Madd (4/5)',
-      qalaqah: 'Qalqalah',
-      qalqalah: 'Qalqalah',
-      qlq: 'Qalqalah',
-      ghunnah: 'Ghunnah',
-      ghn: 'Ghunnah',
-      idgham_ghunnah: 'Idgham with Ghunnah',
-      idgh_ghn: 'Idgham with Ghunnah',
-      idgham_wo_ghunnah: 'Idgham without Ghunnah',
-      idgh_w_ghn: 'Idgham without Ghunnah',
-      ikhafa: 'Ikhfa',
-      ikhf: 'Ikhfa',
-      ikhf_shfw: 'Ikhfa Shafawi',
-      idghm_shfw: 'Idgham Shafawi',
-      iqlab: 'Iqlab',
-      iqlb: 'Iqlab',
-      idgh_mus: 'Idgham'
-    };
-    root.querySelectorAll('tajweed').forEach(e => {
-      for (const c of e.classList) {
-        if (names[c]) {
-          e.title = names[c];
-          break
-        }
-      }
-    })
-  }
   async function renderReader() {
     const w = ensureReader();
     if (!w) return;
     const arr = readerAyahs();
     if (!arr.length) return;
-    w.innerHTML = readerControls(arr) + `<div class="reader-view-controls"><label>${x(T.translation)}<input type="checkbox" data-reader-translation ${state.translation?'checked':''}></label><select aria-label="${x(T.translation)}" data-reader-language>${Object.entries(L).filter(([c])=>c!=='ar').map(([c,p])=>`<option value="${c}" ${state.translationLang===c?'selected':''}>${p.name}</option>`).join('')}</select><button class="secondary" data-reader-complete>${ZadI18n.t("quran-reader.04f0c01fbc")}</button></div><p class="reading-progress-note" id="translationSource" role="status"></p><div id="v22ReaderContent">${renderVerse(arr)}</div>`;
+    const keys = arr.map(key).join(',');
+    const keepAudio = state.renderedKeys === keys ? w.querySelector('.wird-audio-controls') : null;
+    if (state.renderedKeys && state.renderedKeys !== keys && typeof stopAyahAudio === 'function') stopAyahAudio();
+    state.renderedKeys = keys;
+    const audio = audioControls(arr);
+    w.innerHTML = readerControls(arr) + `<div class="reader-view-controls"><label>${x(T.translation)}<input type="checkbox" data-reader-translation ${state.translation?'checked':''}></label><select aria-label="${x(T.translation)}" data-reader-language>${Object.entries(L).filter(([c])=>c!=='ar').map(([c,p])=>`<option value="${c}" ${state.translationLang===c?'selected':''}>${p.name}</option>`).join('')}</select><button class="secondary" data-reader-complete>${ZadI18n.t("quran-reader.04f0c01fbc")}</button></div><p class="reading-progress-note" id="translationSource" role="status"></p><p class="reading-progress-note" id="wirdTajweedStatus" role="status" hidden></p>${audio}<p class="reading-progress-note wird-audio-hint">${esc(ruleLabel('choose-ayah'))}</p><div id="v22ReaderContent">${renderVerse(arr)}</div>`;
+    if (keepAudio) w.querySelector('.wird-audio-controls').replaceWith(keepAudio);
     const token = ++state.token;
     enhance(arr, token).catch(() => {});
+  }
+
+  function refreshTajweed() {
+    const arr = readerAyahs();
+    document.querySelector('#v22ReaderWorkspace [data-toggle="tajweed"]')?.setAttribute('aria-pressed', String(state.tajweed));
+    const toggle = document.querySelector('#v22ReaderWorkspace [data-toggle="tajweed"]');
+    if (toggle) { toggle.classList.toggle('active', state.tajweed); toggle.textContent = ruleLabel(state.tajweed ? 'enabled' : 'disabled'); }
+    for (const a of arr) {
+      const el = document.querySelector(`#v22ReaderContent [data-verse-key="${CSS.escape(key(a))}"] [data-ar]`);
+      if (el) el.replaceChildren(arabicContent(a));
+    }
+    const warning = document.getElementById('wirdTajweedStatus');
+    if (warning) { warning.hidden = true; warning.textContent = ''; }
+    enhance(arr, ++state.token).catch(() => {});
   }
 
   function readerClick(e) {
@@ -20647,40 +21329,26 @@ window.ZadRouhVideos = [
     if (b.dataset.toggle === 'tajweed') {
       state.tajweed = !state.tajweed;
       Zad.storage.setItem('zad_reader_tajweed_v1', String(state.tajweed));
-      renderReader();
+      refreshTajweed();
       return
     }
     if (b.hasAttribute('data-legend')) {
-      document.getElementById('v22TajweedLegend')?.classList.toggle('show');
+      state.legendOpen = !state.legendOpen;
+      document.getElementById('v22TajweedLegend').hidden = !state.legendOpen;
+      b.setAttribute('aria-expanded', String(state.legendOpen));
       return
     }
+    if (b.dataset.selectVerse) {
+      selectAudio(b.dataset.selectVerse);
+      return;
+    }
     if (b.dataset.play) {
-      const [s, a] = b.dataset.play.split(':').map(Number);
-      const audioId = `${s}_${a}`;
-
-      /* Reuse the existing, proven Quran audio player by giving the new v22
-         button the legacy ID that playAyahAudio expects. */
-      b.id = `audioBtn_${audioId}`;
-
-      /* Visible feedback directly under the play control. */
-      let status = b.closest('.v22Verse')?.querySelector('.v22AudioState');
-      if (!status) {
-        status = document.createElement('div');
-        status.className = 'v22AudioState';
-        status.id = `audioStatus_${audioId}`;
-        status.setAttribute('aria-live', 'polite');
-        b.closest('.v22VerseHead')?.insertAdjacentElement('afterend', status);
-      } else {
-        status.id = `audioStatus_${audioId}`;
-      }
-
-      try {
-        playAyahAudio(s, a)
-      } catch (err) {
-        status.textContent = ZadI18n.t("quran-reader.27aea4a582");
-        status.classList.add('bad');
-      }
-      return
+      const [surah, ayah] = b.dataset.play.split(':').map(Number);
+      Promise.resolve(playAyahAudio(surah, ayah)).catch(() => {
+        const status = document.getElementById(`audioStatus_${surah}_${ayah}`);
+        if (status) status.textContent = ZadI18n.t("quran-reader.27aea4a582");
+      });
+      return;
     }
     if (b.dataset.portion) {
       try {

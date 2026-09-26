@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-26",
+  "quranTajweed": {
+    "url": "https://api.quran.com/api/v4/quran/verses/uthmani_tajweed?chapter_number=2",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  "browser": {
+    "localApp": "NOT_RUN",
+    "reason": "net::ERR_BLOCKED_BY_CLIENT",
+    "widths": [
+      390,
+      768,
+      1440
+    ]
+  },
+  "youtube": {
+    "directEmbedAttempt": "https://www.youtube-nocookie.com/embed/ZWraKKwNfpE?playsinline=1&rel=0",
+    "observedMessage": "Video player configuration error",
+    "inSitePlaybackVerified": 0,
+    "ownerEmbeddingBlocksConfirmed": 0,
+    "otherVideosLiveTested": 0,
+    "note": "Direct top-level embedding has no normal hosting-page referrer. This error does not establish that an owner disables embedding. All ten video lifecycle tests use DOM/API doubles."
+  }
+}

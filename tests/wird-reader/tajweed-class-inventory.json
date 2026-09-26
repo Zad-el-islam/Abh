@@ -1,0 +1,161 @@
+{
+  "liveFullCorpusInventory": "NOT_AVAILABLE_HTTP_403",
+  "classesObservedInOfficialDocumentationExample": [
+    "ham_wasl",
+    "laam_shamsiyah",
+    "madda_normal",
+    "madda_permissible"
+  ],
+  "inventory": [
+    {
+      "class": "ham_wasl",
+      "ruleColorCategory": "silent",
+      "cssVariable": "--tajweed-silent",
+      "observedInDocumentationExample": true
+    },
+    {
+      "class": "slnt",
+      "ruleColorCategory": "silent",
+      "cssVariable": "--tajweed-silent",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "laam_shamsiyah",
+      "ruleColorCategory": "silent",
+      "cssVariable": "--tajweed-silent",
+      "observedInDocumentationExample": true
+    },
+    {
+      "class": "idgh_w_ghn",
+      "ruleColorCategory": "silent",
+      "cssVariable": "--tajweed-silent",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "idgham_wo_ghunnah",
+      "ruleColorCategory": "silent",
+      "cssVariable": "--tajweed-silent",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "idgh_mus",
+      "ruleColorCategory": "silent",
+      "cssVariable": "--tajweed-silent",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "madda_normal",
+      "ruleColorCategory": "normal-madd",
+      "cssVariable": "--tajweed-normal-madd",
+      "observedInDocumentationExample": true
+    },
+    {
+      "class": "madda_permissible",
+      "ruleColorCategory": "separated-madd",
+      "cssVariable": "--tajweed-separated-madd",
+      "observedInDocumentationExample": true
+    },
+    {
+      "class": "madda_obligatory",
+      "ruleColorCategory": "connected-madd",
+      "cssVariable": "--tajweed-connected-madd",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "madda_necessary",
+      "ruleColorCategory": "necessary-madd",
+      "cssVariable": "--tajweed-necessary-madd",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "ghn",
+      "ruleColorCategory": "ghunnah-ikhfa",
+      "cssVariable": "--tajweed-ghunnah-ikhfa",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "ghunnah",
+      "ruleColorCategory": "ghunnah-ikhfa",
+      "cssVariable": "--tajweed-ghunnah-ikhfa",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "ikhf",
+      "ruleColorCategory": "ghunnah-ikhfa",
+      "cssVariable": "--tajweed-ghunnah-ikhfa",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "ikhfa",
+      "ruleColorCategory": "ghunnah-ikhfa",
+      "cssVariable": "--tajweed-ghunnah-ikhfa",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "ikhf_shfw",
+      "ruleColorCategory": "ghunnah-ikhfa",
+      "cssVariable": "--tajweed-ghunnah-ikhfa",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "idghm_shfw",
+      "ruleColorCategory": "ghunnah-ikhfa",
+      "cssVariable": "--tajweed-ghunnah-ikhfa",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "idgh_ghn",
+      "ruleColorCategory": "ghunnah-ikhfa",
+      "cssVariable": "--tajweed-ghunnah-ikhfa",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "idgham_ghunnah",
+      "ruleColorCategory": "ghunnah-ikhfa",
+      "cssVariable": "--tajweed-ghunnah-ikhfa",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "iqlb",
+      "ruleColorCategory": "ghunnah-ikhfa",
+      "cssVariable": "--tajweed-ghunnah-ikhfa",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "iqlab",
+      "ruleColorCategory": "ghunnah-ikhfa",
+      "cssVariable": "--tajweed-ghunnah-ikhfa",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "qlq",
+      "ruleColorCategory": "qalqala",
+      "cssVariable": "--tajweed-qalqala",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "qalqalah",
+      "ruleColorCategory": "qalqala",
+      "cssVariable": "--tajweed-qalqala",
+      "observedInDocumentationExample": false
+    },
+    {
+      "class": "tafkhim",
+      "ruleColorCategory": "tafkhim",
+      "cssVariable": "--tajweed-tafkhim",
+      "observedInDocumentationExample": false
+    }
+  ],
+  "sources": [
+    "https://api-docs.quran.foundation/docs/content_apis_versioned/4.0.0/quran-verses-uthmani-tajweed/",
+    "https://github.com/GlobalQuran/data/issues/2"
+  ],
+  "notes": [
+    "Only classes present in the provider markup are used. There is no rule detection from Quran letters.",
+    "Unknown classes or any changed letter/mark cause plain-text fallback for that ayah.",
+    "idgh_w_ghn means without ghunnah: silent family, never ghunnah/green.",
+    "API madda_permissible includes permitted stopping lengths; it must not be described exclusively as separated madd.",
+    "The screenshot/current Quran.com uses its newer color-font legend. Legacy HTML API does not guarantee a tafkhim annotation for each heavy letter. No missing tafkhim rules are inferred.",
+    "Compatibility aliases are supported, not claimed as observed in the unavailable complete live response."
+  ]
+}

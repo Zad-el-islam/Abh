@@ -41,13 +41,13 @@
   },
   {
     "file": "assets/css/reader.css",
-    "bytes": 10079,
-    "sha256": "c51981ee68ada40bc81260126e327955552529a5c127049cb243579b36da1953"
+    "bytes": 17419,
+    "sha256": "00cc4bdde648e4255c44956ca8f7e57913bdbdc70012fce4cde9601acf34ab73"
   },
   {
     "file": "assets/css/rouh.css",
-    "bytes": 3432,
-    "sha256": "ed04a8badfcdde3b1805585a1fd2e044b22f70b0298335e2daa38a6eae07c0ab"
+    "bytes": 4025,
+    "sha256": "3fead1e8488fe5f59cae95b224d15154838cd2fb16f44149c14d529a5b670054"
   },
   {
     "file": "assets/css/talk.css",
@@ -181,8 +181,8 @@
   },
   {
     "file": "assets/js/quran-reader.js",
-    "bytes": 24476,
-    "sha256": "2ede3c0fadd46f12c82c05625d4fcbd84a2bdf810655127d7edf6f5689f7e7d3"
+    "bytes": 38885,
+    "sha256": "b673ea16f286ed79cc2ffe460d19bf0a18905a564419a09606761185e5e1951f"
   },
   {
     "file": "assets/js/quran-sources.js",
@@ -206,8 +206,8 @@
   },
   {
     "file": "assets/js/rouh.js",
-    "bytes": 7567,
-    "sha256": "ee183ba7bdb449a3f61eba14ba54e7fa8a24d1fb557f3c83d691264327220b65"
+    "bytes": 13658,
+    "sha256": "2159a76024e6bd8b2f4f46910135ce120416531751506483da761a890e3b2b57"
   },
   {
     "file": "assets/js/seerah.js",
@@ -366,8 +366,8 @@
   },
   {
     "file": "index.html",
-    "bytes": 1605171,
-    "sha256": "bdb3bec93927e5c5e7e330b6397c518f9b616ecff0c3e7a972ed8f5ba38e1338"
+    "bytes": 1633673,
+    "sha256": "5f72343e08e1d84ce8a87ac0d387adbe51d998ea762b5a83b80bcc4d59dbe7e4"
   },
   {
     "file": "kitab_al_tawhid.pdf",
@@ -421,8 +421,8 @@
   },
   {
     "file": "source-pages/index.html",
-    "bytes": 56111,
-    "sha256": "f78e063820454387899ec86018d4b4a2f2d3025b7773717e47decc0932d94602"
+    "bytes": 56180,
+    "sha256": "57ad20a8c2946cc8f1119c9171eeed072c06388b49a12844cf24cf92b53147e0"
   },
   {
     "file": "source-pages/reader.html",
@@ -651,13 +651,13 @@
   },
   {
     "file": "tests/quran-integrity-results.json",
-    "bytes": 1048,
-    "sha256": "6e83cee5a42b65b46a8e0d9083016acae0da33d118bd7cf760bc75839de4c863"
+    "bytes": 1252,
+    "sha256": "c3cf58eded58cce251fc304a9e05bcb69594f3b479eba15b820c5672b93836dd"
   },
   {
     "file": "tests/quran-integrity.cjs",
-    "bytes": 3452,
-    "sha256": "5f3cb591f4cdf7b1aba2d4c332b81ae4793bad031d77b79449555bbf2288b6d6"
+    "bytes": 5895,
+    "sha256": "a8dbb836822bb377e25fb642d11be4b85d7b0a3497fe87d2d19e160a1d08f141"
   },
   {
     "file": "tests/regression.cjs",
@@ -671,13 +671,13 @@
   },
   {
     "file": "tests/rouh-gateway-results.json",
-    "bytes": 7695,
-    "sha256": "e0a0f29fcf1b9298582999798566bbf42d701dc867441234d99aeb0b0f59c52a"
+    "bytes": 8389,
+    "sha256": "a53b9a57311ef83c01ed2b04f6df277042abc45aa5ab7304671132ea3f9ec927"
   },
   {
     "file": "tests/rouh-gateway.cjs",
-    "bytes": 10984,
-    "sha256": "a8950f2c8269e2464ff1c004c528fbc85ba6b9d500e27517b0c5deb995378168"
+    "bytes": 14934,
+    "sha256": "9c6b844f1040e1301d0289dfe7acdc77932a3ee9e1a9a514cd836bbf08139436"
   },
   {
     "file": "tests/scoped-colors-results.json",
@@ -698,6 +698,121 @@
     "file": "tests/static-results.json",
     "bytes": 1027,
     "sha256": "5b899ad6546ed2be7bf299d733f0150c8f5c5b1bd8af420c26bf94d8148552c0"
+  },
+  {
+    "file": "tests/two-fix/README.md",
+    "bytes": 5251,
+    "sha256": "782f1abe9938b0ef0b257ab1d8a847a2ba9be35b5d4545d7dcb0f94d4246bf6d"
+  },
+  {
+    "file": "tests/two-fix/acceptance.json",
+    "bytes": 1941,
+    "sha256": "ad1ae0662d3967c192e489d6061f08e23b4bb1cafa09f2e9a0214bcdeed86d7d"
+  },
+  {
+    "file": "tests/two-fix/font-check.py",
+    "bytes": 2557,
+    "sha256": "a1ef285301c381570ffe7fd25fd59213ed093685ad2070f157203b3cbee0e089"
+  },
+  {
+    "file": "tests/two-fix/font-results.json",
+    "bytes": 3456,
+    "sha256": "9ed7afff39e5d59fbf720ba3086c026d6b87b4d8fb78b3096eeed5a3f40c86bc"
+  },
+  {
+    "file": "tests/two-fix/opening-font-proof.png",
+    "bytes": 20687,
+    "sha256": "6b86f391fa6ed2a5df00996076caa4dd031ec44d87dc8adc451feb05353969df"
+  },
+  {
+    "file": "tests/two-fix/provider-access.json",
+    "bytes": 805,
+    "sha256": "4ae119c5edad7a984c0430ea8c58c1855fd148a968d8e788476907b390591bb1"
+  },
+  {
+    "file": "tests/two-fix/scope-check.cjs",
+    "bytes": 2519,
+    "sha256": "9d438781494f6063161acfa727081e4ed7c24143a142ad806aa2292b51c862e1"
+  },
+  {
+    "file": "tests/two-fix/scope-results.json",
+    "bytes": 1572,
+    "sha256": "e804ba5da707ccc42c2742eb1c333009443b833996a1ef6d2f45892dce7511b7"
+  },
+  {
+    "file": "tests/two-fix/source-before.sha256.json",
+    "bytes": 16033,
+    "sha256": "d1271466e3cb3ed53141d42046269678a265cf91f7c0acb74a27a20786b55fda"
+  },
+  {
+    "file": "tests/wird-reader/README.md",
+    "bytes": 5933,
+    "sha256": "5085ef315de301b094ae23a946852a6a03fdf8365509a9d9111cf71841e80c30"
+  },
+  {
+    "file": "tests/wird-reader/acceptance.json",
+    "bytes": 1930,
+    "sha256": "1b9f5785b4dead150959c90d944c2b22728d2f10c6619dc6fd66d9810225ad4c"
+  },
+  {
+    "file": "tests/wird-reader/font-metrics.json",
+    "bytes": 533,
+    "sha256": "b77326b87bfbf35f7311c29a468e132d2bca05e887a0a188b6398682ae380d71"
+  },
+  {
+    "file": "tests/wird-reader/pdf-verification.json",
+    "bytes": 14048,
+    "sha256": "aaa25353ce8d999c97677b7b517076f11509dca0f5cc4d3ade801bf1ef01625a"
+  },
+  {
+    "file": "tests/wird-reader/quran-foundation-doc-example.json",
+    "bytes": 706,
+    "sha256": "87c77440a29fdd71c44eeabaed2f6f6f67a3432328d52a9796ff0a9092ad23be"
+  },
+  {
+    "file": "tests/wird-reader/qurancom-comparison.json",
+    "bytes": 643,
+    "sha256": "9f6c953b84e5ff08b5c8066e7237d30117220a8c279d2f2ad1e84bd8ac09f629"
+  },
+  {
+    "file": "tests/wird-reader/scope-check.cjs",
+    "bytes": 2242,
+    "sha256": "c4a25f89af830cf35ba94066088dcb8a8589e655b02d81c9813afcebf8f005ae"
+  },
+  {
+    "file": "tests/wird-reader/scope-results.json",
+    "bytes": 1130,
+    "sha256": "f8441761c3308f53a709fa1538ec83eded17f431bfeeafcf591319a9e9f4ebf0"
+  },
+  {
+    "file": "tests/wird-reader/source-before.sha256.json",
+    "bytes": 14485,
+    "sha256": "fc9f9aa967352e81bbfad47b495ce8f2b9bda2ad6353272a11b5486856bb282e"
+  },
+  {
+    "file": "tests/wird-reader/tajweed-class-inventory.json",
+    "bytes": 5109,
+    "sha256": "e9e2fb7b0cf6bc9cccf3190c1b2f4639ac96d317b3252020a0dbb6ac43a348c0"
+  },
+  {
+    "file": "tests/wird-reader/tajweed-colors.json",
+    "bytes": 2268,
+    "sha256": "f270ae4fdf93ad7ef9f9f9ae91af2ddba023ee09a7a18754f8a4a9958a8c31e4"
+  },
+  {
+    "file": "tests/wird-reader/translation-keys.json",
+    "bytes": 4385,
+    "sha256": "214d978450d2d2796951e118a351d7302ba325ee3095f5399c204ead8b795645"
+  },
+  {
+    "file": "tests/wird-reader-results.json",
+    "bytes": 4319,
+    "sha256": "1fb1163d42b430ebd45cf6c4b1e9ecf66e634fc62aa804c6654b88935070de2f"
+  },
+  {
+    "file": "tests/wird-reader.cjs",
+    "bytes": 19730,
+    "sha256": "13a57558b687045d846e3317d6091a1a35dd93e2437224ac6f770b62d259167e"
   },
   {
     "file": "thalathat_al_usul.pdf",

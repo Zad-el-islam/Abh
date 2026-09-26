@@ -1,0 +1,72 @@
+{
+  "inspectedOn": "2026-09-26",
+  "officialThemeSource": "https://github.com/quran/quran.com-frontend-next/blob/aff1a035b09b66f28047b3216edcae4c5c949a49/src/components/QuranReader/TajweedBar/TajweedBar.module.scss",
+  "currentQuranCom": {
+    "light": {
+      "silent": "#a5a5a5",
+      "normal-madd": "#ce9e00",
+      "separated-madd": "#ff7b00",
+      "connected-madd": "#f40000",
+      "necessary-madd": "#b50000",
+      "ghunnah-ikhfa": "#09b000",
+      "qalqala": "#2fadff",
+      "tafkhim": "#3f48e6"
+    },
+    "dark": {
+      "silent": "#999999",
+      "normal-madd": "#ffc1e0",
+      "separated-madd": "#ff8e3b",
+      "connected-madd": "#ff5e8e",
+      "necessary-madd": "#e30000",
+      "ghunnah-ikhfa": "#26b55d",
+      "qalqala": "#00deff",
+      "tafkhim": "#3c84d5"
+    }
+  },
+  "lightComputedColorsMatchedSource": true,
+  "actualReaderColors": {
+    "light": {
+      "silent": "#686868",
+      "normal-madd": "#cc0066",
+      "separated-madd": "#ad4900",
+      "connected-madd": "#d0003e",
+      "necessary-madd": "#d30000",
+      "ghunnah-ikhfa": "#19773d",
+      "qalqala": "#007283",
+      "tafkhim": "#2769b4"
+    },
+    "dark": {
+      "silent": "#a2a2a2",
+      "normal-madd": "#ffc1e0",
+      "separated-madd": "#ff8e3b",
+      "connected-madd": "#ff749d",
+      "necessary-madd": "#ff7979",
+      "ghunnah-ikhfa": "#27ba5f",
+      "qalqala": "#00deff",
+      "tafkhim": "#71a6e0"
+    }
+  },
+  "derivation": "Retain screenshot/dark reference hue and saturation. Change only HSL lightness in 0.1% steps until WCAG contrast >=4.5 against every existing reader surface and alternate surface. This keeps pink/orange/pink/red/green/cyan/blue identities in both themes; Quran.com current light palette itself changes pink to gold/red.",
+  "minimumContrast": {
+    "light": {
+      "silent": 4.502,
+      "normal-madd": 4.513,
+      "separated-madd": 4.549,
+      "connected-madd": 4.523,
+      "necessary-madd": 4.501,
+      "ghunnah-ikhfa": 4.528,
+      "qalqala": 4.543,
+      "tafkhim": 4.506
+    },
+    "dark": {
+      "silent": 4.502,
+      "normal-madd": 7.638,
+      "separated-madd": 5.026,
+      "connected-madd": 4.508,
+      "necessary-madd": 4.522,
+      "ghunnah-ikhfa": 4.529,
+      "qalqala": 7.056,
+      "tafkhim": 4.506
+    }
+  }
+}

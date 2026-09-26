@@ -1,0 +1,63 @@
+{
+  "date": "2026-09-26",
+  "scope": "Daily Wird Quran reader and Zad Al-Rouh player only",
+  "canonicalRuntimeFiles": [
+    "assets/js/quran-reader.js",
+    "assets/css/reader.css",
+    "assets/js/rouh.js",
+    "assets/css/rouh.css",
+    "source-pages/index.html (CSP only)"
+  ],
+  "quran": {
+    "fatihaNumbering": "PASS",
+    "baqarahSeparateBasmala": "PASS",
+    "imranSeparateBasmala": "PASS",
+    "tawbahNoBasmala": "PASS",
+    "otherSeparateOpeningLines": 112,
+    "sourceOpeningVariantsPreserved": [
+      "95:1",
+      "97:1"
+    ],
+    "2:1and3:1": "PASS in font raster and DOM/CSS tests; browser visual QA unavailable",
+    "beyondFatihaTransportAndIdentity": "PASS with provider-shaped plain payloads, not a live Tajweed corpus",
+    "liveTajweedBeyondFatiha": "NOT_VERIFIED: HTTP403",
+    "lightModeColors": "PASS: calculated contrast >=4.5:1",
+    "darkModeColors": "PASS: calculated contrast >=4.5:1",
+    "pageOverlapClipping": "NOT_VERIFIED in browser; scoped CSS and font tests pass",
+    "manualTextEdits": false,
+    "surahs": 114,
+    "ayahs": 6236,
+    "root": "5b58aa48fb07265a53cea6abd510d226345357dd556250e30f3ba87b8a076499",
+    "missing": 0,
+    "duplicates": 0,
+    "progressAndAudioContracts": "PASS with test media"
+  },
+  "rouh": {
+    "dedicatedPage": false,
+    "route": "#rouh",
+    "inlinePlayerDOM": "PASS",
+    "curatedVideosChanged": 0,
+    "videosTestedInDOM": 10,
+    "videosVerifiedPlayableInSite": 0,
+    "livePlayback": "NOT_VERIFIED",
+    "fullscreenAttributesAndAPI": "PASS (API simulated)",
+    "originalYouTubeLinks": "PASS,10/10",
+    "hiddenFramesAfterClose": 0,
+    "widths": [
+      390,
+      768,
+      1440
+    ],
+    "responsive": "PASS DOM/CSS; rendered browser QA unavailable",
+    "seerahChanged": false
+  },
+  "pdfsModified": false,
+  "unrelatedSourceFilesModified": 0,
+  "tests": {
+    "reader": 32,
+    "rouh": 19,
+    "integrity": 6,
+    "fontSamples": 12,
+    "failed": 0
+  }
+}

@@ -1,10 +1,13 @@
 {
-  "generated": "2026-09-26T06:30:34.495Z",
+  "generated": "2026-09-26T10:10:33.079Z",
   "normalization": "Remove one leading U+FEFF per ayah; Unicode NFC; SHA-256 UTF-8 per ayah; SHA-256 of concatenated lowercase hex hashes in canonical order, no delimiter.",
   "expectedRoot": "5b58aa48fb07265a53cea6abd510d226345357dd556250e30f3ba87b8a076499",
   "integrity": {
     "surahs": 114,
     "ayahs": 6236,
+    "uniqueVerseKeys": 6236,
+    "duplicates": 0,
+    "missing": 0,
     "root": "5b58aa48fb07265a53cea6abd510d226345357dd556250e30f3ba87b8a076499"
   },
   "results": [
@@ -27,8 +30,12 @@
     {
       "name": "Reordered canonical ayahs fail validation",
       "status": "passed"
+    },
+    {
+      "name": "Comparison distinguishes presentation carriers without removing meaningful marks",
+      "status": "passed"
     }
   ],
-  "passed": 5,
+  "passed": 6,
   "failed": 0
 }
