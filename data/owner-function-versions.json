@@ -1,0 +1,14 @@
+{
+  "zad-talk-create-upload": 9,
+  "zad-talk-finalize-upload": 7,
+  "zad-talk-feed": 10,
+  "zad-talk-admin-list": 5,
+  "zad-talk-admin-review": 5,
+  "zad-admin-auth": 6,
+  "zad-admin-users": 8,
+  "zad-talk-social": 8,
+  "zad-talk-leaderboard": 5,
+  "zad-account-delete": 3,
+  "zad-access-check": 5,
+  "zad-admin-comments": 2
+}

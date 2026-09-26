@@ -44,3 +44,7 @@ entrypoint = "./functions/zad-talk-leaderboard/index.ts"
 [functions."zad-talk-social"]
 verify_jwt = false
 entrypoint = "./functions/zad-talk-social/index.ts"
+
+[functions.zad-admin-comments]
+verify_jwt = false
+entrypoint = "./functions/zad-admin-comments/index.ts"

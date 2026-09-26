@@ -176,7 +176,16 @@
         email: t,
         password: d
       });
-      if (n.error) return g(), m(e, c(n.error), "bad");
+      if (n.error) {
+        const response = await Zad.fetch(Zad.config.url + '/functions/v1/zad-admin-auth', {
+          method: 'POST', headers: {apikey: Zad.config.key, 'content-type': 'application/json'},
+          body: JSON.stringify({action:'account_login',username:u,password:d})
+        });
+        const fallback = await response.json().catch(()=>({}));
+        if (!response.ok || !fallback.auth_session) return g(), m(e, c(n.error), "bad");
+        const restored = await i.auth.setSession(fallback.auth_session);
+        if (restored.error) return g(), m(e, c(restored.error), "bad");
+      }
       h(), p([e ? "zadPanelLoginPassword" : "zadAuthLoginPassword"]), m(e, ZadI18n.t("account-security.6ef0725a8e"), "ok")
     } catch (t) {
       g(), m(e, c(t), "bad")

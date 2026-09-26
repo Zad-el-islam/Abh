@@ -391,3 +391,22 @@
   color: var(--muted);
   margin-top: 5px;
 }
+
+/* Reels use the existing semantic surfaces and native video controls. */
+.zadTalkFeedShell {display:block;height:min(760px,calc(100dvh - 170px));min-height:420px;overflow-y:auto;overscroll-behavior-y:contain;scroll-snap-type:y mandatory;scrollbar-width:thin;max-width:940px;margin-inline:auto}
+.zadTalkClip {height:100%;min-height:100%;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-rows:1fr auto;scroll-snap-align:start;scroll-snap-stop:always;margin-bottom:16px}
+.zadTalkClip video {grid-column:1;grid-row:1 / 3;height:100%;max-height:none;aspect-ratio:auto;min-height:0}
+.zadTalkClipOverlay {grid-column:2;grid-row:1;align-self:end;min-width:0;padding:22px}
+.ztActionRail {grid-column:2;grid-row:2;flex-wrap:wrap;padding:16px;gap:8px}
+.ztAction {padding:8px;min-width:48px;flex-direction:column;display:flex;align-items:center}
+button.ztCreatorLine {background:transparent;border:0;color:var(--color-text);text-align:start;padding:0;max-width:100%;min-height:44px}
+.ztCreatorLine>span {min-width:0}.ztHandle {display:block;color:var(--color-muted);font-size:.75rem;overflow-wrap:anywhere;text-align:start}
+.ztCommentBody {min-width:0}.ztCommentActions {display:flex;flex-wrap:wrap;gap:8px;margin-block:10px}.ztCommentActions button,.ztReplies>button,.ztCommentBody>button {padding:5px 9px;font-size:.75rem}
+.ztCommentActions [aria-pressed="true"] {color:var(--color-brand);border-color:var(--color-brand)}.ztReplies {border-inline-start:1px solid var(--color-border);padding-inline-start:10px;margin-top:12px}.ztReplies[hidden] {display:none}
+#ztReplyCancel,#ztCommentsMore {align-self:start;margin:8px 16px}.ztCommentsPanel {max-height:90dvh;overflow:hidden;display:flex;flex-direction:column}.ztCommentsList {min-height:0;flex:1;overflow-y:auto}
+.ztPublicProfile {width:min(560px,92vw);max-height:85dvh;overflow-y:auto;background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:20px}.ztPublicProfile::backdrop {background:rgba(10,15,12,.6)}.ztPublicIdentity {display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-block:20px}.ztPublicIdentity strong {overflow-wrap:anywhere}.ztPublicProfile h2 {font-size:1rem}.ztPublicLink {display:block;color:var(--color-brand);padding:14px 0;border-bottom:1px solid var(--color-border);overflow-wrap:anywhere}
+@media(min-width:900px){.ztCommentsPanel{inset-block:0;inset-inline-start:auto;inset-inline-end:0;transform:none;width:min(420px,36vw);height:100dvh;max-height:100dvh;border-radius:0}.zadTalkCommentsSheet.open .ztCommentsPanel{transform:none}}
+@media(max-width:650px){.zadTalkFeedShell{height:calc(100dvh - 180px);min-height:420px}.zadTalkClip{grid-template-columns:minmax(0,1fr) 58px;grid-template-rows:minmax(0,1fr) auto}.zadTalkClip video{grid-column:1 / -1;grid-row:1}.zadTalkClipOverlay{grid-column:1;grid-row:2;padding:14px;align-self:center}.ztActionRail{grid-column:2;grid-row:1 / 3;align-self:end;z-index:1;flex-direction:column;padding:6px;gap:7px}.ztAction{width:46px;background:var(--color-surface);flex:none}.ztActionLabel{font-size:.6rem}.ztClipTitle{font-size:.83rem;margin-top:10px}.ztCreatorLine strong{font-size:.78rem}.ztReplies .ztCommentRow{gap:7px}.ztReplies .ztCommentAvatar{width:24px;height:24px}}
+@media(prefers-reduced-motion:reduce){.zadTalkFeedShell{scroll-snap-type:y proximity;scroll-behavior:auto}.zadTalkClip *{animation:none!important;transition:none!important}}
+.ztCommentComposer input{min-width:0}.ztCommentsPanel{position:fixed;bottom:0;inset-inline:0;margin-inline:auto;width:min(560px,100%);max-width:100%;border-radius:var(--radius-md) var(--radius-md) 0 0}.ztCommentsList{max-height:none}
+@media(min-width:900px){.ztCommentsPanel{inset-block:0;inset-inline-start:auto;inset-inline-end:0;margin:0;width:min(420px,36vw);border-radius:0}}

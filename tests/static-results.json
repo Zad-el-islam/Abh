@@ -4,7 +4,7 @@
   "scope": "Syntax, local references, byte/text integrity and color token arithmetic; no browser rendering",
   "results": [
     {
-      "name": "All shipped JavaScript and review-only TypeScript parse",
+      "name": "All shipped JavaScript and canonical Edge TypeScript parse",
       "status": "passed"
     },
     {

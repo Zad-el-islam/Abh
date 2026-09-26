@@ -1,0 +1,48 @@
+{
+  "generated": "2026-09-26T06:31:34.461Z",
+  "scope": "DOM with API test doubles. Live role enforcement is documented separately.",
+  "passed": 10,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Rouh: ten unique supplied videos, stable daily choice excludes long reference",
+      "status": "passed"
+    },
+    {
+      "name": "Rouh: categories, local saved items and a single lazy iframe with fallback",
+      "status": "passed"
+    },
+    {
+      "name": "Talk: actual display name, separate handle, safe caption and avatar fallback",
+      "status": "passed"
+    },
+    {
+      "name": "Comments: pagination and idempotent like request preserve server ownership",
+      "status": "passed"
+    },
+    {
+      "name": "Comments: one-level replies, explicit reply parent and own deletion confirmation",
+      "status": "passed"
+    },
+    {
+      "name": "Talk: public publisher profile uses the feed contract and approved links",
+      "status": "passed"
+    },
+    {
+      "name": "All seven languages localize new chrome without changing video source metadata",
+      "status": "passed"
+    },
+    {
+      "name": "Owner admin UI uses Auth bearer, session storage and protected role controls",
+      "status": "passed"
+    },
+    {
+      "name": "Admin has no role-assignment controls and cannot operate on Owner in UI",
+      "status": "passed"
+    },
+    {
+      "name": "Moderator sees video/comment moderation and does not request user management",
+      "status": "passed"
+    }
+  ]
+}

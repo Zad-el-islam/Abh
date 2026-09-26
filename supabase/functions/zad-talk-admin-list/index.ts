@@ -1,6 +1,6 @@
 import {serve,admin,fail,checked,page} from '../_shared/runtime.ts';
-serve(async(_req,sb,body)=>{
-  await admin(sb,body.token);
+serve(async(req,sb,body)=>{
+  await admin(sb,body.token,req);
   const status=body.status||'pending',offset=page(body.offset,0,100000),limit=Math.max(1,page(body.limit,100,100));
   if(!['all','uploading','pending','approved','rejected'].includes(status))fail(400,'invalid_status');
   let q=sb.from('zad_talk_submissions').select('id,title,description,submitter_name,submitter_user_id,media_kind,storage_path,original_file_name,mime_type,file_size,status,rejection_reason,created_at,reviewed_at,published_at,upload_verified_at').order('created_at',{ascending:false}).order('id',{ascending:false}).range(offset,offset+limit-1);

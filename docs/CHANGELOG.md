@@ -1,3 +1,11 @@
+# 2.2.1 — 2026-09-26
+
+Promote Rouh to the fourth main gateway; responsive 2×2/one-column home; main navigation/search; accessible in-site player lifecycle and scoped CSP paths. No backend/account/content changes. See ROUH-GATEWAY-2.2.1.md for QA and explicit live playback limits.
+
+# 2.2.0 — 2026-09-26
+
+Owner hierarchy, protected role management, Auth-linked staff, Talk identity/reels/comment threads, and curated Rouh. See OWNER-SOCIAL-2.2.0.md for applied SQL, live versions and verification limits.
+
 # 2.1.2 — إصلاح Supabase
 
 - استعادة المشروع الأصلي وفحص البنية والبيانات قبل التعديل.

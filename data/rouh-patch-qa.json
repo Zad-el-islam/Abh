@@ -1,0 +1,92 @@
+{
+  "version": "2.2.1",
+  "generated": "2026-09-26T06:34:23.768341+00:00",
+  "fourthGateway": "PASS",
+  "responsiveCssContracts": {
+    "status": "PASS",
+    "widths": [
+      390,
+      768,
+      1440
+    ],
+    "columns": [
+      1,
+      2,
+      2
+    ]
+  },
+  "mainNavigation": "PASS",
+  "libraryUnderIlm": "PASS",
+  "builtInPlayerDomLifecycle": "PASS",
+  "curatedVideos": 10,
+  "videosWithSuccessfulDomEmbedLifecycle": 10,
+  "viewportVideoCases": 30,
+  "livePlaybackVerified": 0,
+  "livePlaybackStatus": "NOT_VERIFIED",
+  "ownerEmbeddingRestrictions": "UNDETERMINED",
+  "liveThumbnailLoading": "NOT_VERIFIED",
+  "renderedBrowserQa": "NOT_RUN: local project navigation blocked by browser policy",
+  "newRemoteScripts": 0,
+  "supabaseCallsOrChanges": 0,
+  "unchangedProtectedFiles": 72,
+  "unchangedPdfs": 5,
+  "canonicalFilesChanged": [
+    "assets/css/design-system.css",
+    "assets/css/rouh.css",
+    "assets/js/gateways.js",
+    "assets/js/i18n-catalog.js",
+    "assets/js/rouh.js",
+    "assets/js/settings.js",
+    "source-pages/index.html"
+  ],
+  "localTests": {
+    "passed": 137,
+    "failed": 0
+  },
+  "suites": {
+    "results": {
+      "passed": 27,
+      "failed": 0
+    },
+    "backend-results": {
+      "passed": 5,
+      "failed": 0
+    },
+    "static-results": {
+      "passed": 7,
+      "failed": 0
+    },
+    "localization-results": {
+      "passed": 31,
+      "failed": 0
+    },
+    "media-localization-results": {
+      "passed": 7,
+      "failed": 0
+    },
+    "palettes-paths-results": {
+      "passed": 16,
+      "failed": 0
+    },
+    "quran-integrity-results": {
+      "passed": 5,
+      "failed": 0
+    },
+    "scoped-colors-results": {
+      "passed": 8,
+      "failed": 0
+    },
+    "backend-security-results": {
+      "passed": 7,
+      "failed": 0
+    },
+    "owner-social-ui-results": {
+      "passed": 10,
+      "failed": 0
+    },
+    "rouh-gateway-results": {
+      "passed": 14,
+      "failed": 0
+    }
+  }
+}

@@ -1,7 +1,7 @@
 /* Settings and search use native dialogs; reading and account data keep their existing keys. */
 window.ZadSettings = (() => {
   'use strict';
-  const T = i => ZadI18n.t(["gateways.eeeabade98","quran-reader.bfcf483079","gateways.249b9bc3b4","gateways.9cfadeada3","gateways.fe99b36520","quran-reader.5fd9563e68","gateways.6520b21edd","settings.66dcee1f46","settings.41a3c0033a","settings.ba0ba5f087","settings.5bb00398b2","settings.b85dec8fda","settings.aabb4f12fa","settings.b95b2ced0e","settings.48eb16a307","settings.560ef2b686","settings.f3569af245","settings.fd52a3d1cd","settings.c530d24d73","settings.ca90c297b0","settings.94b1969e15","settings.f8d52dd9b0","gateways.f7c9bb7bc3","gateways.fdf8eba0a0","settings.b36e86980a","quran-reader.0cde29a629","quran-reader.ff27a05115","gateways.fb7e622386","settings.7a6988a2b7","settings.c85686ecb0","settings.41fa3f074a"][i]);
+  const T = i => ZadI18n.t(["gateways.eeeabade98","quran-reader.bfcf483079","gateways.249b9bc3b4","gateways.9cfadeada3","gateways.fe99b36520","quran-reader.5fd9563e68","gateways.6520b21edd","settings.66dcee1f46","settings.41a3c0033a","settings.ba0ba5f087","settings.5bb00398b2","settings.b85dec8fda","settings.aabb4f12fa","settings.b95b2ced0e","settings.48eb16a307","settings.560ef2b686","settings.f3569af245","settings.fd52a3d1cd","settings.c530d24d73","settings.ca90c297b0","settings.94b1969e15","settings.f8d52dd9b0","gateways.f7c9bb7bc3","gateways.fdf8eba0a0","settings.b36e86980a","quran-reader.0cde29a629","quran-reader.ff27a05115","gateways.fb7e622386","settings.7a6988a2b7","settings.c85686ecb0","settings.41fa3f074a","gateways.ca3dff37d8"][i]);
   const esc = Zad.escape;
 
   function translate() {
@@ -11,6 +11,7 @@ window.ZadSettings = (() => {
       iman: 2,
       ilm: 3,
       media: 4,
+      rouh: 31,
       settings: 5,
       language: 6,
       account: 7,
@@ -108,6 +109,7 @@ window.ZadSettings = (() => {
       ['seerah', 27, 'سيرة seerah sirah'],
       ['zad', null, 'زاد المحارب steadfastness رسائل'],
       ['media', 4, 'زاد توك video مقاطع'],
+      ['rouh', 31, 'زاد الروح soul ruh alma âme jiwa قلب مقاطع'],
       ['aqidah', null, 'عقيدة creed aqidah']
     ];
     const d = dialog('searchDialog', T(20), `<label class="search-field">${Zad.icon('search')}<input id="globalSearchInput" type="search" placeholder="${esc(T(21))}" aria-label="${esc(T(8))}" autocomplete="off"></label><div class="global-results" id="globalSearchResults" aria-live="polite"></div>`);

@@ -65,9 +65,9 @@ export async function checkIp(req: Request,sb: any) {
 }
 
 export async function user(req: Request,sb: any,required=true) {
-  const ip=await checkIp(req,sb);
+  let ip: string|null=null;
   const header=req.headers.get('authorization')||'';
-  if(!header){if(required)fail(401,'login_required');return {user:null,profile:null,ip};}
+  if(!header){if(required)fail(401,'login_required');ip=await checkIp(req,sb);return {user:null,profile:null,ip,role:'user',membership:null};}
   const token=header.match(/^Bearer (\S+)$/i)?.[1];
   if(!token)fail(401,'unauthorized');
   const r=await sb.auth.getUser(token);
@@ -79,16 +79,26 @@ export async function user(req: Request,sb: any,required=true) {
   if(!profile)fail(403,'profile_not_found');
   if(profile.account_status!=='active')fail(403,'account_banned');
   if(!checked(await sb.rpc('zad_validate_user_session',{p_user_id:r.data.user.id,p_session_id:claims.session_id})))fail(401,'session_expired');
+  const membership=checked(await sb.from('zad_admins').select('id,user_id,role,is_active').eq('user_id',r.data.user.id).eq('is_active',true).maybeSingle());
+  const role=membership?.role||'user';
+  if(role!=='owner')ip=await checkIp(req,sb);
   if(ip)checked(await sb.from('zad_user_ip_links').upsert({user_id:r.data.user.id,ip_hash:ip,last_seen_at:new Date().toISOString()},{onConflict:'user_id,ip_hash'}));
-  return {user:r.data.user,profile,ip};
+  return {user:r.data.user,profile,ip,role,membership};
 }
 
-export async function admin(sb: any,token: unknown) {
+export async function admin(sb: any,token: unknown,req?: Request) {
+  if(req?.headers.has('authorization')){
+    const who=await user(req,sb);
+    if(!who.membership||!['owner','admin','moderator'].includes(who.role))fail(403,'staff_required');
+    return {admin_id:who.membership.id,user_id:who.user.id,role:who.role,display_name:who.profile.display_name,username:who.profile.username};
+  }
   if(typeof token!=='string'||!/^[a-f0-9]{64}$/.test(token))fail(401,'unauthorized');
   const rows=checked(await sb.rpc('zad_admin_validate_session',{p_token:token}));
   const row=Array.isArray(rows)?rows[0]:rows;
   if(!row?.admin_id)fail(401,'unauthorized');
-  return row;
+  const membership=checked(await sb.from('zad_admins').select('role,user_id').eq('id',row.admin_id).eq('is_active',true).maybeSingle());
+  if(!membership||membership.user_id)fail(401,'auth_login_required');
+  return {...row,role:membership.role,user_id:null};
 }
 
 export function validPath(row: any) {
@@ -131,6 +141,8 @@ export async function verifyVideo(sb: any,row: any) {
 }
 
 export async function deleteUser(sb: any,id: string) {
+  const membership=checked(await sb.from('zad_admins').select('id,role').eq('user_id',id).maybeSingle());
+  if(membership?.role==='owner')fail(403,'owner_protected');
   const rows=checked(await sb.from('zad_talk_submissions').select('id,submitter_user_id,storage_path').eq('submitter_user_id',id).limit(1001));
   if(rows.length>1000)fail(409,'delete_requires_batch');
   const paths=rows.filter((r:any)=>r.storage_path).map((r:any)=>{if(!validPath(r))fail(409,'invalid_storage_path');return r.storage_path;});
@@ -139,5 +151,6 @@ export async function deleteUser(sb: any,id: string) {
   if(avatars?.length)checked(await sb.storage.from('zad-profile-avatars').remove(avatars.map((f:any)=>`${id}/${f.name}`)));
   checked(await sb.from('zad_talk_submissions').delete().eq('submitter_user_id',id));
   checked(await sb.from('zad_talk_likes').delete().eq('actor_key',`u:${id}`));
+  if(membership)checked(await sb.from('zad_admins').delete().eq('id',membership.id));
   checked(await sb.auth.admin.deleteUser(id,false));
 }

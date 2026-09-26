@@ -1,34 +1,34 @@
 {
-  "generated": "2026-09-25T17:43:53.152Z",
+  "generated": "2026-09-26T06:32:11.295Z",
   "kind": "JSDOM/contracts; not rendered browser QA",
-  "catalogKeys": 960,
+  "catalogKeys": 997,
   "languages": {
     "ar": {
-      "keys": 960,
+      "keys": 997,
       "missing": 0
     },
     "en": {
-      "keys": 960,
+      "keys": 997,
       "missing": 0
     },
     "fr": {
-      "keys": 960,
+      "keys": 997,
       "missing": 0
     },
     "id": {
-      "keys": 960,
+      "keys": 997,
       "missing": 0
     },
     "tr": {
-      "keys": 960,
+      "keys": 997,
       "missing": 0
     },
     "ur": {
-      "keys": 960,
+      "keys": 997,
       "missing": 0
     },
     "es": {
-      "keys": 960,
+      "keys": 997,
       "missing": 0
     }
   },

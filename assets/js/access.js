@@ -27,9 +27,10 @@
       box.className = 'zadProfileIdentity';
       card.querySelector('.zadProfileCopy')?.appendChild(box)
     }
-    const name = esc(profile?.username || profile?.display_name || user?.user_metadata?.username || user?.user_metadata?.display_name) || ZadI18n.t("access.58fffe6bec");
+    const name = esc(profile?.display_name || profile?.username) || ZadI18n.t("access.58fffe6bec");
+    const handle = esc(profile?.username || '');
     const banned = profile?.account_status === 'banned';
-    box.innerHTML = ("<strong>@" + (name) + "</strong><span class=\"zadProfileBadge" + (banned?' bad':'') + "\">" + (banned?ZadI18n.t("access.630d2cffed"):ZadI18n.t("access.8488a53a70")) + "</span><small>" + ZadI18n.html("access.8837e22ea3") + "</small>");
+    box.innerHTML = `<strong dir="auto">${name}</strong>${handle?`<small dir="ltr">@${handle}</small>`:''}<span class="zadProfileBadge${banned?' bad':''}">${ZadI18n.t(banned?'access.630d2cffed':'access.8488a53a70')}</span>${profile.role==='owner'?`<span class="zadProfileBadge" data-i18n="roles.owner">${ZadI18n.t('roles.owner')}</span>`:''}${['owner','admin','moderator'].includes(profile.role)?`<a href="admin.html" data-i18n="roles.panel">${ZadI18n.t('roles.panel')}</a>`:''}`;
     const av = card.querySelector('.zadProfileAvatar'),
       file = card.querySelector('[data-profile-file]');
     if (av && file && !av.dataset.openPhoto) {
@@ -61,6 +62,8 @@
     const p = await sb.from('profiles').select('username,display_name,avatar_url,account_status,ban_reason,banned_at,force_logout_at').eq('id', user.id).maybeSingle();
     if (p.error) return;
     const profile = p.data || {};
+    const verified = await check.json().catch(()=>({}));
+    profile.role = verified.role || 'user';
     document.querySelectorAll('.zadProfileCard').forEach(c => enrichCard(c, profile, user));
     const issued = tokenIat(session.access_token || '');
     const force = profile.force_logout_at ? new Date(profile.force_logout_at).getTime() : 0;

@@ -1,9 +1,11 @@
-/* The server verifies the custom admin session for every operation. UI state grants no authority. */
+/* Auth-linked roles and legacy sessions are verified by the server on every request. */
 (() => {
   'use strict';
   const $ = id => document.getElementById(id),
     esc = Zad.escape,
     SESSION = 'zad_admin_session_v2';
+  const staffClient = window.supabase.createClient(Zad.config.url,Zad.config.key,{auth:{storage:Zad.session,storageKey:'zad_staff_auth_v1',persistSession:true,autoRefreshToken:true,detectSessionInUrl:false}});
+  const roleLabel = role => ({owner:'المالك · OWNER',admin:'مدير · ADMIN',moderator:'مشرف · MODERATOR',user:'مستخدم · USER'}[role] || 'مستخدم · USER');
   const labels = {
     pending: 'بانتظار المراجعة',
     approved: 'منشور',
@@ -20,7 +22,7 @@
   Zad.storage.removeItem('zad_admin_name');
   try {
     const saved = JSON.parse(Zad.session.getItem(SESSION));
-    if (saved && typeof saved.token === 'string' && saved.token.length <= 256 && Number(saved.expires) > Date.now() && Number(saved.expires) <= Date.now() + 12 * 3600000) session = saved;
+    if (saved && (saved.kind === 'auth' || typeof saved.token === 'string' && saved.token.length <= 256) && Number(saved.expires) > Date.now() && Number(saved.expires) <= Date.now() + 12 * 3600000) session = saved;
     else Zad.session.removeItem(SESSION);
   } catch (_) {
     Zad.session.removeItem(SESSION);
@@ -43,6 +45,8 @@
     videos = [];
     $('usersGrid').textContent = '';
     $('videosGrid').textContent = '';
+    $('commentsGrid').textContent = '';
+    $('staffGrid').textContent = '';
   }
 
   function friendly(error) {
@@ -55,15 +59,14 @@
       clearSession();
       throw new Error('session expired');
     }
+    const headers={apikey:Zad.config.key,'content-type':'application/json'};
+    if(auth&&session.kind==='auth'){const current=await staffClient.auth.getSession();const token=current.data?.session?.access_token;if(!token){clearSession();throw new Error('session expired');}headers.authorization='Bearer '+token;}
     const r = await Zad.fetch(Zad.config.url + '/functions/v1/' + name, {
       method: 'POST',
-      headers: {
-        apikey: Zad.config.key,
-        'content-type': 'application/json'
-      },
+      headers,
       body: JSON.stringify(auth ? {
         ...body,
-        token: session.token
+        ...(session.kind!=='auth'?{token:session.token}:{})
       } : body)
     });
     let data;
@@ -89,7 +92,9 @@
     $('loginView').classList.add('hidden');
     $('appView').classList.remove('hidden');
     $('logoutBtn').classList.remove('hidden');
-    $('adminName').textContent = session.name || 'الإدارة';
+    $('adminName').textContent = (session.name || 'الإدارة')+' · '+roleLabel(session.role);
+    document.querySelector('[data-tab="users"]').classList.toggle('hidden',session.role==='moderator');
+    $('ownerStaff').classList.toggle('hidden',session.role!=='owner');
   }
   async function login(e) {
     e.preventDefault();
@@ -102,12 +107,9 @@
         username: $('adminUser').value.trim(),
         password: $('adminPass').value
       }, false);
-      if (typeof data.session_token !== 'string' || !data.session_token) throw new Error('invalid response');
-      session = {
-        token: data.session_token,
-        name: String(data.admin_display_name || $('adminUser').value),
-        expires: Math.min(Date.parse(data.expires_at) || Date.now() + 12 * 3600000, Date.now() + 12 * 3600000)
-      };
+      if(data.auth_session){const result=await staffClient.auth.setSession(data.auth_session);if(result.error)throw result.error;}
+      else if(typeof data.session_token!=='string'||!data.session_token)throw new Error('invalid response');
+      session={kind:data.auth_session?'auth':'legacy',...(data.auth_session?{}:{token:data.session_token}),role:data.role||'admin',name:String(data.admin_display_name||$('adminUser').value),expires:Math.min(Date.parse(data.expires_at)||Date.now()+12*3600000,Date.now()+12*3600000)};
       Zad.session.setItem(SESSION, JSON.stringify(session));
       $('adminPass').value = '';
       message('loginStatus', '');
@@ -120,9 +122,10 @@
     }
   }
   async function logout() {
-    const token = session?.token;
+    const token = session?.token, authLinked=session?.kind==='auth';
     clearSession();
     $('adminUser').focus();
+    if(authLinked){const result=await staffClient.auth.signOut();if(result.error)message('loginStatus','تعذر تأكيد تسجيل الخروج من الخادم.',true);}
     if (token) try {
       await api('zad-admin-auth', {
         action: 'logout',
@@ -145,6 +148,7 @@
   }
   const number = value => Math.max(0, Number(value) || 0).toLocaleString('ar-EG');
   async function loadUsers() {
+    if(session?.role==='moderator')return;
     const request = ++userRequest;
     $('refreshUsers').disabled = true;
     message('usersState', 'جارٍ تحميل الحسابات…');
@@ -174,6 +178,15 @@
         avatar = Zad.mediaURL(user.avatar_url),
         banned = user.account_status === 'banned';
       card.innerHTML = `<div class="admin-user-head"><div class="admin-avatar">${avatar?`<img src="${esc(avatar)}" alt="" loading="lazy">`:esc(name.slice(0,1))}</div><div><h3 dir="auto">@${esc(name)}</h3><div class="meta">${number(user.video_count)} مقطع · أُنشئ ${esc(date(user.created_at))}</div><span class="badge ${banned?'banned':''}">${banned?'محظور':'نشط'}</span></div></div>${user.ban_reason?`<p class="meta">سبب الحظر: ${esc(user.ban_reason)}</p>`:''}<div class="admin-actions"><button type="button" class="secondary" data-act="kick">تسجيل خروج الحساب</button><button type="button" class="secondary" data-act="${banned?'unban':'ban'}">${banned?'فك الحظر':'حظر الحساب والاتصال'}</button><button type="button" class="danger" data-act="delete">حذف الحساب</button></div>`;
+      const title=card.querySelector('h3');title.textContent=user.display_name||user.username||'مستخدم';
+      const role=document.createElement('span');role.className='badge';role.textContent=roleLabel(user.role);title.after(role);
+      const handle=document.createElement('p');handle.className='meta';handle.dir='ltr';handle.textContent='@'+(user.username||'');role.after(handle);
+      if(user.role==='owner'||session.role!=='owner'&&user.role&&user.role!=='user')card.querySelector('.admin-actions').remove();
+      if(session.role==='owner'&&user.role!=='owner'){
+        const field=document.createElement('label');field.textContent='الصلاحية';const select=document.createElement('select');
+        for(const value of ['user','moderator','admin']){const o=document.createElement('option');o.value=value;o.textContent=roleLabel(value);select.append(o);}select.value=user.role||'user';field.append(select);card.append(field);
+        select.addEventListener('change',()=>{const next=select.value;if(!confirm('تغيير صلاحية @'+user.username+' إلى '+roleLabel(next)+'؟')){select.value=user.role||'user';return;}action('zad-admin-users',{action:'set_role',user_id:user.id,role:next},'تم تحديث الصلاحية.');});
+      }
       card.querySelectorAll('[data-act]').forEach(b => b.addEventListener('click', () => userAction(user, b.dataset.act)));
       grid.append(card);
     }
@@ -233,6 +246,7 @@
       message('appStatus', friendly(error), true);
       renderUsers();
       renderVideos();
+      document.querySelectorAll('#commentsGrid [data-act],#staffGrid [data-act]').forEach(b=>b.disabled=false);
     } finally {
       actionBusy = false;
     }
@@ -260,7 +274,7 @@
     let reason = null;
     if (kind === 'reject') {
       reason = prompt('سبب رفض المقطع أو إلغاء نشره (اختياري):', '');
-      if (reason === null) return;
+      if (reason === null || !confirm('تأكيد رفض المقطع أو إلغاء نشره؟')) return;
     }
     if (kind === 'approve' && !confirm('اعتماد ونشر المقطع «' + String(video.title || '') + '» للعامة؟')) return;
     if (kind === 'delete' && !confirm('حذف المقطع وملفه نهائيًا؟ لا يمكن التراجع.')) return;
@@ -271,8 +285,19 @@
     }, 'تم تحديث المقطع.');
   }
   async function loadAll() {
-    await Promise.all([loadUsers(), loadVideos()]);
+    await Promise.all([loadUsers(), loadVideos(),loadComments(true),loadStaff()]);
   }
+
+  let commentOffset=0, commentRequest=0;
+  async function loadComments(reset=true){const request=++commentRequest;if(reset)commentOffset=0;$('refreshComments').disabled=true;$('moreComments').disabled=true;message('commentsState','جارٍ تحميل التعليقات…');try{
+    const data=await api('zad-admin-comments',{action:'list',q:$('commentSearch').value.trim(),offset:commentOffset});if(request!==commentRequest||!session)return;
+    if(reset)$('commentsGrid').textContent='';
+    for(const c of data.comments||[]){const card=document.createElement('article');card.className='admin-card';card.innerHTML=`<h3 dir="auto">${esc(c.profile?.display_name||c.profile?.username||'مستخدم')}</h3><p class="meta">@${esc(c.profile?.username||'')} · ${esc(date(c.created_at))}</p><p dir="auto">${esc(c.body)}</p><p class="meta" dir="auto">${esc(c.zad_talk_submissions?.title||'')} · ${c.status==='hidden'?'مخفي':'ظاهر'}</p>${c.status!=='hidden'?'<button type="button" class="secondary" data-act="hide">إخفاء التعليق</button>':''}`;
+    card.querySelector('[data-act]')?.addEventListener('click',()=>{if(confirm('إخفاء هذا التعليق وردوده من العرض العام؟'))action('zad-admin-comments',{action:'hide',comment_id:c.id},'تم إخفاء التعليق.');});$('commentsGrid').append(card);}
+    commentOffset=data.next_offset;$('moreComments').classList.toggle('hidden',!data.has_more);message('commentsState',$('commentsGrid').children.length?'':'لا توجد تعليقات مطابقة.');
+  }catch(e){message('commentsState',friendly(e),true);}finally{if(request===commentRequest){$('refreshComments').disabled=false;$('moreComments').disabled=false;}}}
+  async function loadStaff(){if(session?.role!=='owner')return;try{const data=await api('zad-admin-users',{action:'list_staff'});if(session?.role!=='owner')return;$('staffGrid').textContent='';for(const staff of (data.staff||[]).filter(x=>!x.user_id)){const card=document.createElement('article');card.className='admin-card';card.innerHTML=`<h3 dir="auto">${esc(staff.display_name||staff.username)}</h3><p class="meta">${esc(roleLabel(staff.role))} · ${staff.is_active?'نشط':'موقوف'}</p><button type="button" class="secondary" data-act="legacy">${staff.is_active?'إيقاف الدخول':'تفعيل الدخول'}</button>`;card.querySelector('button').addEventListener('click',()=>{if(confirm((staff.is_active?'إيقاف دخول حساب الإدارة وإلغاء جلساته: ':'تفعيل دخول حساب الإدارة: ')+staff.username+'؟'))action('zad-admin-users',{action:'legacy_access',admin_id:staff.id,active:!staff.is_active},'تم تحديث دخول الإدارة.');});$('staffGrid').append(card);}}catch(e){message('appStatus',friendly(e),true);}}
+  $('refreshComments').addEventListener('click',()=>loadComments(true));$('moreComments').addEventListener('click',()=>loadComments(false));let commentTimer;$('commentSearch').addEventListener('input',()=>{clearTimeout(commentTimer);commentTimer=setTimeout(()=>loadComments(true),300);});
   $('loginForm').addEventListener('submit', login);
   $('logoutBtn').addEventListener('click', logout);
   $('refreshUsers').addEventListener('click', loadUsers);
@@ -294,12 +319,14 @@
       });
       $('videosPane').classList.toggle('hidden', b.dataset.tab !== 'videos');
       $('usersPane').classList.toggle('hidden', b.dataset.tab !== 'users');
+      $('commentsPane').classList.toggle('hidden', b.dataset.tab !== 'comments');
       document.querySelectorAll('video').forEach(v => v.pause());
     });
     b.addEventListener('keydown', e => {
       if (['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) {
         e.preventDefault();
-        const next = e.key === 'Home' ? tabs[0] : e.key === 'End' ? tabs.at(-1) : tabs.find(t => t !== b);
+        const visible=tabs.filter(t=>!t.classList.contains('hidden')), index=visible.indexOf(b);
+        const next=e.key==='Home'?visible[0]:e.key==='End'?visible.at(-1):visible[(index+(e.key==='ArrowRight'?1:-1)+visible.length)%visible.length];
         next.click();
         next.focus();
       }
@@ -313,7 +340,6 @@
     }
   });
   if (session) {
-    showApp();
-    loadAll();
+    api('zad-admin-auth',{action:'me'}).then(data=>{session.role=data.role;session.name=data.admin_display_name||session.name;showApp();loadAll();}).catch(()=>clearSession());
   }
 })();

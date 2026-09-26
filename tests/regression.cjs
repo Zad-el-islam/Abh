@@ -51,9 +51,9 @@ const sourceURL = 'https://bzrhrvgddtnhctcdlgmy.supabase.co/storage/v1/object/si
       assert.deepEqual(isolated.resources, []);
       assert.deepEqual(isolated.errors, []);
       assert.equal(isolated.w.ZadCurrentRoute, 'home');
-      assert.equal(doc.querySelectorAll('.gateway-card').length, 3);
+      assert.equal(doc.querySelectorAll('.gateway-card').length, 4);
       assert.equal(doc.querySelectorAll('script[src],link[rel="stylesheet"]').length, 0);
-      assert.equal(doc.styleSheets.length, 5);
+      assert.equal(doc.styleSheets.length, 6);
       assert(doc.querySelector('.site-brand img').src.startsWith('data:image/svg+xml;base64,'));
       isolated.w.ZadNavigate('library');
       await tick();
@@ -330,7 +330,7 @@ const sourceURL = 'https://bzrhrvgddtnhctcdlgmy.supabase.co/storage/v1/object/si
       assert.deepEqual(reload.errors, []);
     }
   });
-  await test('Public videos: safe UGC, click-to-play, no loop, controls and no bulk preloads', async () => {
+  await test('Public videos: safe UGC, controlled loop, native controls and no bulk preloads', async () => {
     const attack = '\"><img src=x onerror=alert(1)>';
     const feed = await boot({
       fetcher: (url, opts) => url.includes('zad-talk-feed') ? json({
@@ -356,7 +356,7 @@ const sourceURL = 'https://bzrhrvgddtnhctcdlgmy.supabase.co/storage/v1/object/si
       v = doc.querySelector('#zadTalkFeed video');
     assert(v);
     assert.equal(v.autoplay, false);
-    assert.equal(v.loop, false);
+    assert.equal(v.loop, true);
     assert.equal(v.preload, 'none');
     assert(v.controls);
     assert.equal(doc.querySelector('.ztClipTitle').textContent, attack);

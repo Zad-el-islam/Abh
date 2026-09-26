@@ -519,7 +519,7 @@ textarea {
 }
 .gateway-grid {
   display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 20px;
 }
 .gateway-card {
@@ -1364,3 +1364,14 @@ button,a,input,select,textarea {max-inline-size:100%;}
 /* Functional field boundaries and inactive labels stay legible in both modes. */
 input:not([type=checkbox]):not([type=radio]),select,textarea {border-color:var(--color-muted);}
 button:disabled,.button[aria-disabled="true"] {opacity:1;background:var(--color-surface-alt);color:var(--color-muted);border-color:var(--color-muted);cursor:not-allowed;}
+
+/* Main gateways retain readable labels in one separate, scrollable mobile row. */
+@media(min-width:851px) and (max-width:1080px){
+  .site-header:not(.standalone-header) .header-inner{flex-wrap:wrap;gap:16px;}
+  .primary-nav{order:3;flex-basis:100%;justify-content:center;border-top:1px solid var(--line);}
+  .header-actions{margin-inline-start:auto;}
+}
+@media(max-width:640px){
+  .primary-nav{justify-content:flex-start;overflow-x:auto;gap:20px;scrollbar-width:thin;overscroll-behavior-inline:contain;max-width:100%;}
+  .primary-nav a{flex:0 0 auto;white-space:nowrap;min-height:44px;display:flex;align-items:center;}
+}

@@ -1,0 +1,311 @@
+{
+  "generated": "2026-09-26T06:31:44.466Z",
+  "scope": "Automated DOM and CSS breakpoint contracts; no rendered layout or YouTube playback claim",
+  "widths": [
+    390,
+    768,
+    1440
+  ],
+  "passed": 14,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Homepage has four equal gateway cards, unique 01–04 icons/actions, Rouh in main navigation",
+      "status": "passed"
+    },
+    {
+      "name": "Library remains inside Ilm; Rouh header, route, return and browser back work",
+      "status": "passed"
+    },
+    {
+      "name": "All seven languages cover gateway/nav/search/landing labels without translating source metadata",
+      "status": "passed"
+    },
+    {
+      "name": "390px: CSS gateway/grid, navigation and 16:9 modal sizing contracts",
+      "status": "passed"
+    },
+    {
+      "name": "390px: all ten primary Play buttons create only one in-site frame; close/ESC stop its context",
+      "status": "passed"
+    },
+    {
+      "name": "768px: CSS gateway/grid, navigation and 16:9 modal sizing contracts",
+      "status": "passed"
+    },
+    {
+      "name": "768px: all ten primary Play buttons create only one in-site frame; close/ESC stop its context",
+      "status": "passed"
+    },
+    {
+      "name": "1440px: CSS gateway/grid, navigation and 16:9 modal sizing contracts",
+      "status": "passed"
+    },
+    {
+      "name": "1440px: all ten primary Play buttons create only one in-site frame; close/ESC stop its context",
+      "status": "passed"
+    },
+    {
+      "name": "Opening another video removes the previous frame; old callbacks cannot close the current one",
+      "status": "passed"
+    },
+    {
+      "name": "Graceful thumbnail/frame failure retains primary Play and secondary original YouTube fallback",
+      "status": "passed"
+    },
+    {
+      "name": "Route/language changes remove iframe/audio context and preserve saved videos",
+      "status": "passed"
+    },
+    {
+      "name": "Rouh scoped palettes, light/dark and deep-link refresh preserve independent Home selection",
+      "status": "passed"
+    },
+    {
+      "name": "CSP permits only exact thumbnail/embed paths and no new remote parent scripts",
+      "status": "passed"
+    }
+  ],
+  "videoMatrix": [
+    {
+      "id": "ZWraKKwNfpE",
+      "width": 390,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "nkil1U1GxdA",
+      "width": 390,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "f0AHyAhNulc",
+      "width": 390,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "qHXCBBBXes4",
+      "width": 390,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "63_AOCldyXo",
+      "width": 390,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "1Koy-oS76dw",
+      "width": 390,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "d13ilMz8xXc",
+      "width": 390,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "1D7jEHCpN3o",
+      "width": 390,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "mCAvzIYamn4",
+      "width": 390,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "zw5hDAbYNgY",
+      "width": 390,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "ZWraKKwNfpE",
+      "width": 768,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "nkil1U1GxdA",
+      "width": 768,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "f0AHyAhNulc",
+      "width": 768,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "qHXCBBBXes4",
+      "width": 768,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "63_AOCldyXo",
+      "width": 768,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "1Koy-oS76dw",
+      "width": 768,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "d13ilMz8xXc",
+      "width": 768,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "1D7jEHCpN3o",
+      "width": 768,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "mCAvzIYamn4",
+      "width": 768,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "zw5hDAbYNgY",
+      "width": 768,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "ZWraKKwNfpE",
+      "width": 1440,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "nkil1U1GxdA",
+      "width": 1440,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "f0AHyAhNulc",
+      "width": 1440,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "qHXCBBBXes4",
+      "width": 1440,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "63_AOCldyXo",
+      "width": 1440,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "1Koy-oS76dw",
+      "width": 1440,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "d13ilMz8xXc",
+      "width": 1440,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "1D7jEHCpN3o",
+      "width": 1440,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "mCAvzIYamn4",
+      "width": 1440,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    },
+    {
+      "id": "zw5hDAbYNgY",
+      "width": 1440,
+      "domEmbed": "passed",
+      "thumbnailUrl": "passed",
+      "close": "passed",
+      "livePlayback": "not_verified"
+    }
+  ]
+}

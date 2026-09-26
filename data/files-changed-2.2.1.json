@@ -1,0 +1,36 @@
+{
+  "modified": [
+    "README.md",
+    "admin.html",
+    "assets/css/design-system.css",
+    "assets/css/rouh.css",
+    "assets/js/gateways.js",
+    "assets/js/i18n-catalog.js",
+    "assets/js/rouh.js",
+    "assets/js/settings.js",
+    "data/release-summary.json",
+    "data/visual-qa-status.json",
+    "docs/CHANGELOG.md",
+    "index.html",
+    "package-lock.json",
+    "package.json",
+    "reader.html",
+    "scripts/package_release.py",
+    "seerah.html",
+    "source-pages/index.html",
+    "tests/localization-results.json",
+    "tests/media-localization-results.json",
+    "tests/owner-social-ui-results.json",
+    "tests/palettes-paths-results.json",
+    "tests/quran-integrity-results.json",
+    "tests/regression.cjs",
+    "tests/scoped-colors-results.json"
+  ],
+  "added": [
+    "data/rouh-patch-qa.json",
+    "data/rouh-provider-qa.json",
+    "docs/ROUH-GATEWAY-2.2.1.md",
+    "tests/rouh-gateway-results.json",
+    "tests/rouh-gateway.cjs"
+  ]
+}

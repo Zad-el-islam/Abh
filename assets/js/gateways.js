@@ -114,19 +114,20 @@
       media: 'play',
       rouh: 'moon'
     };
-    return `<article class="gateway-card ${cls}"><div class="gateway-card-top">${Zad.icon(icons[cls])}<span class="gateway-number">${cls==='iman'?'01':cls==='ilm'?'02':'03'}</span></div><h2><a href="#${view}">${t(key)}</a></h2><p>${desc[lang]||desc.en}</p><div class="gateway-topics">${tags.map(k=>`<span>${t(k)}</span>`).join('')}</div><a class="gateway-open" href="#${view}">${t('enter')} ${Zad.icon('arrow')}</a></article>`;
+    return `<article class="gateway-card ${cls}"><div class="gateway-card-top">${Zad.icon(icons[cls])}<span class="gateway-number">${({iman:'01',ilm:'02',media:'03',rouh:'04'})[cls]}</span></div><h2><a href="#${view}">${t(key)}</a></h2><p>${desc[lang]||desc.en}</p><div class="gateway-topics">${tags.map(k=>`<span>${k.startsWith('rouh.')?ZadI18n.t(k):t(k)}</span>`).join('')}</div><a class="gateway-open" href="#${view}">${t('enter')} ${Zad.icon('arrow')}</a></article>`;
   }
 
   function home() {
     const d1 = ZadI18n.pack("gateways.51eb3a24d8");
     const d2 = ZadI18n.pack("gateways.d9f68f6e58");
     const d3 = ZadI18n.pack("gateways.cd4d0d768f");
+    const d4 = ZadI18n.pack("rouh.description");
     const ar = lang === 'ar';
     return `<section class="home-intro"><div><p class="eyebrow">${ZadI18n.t("gateways.da407e4ddd")}</p><h1>${ZadI18n.t("gateways.04bd06faf5")}</h1><p>${ZadI18n.t("gateways.d752e0bb99")}</p></div><div class="intro-mark" aria-hidden="true">${Zad.icon('moon')}</div></section>
  <section class="daily-invitation"><div class="daily-icon">${Zad.icon('book')}</div><div><span class="eyebrow">${ZadI18n.t("gateways.5510206c61")}</span><h2>${ZadI18n.t("gateways.30b0a3390c")}</h2><p>${ZadI18n.t("gateways.1cf5ab53c1")}</p></div><a class="button" href="#wird">${ZadI18n.t("gateways.74c572e45c")} ${Zad.icon('arrow')}</a></section>
  <div class="section-label"><h2>${ZadI18n.t("gateways.cc21748c95")}</h2><span>${ZadI18n.t("gateways.1ef1f01c0b")}</span></div>
- <div class="gateway-grid">${gatewayCard('iman','leaf','iman',d1,['daily','warrior','heart'],'iman')}${gatewayCard('ilm','library','ilm',d2,['hadith','library','seerah'],'ilm')}${gatewayCard('media','play','media',d3,['watch','publish'],'media')}</div>
- <div class="quiet-links"><a href="#library">${Zad.icon('library')}${t('library')}</a><a href="#heart-tasbih">${Zad.icon('heart')}${ZadI18n.t("quran-reader.ff27a05115")}</a><a href="#rouh">${t('rouh')}<small>${t('coming')}</small></a></div>`;
+ <div class="gateway-grid">${gatewayCard('iman','leaf','iman',d1,['daily','warrior','heart'],'iman')}${gatewayCard('ilm','library','ilm',d2,['hadith','library','seerah'],'ilm')}${gatewayCard('media','play','media',d3,['watch','publish'],'media')}${gatewayCard('rouh','moon','rouh',d4,['rouh.heart','rouh.worship','rouh.resolve'],'rouh')}</div>
+ <div class="quiet-links"><a href="#library">${Zad.icon('library')}${t('library')}</a><a href="#heart-tasbih">${Zad.icon('heart')}${ZadI18n.t("quran-reader.ff27a05115")}</a></div>`;
   }
 
   function header(no, key, icon) {
@@ -224,7 +225,7 @@
   }
 
   function rouh() {
-    return `${header('4','rouh','')}<div class="empty-state">${Zad.icon('moon')}<h2>${t('coming')}</h2><p>${ZadI18n.t("gateways.a9f6c2b79c")}</p><a class="button" href="#home">${t('back')}</a></div>`;
+    return window.ZadRouh.render();
   }
   const views = {
     home,

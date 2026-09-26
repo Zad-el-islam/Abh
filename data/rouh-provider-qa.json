@@ -1,0 +1,130 @@
+{
+  "scope": "HTTP endpoint checks only; no browser playback claim",
+  "date": "2026-09-26",
+  "videos": [
+    {
+      "id": "ZWraKKwNfpE",
+      "url": "https://www.youtube-nocookie.com/embed/ZWraKKwNfpE",
+      "live_playback_verified": false,
+      "http_status": 200,
+      "final_url": "https://www.youtube-nocookie.com/embed/ZWraKKwNfpE",
+      "title": "YouTube",
+      "has_player_response": false,
+      "owner_embed_block_detected": false,
+      "limitation": "No playback result in HTTP document; not evidence of successful embedding."
+    },
+    {
+      "id": "nkil1U1GxdA",
+      "url": "https://www.youtube-nocookie.com/embed/nkil1U1GxdA",
+      "live_playback_verified": false,
+      "http_status": 200,
+      "final_url": "https://www.youtube-nocookie.com/embed/nkil1U1GxdA",
+      "title": "YouTube",
+      "has_player_response": false,
+      "owner_embed_block_detected": false,
+      "limitation": "No playback result in HTTP document; not evidence of successful embedding."
+    },
+    {
+      "id": "f0AHyAhNulc",
+      "url": "https://www.youtube-nocookie.com/embed/f0AHyAhNulc",
+      "live_playback_verified": false,
+      "http_status": 200,
+      "final_url": "https://www.youtube-nocookie.com/embed/f0AHyAhNulc",
+      "title": "YouTube",
+      "has_player_response": false,
+      "owner_embed_block_detected": false,
+      "limitation": "No playback result in HTTP document; not evidence of successful embedding."
+    },
+    {
+      "id": "qHXCBBBXes4",
+      "url": "https://www.youtube-nocookie.com/embed/qHXCBBBXes4",
+      "live_playback_verified": false,
+      "http_status": 200,
+      "final_url": "https://www.youtube-nocookie.com/embed/qHXCBBBXes4",
+      "title": "YouTube",
+      "has_player_response": false,
+      "owner_embed_block_detected": false,
+      "limitation": "No playback result in HTTP document; not evidence of successful embedding."
+    },
+    {
+      "id": "63_AOCldyXo",
+      "url": "https://www.youtube-nocookie.com/embed/63_AOCldyXo",
+      "live_playback_verified": false,
+      "http_status": 200,
+      "final_url": "https://www.youtube-nocookie.com/embed/63_AOCldyXo",
+      "title": "YouTube",
+      "has_player_response": false,
+      "owner_embed_block_detected": false,
+      "limitation": "No playback result in HTTP document; not evidence of successful embedding."
+    },
+    {
+      "id": "1Koy-oS76dw",
+      "url": "https://www.youtube-nocookie.com/embed/1Koy-oS76dw",
+      "live_playback_verified": false,
+      "http_status": 200,
+      "final_url": "https://www.youtube-nocookie.com/embed/1Koy-oS76dw",
+      "title": "YouTube",
+      "has_player_response": false,
+      "owner_embed_block_detected": false,
+      "limitation": "No playback result in HTTP document; not evidence of successful embedding."
+    },
+    {
+      "id": "d13ilMz8xXc",
+      "url": "https://www.youtube-nocookie.com/embed/d13ilMz8xXc",
+      "live_playback_verified": false,
+      "http_status": 200,
+      "final_url": "https://www.youtube-nocookie.com/embed/d13ilMz8xXc",
+      "title": "YouTube",
+      "has_player_response": false,
+      "owner_embed_block_detected": false,
+      "limitation": "No playback result in HTTP document; not evidence of successful embedding."
+    },
+    {
+      "id": "1D7jEHCpN3o",
+      "url": "https://www.youtube-nocookie.com/embed/1D7jEHCpN3o",
+      "live_playback_verified": false,
+      "http_status": 200,
+      "final_url": "https://www.youtube-nocookie.com/embed/1D7jEHCpN3o",
+      "title": "YouTube",
+      "has_player_response": false,
+      "owner_embed_block_detected": false,
+      "limitation": "No playback result in HTTP document; not evidence of successful embedding."
+    },
+    {
+      "id": "mCAvzIYamn4",
+      "url": "https://www.youtube-nocookie.com/embed/mCAvzIYamn4",
+      "live_playback_verified": false,
+      "http_status": 200,
+      "final_url": "https://www.youtube-nocookie.com/embed/mCAvzIYamn4",
+      "title": "YouTube",
+      "has_player_response": false,
+      "owner_embed_block_detected": false,
+      "limitation": "No playback result in HTTP document; not evidence of successful embedding."
+    },
+    {
+      "id": "zw5hDAbYNgY",
+      "url": "https://www.youtube-nocookie.com/embed/zw5hDAbYNgY",
+      "live_playback_verified": false,
+      "http_status": 200,
+      "final_url": "https://www.youtube-nocookie.com/embed/zw5hDAbYNgY",
+      "title": "YouTube",
+      "has_player_response": false,
+      "owner_embed_block_detected": false,
+      "limitation": "No playback result in HTTP document; not evidence of successful embedding."
+    }
+  ],
+  "thumbnail_check": {
+    "url": "https://i.ytimg.com/vi/ZWraKKwNfpE/hqdefault.jpg",
+    "status": "unverified",
+    "reason": "The environment returns an HTML Site Unavailable page instead of image bytes. Remaining thumbnail downloads were not retried."
+  },
+  "browser_rendering": {
+    "status": "not_run",
+    "reason": "Local page navigation denied with net::ERR_BLOCKED_BY_CLIENT",
+    "widths": [
+      390,
+      768,
+      1440
+    ]
+  }
+}

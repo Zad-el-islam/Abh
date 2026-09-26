@@ -1,4 +1,4 @@
-/* Review-only Edge Function regression tests. Database/storage clients are test doubles. */
+/* Deployed canonical function contracts. Authentication is isolated here and tested in backend-security.cjs/live QA. Database/storage clients are test doubles. */
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
@@ -42,31 +42,14 @@ function client(resolve, extras = {}) {
 }
 
 function handler(name, sb) {
-  const file = path.join(__dirname, '../backend/review-only', name, 'index.ts');
+  const file = path.join(__dirname, '../supabase/functions', name, 'index.ts');
   const source = fs.readFileSync(file, 'utf8').replace(/^import .*?;\n/, '');
+  const runtime = fs.readFileSync(path.join(__dirname,'../supabase/functions/_shared/runtime.ts'),'utf8').replace(/^import .*?;\n/,'').replace(/^export /gm,'');
   let serve;
-  const env = {
-    SUPABASE_URL: 'https://test.invalid',
-    SUPABASE_SERVICE_ROLE_KEY: 'test-only-secret'
-  };
-  vm.runInNewContext(stripTypeScriptTypes(source), {
-    Deno: {
-      serve(fn) {
-        serve = fn;
-      },
-      env: {
-        get: key => env[key]
-      }
-    },
-    createClient: () => sb,
-    Request,
-    Response,
-    TextEncoder,
-    crypto: crypto.webcrypto,
-    console: {
-      error() {},
-      warn() {}
-    }
+  const env={SUPABASE_URL:'https://test.invalid',SUPABASE_SERVICE_ROLE_KEY:'test-only-secret'};
+  vm.runInNewContext(stripTypeScriptTypes(runtime,{mode:'transform'})+"\nuser=async()=>({user:{id:'23456789-1234-1234-1234-123456789012'},profile:{account_status:'active'},role:'user'});\n"+stripTypeScriptTypes(source), {
+    Deno:{serve(fn){serve=fn;},env:{get:key=>env[key]}},createClient:()=>sb,Request,Response,Headers,AbortSignal,TextEncoder,TextDecoder,DataView,Uint8Array,atob,
+    fetch:async()=>new Response(fs.readFileSync(path.join(__dirname,'fixtures/qa-video.mp4'))),crypto:crypto.webcrypto,console:{error(){},warn(){}}
   });
   return async body => {
     const response = await serve(new Request('https://test.invalid/function', {
@@ -139,13 +122,14 @@ async function test(name, fn) {
       assert.equal(result.status, 500);
       assert(!result.body.session_token);
     });
-    const receipt = 'test-only-receipt-long-enough-for-contract';
+    const receipt = 'a'.repeat(64);
     const baseRow = {
       id: '00000000-0000-0000-0000-000000000001',
       status: 'uploading',
       upload_receipt_hash: hash(receipt),
       upload_expires_at: new Date(Date.now() + 60000).toISOString(),
-      storage_path: 'test/video.mp4',
+      submitter_user_id: '23456789-1234-1234-1234-123456789012',
+      storage_path: '23456789-1234-1234-1234-123456789012/00000000-0000-0000-0000-000000000001/video.mp4',
       file_size: 1024,
       mime_type: 'video/mp4'
     };
@@ -153,14 +137,14 @@ async function test(name, fn) {
       const sb = client(() => ({
         data: {
           ...baseRow,
-          status: 'pending'
+          status: 'pending', upload_verified_at: new Date().toISOString()
         },
         error: null
       }));
       const request = handler('zad-talk-finalize-upload', sb);
       assert.equal((await request({
         id: baseRow.id,
-        receipt: 'different-invalid-receipt-long-enough'
+        receipt: 'b'.repeat(64)
       })).status, 403);
       assert.equal((await request({
         id: baseRow.id,
@@ -179,11 +163,12 @@ async function test(name, fn) {
           mimetype: 'video/mp4'
         }]) {
         const sb = client((table, ops) => ({
-          data: ops.some(o => o[0] === 'update') ? null : baseRow,
+          data: ops.some(o => o[0] === 'update') ? [{id:baseRow.id}] : baseRow,
           error: null
         }), {
           storage: {
             from: () => ({
+              createSignedUrl: async()=>({data:{signedUrl:'https://test.invalid/video.mp4'},error:null}),
               list: async () => ({
                 data: [{
                   name: 'video.mp4',
@@ -257,7 +242,7 @@ async function test(name, fn) {
     fs.writeFileSync(path.join(__dirname, 'backend-results.json'), JSON.stringify({
       passed: results.length - failed,
       failed,
-      scope: 'Offline Node contract tests of review-only sources with mocked database/storage; not Deno or production integration',
+      scope: 'Canonical deployed function contracts with mocked authentication/database/storage. Actual runtime guards are separately tested; this suite is not live integration.',
       results
     }, null, 2));
     process.exitCode = failed ? 1 : 0;

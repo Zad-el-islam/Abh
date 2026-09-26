@@ -1,33 +1,31 @@
 {
-  "version": "2.1.2",
-  "date": "2026-09-25",
+  "version": "2.2.0",
+  "date": "2026-09-26",
   "project": "bzrhrvgddtnhctcdlgmy",
   "rootCause": "Original project INACTIVE; restored same project. Additional authorization, upload validation and session revocation defects repaired after inspecting live schema.",
   "status": "ACTIVE_HEALTHY",
   "migrationsApplied": [
     "20260925154442_repair_zad_backend_authorization.sql",
     "20260925155115_zad_admin_user_search_pagination.sql",
-    "20260925160155_revoke_internal_trigger_rpc_access.sql"
+    "20260925160155_revoke_internal_trigger_rpc_access.sql",
+    "20260925193352_owner_roles_social_threads.sql"
   ],
   "deployedFunctions": {
-    "zad-talk-create-upload": 8,
-    "zad-talk-finalize-upload": 6,
-    "zad-talk-feed": 9,
-    "zad-talk-admin-list": 4,
-    "zad-talk-admin-review": 4,
-    "zad-admin-auth": 5,
-    "zad-admin-users": 6,
-    "zad-talk-social": 7,
-    "zad-talk-leaderboard": 4,
-    "zad-account-delete": 2,
-    "zad-access-check": 4
-  },
-  "liveTests": {
-    "passed": 31,
-    "failed": 0
+    "zad-talk-create-upload": 9,
+    "zad-talk-finalize-upload": 7,
+    "zad-talk-feed": 10,
+    "zad-talk-admin-list": 5,
+    "zad-talk-admin-review": 5,
+    "zad-admin-auth": 6,
+    "zad-admin-users": 8,
+    "zad-talk-social": 8,
+    "zad-talk-leaderboard": 5,
+    "zad-account-delete": 3,
+    "zad-access-check": 5,
+    "zad-admin-comments": 2
   },
   "localTests": {
-    "passed": 113,
+    "passed": 123,
     "failed": 0
   },
   "cleanup": {
@@ -42,5 +40,16 @@
     "Rendered browser QA not run: browser access policy.",
     "Existing signed playback URLs expire after 300 seconds; signed upload tickets remain valid until Storage expiry, but finalization revalidates the current user session.",
     "Auth leaked-password protection remains disabled; not changed through available management tools."
-  ]
+  ],
+  "previousLiveTests": {
+    "passed": 31,
+    "failed": 0
+  },
+  "ownerSocialLiveTests": {
+    "passed": 24,
+    "failed": 0,
+    "executedDate": "2026-09-25"
+  },
+  "realOwnerCreated": false,
+  "ownerAccountPending": "Private email required"
 }

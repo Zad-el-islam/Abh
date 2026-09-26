@@ -84,7 +84,7 @@
       "status": "passed"
     },
     {
-      "name": "Public videos: safe UGC, click-to-play, no loop, controls and no bulk preloads",
+      "name": "Public videos: safe UGC, controlled loop, native controls and no bulk preloads",
       "status": "passed"
     },
     {

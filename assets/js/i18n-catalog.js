@@ -8639,5 +8639,338 @@ window.ZadI18nCatalog = {
     "tr": "Sıkıntı duaları ve ümit ayetleri",
     "ur": "پریشانی کی دعائیں اور امید کی آیات",
     "es": "Súplicas ante la angustia y aleyas de esperanza"
+  },
+  "roles.owner": {
+    "ar": "المالك",
+    "en": "Owner",
+    "fr": "Propriétaire",
+    "id": "Pemilik",
+    "tr": "Sahip",
+    "ur": "مالک",
+    "es": "Propietario"
+  },
+  "roles.admin": {
+    "ar": "مدير",
+    "en": "Admin",
+    "fr": "Administrateur",
+    "id": "Admin",
+    "tr": "Yönetici",
+    "ur": "منتظم",
+    "es": "Administrador"
+  },
+  "roles.moderator": {
+    "ar": "مشرف",
+    "en": "Moderator",
+    "fr": "Modérateur",
+    "id": "Moderator",
+    "tr": "Moderatör",
+    "ur": "نگران",
+    "es": "Moderador"
+  },
+  "roles.user": {
+    "ar": "مستخدم",
+    "en": "User",
+    "fr": "Utilisateur",
+    "id": "Pengguna",
+    "tr": "Kullanıcı",
+    "ur": "صارف",
+    "es": "Usuario"
+  },
+  "roles.panel": {
+    "ar": "لوحة الإدارة",
+    "en": "Admin panel",
+    "fr": "Administration",
+    "id": "Panel admin",
+    "tr": "Yönetim paneli",
+    "ur": "انتظامی پینل",
+    "es": "Administración"
+  },
+  "social.reply": {
+    "ar": "رد",
+    "en": "Reply",
+    "fr": "Répondre",
+    "id": "Balas",
+    "tr": "Yanıtla",
+    "ur": "جواب دیں",
+    "es": "Responder"
+  },
+  "social.replies": {
+    "ar": "الردود ({count})",
+    "en": "Replies ({count})",
+    "fr": "Réponses ({count})",
+    "id": "Balasan ({count})",
+    "tr": "Yanıtlar ({count})",
+    "ur": "جوابات ({count})",
+    "es": "Respuestas ({count})"
+  },
+  "social.delete": {
+    "ar": "حذف",
+    "en": "Delete",
+    "fr": "Supprimer",
+    "id": "Hapus",
+    "tr": "Sil",
+    "ur": "حذف کریں",
+    "es": "Eliminar"
+  },
+  "social.confirm": {
+    "ar": "هل تريد حذف هذا التعليق؟",
+    "en": "Delete this comment?",
+    "fr": "Supprimer ce commentaire ?",
+    "id": "Hapus komentar ini?",
+    "tr": "Bu yorum silinsin mi?",
+    "ur": "کیا یہ تبصرہ حذف کرنا ہے؟",
+    "es": "¿Eliminar este comentario?"
+  },
+  "social.cancel": {
+    "ar": "إلغاء الرد",
+    "en": "Cancel reply",
+    "fr": "Annuler la réponse",
+    "id": "Batalkan balasan",
+    "tr": "Yanıtı iptal et",
+    "ur": "جواب منسوخ کریں",
+    "es": "Cancelar respuesta"
+  },
+  "social.more": {
+    "ar": "عرض المزيد",
+    "en": "Show more",
+    "fr": "Voir plus",
+    "id": "Tampilkan lagi",
+    "tr": "Daha fazla göster",
+    "ur": "مزید دکھائیں",
+    "es": "Ver más"
+  },
+  "social.profile": {
+    "ar": "الملف العام",
+    "en": "Public profile",
+    "fr": "Profil public",
+    "id": "Profil publik",
+    "tr": "Herkese açık profil",
+    "ur": "عوامی پروفائل",
+    "es": "Perfil público"
+  },
+  "social.publisher": {
+    "ar": "الناشر",
+    "en": "Publisher",
+    "fr": "Auteur",
+    "id": "Penerbit",
+    "tr": "Yayıncı",
+    "ur": "ناشر",
+    "es": "Autor"
+  },
+  "social.recent": {
+    "ar": "المقاطع المنشورة",
+    "en": "Published videos",
+    "fr": "Vidéos publiées",
+    "id": "Video terbit",
+    "tr": "Yayımlanan videolar",
+    "ur": "شائع شدہ ویڈیوز",
+    "es": "Vídeos publicados"
+  },
+  "social.failed": {
+    "ar": "تعذر إتمام الطلب. حاول مرة أخرى.",
+    "en": "Could not complete the request. Try again.",
+    "fr": "Impossible de terminer la demande. Réessayez.",
+    "id": "Permintaan gagal. Coba lagi.",
+    "tr": "İstek tamamlanamadı. Tekrar deneyin.",
+    "ur": "درخواست مکمل نہیں ہو سکی۔ دوبارہ کوشش کریں۔",
+    "es": "No se pudo completar la solicitud. Inténtalo de nuevo."
+  },
+  "rouh.description": {
+    "ar": "مقاطع مختارة للتأمل والتعلّم، تعود إليها حين تحتاجها.",
+    "en": "Selected videos for reflection and learning, ready when you need them.",
+    "fr": "Des vidéos choisies pour réfléchir et apprendre, à retrouver selon vos besoins.",
+    "id": "Video pilihan untuk merenung dan belajar, kapan pun dibutuhkan.",
+    "tr": "İhtiyaç duyduğunuzda dönüp izleyebileceğiniz düşünme ve öğrenme videoları.",
+    "ur": "غور و فکر اور سیکھنے کے لیے منتخب ویڈیوز، جب بھی آپ کو ضرورت ہو۔",
+    "es": "Vídeos seleccionados para reflexionar y aprender, cuando los necesites."
+  },
+  "rouh.question": {
+    "ar": "ماذا يحتاج قلبك الآن؟",
+    "en": "What does your heart need now?",
+    "fr": "De quoi votre cœur a-t-il besoin maintenant ?",
+    "id": "Apa yang hati Anda butuhkan saat ini?",
+    "tr": "Kalbinizin şimdi neye ihtiyacı var?",
+    "ur": "اب آپ کے دل کو کس چیز کی ضرورت ہے؟",
+    "es": "¿Qué necesita tu corazón ahora?"
+  },
+  "rouh.all": {
+    "ar": "الكل",
+    "en": "All",
+    "fr": "Tout",
+    "id": "Semua",
+    "tr": "Tümü",
+    "ur": "سب",
+    "es": "Todos"
+  },
+  "rouh.saved": {
+    "ar": "محفوظاتي",
+    "en": "My saved videos",
+    "fr": "Mes vidéos enregistrées",
+    "id": "Video simpanan saya",
+    "tr": "Kaydettiğim videolar",
+    "ur": "میری محفوظ ویڈیوز",
+    "es": "Mis vídeos guardados"
+  },
+  "rouh.save": {
+    "ar": "احفظه لوقت الحاجة",
+    "en": "Save for when you need it",
+    "fr": "Garder pour plus tard",
+    "id": "Simpan untuk saat dibutuhkan",
+    "tr": "İhtiyaç duyduğunda izlemek için kaydet",
+    "ur": "ضرورت کے وقت کے لیے محفوظ کریں",
+    "es": "Guardar para cuando lo necesites"
+  },
+  "rouh.unsave": {
+    "ar": "إزالة من المحفوظات",
+    "en": "Remove from saved",
+    "fr": "Retirer des enregistrements",
+    "id": "Hapus dari simpanan",
+    "tr": "Kaydedilenlerden kaldır",
+    "ur": "محفوظات سے ہٹائیں",
+    "es": "Quitar de guardados"
+  },
+  "rouh.daily": {
+    "ar": "مقطع اليوم",
+    "en": "Video of the day",
+    "fr": "La vidéo du jour",
+    "id": "Video hari ini",
+    "tr": "Günün videosu",
+    "ur": "آج کی ویڈیو",
+    "es": "El vídeo del día"
+  },
+  "rouh.heart": {
+    "ar": "تزكية القلب",
+    "en": "Nurturing the heart",
+    "fr": "Purifier le cœur",
+    "id": "Penyucian hati",
+    "tr": "Kalbi arındırmak",
+    "ur": "تزکیۂ قلب",
+    "es": "Purificar el corazón"
+  },
+  "rouh.worship": {
+    "ar": "العبادات والذكر",
+    "en": "Worship and remembrance",
+    "fr": "Adoration et rappel",
+    "id": "Ibadah dan zikir",
+    "tr": "İbadet ve zikir",
+    "ur": "عبادات اور ذکر",
+    "es": "Adoración y recuerdo"
+  },
+  "rouh.prayer": {
+    "ar": "الصلاة",
+    "en": "Prayer",
+    "fr": "Prière",
+    "id": "Salat",
+    "tr": "Namaz",
+    "ur": "نماز",
+    "es": "Oración"
+  },
+  "rouh.quran": {
+    "ar": "القرآن",
+    "en": "Quran",
+    "fr": "Coran",
+    "id": "Al-Quran",
+    "tr": "Kur’an",
+    "ur": "قرآن",
+    "es": "Corán"
+  },
+  "rouh.repentance": {
+    "ar": "التوبة والعودة",
+    "en": "Repentance and returning",
+    "fr": "Se repentir et revenir",
+    "id": "Tobat dan kembali",
+    "tr": "Tövbe ve dönüş",
+    "ur": "توبہ اور رجوع",
+    "es": "Arrepentirse y volver"
+  },
+  "rouh.resolve": {
+    "ar": "الهمة والثبات",
+    "en": "Motivation and steadfastness",
+    "fr": "Élan et persévérance",
+    "id": "Semangat dan keteguhan",
+    "tr": "Gayret ve sebat",
+    "ur": "ہمت اور ثابت قدمی",
+    "es": "Ánimo y constancia"
+  },
+  "rouh.weak": {
+    "ar": "حين تضعف",
+    "en": "When you feel weak",
+    "fr": "Quand vous vous sentez faible",
+    "id": "Saat merasa lemah",
+    "tr": "Kendinizi güçsüz hissettiğinizde",
+    "ur": "جب آپ کمزور پڑیں",
+    "es": "Cuando te sientas débil"
+  },
+  "rouh.short": {
+    "ar": "مقاطع قصيرة",
+    "en": "Short videos",
+    "fr": "Vidéos courtes",
+    "id": "Video singkat",
+    "tr": "Kısa videolar",
+    "ur": "مختصر ویڈیوز",
+    "es": "Vídeos cortos"
+  },
+  "rouh.certainty": {
+    "ar": "اليقين والرد على الشبهات",
+    "en": "Conviction and addressing doubts",
+    "fr": "Certitude et réponses aux doutes",
+    "id": "Keyakinan dan jawaban atas keraguan",
+    "tr": "Yakîn ve şüphelere cevaplar",
+    "ur": "یقین اور شبہات کے جوابات",
+    "es": "Convicción y respuestas a las dudas"
+  },
+  "rouh.reference": {
+    "ar": "مرجع مطوّل",
+    "en": "Extended reference",
+    "fr": "Référence longue",
+    "id": "Referensi panjang",
+    "tr": "Uzun başvuru kaynağı",
+    "ur": "تفصیلی حوالہ",
+    "es": "Referencia extensa"
+  },
+  "rouh.play": {
+    "ar": "شاهد المقطع",
+    "en": "Watch video",
+    "fr": "Regarder",
+    "id": "Tonton video",
+    "tr": "Videoyu izle",
+    "ur": "ویڈیو دیکھیں",
+    "es": "Ver vídeo"
+  },
+  "rouh.youtube": {
+    "ar": "افتح في YouTube",
+    "en": "Open on YouTube",
+    "fr": "Ouvrir sur YouTube",
+    "id": "Buka di YouTube",
+    "tr": "YouTube’da aç",
+    "ur": "YouTube پر کھولیں",
+    "es": "Abrir en YouTube"
+  },
+  "rouh.fallback": {
+    "ar": "قد يقيّد YouTube تشغيل بعض المقاطع هنا. إذا تعذر التشغيل، يمكنك فتح المقطع في YouTube.",
+    "en": "YouTube may restrict playback of some videos here. If playback is unavailable, open the video on YouTube.",
+    "fr": "YouTube peut limiter la lecture de certaines vidéos ici. Si elle est indisponible, ouvrez la vidéo sur YouTube.",
+    "id": "YouTube dapat membatasi pemutaran sebagian video di sini. Jika tidak dapat diputar, buka videonya di YouTube.",
+    "tr": "YouTube bazı videoların burada oynatılmasını kısıtlayabilir. Oynatılamıyorsa videoyu YouTube’da açın.",
+    "ur": "YouTube یہاں کچھ ویڈیوز چلانے پر پابندی لگا سکتا ہے۔ اگر ویڈیو نہ چلے تو اسے YouTube پر کھولیں۔",
+    "es": "YouTube puede restringir la reproducción de algunos vídeos aquí. Si no se reproducen, ábrelos en YouTube."
+  },
+  "rouh.empty": {
+    "ar": "لا توجد مقاطع محفوظة بعد.",
+    "en": "No saved videos yet.",
+    "fr": "Aucune vidéo enregistrée.",
+    "id": "Belum ada video tersimpan.",
+    "tr": "Henüz kaydedilmiş video yok.",
+    "ur": "ابھی کوئی ویڈیو محفوظ نہیں ہے۔",
+    "es": "Aún no hay vídeos guardados."
+  },
+  "rouh.unavailable": {
+    "ar": "تعذر تحميل المشغّل هنا. يمكنك مشاهدة المقطع عبر الرابط التالي.",
+    "en": "The player could not load here. You can watch the video using the link below.",
+    "fr": "Le lecteur n’a pas pu se charger ici. Vous pouvez regarder la vidéo via le lien ci-dessous.",
+    "id": "Pemutar tidak dapat dimuat di sini. Anda dapat menonton video melalui tautan di bawah.",
+    "tr": "Oynatıcı burada yüklenemedi. Videoyu aşağıdaki bağlantıdan izleyebilirsiniz.",
+    "ur": "یہاں پلیئر لوڈ نہیں ہو سکا۔ نیچے دیے گئے لنک سے ویڈیو دیکھ سکتے ہیں۔",
+    "es": "No se pudo cargar el reproductor aquí. Puedes ver el vídeo con el siguiente enlace."
   }
 };

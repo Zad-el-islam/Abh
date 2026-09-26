@@ -37,9 +37,9 @@ function files(dir) {
   }).flatMap(e => e.isDirectory() ? files(path.join(dir, e.name)) : [path.join(dir, e.name)]);
 }
 const scripts = files('assets/js').filter(f => f.endsWith('.js'));
-check('All shipped JavaScript and review-only TypeScript parse', () => {
+check('All shipped JavaScript and canonical Edge TypeScript parse', () => {
   for (const file of scripts) parser.parse(read(file));
-  for (const file of files('backend').filter(f => f.endsWith('.ts'))) parser.parse(read(file), {
+  for (const file of files('supabase/functions').filter(f => f.endsWith('.ts'))) parser.parse(read(file), {
     sourceType: 'module',
     plugins: ['typescript']
   });

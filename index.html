@@ -1,6 +1,6 @@
 <!DOCTYPE html><html data-accent="emerald" data-theme="light" dir="rtl" lang="ar" data-portable-build="1"><head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;; object-src &#x27;none&#x27;; script-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; img-src &#x27;self&#x27; data: blob: https://bzrhrvgddtnhctcdlgmy.supabase.co; font-src &#x27;self&#x27; data:; connect-src &#x27;self&#x27; https://bzrhrvgddtnhctcdlgmy.supabase.co https://api.quran.com wss://bzrhrvgddtnhctcdlgmy.supabase.co https://api.alquran.cloud https://quranenc.com https://cdn.mualim.app https://huggingface.co https://*.huggingface.co https://*.hf.co https://*.xethub.hf.co; media-src &#x27;self&#x27; blob: https://bzrhrvgddtnhctcdlgmy.supabase.co https://everyayah.com https://*.mp3quran.net https://cdn.mualim.app https://huggingface.co https://*.huggingface.co https://*.hf.co https://*.xethub.hf.co; frame-src &#x27;self&#x27; blob: https://www.youtube.com https://www.youtube-nocookie.com; worker-src &#x27;self&#x27; blob:; manifest-src &#x27;self&#x27;; upgrade-insecure-requests; block-all-mixed-content">
+<meta http-equiv="Content-Security-Policy" content="default-src &#x27;self&#x27;; base-uri &#x27;self&#x27;; form-action &#x27;self&#x27;; object-src &#x27;none&#x27;; script-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; style-src &#x27;self&#x27; &#x27;unsafe-inline&#x27;; img-src &#x27;self&#x27; data: blob: https://i.ytimg.com/vi/ https://bzrhrvgddtnhctcdlgmy.supabase.co; font-src &#x27;self&#x27; data:; connect-src &#x27;self&#x27; https://bzrhrvgddtnhctcdlgmy.supabase.co https://api.quran.com wss://bzrhrvgddtnhctcdlgmy.supabase.co https://api.alquran.cloud https://quranenc.com https://cdn.mualim.app https://huggingface.co https://*.huggingface.co https://*.hf.co https://*.xethub.hf.co; media-src &#x27;self&#x27; blob: https://bzrhrvgddtnhctcdlgmy.supabase.co https://everyayah.com https://*.mp3quran.net https://cdn.mualim.app https://huggingface.co https://*.huggingface.co https://*.hf.co https://*.xethub.hf.co; frame-src &#x27;self&#x27; blob: https://www.youtube.com/embed/ https://www.youtube-nocookie.com/embed/; worker-src &#x27;self&#x27; blob:; manifest-src &#x27;self&#x27;; upgrade-insecure-requests; block-all-mixed-content">
 <meta content="strict-origin-when-cross-origin" name="referrer">
 <meta content="telephone=no" name="format-detection">
 <link crossorigin="" href="https://bzrhrvgddtnhctcdlgmy.supabase.co" rel="preconnect">
@@ -532,7 +532,7 @@ textarea {
 }
 .gateway-grid {
   display: grid;
-  grid-template-columns: repeat(3,minmax(0,1fr));
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 20px;
 }
 .gateway-card {
@@ -1377,6 +1377,17 @@ button,a,input,select,textarea {max-inline-size:100%;}
 /* Functional field boundaries and inactive labels stay legible in both modes. */
 input:not([type=checkbox]):not([type=radio]),select,textarea {border-color:var(--color-muted);}
 button:disabled,.button[aria-disabled="true"] {opacity:1;background:var(--color-surface-alt);color:var(--color-muted);border-color:var(--color-muted);cursor:not-allowed;}
+
+/* Main gateways retain readable labels in one separate, scrollable mobile row. */
+@media(min-width:851px) and (max-width:1080px){
+  .site-header:not(.standalone-header) .header-inner{flex-wrap:wrap;gap:16px;}
+  .primary-nav{order:3;flex-basis:100%;justify-content:center;border-top:1px solid var(--line);}
+  .header-actions{margin-inline-start:auto;}
+}
+@media(max-width:640px){
+  .primary-nav{justify-content:flex-start;overflow-x:auto;gap:20px;scrollbar-width:thin;overscroll-behavior-inline:contain;max-width:100%;}
+  .primary-nav a{flex:0 0 auto;white-space:nowrap;min-height:44px;display:flex;align-items:center;}
+}
 </style>
 <style data-source="assets/css/modules.css">.card,.zadPanel,.heartPanel,.hadithPanel {
   padding: 24px;
@@ -3722,7 +3733,59 @@ tajweed.idgh_ghn,tajweed.idgh_w_ghn,tajweed.idgh_mus,tajweed.idgh_mus_shfw {
   color: var(--muted);
   margin-top: 5px;
 }
+
+/* Reels use the existing semantic surfaces and native video controls. */
+.zadTalkFeedShell {display:block;height:min(760px,calc(100dvh - 170px));min-height:420px;overflow-y:auto;overscroll-behavior-y:contain;scroll-snap-type:y mandatory;scrollbar-width:thin;max-width:940px;margin-inline:auto}
+.zadTalkClip {height:100%;min-height:100%;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);grid-template-rows:1fr auto;scroll-snap-align:start;scroll-snap-stop:always;margin-bottom:16px}
+.zadTalkClip video {grid-column:1;grid-row:1 / 3;height:100%;max-height:none;aspect-ratio:auto;min-height:0}
+.zadTalkClipOverlay {grid-column:2;grid-row:1;align-self:end;min-width:0;padding:22px}
+.ztActionRail {grid-column:2;grid-row:2;flex-wrap:wrap;padding:16px;gap:8px}
+.ztAction {padding:8px;min-width:48px;flex-direction:column;display:flex;align-items:center}
+button.ztCreatorLine {background:transparent;border:0;color:var(--color-text);text-align:start;padding:0;max-width:100%;min-height:44px}
+.ztCreatorLine>span {min-width:0}.ztHandle {display:block;color:var(--color-muted);font-size:.75rem;overflow-wrap:anywhere;text-align:start}
+.ztCommentBody {min-width:0}.ztCommentActions {display:flex;flex-wrap:wrap;gap:8px;margin-block:10px}.ztCommentActions button,.ztReplies>button,.ztCommentBody>button {padding:5px 9px;font-size:.75rem}
+.ztCommentActions [aria-pressed="true"] {color:var(--color-brand);border-color:var(--color-brand)}.ztReplies {border-inline-start:1px solid var(--color-border);padding-inline-start:10px;margin-top:12px}.ztReplies[hidden] {display:none}
+#ztReplyCancel,#ztCommentsMore {align-self:start;margin:8px 16px}.ztCommentsPanel {max-height:90dvh;overflow:hidden;display:flex;flex-direction:column}.ztCommentsList {min-height:0;flex:1;overflow-y:auto}
+.ztPublicProfile {width:min(560px,92vw);max-height:85dvh;overflow-y:auto;background:var(--color-surface);color:var(--color-text);border:1px solid var(--color-border);border-radius:var(--radius-md);padding:20px}.ztPublicProfile::backdrop {background:rgba(10,15,12,.6)}.ztPublicIdentity {display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-block:20px}.ztPublicIdentity strong {overflow-wrap:anywhere}.ztPublicProfile h2 {font-size:1rem}.ztPublicLink {display:block;color:var(--color-brand);padding:14px 0;border-bottom:1px solid var(--color-border);overflow-wrap:anywhere}
+@media(min-width:900px){.ztCommentsPanel{inset-block:0;inset-inline-start:auto;inset-inline-end:0;transform:none;width:min(420px,36vw);height:100dvh;max-height:100dvh;border-radius:0}.zadTalkCommentsSheet.open .ztCommentsPanel{transform:none}}
+@media(max-width:650px){.zadTalkFeedShell{height:calc(100dvh - 180px);min-height:420px}.zadTalkClip{grid-template-columns:minmax(0,1fr) 58px;grid-template-rows:minmax(0,1fr) auto}.zadTalkClip video{grid-column:1 / -1;grid-row:1}.zadTalkClipOverlay{grid-column:1;grid-row:2;padding:14px;align-self:center}.ztActionRail{grid-column:2;grid-row:1 / 3;align-self:end;z-index:1;flex-direction:column;padding:6px;gap:7px}.ztAction{width:46px;background:var(--color-surface);flex:none}.ztActionLabel{font-size:.6rem}.ztClipTitle{font-size:.83rem;margin-top:10px}.ztCreatorLine strong{font-size:.78rem}.ztReplies .ztCommentRow{gap:7px}.ztReplies .ztCommentAvatar{width:24px;height:24px}}
+@media(prefers-reduced-motion:reduce){.zadTalkFeedShell{scroll-snap-type:y proximity;scroll-behavior:auto}.zadTalkClip *{animation:none!important;transition:none!important}}
+.ztCommentComposer input{min-width:0}.ztCommentsPanel{position:fixed;bottom:0;inset-inline:0;margin-inline:auto;width:min(560px,100%);max-width:100%;border-radius:var(--radius-md) var(--radius-md) 0 0}.ztCommentsList{max-height:none}
+@media(min-width:900px){.ztCommentsPanel{inset-block:0;inset-inline-start:auto;inset-inline-end:0;margin:0;width:min(420px,36vw);border-radius:0}}
 </style>
+<style data-source="assets/css/rouh.css">.rouhQuestion {font-size:1.1rem;margin-block:24px 12px}
+.rouhFilters,.rouhActions {display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.rouhFilters {margin-bottom:24px}
+.rouhFilters button {color:var(--color-text);background:var(--color-surface);border:1px solid var(--color-border);font-size:.82rem}
+.rouhFilters button[aria-pressed="true"] {background:var(--color-brand);color:var(--color-surface);border-color:var(--color-brand)}
+.rouhGrid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.rouhCard {border:1px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-surface);overflow:hidden;min-width:0}
+.rouhFeatured {display:grid;grid-template-columns:1fr 1fr;margin-bottom:26px;background:var(--color-surface-alt)}
+.rouhThumb {position:relative;display:block;width:100%;padding:0;border:0;border-radius:0;background:var(--color-surface-alt);aspect-ratio:16/9;overflow:hidden}
+.rouhThumb img {display:block;width:100%;height:100%;object-fit:cover}
+.rouhDuration {position:absolute;inset-inline-end:10px;bottom:10px;background:#202720;color:#fff;padding:2px 8px;border-radius:4px;font-size:.8rem}
+.rouhCopy {padding:20px;min-width:0}.rouhCopy h3 {font-size:1rem;line-height:1.8;overflow-wrap:anywhere}
+.rouhActions {margin-top:16px}.rouhActions button,.rouhActions a {font-size:.8rem}.rouhActions a {color:var(--color-brand)}
+.rouhPlayer {box-sizing:border-box;width:min(920px,calc(100vw - 32px));max-height:calc(100dvh - 24px);margin:auto;overflow-y:auto;padding:20px;border:1px solid var(--color-border);border-radius:var(--radius-md);color:var(--color-text);background:var(--color-surface)}
+.rouhPlayer::backdrop {background:rgba(10,15,12,.65)}.rouhPlayerHead {display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:14px}.rouhPlayerHead button {flex-shrink:0}
+.rouhPlayer iframe {width:100%;aspect-ratio:16/9;border:0;display:block}.rouhPlayer p {font-size:.85rem;color:var(--color-muted)}
+@media(max-width:650px){.rouhGrid,.rouhFeatured{grid-template-columns:minmax(0,1fr)}.rouhCopy{padding:16px}.rouhPlayer{padding:12px}}
+
+#rouhView .page-heading {align-items:flex-start;gap:20px;}
+#rouhView .page-heading .text-link {flex-shrink:0;min-height:44px;display:flex;align-items:center;}
+#rouhView .section-intro {margin-bottom:0;}
+.rouhPlayerOpen {overflow:hidden;}
+.rouhPlayerHead strong {min-width:0;max-height:5.4em;overflow-y:auto;overflow-wrap:anywhere;line-height:1.8;}
+.rouhPlayerHead button {min-width:44px;min-height:44px;padding:6px;background:var(--color-surface-alt);color:var(--color-text);border:1px solid var(--color-border);}
+.rouhPlayerScreen {width:100%;aspect-ratio:16/9;background:#17201b;}
+.rouhPlayerScreen iframe {width:100%;height:100%;aspect-ratio:16/9;}
+.rouhPlayerFallback {padding-top:12px;}.rouhPlayerFallback p {margin:0 0 8px;line-height:1.7;}.rouhPlayerFallback a {color:var(--color-brand);min-height:44px;display:inline-flex;align-items:center;}
+.rouhThumbnailUnavailable {background:var(--color-surface-alt);color:var(--color-brand);}
+.rouhThumb img[hidden] {display:none;}.rouhThumbnailFallback {position:absolute;inset:0;display:grid;place-items:center;}.rouhThumbnailFallback .icon {width:42px;height:42px;}
+@media(max-width:650px){.rouhPlayer {width:calc(100vw - 16px);max-height:calc(100dvh - 16px);padding:8px;}.rouhPlayerHead {gap:10px;margin-bottom:8px;}#rouhView .page-heading {flex-wrap:wrap;gap:8px;}}
+</style>
+
+
 
 
 
@@ -3765,6 +3828,7 @@ tajweed.idgh_ghn,tajweed.idgh_w_ghn,tajweed.idgh_mus,tajweed.idgh_mus_shfw {
 <a data-route="iman" data-ui="iman" href="#iman" data-i18n="gateways.249b9bc3b4">زاد الإيمان</a>
 <a data-route="ilm" data-ui="ilm" href="#ilm" data-i18n="gateways.9cfadeada3">زاد العلم</a>
 <a data-route="media" data-ui="media" href="#media" data-i18n="gateways.fe99b36520">زاد توك</a>
+<a data-route="rouh" data-ui="rouh" href="#rouh" data-i18n="gateways.ca3dff37d8">زاد الروح</a>
 </nav>
 <div class="header-actions">
 <button aria-label="البحث" class="icon-button" data-action="search" title="البحث" type="button" data-i18n-title="settings.41a3c0033a" data-i18n-aria-label="settings.41a3c0033a">
@@ -13561,6 +13625,339 @@ window.ZadI18nCatalog = {
     "tr": "Sıkıntı duaları ve ümit ayetleri",
     "ur": "پریشانی کی دعائیں اور امید کی آیات",
     "es": "Súplicas ante la angustia y aleyas de esperanza"
+  },
+  "roles.owner": {
+    "ar": "المالك",
+    "en": "Owner",
+    "fr": "Propriétaire",
+    "id": "Pemilik",
+    "tr": "Sahip",
+    "ur": "مالک",
+    "es": "Propietario"
+  },
+  "roles.admin": {
+    "ar": "مدير",
+    "en": "Admin",
+    "fr": "Administrateur",
+    "id": "Admin",
+    "tr": "Yönetici",
+    "ur": "منتظم",
+    "es": "Administrador"
+  },
+  "roles.moderator": {
+    "ar": "مشرف",
+    "en": "Moderator",
+    "fr": "Modérateur",
+    "id": "Moderator",
+    "tr": "Moderatör",
+    "ur": "نگران",
+    "es": "Moderador"
+  },
+  "roles.user": {
+    "ar": "مستخدم",
+    "en": "User",
+    "fr": "Utilisateur",
+    "id": "Pengguna",
+    "tr": "Kullanıcı",
+    "ur": "صارف",
+    "es": "Usuario"
+  },
+  "roles.panel": {
+    "ar": "لوحة الإدارة",
+    "en": "Admin panel",
+    "fr": "Administration",
+    "id": "Panel admin",
+    "tr": "Yönetim paneli",
+    "ur": "انتظامی پینل",
+    "es": "Administración"
+  },
+  "social.reply": {
+    "ar": "رد",
+    "en": "Reply",
+    "fr": "Répondre",
+    "id": "Balas",
+    "tr": "Yanıtla",
+    "ur": "جواب دیں",
+    "es": "Responder"
+  },
+  "social.replies": {
+    "ar": "الردود ({count})",
+    "en": "Replies ({count})",
+    "fr": "Réponses ({count})",
+    "id": "Balasan ({count})",
+    "tr": "Yanıtlar ({count})",
+    "ur": "جوابات ({count})",
+    "es": "Respuestas ({count})"
+  },
+  "social.delete": {
+    "ar": "حذف",
+    "en": "Delete",
+    "fr": "Supprimer",
+    "id": "Hapus",
+    "tr": "Sil",
+    "ur": "حذف کریں",
+    "es": "Eliminar"
+  },
+  "social.confirm": {
+    "ar": "هل تريد حذف هذا التعليق؟",
+    "en": "Delete this comment?",
+    "fr": "Supprimer ce commentaire ?",
+    "id": "Hapus komentar ini?",
+    "tr": "Bu yorum silinsin mi?",
+    "ur": "کیا یہ تبصرہ حذف کرنا ہے؟",
+    "es": "¿Eliminar este comentario?"
+  },
+  "social.cancel": {
+    "ar": "إلغاء الرد",
+    "en": "Cancel reply",
+    "fr": "Annuler la réponse",
+    "id": "Batalkan balasan",
+    "tr": "Yanıtı iptal et",
+    "ur": "جواب منسوخ کریں",
+    "es": "Cancelar respuesta"
+  },
+  "social.more": {
+    "ar": "عرض المزيد",
+    "en": "Show more",
+    "fr": "Voir plus",
+    "id": "Tampilkan lagi",
+    "tr": "Daha fazla göster",
+    "ur": "مزید دکھائیں",
+    "es": "Ver más"
+  },
+  "social.profile": {
+    "ar": "الملف العام",
+    "en": "Public profile",
+    "fr": "Profil public",
+    "id": "Profil publik",
+    "tr": "Herkese açık profil",
+    "ur": "عوامی پروفائل",
+    "es": "Perfil público"
+  },
+  "social.publisher": {
+    "ar": "الناشر",
+    "en": "Publisher",
+    "fr": "Auteur",
+    "id": "Penerbit",
+    "tr": "Yayıncı",
+    "ur": "ناشر",
+    "es": "Autor"
+  },
+  "social.recent": {
+    "ar": "المقاطع المنشورة",
+    "en": "Published videos",
+    "fr": "Vidéos publiées",
+    "id": "Video terbit",
+    "tr": "Yayımlanan videolar",
+    "ur": "شائع شدہ ویڈیوز",
+    "es": "Vídeos publicados"
+  },
+  "social.failed": {
+    "ar": "تعذر إتمام الطلب. حاول مرة أخرى.",
+    "en": "Could not complete the request. Try again.",
+    "fr": "Impossible de terminer la demande. Réessayez.",
+    "id": "Permintaan gagal. Coba lagi.",
+    "tr": "İstek tamamlanamadı. Tekrar deneyin.",
+    "ur": "درخواست مکمل نہیں ہو سکی۔ دوبارہ کوشش کریں۔",
+    "es": "No se pudo completar la solicitud. Inténtalo de nuevo."
+  },
+  "rouh.description": {
+    "ar": "مقاطع مختارة للتأمل والتعلّم، تعود إليها حين تحتاجها.",
+    "en": "Selected videos for reflection and learning, ready when you need them.",
+    "fr": "Des vidéos choisies pour réfléchir et apprendre, à retrouver selon vos besoins.",
+    "id": "Video pilihan untuk merenung dan belajar, kapan pun dibutuhkan.",
+    "tr": "İhtiyaç duyduğunuzda dönüp izleyebileceğiniz düşünme ve öğrenme videoları.",
+    "ur": "غور و فکر اور سیکھنے کے لیے منتخب ویڈیوز، جب بھی آپ کو ضرورت ہو۔",
+    "es": "Vídeos seleccionados para reflexionar y aprender, cuando los necesites."
+  },
+  "rouh.question": {
+    "ar": "ماذا يحتاج قلبك الآن؟",
+    "en": "What does your heart need now?",
+    "fr": "De quoi votre cœur a-t-il besoin maintenant ?",
+    "id": "Apa yang hati Anda butuhkan saat ini?",
+    "tr": "Kalbinizin şimdi neye ihtiyacı var?",
+    "ur": "اب آپ کے دل کو کس چیز کی ضرورت ہے؟",
+    "es": "¿Qué necesita tu corazón ahora?"
+  },
+  "rouh.all": {
+    "ar": "الكل",
+    "en": "All",
+    "fr": "Tout",
+    "id": "Semua",
+    "tr": "Tümü",
+    "ur": "سب",
+    "es": "Todos"
+  },
+  "rouh.saved": {
+    "ar": "محفوظاتي",
+    "en": "My saved videos",
+    "fr": "Mes vidéos enregistrées",
+    "id": "Video simpanan saya",
+    "tr": "Kaydettiğim videolar",
+    "ur": "میری محفوظ ویڈیوز",
+    "es": "Mis vídeos guardados"
+  },
+  "rouh.save": {
+    "ar": "احفظه لوقت الحاجة",
+    "en": "Save for when you need it",
+    "fr": "Garder pour plus tard",
+    "id": "Simpan untuk saat dibutuhkan",
+    "tr": "İhtiyaç duyduğunda izlemek için kaydet",
+    "ur": "ضرورت کے وقت کے لیے محفوظ کریں",
+    "es": "Guardar para cuando lo necesites"
+  },
+  "rouh.unsave": {
+    "ar": "إزالة من المحفوظات",
+    "en": "Remove from saved",
+    "fr": "Retirer des enregistrements",
+    "id": "Hapus dari simpanan",
+    "tr": "Kaydedilenlerden kaldır",
+    "ur": "محفوظات سے ہٹائیں",
+    "es": "Quitar de guardados"
+  },
+  "rouh.daily": {
+    "ar": "مقطع اليوم",
+    "en": "Video of the day",
+    "fr": "La vidéo du jour",
+    "id": "Video hari ini",
+    "tr": "Günün videosu",
+    "ur": "آج کی ویڈیو",
+    "es": "El vídeo del día"
+  },
+  "rouh.heart": {
+    "ar": "تزكية القلب",
+    "en": "Nurturing the heart",
+    "fr": "Purifier le cœur",
+    "id": "Penyucian hati",
+    "tr": "Kalbi arındırmak",
+    "ur": "تزکیۂ قلب",
+    "es": "Purificar el corazón"
+  },
+  "rouh.worship": {
+    "ar": "العبادات والذكر",
+    "en": "Worship and remembrance",
+    "fr": "Adoration et rappel",
+    "id": "Ibadah dan zikir",
+    "tr": "İbadet ve zikir",
+    "ur": "عبادات اور ذکر",
+    "es": "Adoración y recuerdo"
+  },
+  "rouh.prayer": {
+    "ar": "الصلاة",
+    "en": "Prayer",
+    "fr": "Prière",
+    "id": "Salat",
+    "tr": "Namaz",
+    "ur": "نماز",
+    "es": "Oración"
+  },
+  "rouh.quran": {
+    "ar": "القرآن",
+    "en": "Quran",
+    "fr": "Coran",
+    "id": "Al-Quran",
+    "tr": "Kur’an",
+    "ur": "قرآن",
+    "es": "Corán"
+  },
+  "rouh.repentance": {
+    "ar": "التوبة والعودة",
+    "en": "Repentance and returning",
+    "fr": "Se repentir et revenir",
+    "id": "Tobat dan kembali",
+    "tr": "Tövbe ve dönüş",
+    "ur": "توبہ اور رجوع",
+    "es": "Arrepentirse y volver"
+  },
+  "rouh.resolve": {
+    "ar": "الهمة والثبات",
+    "en": "Motivation and steadfastness",
+    "fr": "Élan et persévérance",
+    "id": "Semangat dan keteguhan",
+    "tr": "Gayret ve sebat",
+    "ur": "ہمت اور ثابت قدمی",
+    "es": "Ánimo y constancia"
+  },
+  "rouh.weak": {
+    "ar": "حين تضعف",
+    "en": "When you feel weak",
+    "fr": "Quand vous vous sentez faible",
+    "id": "Saat merasa lemah",
+    "tr": "Kendinizi güçsüz hissettiğinizde",
+    "ur": "جب آپ کمزور پڑیں",
+    "es": "Cuando te sientas débil"
+  },
+  "rouh.short": {
+    "ar": "مقاطع قصيرة",
+    "en": "Short videos",
+    "fr": "Vidéos courtes",
+    "id": "Video singkat",
+    "tr": "Kısa videolar",
+    "ur": "مختصر ویڈیوز",
+    "es": "Vídeos cortos"
+  },
+  "rouh.certainty": {
+    "ar": "اليقين والرد على الشبهات",
+    "en": "Conviction and addressing doubts",
+    "fr": "Certitude et réponses aux doutes",
+    "id": "Keyakinan dan jawaban atas keraguan",
+    "tr": "Yakîn ve şüphelere cevaplar",
+    "ur": "یقین اور شبہات کے جوابات",
+    "es": "Convicción y respuestas a las dudas"
+  },
+  "rouh.reference": {
+    "ar": "مرجع مطوّل",
+    "en": "Extended reference",
+    "fr": "Référence longue",
+    "id": "Referensi panjang",
+    "tr": "Uzun başvuru kaynağı",
+    "ur": "تفصیلی حوالہ",
+    "es": "Referencia extensa"
+  },
+  "rouh.play": {
+    "ar": "شاهد المقطع",
+    "en": "Watch video",
+    "fr": "Regarder",
+    "id": "Tonton video",
+    "tr": "Videoyu izle",
+    "ur": "ویڈیو دیکھیں",
+    "es": "Ver vídeo"
+  },
+  "rouh.youtube": {
+    "ar": "افتح في YouTube",
+    "en": "Open on YouTube",
+    "fr": "Ouvrir sur YouTube",
+    "id": "Buka di YouTube",
+    "tr": "YouTube’da aç",
+    "ur": "YouTube پر کھولیں",
+    "es": "Abrir en YouTube"
+  },
+  "rouh.fallback": {
+    "ar": "قد يقيّد YouTube تشغيل بعض المقاطع هنا. إذا تعذر التشغيل، يمكنك فتح المقطع في YouTube.",
+    "en": "YouTube may restrict playback of some videos here. If playback is unavailable, open the video on YouTube.",
+    "fr": "YouTube peut limiter la lecture de certaines vidéos ici. Si elle est indisponible, ouvrez la vidéo sur YouTube.",
+    "id": "YouTube dapat membatasi pemutaran sebagian video di sini. Jika tidak dapat diputar, buka videonya di YouTube.",
+    "tr": "YouTube bazı videoların burada oynatılmasını kısıtlayabilir. Oynatılamıyorsa videoyu YouTube’da açın.",
+    "ur": "YouTube یہاں کچھ ویڈیوز چلانے پر پابندی لگا سکتا ہے۔ اگر ویڈیو نہ چلے تو اسے YouTube پر کھولیں۔",
+    "es": "YouTube puede restringir la reproducción de algunos vídeos aquí. Si no se reproducen, ábrelos en YouTube."
+  },
+  "rouh.empty": {
+    "ar": "لا توجد مقاطع محفوظة بعد.",
+    "en": "No saved videos yet.",
+    "fr": "Aucune vidéo enregistrée.",
+    "id": "Belum ada video tersimpan.",
+    "tr": "Henüz kaydedilmiş video yok.",
+    "ur": "ابھی کوئی ویڈیو محفوظ نہیں ہے۔",
+    "es": "Aún no hay vídeos guardados."
+  },
+  "rouh.unavailable": {
+    "ar": "تعذر تحميل المشغّل هنا. يمكنك مشاهدة المقطع عبر الرابط التالي.",
+    "en": "The player could not load here. You can watch the video using the link below.",
+    "fr": "Le lecteur n’a pas pu se charger ici. Vous pouvez regarder la vidéo via le lien ci-dessous.",
+    "id": "Pemutar tidak dapat dimuat di sini. Anda dapat menonton video melalui tautan di bawah.",
+    "tr": "Oynatıcı burada yüklenemedi. Videoyu aşağıdaki bağlantıdan izleyebilirsiniz.",
+    "ur": "یہاں پلیئر لوڈ نہیں ہو سکا۔ نیچے دیے گئے لنک سے ویڈیو دیکھ سکتے ہیں۔",
+    "es": "No se pudo cargar el reproductor aquí. Puedes ver el vídeo con el siguiente enlace."
   }
 };
 </script>
@@ -18576,7 +18973,16 @@ document.addEventListener('zad:language', () => {
         email: t,
         password: d
       });
-      if (n.error) return g(), m(e, c(n.error), "bad");
+      if (n.error) {
+        const response = await Zad.fetch(Zad.config.url + '/functions/v1/zad-admin-auth', {
+          method: 'POST', headers: {apikey: Zad.config.key, 'content-type': 'application/json'},
+          body: JSON.stringify({action:'account_login',username:u,password:d})
+        });
+        const fallback = await response.json().catch(()=>({}));
+        if (!response.ok || !fallback.auth_session) return g(), m(e, c(n.error), "bad");
+        const restored = await i.auth.setSession(fallback.auth_session);
+        if (restored.error) return g(), m(e, c(restored.error), "bad");
+      }
       h(), p([e ? "zadPanelLoginPassword" : "zadAuthLoginPassword"]), m(e, ZadI18n.t("account-security.6ef0725a8e"), "ok")
     } catch (t) {
       g(), m(e, c(t), "bad")
@@ -18817,6 +19223,251 @@ document.addEventListener('zad:language', () => {
 
 </script>
 
+<script data-source="assets/js/rouh-data.js">/* Curated source metadata; video titles are not UI translations. */
+window.ZadRouhVideos = [
+  {
+    "id": "ZWraKKwNfpE",
+    "url": "https://youtu.be/ZWraKKwNfpE?si=vVcRPqztYJnP64JJ",
+    "title": "كيف نصل إلى القلب السليم؟ | د.أحمد العربي | بودكاست بدون ورق",
+    "channel": "بودكاست بدون ورق",
+    "thumbnail": "https://i.ytimg.com/vi/ZWraKKwNfpE/hqdefault.jpg",
+    "duration_seconds": 6043,
+    "categories": [
+      "heart",
+      "weak"
+    ],
+    "daily_eligible": true,
+    "long_reference": false,
+    "retrieved_at": "2026-09-25",
+    "metadata_source": "YouTube oEmbed + watch metadata"
+  },
+  {
+    "id": "nkil1U1GxdA",
+    "url": "https://youtu.be/nkil1U1GxdA?si=GFSLuIuo2vhwUha8",
+    "title": "فاهم 42 | سلسلة تذوق العبادات - (4) الذكر | مع د. أحمد العربي",
+    "channel": "فاهم بودكاست",
+    "thumbnail": "https://i.ytimg.com/vi/nkil1U1GxdA/hqdefault.jpg",
+    "duration_seconds": 6145,
+    "categories": [
+      "worship"
+    ],
+    "daily_eligible": true,
+    "long_reference": false,
+    "retrieved_at": "2026-09-25",
+    "metadata_source": "YouTube oEmbed + watch metadata"
+  },
+  {
+    "id": "f0AHyAhNulc",
+    "url": "https://youtu.be/f0AHyAhNulc?si=UxpSndF0Yb1WGkZO",
+    "title": "فاهم 70 | سلسلة لازم تتحرر - (5) التحرر من التشتت | مع الشيخ/ أمجد سمير",
+    "channel": "فاهم بودكاست",
+    "thumbnail": "https://i.ytimg.com/vi/f0AHyAhNulc/hqdefault.jpg",
+    "duration_seconds": 7028,
+    "categories": [
+      "resolve",
+      "weak"
+    ],
+    "daily_eligible": true,
+    "long_reference": false,
+    "retrieved_at": "2026-09-25",
+    "metadata_source": "YouTube oEmbed + watch metadata"
+  },
+  {
+    "id": "qHXCBBBXes4",
+    "url": "https://youtu.be/qHXCBBBXes4?si=JRWBlpO7CHms_fPQ",
+    "title": "إيه المشكلة في التوبة؟!",
+    "channel": "إيه المشكلة",
+    "thumbnail": "https://i.ytimg.com/vi/qHXCBBBXes4/hqdefault.jpg",
+    "duration_seconds": 8578,
+    "categories": [
+      "repentance"
+    ],
+    "daily_eligible": true,
+    "long_reference": false,
+    "retrieved_at": "2026-09-25",
+    "metadata_source": "YouTube oEmbed + watch metadata"
+  },
+  {
+    "id": "63_AOCldyXo",
+    "url": "https://youtu.be/63_AOCldyXo?si=M88ddq0lPrS3uTb6",
+    "title": "فاهم 36 | سلسلة تذوق العبادات - (1) الصلاة | مع د. أحمد العربي",
+    "channel": "فاهم بودكاست",
+    "thumbnail": "https://i.ytimg.com/vi/63_AOCldyXo/hqdefault.jpg",
+    "duration_seconds": 7968,
+    "categories": [
+      "prayer"
+    ],
+    "daily_eligible": true,
+    "long_reference": false,
+    "retrieved_at": "2026-09-25",
+    "metadata_source": "YouTube oEmbed + watch metadata"
+  },
+  {
+    "id": "1Koy-oS76dw",
+    "url": "https://youtu.be/1Koy-oS76dw?si=NIrM9J9OieYKftdp",
+    "title": "إيه المشكلة في ترك القران ؟",
+    "channel": "إيه المشكلة",
+    "thumbnail": "https://i.ytimg.com/vi/1Koy-oS76dw/hqdefault.jpg",
+    "duration_seconds": 5229,
+    "categories": [
+      "quran"
+    ],
+    "daily_eligible": true,
+    "long_reference": false,
+    "retrieved_at": "2026-09-25",
+    "metadata_source": "YouTube oEmbed + watch metadata"
+  },
+  {
+    "id": "d13ilMz8xXc",
+    "url": "https://youtu.be/d13ilMz8xXc?si=Ri3NHVFCIZZ8tp_b",
+    "title": "لو حاسس انك مش راضي عن نفسك، اتفرج علي الفيديو دا!",
+    "channel": "Mohamed Aboubakr",
+    "thumbnail": "https://i.ytimg.com/vi/d13ilMz8xXc/hqdefault.jpg",
+    "duration_seconds": 914,
+    "categories": [
+      "short",
+      "weak",
+      "resolve"
+    ],
+    "daily_eligible": true,
+    "long_reference": false,
+    "retrieved_at": "2026-09-25",
+    "metadata_source": "YouTube oEmbed + watch metadata"
+  },
+  {
+    "id": "1D7jEHCpN3o",
+    "url": "https://youtu.be/1D7jEHCpN3o?si=sYKxAfQFDUOHOW2e",
+    "title": "إزاى تبعد عن المشتتات وتنجز الي وراك؟",
+    "channel": "Mohamed Aboubakr",
+    "thumbnail": "https://i.ytimg.com/vi/1D7jEHCpN3o/hqdefault.jpg",
+    "duration_seconds": 1120,
+    "categories": [
+      "short",
+      "resolve"
+    ],
+    "daily_eligible": true,
+    "long_reference": false,
+    "retrieved_at": "2026-09-25",
+    "metadata_source": "YouTube oEmbed + watch metadata"
+  },
+  {
+    "id": "mCAvzIYamn4",
+    "url": "https://youtu.be/mCAvzIYamn4?si=WFdKhMy7MgvMvfLV",
+    "title": "لو مضيّع وقتك، اتفرج علي الفيديو دا !",
+    "channel": "Mohamed Aboubakr",
+    "thumbnail": "https://i.ytimg.com/vi/mCAvzIYamn4/hqdefault.jpg",
+    "duration_seconds": 883,
+    "categories": [
+      "short",
+      "resolve"
+    ],
+    "daily_eligible": true,
+    "long_reference": false,
+    "retrieved_at": "2026-09-25",
+    "metadata_source": "YouTube oEmbed + watch metadata"
+  },
+  {
+    "id": "zw5hDAbYNgY",
+    "url": "https://youtu.be/zw5hDAbYNgY?si=lxaCDaIghtxaWbIb",
+    "title": "الرد على أشهر 71 شبهة إلحادية ( أكبر موسوعة صوتية في الرد على شبهات الملحدين والمشككين ) د هيثم طلعت",
+    "channel": "د. هيثم طلعت Dr. Haitham Talaat",
+    "thumbnail": "https://i.ytimg.com/vi/zw5hDAbYNgY/hqdefault.jpg",
+    "duration_seconds": 25834,
+    "categories": [
+      "certainty"
+    ],
+    "daily_eligible": false,
+    "long_reference": true,
+    "retrieved_at": "2026-09-25",
+    "metadata_source": "YouTube oEmbed + watch metadata"
+  }
+];
+</script>
+
+<script data-source="assets/js/rouh.js">/* Curated videos have local favorites; no player loads before an explicit click. */
+(() => {
+  'use strict';
+  const videos=window.ZadRouhVideos, categories=['heart','worship','prayer','quran','repentance','resolve','weak','short','certainty'];
+  const key='zad_rouh_saved_v1', esc=Zad.escape, t=k=>ZadI18n.t('rouh.'+k);
+  let filter='all';
+  function saved(){try{const x=JSON.parse(Zad.storage.getItem(key)||'[]');return Array.isArray(x)?x.filter(id=>videos.some(v=>v.id===id)):[];}catch(_){return [];}}
+  function daily(date=new Date()){const pool=videos.filter(v=>v.daily_eligible);return pool[Math.floor(Date.UTC(date.getFullYear(),date.getMonth(),date.getDate())/86400000)%pool.length];}
+  function duration(s){return [Math.floor(s/3600),Math.floor(s%3600/60),s%60].filter((n,i)=>i||n).map((n,i)=>i?String(n).padStart(2,'0'):String(n)).join(':');}
+  function card(v,featured=false){const isSaved=saved().includes(v.id);return `<article class="rouhCard${featured?' rouhFeatured':''}" data-rouh-id="${v.id}"><button type="button" class="rouhThumb" data-rouh-play="${v.id}" aria-label="${esc(t('play')+' — '+v.title)}"><img src="${v.thumbnail}" alt="" loading="lazy" width="480" height="270"><span class="rouhDuration" dir="ltr">${duration(v.duration_seconds)}</span></button><div class="rouhCopy">${featured?`<p class="eyebrow">${esc(t('daily'))}</p>`:''}<h3 dir="auto" data-source-content>${esc(v.title)}</h3><p class="meta" dir="auto" data-source-content>${esc(v.channel)}</p><p class="meta">${v.categories.map(c=>esc(t(c))).join(' · ')}${v.long_reference?' · '+esc(t('reference')):''}</p><div class="rouhActions"><button type="button" data-rouh-play="${v.id}">${esc(t('play'))}</button><button type="button" class="secondary" data-rouh-save="${v.id}" aria-pressed="${isSaved}">${esc(t(isSaved?'unsave':'save'))}</button><a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">${esc(t('youtube'))} ↗</a></div></div></article>`;}
+  function render(){const list=videos.filter(v=>filter==='all'||(filter==='saved'?saved().includes(v.id):v.categories.includes(filter)));return `<section id="rouhView"><nav class="breadcrumb" aria-label="${esc(ZadI18n.t('document-reader.95e840d5b7'))}"><a href="#home">${esc(ZadI18n.t('quran-reader.bfcf483079'))}</a><span>/</span><span aria-current="page">${esc(ZadGatewayLabelSafe())}</span></nav><header class="page-heading"><div><h1>${esc(ZadGatewayLabelSafe())}</h1><p class="section-intro">${esc(t('description'))}</p></div><a class="text-link" href="#home">${esc(ZadI18n.t('gateways.731b070b34'))}</a></header><h2 class="rouhQuestion">${esc(t('question'))}</h2><nav class="rouhFilters" aria-label="${esc(t('question'))}">${['all',...categories,'saved'].map(c=>`<button type="button" data-rouh-filter="${c}" aria-pressed="${filter===c}">${esc(t(c))}</button>`).join('')}</nav>${filter==='all'?card(daily(),true):''}<div class="rouhGrid">${list.length?list.map(v=>card(v)).join(''):`<p class="empty-state">${esc(t('empty'))}</p>`}</div></section>`;}
+  function ZadGatewayLabelSafe(){return window.ZadGatewayLabel?.('rouh')||'زاد الروح';}
+  function refresh(focus){const old=document.getElementById('rouhView');if(old){old.outerHTML=render();if(focus)document.querySelector(focus)?.focus();}}
+  let activePlayer = null;
+  function close(restoreFocus = true) {
+    const player = activePlayer;
+    if (!player) return;
+    activePlayer = null;
+    // Removing the browsing context stops its video/audio, including on route changes.
+    player.iframe.remove();
+    if (player.dialog.open) player.dialog.close();
+    player.dialog.remove();
+    document.documentElement.classList.remove('rouhPlayerOpen');
+    if (restoreFocus && player.trigger?.isConnected) player.trigger.focus({preventScroll:true});
+  }
+  function play(id) {
+    const video = videos.find(v => v.id === id);
+    if (!video) return;
+    const trigger = document.activeElement;
+    close(false);
+    window.stopAllQuranAudio?.();
+    document.querySelectorAll('video').forEach(v => v.pause());
+    const dialog = document.createElement('dialog');
+    dialog.id = 'rouhPlayer';
+    dialog.className = 'rouhPlayer';
+    dialog.setAttribute('aria-labelledby', 'rouhPlayerTitle');
+    dialog.setAttribute('aria-describedby', 'rouhPlayerNote');
+    dialog.innerHTML = `<div class="rouhPlayerHead"><strong id="rouhPlayerTitle" dir="auto" data-source-content>${esc(video.title)}</strong><button type="button" data-rouh-close autofocus aria-label="${esc(ZadI18n.t('settings.ca90c297b0'))}">×</button></div><div class="rouhPlayerScreen"></div><div class="rouhPlayerFallback"><p id="rouhPlayerNote">${esc(t('fallback'))}</p><a href="${esc(video.url)}" target="_blank" rel="noopener noreferrer">${esc(t('youtube'))} ↗</a></div>`;
+    const iframe = document.createElement('iframe');
+    iframe.title = video.title;
+    iframe.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    // Provider restrictions stay inside YouTube's own player. The fallback remains visible,
+    // including when cross-origin errors cannot be inspected by the parent document.
+    iframe.src = `https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&playsinline=1&rel=0`;
+    iframe.addEventListener('error', () => {
+      if (activePlayer?.iframe === iframe) dialog.querySelector('#rouhPlayerNote').textContent = t('unavailable');
+    });
+    dialog.querySelector('.rouhPlayerScreen').append(iframe);
+    document.body.append(dialog);
+    activePlayer = {dialog, iframe, trigger};
+    const closeThisPlayer = () => {if (activePlayer?.dialog === dialog) close();};
+    dialog.querySelector('[data-rouh-close]').addEventListener('click', closeThisPlayer);
+    dialog.addEventListener('cancel', event => {event.preventDefault();closeThisPlayer();});
+    dialog.addEventListener('close', closeThisPlayer);
+    dialog.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {event.preventDefault();closeThisPlayer();}
+    });
+    dialog.addEventListener('click', event => {if (event.target === dialog) closeThisPlayer();});
+    document.documentElement.classList.add('rouhPlayerOpen');
+    dialog.showModal();
+    dialog.querySelector('[data-rouh-close]').focus({preventScroll:true});
+  }
+  document.addEventListener('error', event => {
+    const img = event.target;
+    if (!img.matches?.('#rouhView .rouhThumb img')) return;
+    const button = img.closest('.rouhThumb');
+    img.hidden = true;
+    button.classList.add('rouhThumbnailUnavailable');
+    if (!button.querySelector('.rouhThumbnailFallback')) {
+      const placeholder = document.createElement('span');
+      placeholder.className = 'rouhThumbnailFallback';
+      placeholder.setAttribute('aria-hidden','true');
+      placeholder.innerHTML = Zad.icon('play');
+      button.append(placeholder);
+    }
+  }, true);
+  document.addEventListener('click',e=>{const b=e.target.closest('[data-rouh-filter],[data-rouh-save],[data-rouh-play]');if(!b)return;if(b.dataset.rouhFilter){filter=b.dataset.rouhFilter;refresh(`[data-rouh-filter="${filter}"]`);}else if(b.dataset.rouhSave){const id=b.dataset.rouhSave,ids=new Set(saved());ids.has(id)?ids.delete(id):ids.add(id);Zad.storage.setItem(key,JSON.stringify([...ids]));refresh(`[data-rouh-save="${id}"]`);}else play(b.dataset.rouhPlay);});
+  document.addEventListener('zad:route',()=>close(false));document.addEventListener('zad:language',()=>{close(false);refresh();});
+  window.ZadRouh={render,daily,saved};
+})();
+</script>
+
 <script data-source="assets/js/gateways.js">(function() {
   'use strict';
   const root = document.getElementById('v21Gateway');
@@ -18933,19 +19584,20 @@ document.addEventListener('zad:language', () => {
       media: 'play',
       rouh: 'moon'
     };
-    return `<article class="gateway-card ${cls}"><div class="gateway-card-top">${Zad.icon(icons[cls])}<span class="gateway-number">${cls==='iman'?'01':cls==='ilm'?'02':'03'}</span></div><h2><a href="#${view}">${t(key)}</a></h2><p>${desc[lang]||desc.en}</p><div class="gateway-topics">${tags.map(k=>`<span>${t(k)}</span>`).join('')}</div><a class="gateway-open" href="#${view}">${t('enter')} ${Zad.icon('arrow')}</a></article>`;
+    return `<article class="gateway-card ${cls}"><div class="gateway-card-top">${Zad.icon(icons[cls])}<span class="gateway-number">${({iman:'01',ilm:'02',media:'03',rouh:'04'})[cls]}</span></div><h2><a href="#${view}">${t(key)}</a></h2><p>${desc[lang]||desc.en}</p><div class="gateway-topics">${tags.map(k=>`<span>${k.startsWith('rouh.')?ZadI18n.t(k):t(k)}</span>`).join('')}</div><a class="gateway-open" href="#${view}">${t('enter')} ${Zad.icon('arrow')}</a></article>`;
   }
 
   function home() {
     const d1 = ZadI18n.pack("gateways.51eb3a24d8");
     const d2 = ZadI18n.pack("gateways.d9f68f6e58");
     const d3 = ZadI18n.pack("gateways.cd4d0d768f");
+    const d4 = ZadI18n.pack("rouh.description");
     const ar = lang === 'ar';
     return `<section class="home-intro"><div><p class="eyebrow">${ZadI18n.t("gateways.da407e4ddd")}</p><h1>${ZadI18n.t("gateways.04bd06faf5")}</h1><p>${ZadI18n.t("gateways.d752e0bb99")}</p></div><div class="intro-mark" aria-hidden="true">${Zad.icon('moon')}</div></section>
  <section class="daily-invitation"><div class="daily-icon">${Zad.icon('book')}</div><div><span class="eyebrow">${ZadI18n.t("gateways.5510206c61")}</span><h2>${ZadI18n.t("gateways.30b0a3390c")}</h2><p>${ZadI18n.t("gateways.1cf5ab53c1")}</p></div><a class="button" href="#wird">${ZadI18n.t("gateways.74c572e45c")} ${Zad.icon('arrow')}</a></section>
  <div class="section-label"><h2>${ZadI18n.t("gateways.cc21748c95")}</h2><span>${ZadI18n.t("gateways.1ef1f01c0b")}</span></div>
- <div class="gateway-grid">${gatewayCard('iman','leaf','iman',d1,['daily','warrior','heart'],'iman')}${gatewayCard('ilm','library','ilm',d2,['hadith','library','seerah'],'ilm')}${gatewayCard('media','play','media',d3,['watch','publish'],'media')}</div>
- <div class="quiet-links"><a href="#library">${Zad.icon('library')}${t('library')}</a><a href="#heart-tasbih">${Zad.icon('heart')}${ZadI18n.t("quran-reader.ff27a05115")}</a><a href="#rouh">${t('rouh')}<small>${t('coming')}</small></a></div>`;
+ <div class="gateway-grid">${gatewayCard('iman','leaf','iman',d1,['daily','warrior','heart'],'iman')}${gatewayCard('ilm','library','ilm',d2,['hadith','library','seerah'],'ilm')}${gatewayCard('media','play','media',d3,['watch','publish'],'media')}${gatewayCard('rouh','moon','rouh',d4,['rouh.heart','rouh.worship','rouh.resolve'],'rouh')}</div>
+ <div class="quiet-links"><a href="#library">${Zad.icon('library')}${t('library')}</a><a href="#heart-tasbih">${Zad.icon('heart')}${ZadI18n.t("quran-reader.ff27a05115")}</a></div>`;
   }
 
   function header(no, key, icon) {
@@ -19043,7 +19695,7 @@ document.addEventListener('zad:language', () => {
   }
 
   function rouh() {
-    return `${header('4','rouh','')}<div class="empty-state">${Zad.icon('moon')}<h2>${t('coming')}</h2><p>${ZadI18n.t("gateways.a9f6c2b79c")}</p><a class="button" href="#home">${t('back')}</a></div>`;
+    return window.ZadRouh.render();
   }
   const views = {
     home,
@@ -20254,7 +20906,7 @@ document.addEventListener('zad:language', () => {
 
   function ztAvatarHTML(url, name = '') {
     const safe = Zad.mediaURL(url);
-    return safe ? `<img src="${Zad.escape(safe)}" alt="" loading="lazy">` : `<span>${Zad.escape(String(name).slice(0,1))||Zad.icon('user')}</span>`;
+    return safe ? `<img src="${Zad.escape(safe)}" alt="" loading="lazy" data-fallback="${Zad.escape(String(name).slice(0,1))}">` : `<span>${Zad.escape(String(name).slice(0,1))||Zad.icon('user')}</span>`;
   }
 
   function ztEnsureFeed() {
@@ -20357,131 +21009,52 @@ document.addEventListener('zad:language', () => {
     }
   }
 
+  let ztCommentOffset=0, ztReplyTo=null, ztCommentBusy=false, ztCommentEpoch=0, ztCommentLoading=false, ztReturnFocus=null;
   function ztEnsureCommentsSheet() {
-    let sheet = document.getElementById('zadTalkCommentsSheet');
-    if (sheet) return sheet;
-    sheet = document.createElement('section');
-    sheet.id = 'zadTalkCommentsSheet';
-    sheet.className = 'zadTalkCommentsSheet';
-    sheet.setAttribute('aria-hidden', 'true');
-    sheet.innerHTML = ("<div class=\"ztCommentsBackdrop\" data-zt-comments-close></div><div class=\"ztCommentsPanel\"><div class=\"ztCommentsHead\"><strong>" + ZadI18n.html("talk.5f285a4c6a") + "</strong><button type=\"button\" data-zt-comments-close aria-label=\"" + ZadI18n.html("settings.ca90c297b0") + "\">✕</button></div><div class=\"ztCommentsList\" id=\"ztCommentsList\"></div><div class=\"ztCommentComposer\"><input id=\"ztCommentInput\" maxlength=\"500\" placeholder=\"" + ZadI18n.html("talk.029d5fc7bd") + "\"><button type=\"button\" id=\"ztCommentSend\">" + ZadI18n.html("talk.8b1e3b105d") + "</button></div><div class=\"ztCommentsStatus\" id=\"ztCommentsStatus\"></div></div>");
-    document.body.appendChild(sheet);
-    sheet.querySelectorAll('[data-zt-comments-close]').forEach(b => b.addEventListener('click', ztCloseComments));
-    sheet.querySelector('#ztCommentSend')?.addEventListener('click', ztSubmitComment);
-    sheet.querySelector('#ztCommentInput')?.addEventListener('keydown', e => {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        ztSubmitComment()
-      }
-    });
+    let sheet=document.getElementById('zadTalkCommentsSheet');if(sheet)return sheet;
+    sheet=document.createElement('section');sheet.id='zadTalkCommentsSheet';sheet.className='zadTalkCommentsSheet';sheet.setAttribute('aria-hidden','true');
+    sheet.innerHTML=`<div class="ztCommentsBackdrop" data-zt-comments-close></div><div class="ztCommentsPanel" role="dialog" aria-modal="true" aria-labelledby="ztCommentsTitle"><div class="ztCommentsHead"><strong id="ztCommentsTitle">${ZadI18n.html('talk.5f285a4c6a')}</strong><button type="button" data-zt-comments-close aria-label="${ZadI18n.html('settings.ca90c297b0')}">✕</button></div><div class="ztCommentsList" id="ztCommentsList"></div><button type="button" id="ztCommentsMore" class="secondary hidden" data-i18n="social.more">${ZadI18n.html('social.more')}</button><button type="button" id="ztReplyCancel" class="secondary hidden" data-i18n="social.cancel">${ZadI18n.html('social.cancel')}</button><div class="ztCommentComposer"><input id="ztCommentInput" maxlength="500" placeholder="${ZadI18n.html('talk.029d5fc7bd')}"><button type="button" id="ztCommentSend">${ZadI18n.html('talk.8b1e3b105d')}</button></div><div class="ztCommentsStatus" id="ztCommentsStatus" role="status"></div></div>`;
+    document.body.append(sheet);
+    sheet.querySelectorAll('[data-zt-comments-close]').forEach(b=>b.addEventListener('click',ztCloseComments));
+    sheet.querySelector('#ztCommentSend').addEventListener('click',ztSubmitComment);
+    sheet.querySelector('#ztCommentsMore').addEventListener('click',()=>ztLoadComments(false));
+    sheet.querySelector('#ztReplyCancel').addEventListener('click',()=>ztSetReply(null));
+    sheet.querySelector('#ztCommentInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ztSubmitComment();}});
+    sheet.addEventListener('keydown',e=>{if(e.key==='Escape')ztCloseComments();if(e.key==='Tab'){const nodes=[...sheet.querySelectorAll('button,input,a')].filter(n=>!n.disabled&&!n.classList.contains('hidden')&&!n.closest('[hidden]'));if(!nodes.length)return;const first=nodes[0],last=nodes.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
     return sheet;
   }
-
-  function ztCloseComments() {
-    const s = document.getElementById('zadTalkCommentsSheet');
-    if (!s) return;
-    s.classList.remove('open');
-    s.setAttribute('aria-hidden', 'true');
-    s.dataset.clipId = '';
-    document.documentElement.classList.remove('ztCommentsOpen');
-  }
-
-  function ztRenderComments(comments) {
-    const list = document.getElementById('ztCommentsList');
-    if (!list) return;
-    list.textContent = '';
-    if (!comments?.length) {
-      list.innerHTML = ("<div class=\"ztCommentsEmpty\">" + ZadI18n.html("talk.409c7d9759") + "</div>");
-      return
+  function ztSetReply(comment){ztReplyTo=comment?.id||null;const b=document.getElementById('ztReplyCancel');b?.classList.toggle('hidden',!comment);if(b)b.textContent=ZadI18n.t('social.cancel')+(comment?' — '+(comment.display_name||comment.username||''):'');if(comment)document.getElementById('ztCommentInput')?.focus();}
+  function ztCloseComments(){const s=document.getElementById('zadTalkCommentsSheet');if(!s)return;ztCommentEpoch++;ztCommentLoading=false;s.classList.remove('open');s.setAttribute('aria-hidden','true');s.dataset.clipId='';ztSetReply(null);document.documentElement.classList.remove('ztCommentsOpen');ztReturnFocus?.focus();}
+  function ztCommentError(e){const status=document.getElementById('ztCommentsStatus');if(status)status.textContent=Zad.errorText(e,ZadI18n.t('social.failed'));if(/login_required|unauthorized|not_authenticated/i.test(e?.message||''))window.zadOpenAuth?.();}
+  function ztCommentRow(c,id){
+    const row=document.createElement('article');row.className='ztCommentRow';row.dataset.commentId=String(c.id);
+    const av=document.createElement('div');av.className='ztCommentAvatar';av.innerHTML=ztAvatarHTML(c.avatar_url,c.display_name||c.username);
+    const body=document.createElement('div');body.className='ztCommentBody';
+    const name=document.createElement('strong');name.textContent=c.display_name||c.username||ZadI18n.t('social.publisher');
+    const txt=document.createElement('p');txt.dir='auto';txt.textContent=c.body||'';txt.setAttribute('data-source-content','');
+    const time=document.createElement('small');time.dataset.commentTime=c.created_at||'';try{time.textContent=new Intl.DateTimeFormat(ZadI18n.locale,{dateStyle:'medium'}).format(new Date(c.created_at));}catch(_){}
+    const actions=document.createElement('div');actions.className='ztCommentActions';
+    const like=document.createElement('button');like.type='button';like.className='secondary';like.setAttribute('aria-pressed',String(!!c.liked));like.dataset.commentLikes=String(c.like_count||0);
+    const likeText=()=>{like.textContent=ZadI18n.t('talk.27813f1a76')+' · '+ztFormatCount(like.dataset.commentLikes);};likeText();
+    like.addEventListener('click',async()=>{like.disabled=true;try{const d=await ztEdge('zad-talk-social',{action:'comment_like',id,comment_id:c.id,liked:like.getAttribute('aria-pressed')!=='true'});like.dataset.commentLikes=String(d.like_count||0);like.setAttribute('aria-pressed',String(!!d.liked));likeText();}catch(e){ztCommentError(e);}finally{like.disabled=false;}});actions.append(like);
+    if(!c.parent_comment_id){const reply=document.createElement('button');reply.type='button';reply.className='secondary';reply.dataset.i18n='social.reply';reply.textContent=ZadI18n.t('social.reply');reply.addEventListener('click',()=>ztSetReply(c));actions.append(reply);}
+    if(c.can_delete){const del=document.createElement('button');del.type='button';del.className='secondary';del.dataset.i18n='social.delete';del.textContent=ZadI18n.t('social.delete');del.addEventListener('click',async()=>{if(!confirm(ZadI18n.t('social.confirm')))return;del.disabled=true;try{await ztEdge('zad-talk-social',{action:'comment_delete',id,comment_id:c.id});await ztLoadComments(true);const article=document.querySelector(`.zadTalkClip[data-id="${CSS.escape(id)}"]`);ztLoadSocial(article,id,true);}catch(e){ztCommentError(e);}finally{del.disabled=false;}});actions.append(del);}
+    body.append(name,txt,time,actions);row.append(av,body);
+    if(!c.parent_comment_id&&c.reply_count){const toggle=document.createElement('button');toggle.type='button';toggle.className='secondary';toggle.dataset.replyCount=String(c.reply_count);toggle.textContent=ZadI18n.t('social.replies',{count:ztFormatCount(c.reply_count)});toggle.setAttribute('aria-expanded','false');const replies=document.createElement('div');replies.className='ztReplies';replies.hidden=true;let offset=0,loaded=false;
+      const more=document.createElement('button');more.type='button';more.className='secondary';more.dataset.i18n='social.more';more.textContent=ZadI18n.t('social.more');
+      async function load(){more.disabled=true;toggle.disabled=true;try{const d=await ztEdge('zad-talk-social',{action:'comments',id,parent_comment_id:c.id,offset});(d.comments||[]).forEach(x=>replies.insertBefore(ztCommentRow(x,id),more));offset=d.next_offset;more.hidden=!d.has_more;loaded=true;}catch(e){ztCommentError(e);}finally{more.disabled=false;toggle.disabled=false;}}
+      replies.append(more);more.addEventListener('click',load);toggle.addEventListener('click',async()=>{replies.hidden=!replies.hidden;toggle.setAttribute('aria-expanded',String(!replies.hidden));if(!replies.hidden&&!loaded)await load();});body.append(toggle,replies);
     }
-    comments.forEach(c => {
-      const row = document.createElement('article');
-      row.className = 'ztCommentRow';
-      const av = document.createElement('div');
-      av.className = 'ztCommentAvatar';
-      if (Zad.mediaURL(c.avatar_url)) {
-        const img = document.createElement('img');
-        img.src = Zad.mediaURL(c.avatar_url);
-        img.alt = '';
-        av.appendChild(img)
-      } else av.textContent = (ztEscText(c.username).slice(0, 1) || 'ز');
-      const body = document.createElement('div');
-      body.className = 'ztCommentBody';
-      const name = document.createElement('strong');
-      name.textContent = ztEscText(c.username) || ZadI18n.t("access.58fffe6bec");
-      const txt = document.createElement('p');
-      txt.textContent = ztEscText(c.body);
-      const time = document.createElement('small');
-      time.dataset.commentTime=c.created_at||'';
-      try {
-        time.textContent = new Intl.DateTimeFormat(ZadI18n.locale, {
-          dateStyle: 'medium'
-        }).format(new Date(c.created_at))
-      } catch (_) {
-        time.textContent = ''
-      }
-      body.append(name, txt, time);
-      row.append(av, body);
-      list.appendChild(row);
-    })
+    return row;
   }
-  async function ztOpenComments(article, id) {
-    const sheet = ztEnsureCommentsSheet();
-    sheet.dataset.clipId = id;
-    sheet.classList.add('open');
-    sheet.setAttribute('aria-hidden', 'false');
-    document.documentElement.classList.add('ztCommentsOpen');
-    const list = document.getElementById('ztCommentsList');
-    const status = document.getElementById('ztCommentsStatus');
-    if (list) list.innerHTML = ("<div class=\"ztCommentsEmpty\">" + ZadI18n.html("talk.ad66818c6c") + "</div>");
-    if (status) status.textContent = '';
-    try {
-      const d = await ztEdge('zad-talk-social', {
-        action: 'comments',
-        id
-      });
-      ztRenderComments(d.comments || [])
-    } catch (e) {
-      if (list) list.innerHTML = ("<div class=\"ztCommentsEmpty\">" + ZadI18n.html("talk.104817dab4") + "</div>")
-    }
-    const input = document.getElementById('ztCommentInput');
-    if (input) setTimeout(() => input.focus(), 120);
+  async function ztLoadComments(reset){const sheet=document.getElementById('zadTalkCommentsSheet'),id=sheet?.dataset.clipId;if(!id||ztCommentLoading&&!reset)return;if(reset){ztCommentEpoch++;ztCommentOffset=0;}const epoch=ztCommentEpoch;ztCommentLoading=true;const list=document.getElementById('ztCommentsList'),more=document.getElementById('ztCommentsMore');more.disabled=true;
+    try{const d=await ztEdge('zad-talk-social',{action:'comments',id,offset:ztCommentOffset});if(epoch!==ztCommentEpoch||sheet.dataset.clipId!==id)return;if(reset)list.textContent='';const comments=d.comments||[];comments.forEach(c=>list.append(ztCommentRow(c,id)));if(!list.children.length)list.innerHTML=`<div class="ztCommentsEmpty">${ZadI18n.html('talk.409c7d9759')}</div>`;ztCommentOffset=d.next_offset??ztCommentOffset+comments.length;more.classList.toggle('hidden',!d.has_more);
+    }catch(e){if(epoch===ztCommentEpoch)ztCommentError(e);}finally{if(epoch===ztCommentEpoch){ztCommentLoading=false;more.disabled=false;}}
   }
-  async function ztSubmitComment() {
-    const sheet = document.getElementById('zadTalkCommentsSheet');
-    const id = sheet?.dataset.clipId || '';
-    const input = document.getElementById('ztCommentInput');
-    const status = document.getElementById('ztCommentsStatus');
-    const text = ztEscText(input?.value);
-    if (!id || !text) return;
-    if (status) status.textContent = ZadI18n.t("talk.b423142bd8");
-    try {
-      const d = await ztEdge('zad-talk-social', {
-        action: 'comment',
-        id,
-        comment: text
-      });
-      if (input) input.value = '';
-      if (status) status.textContent = '';
-      const article = document.querySelector(`.zadTalkClip[data-id="${id}"]`);
-      const count = article?.querySelector('[data-zt-comment-count]');
-      if (count) count.textContent = ztFormatCount(d.comment_count || 0);
-      const all = await ztEdge('zad-talk-social', {
-        action: 'comments',
-        id
-      });
-      ztRenderComments(all.comments || []);
-    } catch (e) {
-      const msg = Zad.errorText(e, ZadI18n.t("talk.167cee3d54"));
-      if (status) status.textContent = msg;
-      if (/login_required|unauthorized|not_authenticated/i.test(String(e?.message||""))) {
-        try {
-          window.zadOpenAuth?.()
-        } catch (_) {}
-      }
-    }
-  }
+  async function ztOpenComments(article,id){const sheet=ztEnsureCommentsSheet();ztReturnFocus=document.activeElement;ztSetReply(null);sheet.dataset.clipId=id;sheet.classList.add('open');sheet.setAttribute('aria-hidden','false');document.documentElement.classList.add('ztCommentsOpen');document.getElementById('ztCommentsList').textContent='';document.getElementById('ztCommentsStatus').textContent='';document.getElementById('ztCommentInput').value='';document.getElementById('ztCommentInput').focus();await ztLoadComments(true);}
+  async function ztSubmitComment(){const sheet=document.getElementById('zadTalkCommentsSheet'),id=sheet?.dataset.clipId,input=document.getElementById('ztCommentInput'),text=ztEscText(input?.value),epoch=ztCommentEpoch;if(!id||!text||ztCommentBusy)return;const button=document.getElementById('ztCommentSend');ztCommentBusy=true;button.disabled=true;try{const d=await ztEdge('zad-talk-social',{action:'comment',id,comment:text,...(ztReplyTo?{parent_comment_id:ztReplyTo}:{})});if(sheet.dataset.clipId!==id||epoch!==ztCommentEpoch)return;input.value='';ztSetReply(null);document.getElementById('ztCommentsStatus').textContent='';const count=document.querySelector(`.zadTalkClip[data-id="${CSS.escape(id)}"] [data-zt-comment-count]`);if(count)count.textContent=ztFormatCount(d.comment_count||0);await ztLoadComments(true);}catch(e){if(epoch===ztCommentEpoch)ztCommentError(e);}finally{ztCommentBusy=false;button.disabled=false;}}
 
+  async function ztOpenProfile(id){if(!id)return;document.getElementById('ztPublicProfile')?.remove();const dialog=document.createElement('dialog');dialog.id='ztPublicProfile';dialog.className='ztPublicProfile';dialog.innerHTML=`<div class="ztCommentsHead"><strong>${ZadI18n.html('social.profile')}</strong><button type="button" aria-label="${ZadI18n.html('settings.ca90c297b0')}">×</button></div><div class="ztPublicIdentity"></div><h2>${ZadI18n.html('social.recent')}</h2><div class="ztPublicVideos"></div><p class="ztProfileState" role="status"></p><button type="button" class="secondary ztProfileMore">${ZadI18n.html('social.more')}</button>`;document.body.append(dialog);dialog.querySelector('.ztCommentsHead button').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>dialog.remove());dialog.showModal();let offset=0;const more=dialog.querySelector('.ztProfileMore');async function load(){more.disabled=true;try{const data=await ztEdge('zad-talk-feed',{user_id:id,offset,limit:4});if(!dialog.isConnected)return;const p=data.profile||{};dialog.querySelector('.ztPublicIdentity').innerHTML=`<div class="ztCreatorMini">${ztAvatarHTML(p.avatar_url,p.display_name||p.username)}</div><strong dir="auto">${Zad.escape(p.display_name||p.username||ZadI18n.t('social.publisher'))}</strong><small dir="ltr">${p.username?'@'+Zad.escape(p.username):''}</small>`;for(const item of data.items||[]){const a=document.createElement('a');a.href=ztDeepLink(item.id);a.textContent=item.title||ZadI18n.t('talk.48988cb485');a.className='ztPublicLink';dialog.querySelector('.ztPublicVideos').append(a);}offset=data.next_offset;more.hidden=!data.has_more;if(!offset)dialog.querySelector('.ztProfileState').textContent=ZadI18n.t('talk.6ae8a709e9');}catch(e){dialog.querySelector('.ztProfileState').textContent=ZadI18n.t('social.failed');}finally{more.disabled=false;}}more.addEventListener('click',load);await load();}
   function ztSetSocial(article, d) {
     if (!article || !d) return;
     const like = article.querySelector('[data-zt-like]');
@@ -20526,17 +21099,20 @@ document.addEventListener('zad:language', () => {
     }
   }
 
+  let ztActiveVideo=null;
   function ztAttachObserver() {
-    ztObserver?.disconnect();
-    if (!window.IntersectionObserver) return;
-    ztObserver = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) entry.target.pause();
-      }
-    }, {
-      threshold: 0.15
-    });
-    document.querySelectorAll('#zadTalkFeed video').forEach(v => ztObserver.observe(v));
+    ztObserver?.disconnect();if(!window.IntersectionObserver)return;
+    const ratios=new Map(),shell=document.getElementById('zadTalkFeed');
+    ztObserver=new IntersectionObserver(entries=>{
+      entries.forEach(e=>ratios.set(e.target,e.isIntersecting?e.intersectionRatio:0));
+      const best=[...ratios].sort((a,b)=>b[1]-a[1])[0];
+      const active=best&&best[1]>=.6&&!document.hidden?best[0]:null;
+      shell.querySelectorAll('video').forEach(v=>{if(v!==active)v.pause();});
+      if(active&&active!==ztActiveVideo){active.preload='metadata';if(!matchMedia('(prefers-reduced-motion: reduce)').matches)active.play().catch(()=>{});}
+      ztActiveVideo=active;
+      if(active&&active.closest('.zadTalkClip')===shell.lastElementChild&&ztHasMore&&!ztLoading)ztLoadFeed(false);
+    },{root:shell,threshold:[0,.6,.9]});
+    shell.querySelectorAll('video').forEach(v=>ztObserver.observe(v));
   }
 
   function ztActionButton(kind, icon, label, countAttr) {
@@ -20572,7 +21148,8 @@ document.addEventListener('zad:language', () => {
     video.controls = true;
     video.playsInline = true;
     video.preload = 'none';
-    video.loop = false;
+    video.loop = true;
+    video.muted = true;
     video.setAttribute('webkit-playsinline', 'true');
     video.setAttribute('aria-label', ztEscText(item.title) || ZadI18n.t("talk.72ed64e002"));
     video.addEventListener('play', () => document.querySelectorAll('video').forEach(v => {
@@ -20583,14 +21160,17 @@ document.addEventListener('zad:language', () => {
     shade.className = 'ztVideoShade';
     const overlay = document.createElement('div');
     overlay.className = 'zadTalkClipOverlay';
-    const creator = document.createElement('div');
+    const creator = document.createElement('button');
+    creator.type = 'button';
+    creator.addEventListener('click',()=>ztOpenProfile(article.dataset.creatorId));
     creator.className = 'ztCreatorLine';
     const mini = document.createElement('div');
     mini.className = 'ztCreatorMini';
     mini.innerHTML = ztAvatarHTML(item.creator_avatar, item.creator_name || item.submitter_name || '');
     const cname = document.createElement('strong');
-    cname.textContent = '@' + (ztEscText(item.creator_name || item.submitter_name) || ZadI18n.t("talk.4cecf6afca"));
-    creator.append(mini, cname);
+    cname.textContent = ztEscText(item.creator_name || item.submitter_name) || ZadI18n.t('social.publisher');
+    const handle=document.createElement('small');handle.className='ztHandle';handle.dir='ltr';handle.textContent=item.creator_username?'@'+item.creator_username:'';
+    const identity=document.createElement('span');identity.append(cname,handle);creator.append(mini, identity);
     const title = document.createElement('p');
     title.className = 'ztClipTitle';
     title.textContent = ztEscText(item.title) || ZadI18n.t("talk.48988cb485");
@@ -20789,6 +21369,8 @@ document.addEventListener('zad:language', () => {
     }
   }
 
+  document.addEventListener('error', e=>{const img=e.target;if(img.matches?.('img[data-fallback]')){const fallback=document.createElement('span');fallback.textContent=img.dataset.fallback||'—';img.replaceWith(fallback);}},true);
+  document.addEventListener('zad:route',()=>{ztCloseComments();ztCloseLeaderboard();document.getElementById('ztPublicProfile')?.close();});
   document.addEventListener('click', e => {
     const submit = e.target.closest?.('[data-v21-submit-video]');
     if (submit) {
@@ -20847,6 +21429,9 @@ document.addEventListener('zad:language', () => {
     document.querySelectorAll('.ztRankCopy small[data-counts]').forEach(el=>{const c=JSON.parse(el.dataset.counts);el.textContent=ZadI18n.t('talk.9ca4c06105',Object.fromEntries(c.map((n,i)=>['v'+i,ztFormatCount(n)])));});
     document.querySelectorAll('.ztRankScore[data-score]').forEach(el=>{el.innerHTML=ztFormatCount(el.dataset.score)+'<small>'+ZadI18n.html('talk.69ff4ac820')+'</small>';});
     document.querySelectorAll('[data-comment-time]').forEach(el=>{const date=new Date(el.dataset.commentTime);if(Number.isFinite(date.getTime()))el.textContent=new Intl.DateTimeFormat(ZadI18n.locale,{dateStyle:'medium'}).format(date);});
+    document.querySelectorAll('[data-comment-likes]').forEach(el=>el.textContent=ZadI18n.t('talk.27813f1a76')+' · '+ztFormatCount(el.dataset.commentLikes));
+    document.querySelectorAll('[data-reply-count]').forEach(el=>el.textContent=ZadI18n.t('social.replies',{count:ztFormatCount(el.dataset.replyCount)}));
+    document.getElementById('ztPublicProfile')?.close();
     chromeLocale=ZadI18n.locale;
   });
 
@@ -21023,9 +21608,10 @@ document.addEventListener('zad:route', () => document.querySelectorAll('video').
       box.className = 'zadProfileIdentity';
       card.querySelector('.zadProfileCopy')?.appendChild(box)
     }
-    const name = esc(profile?.username || profile?.display_name || user?.user_metadata?.username || user?.user_metadata?.display_name) || ZadI18n.t("access.58fffe6bec");
+    const name = esc(profile?.display_name || profile?.username) || ZadI18n.t("access.58fffe6bec");
+    const handle = esc(profile?.username || '');
     const banned = profile?.account_status === 'banned';
-    box.innerHTML = ("<strong>@" + (name) + "</strong><span class=\"zadProfileBadge" + (banned?' bad':'') + "\">" + (banned?ZadI18n.t("access.630d2cffed"):ZadI18n.t("access.8488a53a70")) + "</span><small>" + ZadI18n.html("access.8837e22ea3") + "</small>");
+    box.innerHTML = `<strong dir="auto">${name}</strong>${handle?`<small dir="ltr">@${handle}</small>`:''}<span class="zadProfileBadge${banned?' bad':''}">${ZadI18n.t(banned?'access.630d2cffed':'access.8488a53a70')}</span>${profile.role==='owner'?`<span class="zadProfileBadge" data-i18n="roles.owner">${ZadI18n.t('roles.owner')}</span>`:''}${['owner','admin','moderator'].includes(profile.role)?`<a href="admin.html" data-i18n="roles.panel">${ZadI18n.t('roles.panel')}</a>`:''}`;
     const av = card.querySelector('.zadProfileAvatar'),
       file = card.querySelector('[data-profile-file]');
     if (av && file && !av.dataset.openPhoto) {
@@ -21057,6 +21643,8 @@ document.addEventListener('zad:route', () => document.querySelectorAll('video').
     const p = await sb.from('profiles').select('username,display_name,avatar_url,account_status,ban_reason,banned_at,force_logout_at').eq('id', user.id).maybeSingle();
     if (p.error) return;
     const profile = p.data || {};
+    const verified = await check.json().catch(()=>({}));
+    profile.role = verified.role || 'user';
     document.querySelectorAll('.zadProfileCard').forEach(c => enrichCard(c, profile, user));
     const issued = tokenIat(session.access_token || '');
     const force = profile.force_logout_at ? new Date(profile.force_logout_at).getTime() : 0;
@@ -21246,7 +21834,7 @@ document.addEventListener('zad:route', () => document.querySelectorAll('video').
 <script data-source="assets/js/settings.js">/* Settings and search use native dialogs; reading and account data keep their existing keys. */
 window.ZadSettings = (() => {
   'use strict';
-  const T = i => ZadI18n.t(["gateways.eeeabade98","quran-reader.bfcf483079","gateways.249b9bc3b4","gateways.9cfadeada3","gateways.fe99b36520","quran-reader.5fd9563e68","gateways.6520b21edd","settings.66dcee1f46","settings.41a3c0033a","settings.ba0ba5f087","settings.5bb00398b2","settings.b85dec8fda","settings.aabb4f12fa","settings.b95b2ced0e","settings.48eb16a307","settings.560ef2b686","settings.f3569af245","settings.fd52a3d1cd","settings.c530d24d73","settings.ca90c297b0","settings.94b1969e15","settings.f8d52dd9b0","gateways.f7c9bb7bc3","gateways.fdf8eba0a0","settings.b36e86980a","quran-reader.0cde29a629","quran-reader.ff27a05115","gateways.fb7e622386","settings.7a6988a2b7","settings.c85686ecb0","settings.41fa3f074a"][i]);
+  const T = i => ZadI18n.t(["gateways.eeeabade98","quran-reader.bfcf483079","gateways.249b9bc3b4","gateways.9cfadeada3","gateways.fe99b36520","quran-reader.5fd9563e68","gateways.6520b21edd","settings.66dcee1f46","settings.41a3c0033a","settings.ba0ba5f087","settings.5bb00398b2","settings.b85dec8fda","settings.aabb4f12fa","settings.b95b2ced0e","settings.48eb16a307","settings.560ef2b686","settings.f3569af245","settings.fd52a3d1cd","settings.c530d24d73","settings.ca90c297b0","settings.94b1969e15","settings.f8d52dd9b0","gateways.f7c9bb7bc3","gateways.fdf8eba0a0","settings.b36e86980a","quran-reader.0cde29a629","quran-reader.ff27a05115","gateways.fb7e622386","settings.7a6988a2b7","settings.c85686ecb0","settings.41fa3f074a","gateways.ca3dff37d8"][i]);
   const esc = Zad.escape;
 
   function translate() {
@@ -21256,6 +21844,7 @@ window.ZadSettings = (() => {
       iman: 2,
       ilm: 3,
       media: 4,
+      rouh: 31,
       settings: 5,
       language: 6,
       account: 7,
@@ -21353,6 +21942,7 @@ window.ZadSettings = (() => {
       ['seerah', 27, 'سيرة seerah sirah'],
       ['zad', null, 'زاد المحارب steadfastness رسائل'],
       ['media', 4, 'زاد توك video مقاطع'],
+      ['rouh', 31, 'زاد الروح soul ruh alma âme jiwa قلب مقاطع'],
       ['aqidah', null, 'عقيدة creed aqidah']
     ];
     const d = dialog('searchDialog', T(20), `<label class="search-field">${Zad.icon('search')}<input id="globalSearchInput" type="search" placeholder="${esc(T(21))}" aria-label="${esc(T(8))}" autocomplete="off"></label><div class="global-results" id="globalSearchResults" aria-live="polite"></div>`);

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-25T17:40:16.469Z",
+  "generated": "2026-09-26T06:30:34.495Z",
   "normalization": "Remove one leading U+FEFF per ayah; Unicode NFC; SHA-256 UTF-8 per ayah; SHA-256 of concatenated lowercase hex hashes in canonical order, no delimiter.",
   "expectedRoot": "5b58aa48fb07265a53cea6abd510d226345357dd556250e30f3ba87b8a076499",
   "integrity": {

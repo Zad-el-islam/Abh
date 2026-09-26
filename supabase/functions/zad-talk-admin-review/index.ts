@@ -1,6 +1,6 @@
 import {serve,admin,fail,checked,uuid,verifyVideo,validPath} from '../_shared/runtime.ts';
-serve(async(_req,sb,body)=>{
-  const who=await admin(sb,body.token);
+serve(async(req,sb,body)=>{
+  const who=await admin(sb,body.token,req);
   if(!uuid(body.id)||!['approve','reject','delete'].includes(body.action))fail(400,'invalid_request');
   const row=checked(await sb.from('zad_talk_submissions').select('*').eq('id',body.id).maybeSingle());
   if(!row)fail(404,'not_found');

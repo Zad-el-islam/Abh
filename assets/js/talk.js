@@ -112,7 +112,7 @@
 
   function ztAvatarHTML(url, name = '') {
     const safe = Zad.mediaURL(url);
-    return safe ? `<img src="${Zad.escape(safe)}" alt="" loading="lazy">` : `<span>${Zad.escape(String(name).slice(0,1))||Zad.icon('user')}</span>`;
+    return safe ? `<img src="${Zad.escape(safe)}" alt="" loading="lazy" data-fallback="${Zad.escape(String(name).slice(0,1))}">` : `<span>${Zad.escape(String(name).slice(0,1))||Zad.icon('user')}</span>`;
   }
 
   function ztEnsureFeed() {
@@ -215,131 +215,52 @@
     }
   }
 
+  let ztCommentOffset=0, ztReplyTo=null, ztCommentBusy=false, ztCommentEpoch=0, ztCommentLoading=false, ztReturnFocus=null;
   function ztEnsureCommentsSheet() {
-    let sheet = document.getElementById('zadTalkCommentsSheet');
-    if (sheet) return sheet;
-    sheet = document.createElement('section');
-    sheet.id = 'zadTalkCommentsSheet';
-    sheet.className = 'zadTalkCommentsSheet';
-    sheet.setAttribute('aria-hidden', 'true');
-    sheet.innerHTML = ("<div class=\"ztCommentsBackdrop\" data-zt-comments-close></div><div class=\"ztCommentsPanel\"><div class=\"ztCommentsHead\"><strong>" + ZadI18n.html("talk.5f285a4c6a") + "</strong><button type=\"button\" data-zt-comments-close aria-label=\"" + ZadI18n.html("settings.ca90c297b0") + "\">✕</button></div><div class=\"ztCommentsList\" id=\"ztCommentsList\"></div><div class=\"ztCommentComposer\"><input id=\"ztCommentInput\" maxlength=\"500\" placeholder=\"" + ZadI18n.html("talk.029d5fc7bd") + "\"><button type=\"button\" id=\"ztCommentSend\">" + ZadI18n.html("talk.8b1e3b105d") + "</button></div><div class=\"ztCommentsStatus\" id=\"ztCommentsStatus\"></div></div>");
-    document.body.appendChild(sheet);
-    sheet.querySelectorAll('[data-zt-comments-close]').forEach(b => b.addEventListener('click', ztCloseComments));
-    sheet.querySelector('#ztCommentSend')?.addEventListener('click', ztSubmitComment);
-    sheet.querySelector('#ztCommentInput')?.addEventListener('keydown', e => {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        ztSubmitComment()
-      }
-    });
+    let sheet=document.getElementById('zadTalkCommentsSheet');if(sheet)return sheet;
+    sheet=document.createElement('section');sheet.id='zadTalkCommentsSheet';sheet.className='zadTalkCommentsSheet';sheet.setAttribute('aria-hidden','true');
+    sheet.innerHTML=`<div class="ztCommentsBackdrop" data-zt-comments-close></div><div class="ztCommentsPanel" role="dialog" aria-modal="true" aria-labelledby="ztCommentsTitle"><div class="ztCommentsHead"><strong id="ztCommentsTitle">${ZadI18n.html('talk.5f285a4c6a')}</strong><button type="button" data-zt-comments-close aria-label="${ZadI18n.html('settings.ca90c297b0')}">✕</button></div><div class="ztCommentsList" id="ztCommentsList"></div><button type="button" id="ztCommentsMore" class="secondary hidden" data-i18n="social.more">${ZadI18n.html('social.more')}</button><button type="button" id="ztReplyCancel" class="secondary hidden" data-i18n="social.cancel">${ZadI18n.html('social.cancel')}</button><div class="ztCommentComposer"><input id="ztCommentInput" maxlength="500" placeholder="${ZadI18n.html('talk.029d5fc7bd')}"><button type="button" id="ztCommentSend">${ZadI18n.html('talk.8b1e3b105d')}</button></div><div class="ztCommentsStatus" id="ztCommentsStatus" role="status"></div></div>`;
+    document.body.append(sheet);
+    sheet.querySelectorAll('[data-zt-comments-close]').forEach(b=>b.addEventListener('click',ztCloseComments));
+    sheet.querySelector('#ztCommentSend').addEventListener('click',ztSubmitComment);
+    sheet.querySelector('#ztCommentsMore').addEventListener('click',()=>ztLoadComments(false));
+    sheet.querySelector('#ztReplyCancel').addEventListener('click',()=>ztSetReply(null));
+    sheet.querySelector('#ztCommentInput').addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();ztSubmitComment();}});
+    sheet.addEventListener('keydown',e=>{if(e.key==='Escape')ztCloseComments();if(e.key==='Tab'){const nodes=[...sheet.querySelectorAll('button,input,a')].filter(n=>!n.disabled&&!n.classList.contains('hidden')&&!n.closest('[hidden]'));if(!nodes.length)return;const first=nodes[0],last=nodes.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
     return sheet;
   }
-
-  function ztCloseComments() {
-    const s = document.getElementById('zadTalkCommentsSheet');
-    if (!s) return;
-    s.classList.remove('open');
-    s.setAttribute('aria-hidden', 'true');
-    s.dataset.clipId = '';
-    document.documentElement.classList.remove('ztCommentsOpen');
-  }
-
-  function ztRenderComments(comments) {
-    const list = document.getElementById('ztCommentsList');
-    if (!list) return;
-    list.textContent = '';
-    if (!comments?.length) {
-      list.innerHTML = ("<div class=\"ztCommentsEmpty\">" + ZadI18n.html("talk.409c7d9759") + "</div>");
-      return
+  function ztSetReply(comment){ztReplyTo=comment?.id||null;const b=document.getElementById('ztReplyCancel');b?.classList.toggle('hidden',!comment);if(b)b.textContent=ZadI18n.t('social.cancel')+(comment?' — '+(comment.display_name||comment.username||''):'');if(comment)document.getElementById('ztCommentInput')?.focus();}
+  function ztCloseComments(){const s=document.getElementById('zadTalkCommentsSheet');if(!s)return;ztCommentEpoch++;ztCommentLoading=false;s.classList.remove('open');s.setAttribute('aria-hidden','true');s.dataset.clipId='';ztSetReply(null);document.documentElement.classList.remove('ztCommentsOpen');ztReturnFocus?.focus();}
+  function ztCommentError(e){const status=document.getElementById('ztCommentsStatus');if(status)status.textContent=Zad.errorText(e,ZadI18n.t('social.failed'));if(/login_required|unauthorized|not_authenticated/i.test(e?.message||''))window.zadOpenAuth?.();}
+  function ztCommentRow(c,id){
+    const row=document.createElement('article');row.className='ztCommentRow';row.dataset.commentId=String(c.id);
+    const av=document.createElement('div');av.className='ztCommentAvatar';av.innerHTML=ztAvatarHTML(c.avatar_url,c.display_name||c.username);
+    const body=document.createElement('div');body.className='ztCommentBody';
+    const name=document.createElement('strong');name.textContent=c.display_name||c.username||ZadI18n.t('social.publisher');
+    const txt=document.createElement('p');txt.dir='auto';txt.textContent=c.body||'';txt.setAttribute('data-source-content','');
+    const time=document.createElement('small');time.dataset.commentTime=c.created_at||'';try{time.textContent=new Intl.DateTimeFormat(ZadI18n.locale,{dateStyle:'medium'}).format(new Date(c.created_at));}catch(_){}
+    const actions=document.createElement('div');actions.className='ztCommentActions';
+    const like=document.createElement('button');like.type='button';like.className='secondary';like.setAttribute('aria-pressed',String(!!c.liked));like.dataset.commentLikes=String(c.like_count||0);
+    const likeText=()=>{like.textContent=ZadI18n.t('talk.27813f1a76')+' · '+ztFormatCount(like.dataset.commentLikes);};likeText();
+    like.addEventListener('click',async()=>{like.disabled=true;try{const d=await ztEdge('zad-talk-social',{action:'comment_like',id,comment_id:c.id,liked:like.getAttribute('aria-pressed')!=='true'});like.dataset.commentLikes=String(d.like_count||0);like.setAttribute('aria-pressed',String(!!d.liked));likeText();}catch(e){ztCommentError(e);}finally{like.disabled=false;}});actions.append(like);
+    if(!c.parent_comment_id){const reply=document.createElement('button');reply.type='button';reply.className='secondary';reply.dataset.i18n='social.reply';reply.textContent=ZadI18n.t('social.reply');reply.addEventListener('click',()=>ztSetReply(c));actions.append(reply);}
+    if(c.can_delete){const del=document.createElement('button');del.type='button';del.className='secondary';del.dataset.i18n='social.delete';del.textContent=ZadI18n.t('social.delete');del.addEventListener('click',async()=>{if(!confirm(ZadI18n.t('social.confirm')))return;del.disabled=true;try{await ztEdge('zad-talk-social',{action:'comment_delete',id,comment_id:c.id});await ztLoadComments(true);const article=document.querySelector(`.zadTalkClip[data-id="${CSS.escape(id)}"]`);ztLoadSocial(article,id,true);}catch(e){ztCommentError(e);}finally{del.disabled=false;}});actions.append(del);}
+    body.append(name,txt,time,actions);row.append(av,body);
+    if(!c.parent_comment_id&&c.reply_count){const toggle=document.createElement('button');toggle.type='button';toggle.className='secondary';toggle.dataset.replyCount=String(c.reply_count);toggle.textContent=ZadI18n.t('social.replies',{count:ztFormatCount(c.reply_count)});toggle.setAttribute('aria-expanded','false');const replies=document.createElement('div');replies.className='ztReplies';replies.hidden=true;let offset=0,loaded=false;
+      const more=document.createElement('button');more.type='button';more.className='secondary';more.dataset.i18n='social.more';more.textContent=ZadI18n.t('social.more');
+      async function load(){more.disabled=true;toggle.disabled=true;try{const d=await ztEdge('zad-talk-social',{action:'comments',id,parent_comment_id:c.id,offset});(d.comments||[]).forEach(x=>replies.insertBefore(ztCommentRow(x,id),more));offset=d.next_offset;more.hidden=!d.has_more;loaded=true;}catch(e){ztCommentError(e);}finally{more.disabled=false;toggle.disabled=false;}}
+      replies.append(more);more.addEventListener('click',load);toggle.addEventListener('click',async()=>{replies.hidden=!replies.hidden;toggle.setAttribute('aria-expanded',String(!replies.hidden));if(!replies.hidden&&!loaded)await load();});body.append(toggle,replies);
     }
-    comments.forEach(c => {
-      const row = document.createElement('article');
-      row.className = 'ztCommentRow';
-      const av = document.createElement('div');
-      av.className = 'ztCommentAvatar';
-      if (Zad.mediaURL(c.avatar_url)) {
-        const img = document.createElement('img');
-        img.src = Zad.mediaURL(c.avatar_url);
-        img.alt = '';
-        av.appendChild(img)
-      } else av.textContent = (ztEscText(c.username).slice(0, 1) || 'ز');
-      const body = document.createElement('div');
-      body.className = 'ztCommentBody';
-      const name = document.createElement('strong');
-      name.textContent = ztEscText(c.username) || ZadI18n.t("access.58fffe6bec");
-      const txt = document.createElement('p');
-      txt.textContent = ztEscText(c.body);
-      const time = document.createElement('small');
-      time.dataset.commentTime=c.created_at||'';
-      try {
-        time.textContent = new Intl.DateTimeFormat(ZadI18n.locale, {
-          dateStyle: 'medium'
-        }).format(new Date(c.created_at))
-      } catch (_) {
-        time.textContent = ''
-      }
-      body.append(name, txt, time);
-      row.append(av, body);
-      list.appendChild(row);
-    })
+    return row;
   }
-  async function ztOpenComments(article, id) {
-    const sheet = ztEnsureCommentsSheet();
-    sheet.dataset.clipId = id;
-    sheet.classList.add('open');
-    sheet.setAttribute('aria-hidden', 'false');
-    document.documentElement.classList.add('ztCommentsOpen');
-    const list = document.getElementById('ztCommentsList');
-    const status = document.getElementById('ztCommentsStatus');
-    if (list) list.innerHTML = ("<div class=\"ztCommentsEmpty\">" + ZadI18n.html("talk.ad66818c6c") + "</div>");
-    if (status) status.textContent = '';
-    try {
-      const d = await ztEdge('zad-talk-social', {
-        action: 'comments',
-        id
-      });
-      ztRenderComments(d.comments || [])
-    } catch (e) {
-      if (list) list.innerHTML = ("<div class=\"ztCommentsEmpty\">" + ZadI18n.html("talk.104817dab4") + "</div>")
-    }
-    const input = document.getElementById('ztCommentInput');
-    if (input) setTimeout(() => input.focus(), 120);
+  async function ztLoadComments(reset){const sheet=document.getElementById('zadTalkCommentsSheet'),id=sheet?.dataset.clipId;if(!id||ztCommentLoading&&!reset)return;if(reset){ztCommentEpoch++;ztCommentOffset=0;}const epoch=ztCommentEpoch;ztCommentLoading=true;const list=document.getElementById('ztCommentsList'),more=document.getElementById('ztCommentsMore');more.disabled=true;
+    try{const d=await ztEdge('zad-talk-social',{action:'comments',id,offset:ztCommentOffset});if(epoch!==ztCommentEpoch||sheet.dataset.clipId!==id)return;if(reset)list.textContent='';const comments=d.comments||[];comments.forEach(c=>list.append(ztCommentRow(c,id)));if(!list.children.length)list.innerHTML=`<div class="ztCommentsEmpty">${ZadI18n.html('talk.409c7d9759')}</div>`;ztCommentOffset=d.next_offset??ztCommentOffset+comments.length;more.classList.toggle('hidden',!d.has_more);
+    }catch(e){if(epoch===ztCommentEpoch)ztCommentError(e);}finally{if(epoch===ztCommentEpoch){ztCommentLoading=false;more.disabled=false;}}
   }
-  async function ztSubmitComment() {
-    const sheet = document.getElementById('zadTalkCommentsSheet');
-    const id = sheet?.dataset.clipId || '';
-    const input = document.getElementById('ztCommentInput');
-    const status = document.getElementById('ztCommentsStatus');
-    const text = ztEscText(input?.value);
-    if (!id || !text) return;
-    if (status) status.textContent = ZadI18n.t("talk.b423142bd8");
-    try {
-      const d = await ztEdge('zad-talk-social', {
-        action: 'comment',
-        id,
-        comment: text
-      });
-      if (input) input.value = '';
-      if (status) status.textContent = '';
-      const article = document.querySelector(`.zadTalkClip[data-id="${id}"]`);
-      const count = article?.querySelector('[data-zt-comment-count]');
-      if (count) count.textContent = ztFormatCount(d.comment_count || 0);
-      const all = await ztEdge('zad-talk-social', {
-        action: 'comments',
-        id
-      });
-      ztRenderComments(all.comments || []);
-    } catch (e) {
-      const msg = Zad.errorText(e, ZadI18n.t("talk.167cee3d54"));
-      if (status) status.textContent = msg;
-      if (/login_required|unauthorized|not_authenticated/i.test(String(e?.message||""))) {
-        try {
-          window.zadOpenAuth?.()
-        } catch (_) {}
-      }
-    }
-  }
+  async function ztOpenComments(article,id){const sheet=ztEnsureCommentsSheet();ztReturnFocus=document.activeElement;ztSetReply(null);sheet.dataset.clipId=id;sheet.classList.add('open');sheet.setAttribute('aria-hidden','false');document.documentElement.classList.add('ztCommentsOpen');document.getElementById('ztCommentsList').textContent='';document.getElementById('ztCommentsStatus').textContent='';document.getElementById('ztCommentInput').value='';document.getElementById('ztCommentInput').focus();await ztLoadComments(true);}
+  async function ztSubmitComment(){const sheet=document.getElementById('zadTalkCommentsSheet'),id=sheet?.dataset.clipId,input=document.getElementById('ztCommentInput'),text=ztEscText(input?.value),epoch=ztCommentEpoch;if(!id||!text||ztCommentBusy)return;const button=document.getElementById('ztCommentSend');ztCommentBusy=true;button.disabled=true;try{const d=await ztEdge('zad-talk-social',{action:'comment',id,comment:text,...(ztReplyTo?{parent_comment_id:ztReplyTo}:{})});if(sheet.dataset.clipId!==id||epoch!==ztCommentEpoch)return;input.value='';ztSetReply(null);document.getElementById('ztCommentsStatus').textContent='';const count=document.querySelector(`.zadTalkClip[data-id="${CSS.escape(id)}"] [data-zt-comment-count]`);if(count)count.textContent=ztFormatCount(d.comment_count||0);await ztLoadComments(true);}catch(e){if(epoch===ztCommentEpoch)ztCommentError(e);}finally{ztCommentBusy=false;button.disabled=false;}}
 
+  async function ztOpenProfile(id){if(!id)return;document.getElementById('ztPublicProfile')?.remove();const dialog=document.createElement('dialog');dialog.id='ztPublicProfile';dialog.className='ztPublicProfile';dialog.innerHTML=`<div class="ztCommentsHead"><strong>${ZadI18n.html('social.profile')}</strong><button type="button" aria-label="${ZadI18n.html('settings.ca90c297b0')}">×</button></div><div class="ztPublicIdentity"></div><h2>${ZadI18n.html('social.recent')}</h2><div class="ztPublicVideos"></div><p class="ztProfileState" role="status"></p><button type="button" class="secondary ztProfileMore">${ZadI18n.html('social.more')}</button>`;document.body.append(dialog);dialog.querySelector('.ztCommentsHead button').addEventListener('click',()=>dialog.close());dialog.addEventListener('close',()=>dialog.remove());dialog.showModal();let offset=0;const more=dialog.querySelector('.ztProfileMore');async function load(){more.disabled=true;try{const data=await ztEdge('zad-talk-feed',{user_id:id,offset,limit:4});if(!dialog.isConnected)return;const p=data.profile||{};dialog.querySelector('.ztPublicIdentity').innerHTML=`<div class="ztCreatorMini">${ztAvatarHTML(p.avatar_url,p.display_name||p.username)}</div><strong dir="auto">${Zad.escape(p.display_name||p.username||ZadI18n.t('social.publisher'))}</strong><small dir="ltr">${p.username?'@'+Zad.escape(p.username):''}</small>`;for(const item of data.items||[]){const a=document.createElement('a');a.href=ztDeepLink(item.id);a.textContent=item.title||ZadI18n.t('talk.48988cb485');a.className='ztPublicLink';dialog.querySelector('.ztPublicVideos').append(a);}offset=data.next_offset;more.hidden=!data.has_more;if(!offset)dialog.querySelector('.ztProfileState').textContent=ZadI18n.t('talk.6ae8a709e9');}catch(e){dialog.querySelector('.ztProfileState').textContent=ZadI18n.t('social.failed');}finally{more.disabled=false;}}more.addEventListener('click',load);await load();}
   function ztSetSocial(article, d) {
     if (!article || !d) return;
     const like = article.querySelector('[data-zt-like]');
@@ -384,17 +305,20 @@
     }
   }
 
+  let ztActiveVideo=null;
   function ztAttachObserver() {
-    ztObserver?.disconnect();
-    if (!window.IntersectionObserver) return;
-    ztObserver = new IntersectionObserver(entries => {
-      for (const entry of entries) {
-        if (!entry.isIntersecting) entry.target.pause();
-      }
-    }, {
-      threshold: 0.15
-    });
-    document.querySelectorAll('#zadTalkFeed video').forEach(v => ztObserver.observe(v));
+    ztObserver?.disconnect();if(!window.IntersectionObserver)return;
+    const ratios=new Map(),shell=document.getElementById('zadTalkFeed');
+    ztObserver=new IntersectionObserver(entries=>{
+      entries.forEach(e=>ratios.set(e.target,e.isIntersecting?e.intersectionRatio:0));
+      const best=[...ratios].sort((a,b)=>b[1]-a[1])[0];
+      const active=best&&best[1]>=.6&&!document.hidden?best[0]:null;
+      shell.querySelectorAll('video').forEach(v=>{if(v!==active)v.pause();});
+      if(active&&active!==ztActiveVideo){active.preload='metadata';if(!matchMedia('(prefers-reduced-motion: reduce)').matches)active.play().catch(()=>{});}
+      ztActiveVideo=active;
+      if(active&&active.closest('.zadTalkClip')===shell.lastElementChild&&ztHasMore&&!ztLoading)ztLoadFeed(false);
+    },{root:shell,threshold:[0,.6,.9]});
+    shell.querySelectorAll('video').forEach(v=>ztObserver.observe(v));
   }
 
   function ztActionButton(kind, icon, label, countAttr) {
@@ -430,7 +354,8 @@
     video.controls = true;
     video.playsInline = true;
     video.preload = 'none';
-    video.loop = false;
+    video.loop = true;
+    video.muted = true;
     video.setAttribute('webkit-playsinline', 'true');
     video.setAttribute('aria-label', ztEscText(item.title) || ZadI18n.t("talk.72ed64e002"));
     video.addEventListener('play', () => document.querySelectorAll('video').forEach(v => {
@@ -441,14 +366,17 @@
     shade.className = 'ztVideoShade';
     const overlay = document.createElement('div');
     overlay.className = 'zadTalkClipOverlay';
-    const creator = document.createElement('div');
+    const creator = document.createElement('button');
+    creator.type = 'button';
+    creator.addEventListener('click',()=>ztOpenProfile(article.dataset.creatorId));
     creator.className = 'ztCreatorLine';
     const mini = document.createElement('div');
     mini.className = 'ztCreatorMini';
     mini.innerHTML = ztAvatarHTML(item.creator_avatar, item.creator_name || item.submitter_name || '');
     const cname = document.createElement('strong');
-    cname.textContent = '@' + (ztEscText(item.creator_name || item.submitter_name) || ZadI18n.t("talk.4cecf6afca"));
-    creator.append(mini, cname);
+    cname.textContent = ztEscText(item.creator_name || item.submitter_name) || ZadI18n.t('social.publisher');
+    const handle=document.createElement('small');handle.className='ztHandle';handle.dir='ltr';handle.textContent=item.creator_username?'@'+item.creator_username:'';
+    const identity=document.createElement('span');identity.append(cname,handle);creator.append(mini, identity);
     const title = document.createElement('p');
     title.className = 'ztClipTitle';
     title.textContent = ztEscText(item.title) || ZadI18n.t("talk.48988cb485");
@@ -647,6 +575,8 @@
     }
   }
 
+  document.addEventListener('error', e=>{const img=e.target;if(img.matches?.('img[data-fallback]')){const fallback=document.createElement('span');fallback.textContent=img.dataset.fallback||'—';img.replaceWith(fallback);}},true);
+  document.addEventListener('zad:route',()=>{ztCloseComments();ztCloseLeaderboard();document.getElementById('ztPublicProfile')?.close();});
   document.addEventListener('click', e => {
     const submit = e.target.closest?.('[data-v21-submit-video]');
     if (submit) {
@@ -705,6 +635,9 @@
     document.querySelectorAll('.ztRankCopy small[data-counts]').forEach(el=>{const c=JSON.parse(el.dataset.counts);el.textContent=ZadI18n.t('talk.9ca4c06105',Object.fromEntries(c.map((n,i)=>['v'+i,ztFormatCount(n)])));});
     document.querySelectorAll('.ztRankScore[data-score]').forEach(el=>{el.innerHTML=ztFormatCount(el.dataset.score)+'<small>'+ZadI18n.html('talk.69ff4ac820')+'</small>';});
     document.querySelectorAll('[data-comment-time]').forEach(el=>{const date=new Date(el.dataset.commentTime);if(Number.isFinite(date.getTime()))el.textContent=new Intl.DateTimeFormat(ZadI18n.locale,{dateStyle:'medium'}).format(date);});
+    document.querySelectorAll('[data-comment-likes]').forEach(el=>el.textContent=ZadI18n.t('talk.27813f1a76')+' · '+ztFormatCount(el.dataset.commentLikes));
+    document.querySelectorAll('[data-reply-count]').forEach(el=>el.textContent=ZadI18n.t('social.replies',{count:ztFormatCount(el.dataset.replyCount)}));
+    document.getElementById('ztPublicProfile')?.close();
     chromeLocale=ZadI18n.locale;
   });
 

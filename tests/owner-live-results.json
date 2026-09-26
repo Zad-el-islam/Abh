@@ -1,0 +1,118 @@
+{
+  "executed_date": "2026-09-25",
+  "scope": "Real original Supabase project with temporary QA accounts and Storage media",
+  "project": "bzrhrvgddtnhctcdlgmy",
+  "report_reconstructed_from_completed_session_results": true,
+  "rerun_after_workspace_restore": false,
+  "passed": 24,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Public signup metadata cannot self-assign owner/admin/moderator",
+      "status": "passed"
+    },
+    {
+      "name": "Temporary Owner username login, normal-site profile and admin access",
+      "status": "passed"
+    },
+    {
+      "name": "Owner assigns Admin and Moderator through verified server action",
+      "status": "passed"
+    },
+    {
+      "name": "Owner removes roles and demotion is enforced immediately",
+      "status": "passed"
+    },
+    {
+      "name": "Admin cannot ban/unban/kick/delete/demote Owner",
+      "status": "passed"
+    },
+    {
+      "name": "Moderator cannot modify Owner or manage users",
+      "status": "passed"
+    },
+    {
+      "name": "Owner cannot assign a second Owner or self-delete",
+      "status": "passed"
+    },
+    {
+      "name": "RLS denies direct role writes and forged actor RPC",
+      "status": "passed"
+    },
+    {
+      "name": "Cross-user profile edits and metadata role spoofing denied",
+      "status": "passed"
+    },
+    {
+      "name": "Real avatar upload and profile update",
+      "status": "passed"
+    },
+    {
+      "name": "Real MP4 authorization/upload/finalize reaches pending moderation",
+      "status": "passed"
+    },
+    {
+      "name": "Owner approval and Moderator reject/reapprove control public visibility",
+      "status": "passed"
+    },
+    {
+      "name": "Public feed/profile show actual publisher identity and approved clips",
+      "status": "passed"
+    },
+    {
+      "name": "Video likes use authenticated identity",
+      "status": "passed"
+    },
+    {
+      "name": "Comment author is derived from Auth despite spoofed identity",
+      "status": "passed"
+    },
+    {
+      "name": "Comment like/unlike is idempotent",
+      "status": "passed"
+    },
+    {
+      "name": "One-level replies and counts work; nested replies rejected",
+      "status": "passed"
+    },
+    {
+      "name": "Own comment deletion works; cross-user deletion and raw writes denied",
+      "status": "passed"
+    },
+    {
+      "name": "Admin and Moderator list and hide comments",
+      "status": "passed"
+    },
+    {
+      "name": "Ban/unban rejects banned sessions; Owner survives shared-IP ban",
+      "status": "passed"
+    },
+    {
+      "name": "33-comment pagination has no duplicate rows",
+      "status": "passed"
+    },
+    {
+      "name": "Own root-comment deletion hides its replies",
+      "status": "passed"
+    },
+    {
+      "name": "Live SQL Owner profile/membership and unique-Owner guards reject attacks",
+      "status": "passed"
+    },
+    {
+      "name": "Legacy admin login/moderation and Owner-only disable/enable revoke sessions and protect Owner",
+      "status": "passed"
+    }
+  ],
+  "cleanup_verified_date": "2026-09-26",
+  "cleanup": {
+    "auth_users": 7,
+    "storage_objects": 5,
+    "videos": 3,
+    "qa_profiles": 0,
+    "owners": 0
+  },
+  "real_owner_created": false,
+  "owner_blocker": "Private owner email not supplied; none invented.",
+  "note": "QA audit/rate-limit rows may remain. Initial banned-token assertion corrected to accept 401/403; no authorization bypass."
+}

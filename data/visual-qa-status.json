@@ -1,8 +1,9 @@
 {
   "status": "not_executed",
-  "reason": "The session browser policy denies local project access. No alternate browser or bypass used.",
+  "reason": "Cloud Browser denied local project navigation with net::ERR_BLOCKED_BY_CLIENT. No alternate browser or network bypass used.",
   "requestedWidths": [
     390,
+    768,
     1440
   ],
   "requestedPalettes": [
@@ -10,5 +11,5 @@
     "navy",
     "burgundy"
   ],
-  "note": "Semantic color contrast, CSS token consistency and scope behavior were tested without rendering."
+  "note": "Rouh gateway CSS breakpoint and DOM lifecycle contracts passed at all three widths. This does not establish rendered layout or actual video playback."
 }

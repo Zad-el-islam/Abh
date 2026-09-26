@@ -1,7 +1,7 @@
 {
   "passed": 5,
   "failed": 0,
-  "scope": "Offline Node contract tests of review-only sources with mocked database/storage; not Deno or production integration",
+  "scope": "Canonical deployed function contracts with mocked authentication/database/storage. Actual runtime guards are separately tested; this suite is not live integration.",
   "results": [
     {
       "name": "Admin username cannot become a PostgREST OR filter or LIKE wildcard",
